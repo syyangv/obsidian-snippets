@@ -1,0 +1,300 @@
+/* Moonrise Kingdom Calendar - Complete Styling */
+
+/* Main container */
+.moonrise-calendar {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Month title */
+.moonrise-title {
+  font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif !important;
+  font-weight: 700 !important;
+  color: #8B4513 !important;
+  margin-bottom: 24px !important;
+  font-size: 1.6em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  text-align: center;
+}
+
+/* Summary section */
+.moonrise-summary {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  width: 700px;
+}
+
+/* Summary cards */
+.moonrise-summary-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(139,69,19,0.1);
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.moonrise-summary-card:hover {
+  box-shadow: 0 4px 12px rgba(139,69,19,0.15) !important;
+  transform: translateY(-2px);
+}
+
+/* Card header */
+.moonrise-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* Card dot */
+.moonrise-card-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+/* Card label */
+.moonrise-card-label {
+  font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
+  font-size: 0.75em;
+  color: #8B4513;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Card count */
+.moonrise-card-count {
+  font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  color: #5D4037;
+}
+
+/* Calendar grid */
+.moonrise-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  width: 700px;
+  font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
+  background: #E8D5B7;
+  border: 1px solid #D4A574;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(139,69,19,0.1);
+}
+
+/* Day headers */
+.moonrise-day-header {
+  background: #F7F3E9;
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #E8D5B7;
+}
+
+.moonrise-day-header.weekend {
+  color: #D4A574;
+}
+
+.moonrise-day-header.weekday {
+  color: #8B4513;
+}
+
+/* Day cells */
+.moonrise-day-cell {
+  padding: 8px;
+  min-height: 80px;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.moonrise-day-cell:hover {
+  background-color: rgba(212, 165, 116, 0.1) !important;
+}
+
+.moonrise-day-cell.weekday {
+  background: #FEFCF8;
+}
+
+.moonrise-day-cell.weekend {
+  background: #F0E6D2;
+}
+
+.moonrise-day-cell.today {
+  border: 2px solid #D4A574 !important;
+  border-radius: 8px !important;
+}
+
+.moonrise-day-cell.empty {
+  background: #F0E6D2;
+}
+
+/* Day numbers */
+.moonrise-day-number {
+  font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 0;
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.moonrise-day-number:hover {
+  background-color: rgba(212, 165, 116, 0.2);
+  transform: scale(1.1);
+}
+
+/* Style for links specifically */
+a.moonrise-day-number {
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 165, 116, 0.5);
+  text-underline-offset: 2px;
+}
+
+a.moonrise-day-number:hover {
+  text-decoration-color: rgba(212, 165, 116, 0.8);
+}
+
+.moonrise-day-number.today {
+  font-weight: 600;
+  color: #D4A574;
+}
+
+.moonrise-day-number.weekend {
+  color: #A0845C;
+}
+
+.moonrise-day-number.weekday {
+  color: #5D4037;
+}
+
+/* Activity dots container */
+.moonrise-activities {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+}
+
+/* Activity dots */
+.moonrise-activity-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+
+.moonrise-activity-dot:hover {
+  transform: scale(1.3);
+}
+
+/* Tag-specific background colors for cards */
+.moonrise-summary-card.therapy { background: #E85A4F25; border: 1px solid #E85A4F50; }
+.moonrise-summary-card.举铁 { background: #D68C4525; border: 1px solid #D68C4550; }
+.moonrise-summary-card.学习 { background: #F39C1225; border: 1px solid #F39C1250; }
+.moonrise-summary-card.🎾 { background: #27AE6025; border: 1px solid #27AE6050; }
+.moonrise-summary-card.🎤 { background: #E91E6325; border: 1px solid #E91E6350; }
+.moonrise-summary-card.下厨 { background: #E67E2225; border: 1px solid #E67E2250; }
+.moonrise-summary-card.看戏 { background: #9B59B625; border: 1px solid #9B59B650; }
+.moonrise-summary-card.看医生 { background: #8E44AD25; border: 1px solid #8E44AD50; }
+.moonrise-summary-card.socializing { background: #F9C74F25; border: 1px solid #F9C74F50; }
+.moonrise-summary-card.work { background: #8E44AD25; border: 1px solid #8E44AD50; }
+.moonrise-summary-card.cooking { background: #E67E2225; border: 1px solid #E67E2250; }
+.moonrise-summary-card.travel { background: #16A08525; border: 1px solid #16A08550; }
+.moonrise-summary-card.creative { background: #E91E6325; border: 1px solid #E91E6350; }
+.moonrise-summary-card.social { background: #3498DB25; border: 1px solid #3498DB50; }
+.moonrise-summary-card.health { background: #27AE6025; border: 1px solid #27AE6050; }
+.moonrise-summary-card.learning { background: #F39C1225; border: 1px solid #F39C1250; }
+.moonrise-summary-card.family { background: #9B59B625; border: 1px solid #9B59B650; }
+.moonrise-summary-card.hobby { background: #E74C3C25; border: 1px solid #E74C3C50; }
+.moonrise-summary-card.nature { background: #2ECC7125; border: 1px solid #2ECC7150; }
+
+/* Tag-specific dot colors */
+.moonrise-card-dot.therapy, .moonrise-activity-dot.therapy { background: #E85A4F !important; }
+.moonrise-card-dot.举铁, .moonrise-activity-dot.举铁 { background: #D68C45 !important; }
+.moonrise-card-dot.学习, .moonrise-activity-dot.学习 { background: #F39C12 !important; }
+.moonrise-card-dot.🎾, .moonrise-activity-dot.🎾 { background: #27AE60 !important; }
+.moonrise-card-dot.🎤, .moonrise-activity-dot.🎤 { background: #E91E63 !important; }
+.moonrise-card-dot.下厨, .moonrise-activity-dot.下厨 { background: #E67E22 !important; }
+.moonrise-card-dot.看戏, .moonrise-activity-dot.看戏 { background: #9B59B6 !important; }
+.moonrise-card-dot.看医生, .moonrise-activity-dot.看医生 { background: #8E44AD !important; }
+.moonrise-card-dot.socializing, .moonrise-activity-dot.socializing { background: #F9C74F !important; }
+.moonrise-card-dot.work, .moonrise-activity-dot.work { background: #8E44AD !important; }
+.moonrise-card-dot.cooking, .moonrise-activity-dot.cooking { background: #E67E22 !important; }
+.moonrise-card-dot.travel, .moonrise-activity-dot.travel { background: #16A085 !important; }
+.moonrise-card-dot.creative, .moonrise-activity-dot.creative { background: #E91E63 !important; }
+.moonrise-card-dot.social, .moonrise-activity-dot.social { background: #3498DB !important; }
+.moonrise-card-dot.health, .moonrise-activity-dot.health { background: #27AE60 !important; }
+.moonrise-card-dot.learning, .moonrise-activity-dot.learning { background: #F39C12 !important; }
+.moonrise-card-dot.family, .moonrise-activity-dot.family { background: #9B59B6 !important; }
+.moonrise-card-dot.hobby, .moonrise-activity-dot.hobby { background: #E74C3C !important; }
+.moonrise-card-dot.nature, .moonrise-activity-dot.nature { background: #2ECC71 !important; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .moonrise-calendar {
+    width: 100% !important;
+  }
+  
+  .moonrise-calendar-grid, .moonrise-summary {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  
+  .moonrise-summary {
+    flex-wrap: wrap;
+  }
+  
+  .moonrise-summary-card {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moonrise-summary-card {
+    flex: 1 1 100%;
+  }
+  
+  .moonrise-title {
+    font-size: 1.3em !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .moonrise-calendar {
+    break-inside: avoid;
+    width: 100% !important;
+  }
+  
+  .moonrise-summary-card {
+    break-inside: avoid;
+  }
+  
+  .moonrise-calendar-grid {
+    break-inside: avoid;
+  }
+}

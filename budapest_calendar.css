@@ -1,0 +1,447 @@
+/* Grand Budapest Hotel Calendar - Complete Styling */
+
+/* Main container */
+.budapest-calendar {
+  font-family: 'Times New Roman', 'Georgia', 'Palatino', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #F8E8F0 0%, #F5F0F8 100%);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(138, 43, 89, 0.12);
+}
+
+/* Month title */
+.budapest-title {
+  font-family: 'Trajan Pro', 'Optima', 'Futura', 'Century Gothic', serif !important;
+  font-weight: 600 !important;
+  color: #8A2B59 !important;
+  margin-bottom: 32px !important;
+  font-size: 2.4em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(138, 43, 89, 0.1);
+  position: relative;
+  font-stretch: condensed;
+}
+
+.budapest-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #D4A5C0, #8A2B59, #D4A5C0);
+}
+
+/* Summary section */
+.budapest-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+  width: 720px;
+}
+
+/* Summary cards */
+.budapest-summary-card {
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px solid;
+  box-shadow: 0 4px 16px rgba(138, 43, 89, 0.08);
+  transition: all 0.3s ease;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.budapest-summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-accent-color);
+}
+
+.budapest-summary-card:hover {
+  box-shadow: 0 8px 24px rgba(138, 43, 89, 0.15) !important;
+  transform: translateY(-3px);
+  border-color: var(--card-accent-color) !important;
+}
+
+/* Card header */
+.budapest-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Card ornament */
+.budapest-card-ornament {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  box-shadow: inset 0 1px 3px rgba(138, 43, 89, 0.2);
+}
+
+/* Card label */
+.budapest-card-label {
+  font-family: 'Trajan Pro', 'Optima', 'Futura', 'Century Gothic', serif;
+  font-size: 0.8em;
+  color: #8A2B59;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-style: normal;
+  font-stretch: condensed;
+}
+
+/* Card count */
+.budapest-card-count {
+  font-family: 'Trajan Pro', 'Optima', 'Futura', 'Century Gothic', serif;
+  font-size: 2.2em;
+  font-weight: 500;
+  color: #5A1B3A;
+  text-shadow: 0 1px 2px rgba(138, 43, 89, 0.1);
+  font-stretch: condensed;
+}
+
+/* Calendar grid */
+.budapest-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  width: 720px;
+  font-family: 'Trajan Pro', 'Optima', 'Futura', 'Century Gothic', serif;
+  background: #E6D0DC;
+  border: 3px solid #8A2B59;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(138, 43, 89, 0.15);
+}
+
+/* Day headers */
+.budapest-day-header {
+  background: linear-gradient(135deg, #8A2B59, #A63B6B);
+  color: #FFFFFF;
+  padding: 16px 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.7em;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-stretch: condensed;
+}
+
+/* Day cells */
+.budapest-day-cell {
+  padding: 8px;
+  min-height: 85px;
+  position: relative;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(138, 43, 89, 0.1);
+}
+
+.budapest-day-cell:hover {
+  background-color: rgba(212, 165, 192, 0.2) !important;
+  transform: scale(1.02);
+}
+
+.budapest-day-cell.weekday {
+  background: #FEFBFD;
+}
+
+.budapest-day-cell.weekend {
+  background: #F8F0F5;
+}
+
+.budapest-day-cell.today {
+  background: linear-gradient(135deg, #F0E6EB, #EDD9E2) !important;
+  border: 2px solid #D4A5C0 !important;
+  border-radius: 8px !important;
+  box-shadow: inset 0 2px 4px rgba(212, 165, 192, 0.3);
+}
+
+.budapest-day-cell.empty {
+  background: #F0E6EB;
+  opacity: 0.6;
+}
+
+/* Day numbers */
+.budapest-day-number {
+  font-family: 'Trajan Pro', 'Optima', 'Futura', 'Century Gothic', serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0;
+  text-shadow: 0 1px 1px rgba(138, 43, 89, 0.1);
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-stretch: condensed;
+  display: inline-block;
+}
+
+.budapest-day-number:hover {
+  background-color: rgba(212, 165, 192, 0.2);
+  transform: scale(1.1);
+  text-shadow: 0 1px 3px rgba(138, 43, 89, 0.2);
+}
+
+/* Style for links specifically */
+a.budapest-day-number {
+  text-decoration: underline;
+  text-decoration-color: rgba(138, 43, 89, 0.4);
+  text-underline-offset: 2px;
+}
+
+a.budapest-day-number:hover {
+  text-decoration-color: rgba(138, 43, 89, 0.7);
+}
+
+.budapest-day-number.today {
+  font-weight: 600;
+  color: #8A2B59;
+  text-shadow: 0 1px 2px rgba(138, 43, 89, 0.2);
+}
+
+.budapest-day-number.weekend {
+  color: #A65B7A;
+}
+
+.budapest-day-number.weekday {
+  color: #5A1B3A;
+}
+
+/* Activity dots container */
+.budapest-activities {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+/* Activity ornaments (diamond shapes) */
+.budapest-activity-ornament {
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  opacity: 0.9;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(138, 43, 89, 0.2);
+}
+
+.budapest-activity-ornament:hover {
+  transform: rotate(45deg) scale(1.4);
+  box-shadow: 0 2px 4px rgba(138, 43, 89, 0.3);
+}
+
+/* Tag-specific styles for Grand Budapest Hotel palette */
+/* Card backgrounds and borders */
+.budapest-summary-card.therapy { 
+  background: linear-gradient(135deg, #F8E8F0, #F5E0EB); 
+  border-color: #E487A8; 
+  --card-accent-color: #E487A8;
+}
+.budapest-summary-card.举铁 { 
+  background: linear-gradient(135deg, #F5E8F8, #F0E0F5); 
+  border-color: #C49ADB; 
+  --card-accent-color: #C49ADB;
+}
+.budapest-summary-card.学习 { 
+  background: linear-gradient(135deg, #FFF0E8, #FFE8E0); 
+  border-color: #FF9966; 
+  --card-accent-color: #FF9966;
+}
+.budapest-summary-card.🎾 { 
+  background: linear-gradient(135deg, #E8F8F0, #E0F5E8); 
+  border-color: #66C285; 
+  --card-accent-color: #66C285;
+}
+.budapest-summary-card.🎤 { 
+  background: linear-gradient(135deg, #F8E8F8, #F5E0F5); 
+  border-color: #D687D6; 
+  --card-accent-color: #D687D6;
+}
+.budapest-summary-card.下厨 { 
+  background: linear-gradient(135deg, #F8F0E8, #F5E8E0); 
+  border-color: #E6A876; 
+  --card-accent-color: #E6A876;
+}
+.budapest-summary-card.看戏 { 
+  background: linear-gradient(135deg, #F8F0F8, #F5E8F5); 
+  border-color: #CC7ACC; 
+  --card-accent-color: #CC7ACC;
+}
+.budapest-summary-card.看医生 { 
+  background: linear-gradient(135deg, #E8E8F8, #E0E0F5); 
+  border-color: #8A8ADB; 
+  --card-accent-color: #8A8ADB;
+}
+.budapest-summary-card.socializing { 
+  background: linear-gradient(135deg, #FFF8E8, #FFF0E0); 
+  border-color: #F2C464; 
+  --card-accent-color: #F2C464;
+}
+.budapest-summary-card.work { 
+  background: linear-gradient(135deg, #E8E8F8, #E0E0F5); 
+  border-color: #8A8ADB; 
+  --card-accent-color: #8A8ADB;
+}
+.budapest-summary-card.cooking { 
+  background: linear-gradient(135deg, #F8F0E8, #F5E8E0); 
+  border-color: #E6A876; 
+  --card-accent-color: #E6A876;
+}
+.budapest-summary-card.travel { 
+  background: linear-gradient(135deg, #E8F8F8, #E0F5F5); 
+  border-color: #5DBDBD; 
+  --card-accent-color: #5DBDBD;
+}
+.budapest-summary-card.creative { 
+  background: linear-gradient(135deg, #F8E8F8, #F5E0F5); 
+  border-color: #D687D6; 
+  --card-accent-color: #D687D6;
+}
+.budapest-summary-card.social { 
+  background: linear-gradient(135deg, #F0E8F8, #E8E0F5); 
+  border-color: #B390E6; 
+  --card-accent-color: #B390E6;
+}
+.budapest-summary-card.health { 
+  background: linear-gradient(135deg, #E8F8F0, #E0F5E8); 
+  border-color: #66C285; 
+  --card-accent-color: #66C285;
+}
+.budapest-summary-card.learning { 
+  background: linear-gradient(135deg, #FFF0E8, #FFE8E0); 
+  border-color: #FF9966; 
+  --card-accent-color: #FF9966;
+}
+.budapest-summary-card.family { 
+  background: linear-gradient(135deg, #F8F0F8, #F5E8F5); 
+  border-color: #CC7ACC; 
+  --card-accent-color: #CC7ACC;
+}
+.budapest-summary-card.hobby { 
+  background: linear-gradient(135deg, #F8E8E8, #F5E0E0); 
+  border-color: #E67A7A; 
+  --card-accent-color: #E67A7A;
+}
+.budapest-summary-card.nature { 
+  background: linear-gradient(135deg, #F0F8E8, #E8F5E0); 
+  border-color: #85C470; 
+  --card-accent-color: #85C470;
+}
+
+/* Ornament and activity colors */
+.budapest-card-ornament.therapy, .budapest-activity-ornament.therapy { background: #E487A8 !important; }
+.budapest-card-ornament.举铁, .budapest-activity-ornament.举铁 { background: #C49ADB !important; }
+.budapest-card-ornament.学习, .budapest-activity-ornament.学习 { background: #FF9966 !important; }
+.budapest-card-ornament.🎾, .budapest-activity-ornament.🎾 { background: #66C285 !important; }
+.budapest-card-ornament.🎤, .budapest-activity-ornament.🎤 { background: #D687D6 !important; }
+.budapest-card-ornament.下厨, .budapest-activity-ornament.下厨 { background: #E6A876 !important; }
+.budapest-card-ornament.看戏, .budapest-activity-ornament.看戏 { background: #CC7ACC !important; }
+.budapest-card-ornament.看医生, .budapest-activity-ornament.看医生 { background: #8A8ADB !important; }
+.budapest-card-ornament.socializing, .budapest-activity-ornament.socializing { background: #F2C464 !important; }
+.budapest-card-ornament.work, .budapest-activity-ornament.work { background: #8A8ADB !important; }
+.budapest-card-ornament.cooking, .budapest-activity-ornament.cooking { background: #E6A876 !important; }
+.budapest-card-ornament.travel, .budapest-activity-ornament.travel { background: #5DBDBD !important; }
+.budapest-card-ornament.creative, .budapest-activity-ornament.creative { background: #D687D6 !important; }
+.budapest-card-ornament.social, .budapest-activity-ornament.social { background: #B390E6 !important; }
+.budapest-card-ornament.health, .budapest-activity-ornament.health { background: #66C285 !important; }
+.budapest-card-ornament.learning, .budapest-activity-ornament.learning { background: #FF9966 !important; }
+.budapest-card-ornament.family, .budapest-activity-ornament.family { background: #CC7ACC !important; }
+.budapest-card-ornament.hobby, .budapest-activity-ornament.hobby { background: #E67A7A !important; }
+.budapest-card-ornament.nature, .budapest-activity-ornament.nature { background: #85C470 !important; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .budapest-calendar {
+    width: 100% !important;
+    padding: 20px;
+  }
+  
+  .budapest-calendar-grid, .budapest-summary {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  
+  .budapest-summary {
+    flex-wrap: wrap;
+  }
+  
+  .budapest-summary-card {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 160px;
+  }
+  
+  .budapest-title {
+    font-size: 1.8em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .budapest-summary-card {
+    flex: 1 1 100%;
+  }
+  
+  .budapest-title {
+    font-size: 1.5em !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .budapest-calendar {
+    break-inside: avoid;
+    width: 100% !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+  
+  .budapest-summary-card {
+    break-inside: avoid;
+  }
+  
+  .budapest-calendar-grid {
+    break-inside: avoid;
+  }
+}
+
+/* Animation for luxury feel */
+@keyframes elegant-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.budapest-calendar {
+  animation: elegant-fade-in 0.6s ease-out;
+}
+
+.budapest-summary-card {
+  animation: elegant-fade-in 0.8s ease-out;
+}

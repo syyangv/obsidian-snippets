@@ -1,0 +1,184 @@
+/* Zen Theme Translucency Enhancement */
+/* Save this as a CSS snippet in Obsidian: Settings > Appearance > CSS snippets */
+/*Customization options:
+
+Less transparent: Change 0.75 to 0.85 or 0.9 for more opacity
+More transparent: Change 0.75 to 0.6 or 0.5 for more glass effect
+Blur intensity: Adjust blur(10px) values - higher numbers = more blur*/
+
+
+/* Main workspace translucency */
+.workspace {
+  background-color: rgba(var(--background-primary-rgb), 0.5) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* Editor and reading view background */
+.markdown-source-view.mod-cm6 .cm-editor,
+.markdown-reading-view,
+.workspace-leaf-content {
+  background-color: rgba(var(--background-primary-rgb), 0.55) !important;
+  backdrop-filter: blur(6px);
+}
+
+/* Sidebar translucency */
+.workspace-split.mod-left-split,
+.workspace-split.mod-right-split {
+  background-color: rgba(var(--background-secondary-rgb), 0.8) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* File explorer and other sidebar panels */
+.nav-folder,
+.nav-file,
+.workspace-leaf-content[data-type="file-explorer"],
+.workspace-leaf-content[data-type="search"],
+.workspace-leaf-content[data-type="starred"],
+.workspace-leaf-content[data-type="tag"],
+.workspace-leaf-content[data-type="outline"] {
+  background-color: rgba(var(--background-secondary-rgb), 0.7) !important;
+}
+
+/* Title bar translucency (macOS) */
+.titlebar {
+  background-color: rgba(var(--background-secondary-rgb), 0.6) !important;
+  backdrop-filter: blur(15px);
+}
+
+/* Tab bar translucency */
+.workspace-tab-header-container {
+  background-color: rgba(var(--background-secondary-rgb), 0.75) !important;
+  backdrop-filter: blur(8px);
+}
+
+.workspace-tab-header {
+  background-color: rgba(var(--background-primary-rgb), 0.6) !important;
+}
+
+.workspace-tab-header.is-active {
+  background-color: rgba(var(--background-primary-rgb), 0.85) !important;
+}
+
+/* Status bar translucency */
+.status-bar {
+  background-color: rgba(var(--background-secondary-rgb), 0.8) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Modal and popup translucency */
+.modal,
+.suggestion-container,
+.menu {
+  background-color: rgba(var(--background-primary-rgb), 0.9) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(var(--background-modifier-border-rgb), 0.3);
+}
+
+/* Tag selector specific styling (for your DataviewJS component) */
+.tag-selector-container {
+  background-color: rgba(var(--background-secondary-rgb), 0.7) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid rgba(var(--background-modifier-border-rgb), 0.2);
+}
+
+.tag-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.tag-button {
+  background-color: rgba(var(--interactive-normal-rgb), 0.6) !important;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(var(--background-modifier-border-rgb), 0.3);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-button:hover {
+  background-color: rgba(var(--interactive-hover-rgb), 0.7) !important;
+  transform: translateY(-1px);
+}
+
+.tag-button.active {
+  background-color: rgba(var(--interactive-accent-rgb), 0.8) !important;
+  color: var(--text-on-accent);
+  border-color: rgba(var(--interactive-accent-rgb), 0.6);
+}
+
+.tag-selector-title {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.tag-selector-help {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Additional translucency for specific elements */
+.workspace-ribbon {
+  background-color: rgba(var(--background-secondary-rgb), 0.7) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Graph view translucency */
+.workspace-leaf-content[data-type="graph"] {
+  background-color: rgba(var(--background-primary-rgb), 0.8) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Search results translucency */
+.search-result-container {
+  background-color: rgba(var(--background-secondary-rgb), 0.7) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* Dataview table translucency */
+.dataview.result-group,
+.dataview.table-view-table {
+  background-color: rgba(var(--background-secondary-rgb), 0.6) !important;
+  backdrop-filter: blur(6px);
+  border-radius: 6px;
+}
+
+/* Enhance glass effect on focus */
+.workspace-leaf.mod-active .workspace-leaf-content {
+  background-color: rgba(var(--background-primary-rgb), 0.85) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar translucency */
+::-webkit-scrollbar-track {
+  background-color: rgba(var(--background-secondary-rgb), 0.3) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--text-muted-rgb), 0.4) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* Ensure text remains readable */
+.markdown-preview-view,
+.cm-editor {
+  color: var(--text-normal);
+}
+
+/* Subtle animation for smooth transitions */
+.workspace-leaf-content,
+.tag-selector-container,
+.modal {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}

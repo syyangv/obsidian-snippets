@@ -1,0 +1,235 @@
+/* Complete Mermaid Gantt CSS - Moonrise Kingdom Theme with Grid Lines */
+
+/* =========================== */
+/* FONTS */
+/* =========================== */
+
+/* Target all Mermaid Gantt chart text */
+.mermaid svg text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+}
+
+/* Phase Names - Bigger and Bold */
+.mermaid svg .sectionTitle,
+.mermaid svg text.sectionTitle {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    fill: #5d4037 !important; /* Rich brown for section titles */
+}
+
+/* Target task labels */
+.mermaid svg .taskText {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+/* Target axis labels */
+.mermaid svg .tick text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 11px !important;
+    fill: #666666 !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+/* Target chart title */
+.mermaid svg .titleText {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+/* =========================== */
+/* GRID LINES - PRESERVE THESE */
+/* =========================== */
+
+/* Ensure grid lines are visible */
+.mermaid svg .grid line {
+    stroke: #e0e0e0 !important;
+    stroke-width: 1px !important;
+    opacity: 0.8 !important;
+    display: block !important;
+}
+
+/* Ensure tick marks are visible */
+.mermaid svg .tick line {
+    stroke: #bdbdbd !important;
+    stroke-width: 1px !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+/* Ensure axis lines are visible */
+.mermaid svg .domain {
+    stroke: #757575 !important;
+    stroke-width: 1px !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+/* Ensure grid container is visible */
+.mermaid svg g.x.axis,
+.mermaid svg g.y.axis {
+    opacity: 1 !important;
+    display: block !important;
+}
+
+/* =========================== */
+/* FULL WIDTH COMPACT LAYOUT */
+/* =========================== */
+
+/* Force the compact Gantt SVG to use full container width */
+.mermaid svg[class*="gantt"] {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 800px !important;
+}
+
+/* =========================== */
+/* TASK COLORS - MOONRISE KINGDOM PALETTE */
+/* =========================== */
+
+/* Preparation Phase - Soft Sage Green */
+.mermaid svg .section0 rect:not(.grid):not(.tick),
+.mermaid svg rect[class*="section0"]:not(.grid):not(.tick),
+.mermaid svg rect.task0 {
+    fill: #8fbc8f !important;
+}
+
+/* PWD Phase - Warm Dusty Blue */
+.mermaid svg .section1 rect:not(.grid):not(.tick),
+.mermaid svg rect[class*="section1"]:not(.grid):not(.tick),
+.mermaid svg rect.task1 {
+    fill: #6b9dc2 !important;
+}
+
+/* Pre-PERM Phase - Vintage Yellow */
+.mermaid svg .section2 rect:not(.grid):not(.tick),
+.mermaid svg rect[class*="section2"]:not(.grid):not(.tick),
+.mermaid svg rect.task2 {
+    fill: #f4d03f !important;
+}
+
+/* PERM Phase - Coral Orange */
+.mermaid svg .section3 rect:not(.grid):not(.tick),
+.mermaid svg rect[class*="section3"]:not(.grid):not(.tick),
+.mermaid svg rect.task3 {
+    fill: #e67e22 !important;
+}
+
+/* =========================== */
+/* DONE TASKS - NO GREY! */
+/* =========================== */
+
+.mermaid svg rect.taskDone,
+.mermaid svg rect[class*="taskDone"],
+.mermaid svg rect[class*="done"],
+.mermaid svg rect.done,
+.mermaid svg rect[fill="#bdbdbd"],
+.mermaid svg rect[fill="#9e9e9e"],
+.mermaid svg rect[fill="#757575"] {
+    fill: #556b2f !important; /* Deep olive green */
+    opacity: 1 !important;
+}
+
+.mermaid svg rect.taskDone0,
+.mermaid svg rect[class*="taskDone0"] {
+    fill: #556b2f !important; /* Deep olive green */
+    opacity: 1 !important;
+}
+
+.mermaid svg rect.taskDone1,
+.mermaid svg rect[class*="taskDone1"] {
+    fill: #4682b4 !important; /* Steel blue */
+    opacity: 1 !important;
+}
+
+.mermaid svg rect.taskDone2,
+.mermaid svg rect[class*="taskDone2"] {
+    fill: #daa520 !important; /* Goldenrod */
+    opacity: 1 !important;
+}
+
+.mermaid svg rect.taskDone3,
+.mermaid svg rect[class*="taskDone3"] {
+    fill: #cd853f !important; /* Peru/tan */
+    opacity: 1 !important;
+}
+
+/* =========================== */
+/* ACTIVE TASKS */
+/* =========================== */
+
+.mermaid svg rect.taskActive0 {
+    fill: #7cb342 !important;
+    stroke: #689f38 !important;
+    stroke-width: 2px !important;
+}
+
+.mermaid svg rect.taskActive1 {
+    fill: #42a5f5 !important;
+    stroke: #1e88e5 !important;
+    stroke-width: 2px !important;
+}
+
+.mermaid svg rect.taskActive2 {
+    fill: #ffeb3b !important;
+    stroke: #fbc02d !important;
+    stroke-width: 2px !important;
+}
+
+.mermaid svg rect.taskActive3 {
+    fill: #ff7043 !important;
+    stroke: #f4511e !important;
+    stroke-width: 2px !important;
+}
+
+/* =========================== */
+/* MILESTONES - BRIGHT! */
+/* =========================== */
+
+.mermaid svg .milestone,
+.mermaid svg rect[class*="milestone"],
+.mermaid svg polygon[class*="milestone"] {
+    fill: #ffd54f !important; /* Bright golden yellow */
+    stroke: #ff8f00 !important; /* Bright orange border */
+    stroke-width: 3px !important;
+    opacity: 1 !important;
+}
+
+/* =========================== */
+/* TEXT READABILITY IN DONE TASKS */
+/* =========================== */
+
+.mermaid svg text.taskText0,
+.mermaid svg text[class*="taskText0"] {
+    fill: #e8f5e8 !important; /* Very pale green */
+    font-weight: 500 !important;
+}
+
+.mermaid svg text.taskText1,
+.mermaid svg text[class*="taskText1"] {
+    fill: #e3f2fd !important; /* Very pale blue */
+    font-weight: 500 !important;
+}
+
+.mermaid svg text.taskText2,
+.mermaid svg text[class*="taskText2"] {
+    fill: #fffde7 !important; /* Very pale yellow */
+    font-weight: 500 !important;
+}
+
+.mermaid svg text.taskText3,
+.mermaid svg text[class*="taskText3"] {
+    fill: #fff3e0 !important; /* Very pale orange */
+    font-weight: 500 !important;
+}
+
+.mermaid svg text[class*="done"],
+.mermaid svg .done text {
+    fill: #f5f5f5 !important;
+    font-weight: 500 !important;
+}

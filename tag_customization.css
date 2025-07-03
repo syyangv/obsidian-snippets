@@ -1,0 +1,33 @@
+/* Tag color customization */
+/*moonrise kingdom colorscheme*/
+.tag[href="#organization"] {
+  background-color: #ded9a3;
+  color: #4d5c29;
+}
+
+.tag[href="#learning"] {
+  background-color: #eec9d7;
+  color: #db4372;
+}
+
+.tag[href="#shortcuts"] {
+  background-color: #e1dbd4;
+  color: #7a5b48;
+}
+
+.tag[href="#how-to"] {
+  background-color: #bad3d4;
+  color: #779a86;
+}
+
+.tag[href="#营养"] {
+    background-color: #efd88d;
+    color: #dea12d;
+}
+
+/* Optional: make the tags a bit rounder and bolder */
+.tag {
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 2px 6px;
+}
