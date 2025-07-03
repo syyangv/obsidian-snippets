@@ -1,0 +1,510 @@
+/* Darjeeling Limited Calendar - Enhanced with Saffron */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Cutive+Mono&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Main container */
+.darjeeling-calendar {
+  font-family: 'Special Elite', 'Courier Prime', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(135deg, 
+    rgba(45, 139, 139, 0.9) 0%, 
+    rgba(74, 155, 155, 0.85) 20%, 
+    rgba(244, 164, 96, 0.8) 40%, 
+    rgba(255, 140, 0, 0.75) 60%, 
+    rgba(139, 105, 20, 0.8) 80%, 
+    rgba(205, 133, 63, 0.85) 100%);
+  padding: 30px;
+  border-radius: 0;
+  box-shadow: 0 8px 20px rgba(244, 164, 96, 0.4);
+  position: relative;
+  border: 4px solid rgba(255, 140, 0, 0.8);
+  backdrop-filter: blur(1px);
+}
+
+.darjeeling-calendar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 140, 0, 0.9) 0%,
+    rgba(244, 164, 96, 0.8) 16.6%,
+    rgba(205, 133, 63, 0.85) 33.2%,
+    rgba(160, 82, 45, 0.9) 49.8%,
+    rgba(139, 105, 20, 0.9) 66.4%,
+    rgba(210, 105, 30, 0.8) 83%,
+    rgba(255, 140, 0, 0.9) 100%
+  );
+  opacity: 0.9;
+}
+
+.darjeeling-calendar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 140, 0, 0.9) 0%,
+    rgba(244, 164, 96, 0.8) 16.6%,
+    rgba(205, 133, 63, 0.85) 33.2%,
+    rgba(160, 82, 45, 0.9) 49.8%,
+    rgba(139, 105, 20, 0.9) 66.4%,
+    rgba(210, 105, 30, 0.8) 83%,
+    rgba(255, 140, 0, 0.9) 100%
+  );
+  opacity: 0.9;
+}
+
+/* Month title - Enhanced with saffron */
+.darjeeling-title {
+  font-family: 'Special Elite', 'Courier Prime', monospace !important;
+  font-weight: 400 !important;
+  background: linear-gradient(45deg, 
+    #FF8C00 0%, 
+    #F4A460 20%, 
+    #FFD700 40%, 
+    #FF8C00 60%, 
+    #DAA520 80%, 
+    #FF8C00 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  margin-bottom: 24px !important;
+  font-size: 2.6em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 6px !important;
+  text-align: center;
+  filter: drop-shadow(2px 2px 0px rgba(255, 140, 0, 0.8)) drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.3));
+  position: relative;
+  z-index: 1;
+  border-bottom: 4px solid rgba(244, 164, 96, 0.8);
+  padding-bottom: 8px;
+}
+
+/* Summary section */
+.darjeeling-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+  width: 720px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Summary cards - Enhanced with saffron tones */
+.darjeeling-summary-card {
+  padding: 18px;
+  border-radius: 0;
+  border: 3px solid;
+  background: linear-gradient(135deg, 
+    rgba(255, 248, 220, 0.2) 0%, 
+    rgba(255, 140, 0, 0.1) 50%, 
+    rgba(244, 164, 96, 0.15) 100%);
+  backdrop-filter: blur(2px);
+  box-shadow: 
+    4px 4px 0px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 140, 0, 0.3);
+  transition: all 0.3s ease;
+  flex: 1;
+  position: relative;
+}
+
+.darjeeling-summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 140, 0, 0.8) 0%,
+    rgba(244, 164, 96, 0.7) 16.6%,
+    rgba(205, 133, 63, 0.8) 33.2%,
+    rgba(160, 82, 45, 0.9) 49.8%,
+    rgba(139, 105, 20, 0.8) 66.4%,
+    rgba(210, 105, 30, 0.7) 83%,
+    rgba(255, 140, 0, 0.8) 100%
+  );
+}
+
+.darjeeling-summary-card:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 248, 220, 0.3) 0%, 
+    rgba(255, 140, 0, 0.2) 50%, 
+    rgba(244, 164, 96, 0.25) 100%);
+  box-shadow: 
+    6px 6px 0px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 140, 0, 0.4) !important;
+  transform: translate(-2px, -2px);
+}
+
+/* Card header */
+.darjeeling-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  margin-top: 8px;
+}
+
+/* Card stripe - Enhanced with saffron */
+.darjeeling-card-stripe {
+  width: 20px;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    currentColor 0%,
+    rgba(255, 140, 0, 0.3) 25%,
+    currentColor 50%,
+    rgba(244, 164, 96, 0.3) 75%,
+    currentColor 100%
+  );
+  opacity: 0.8;
+}
+
+/* Card label - Saffron gradient text */
+.darjeeling-card-label {
+  font-family: 'Cutive Mono', 'Courier Prime', monospace;
+  font-size: 0.7em;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-style: normal;
+  background: linear-gradient(45deg, 
+    rgba(47, 79, 79, 0.9) 0%, 
+    rgba(255, 140, 0, 0.8) 50%,
+    rgba(139, 105, 20, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(1px 1px 0px rgba(255, 248, 220, 0.7));
+}
+
+/* Card count - Enhanced saffron gradient */
+.darjeeling-card-count {
+  font-family: 'Special Elite', 'Courier Prime', monospace;
+  font-size: 2.8em;
+  font-weight: 400;
+  background: linear-gradient(45deg, 
+    rgba(47, 79, 79, 1) 0%, 
+    rgba(255, 140, 0, 0.9) 30%,
+    rgba(244, 164, 96, 0.8) 50%,
+    rgba(139, 105, 20, 0.9) 70%, 
+    rgba(47, 79, 79, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(1px 1px 0px rgba(255, 248, 220, 0.5));
+}
+
+/* Calendar grid - Saffron highlights */
+.darjeeling-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  width: 720px;
+  font-family: 'Courier Prime', monospace;
+  background: linear-gradient(135deg, 
+    rgba(255, 140, 0, 0.9) 0%, 
+    rgba(244, 164, 96, 0.85) 50%,
+    rgba(160, 82, 45, 0.9) 100%);
+  border: 4px solid rgba(255, 140, 0, 0.8);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 
+    6px 6px 0px rgba(0, 0, 0, 0.2),
+    inset 0 2px 0 rgba(255, 248, 220, 0.2);
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(1px);
+}
+
+/* Day headers - Saffron theme */
+.darjeeling-day-header {
+  background: linear-gradient(135deg, 
+    rgba(255, 140, 0, 0.95) 0%, 
+    rgba(244, 164, 96, 0.9) 50%, 
+    rgba(205, 133, 63, 0.95) 100%);
+  color: rgba(245, 245, 220, 0.95);
+  padding: 14px 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.7em;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6);
+  font-style: normal;
+  border-bottom: 2px solid rgba(255, 140, 0, 0.7);
+  text-transform: uppercase;
+  backdrop-filter: blur(1px);
+}
+
+/* Day cells - Saffron tinted backgrounds */
+.darjeeling-day-cell {
+  padding: 8px;
+  min-height: 85px;
+  position: relative;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.darjeeling-day-cell:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 140, 0, 0.4) 0%, 
+    rgba(255, 215, 0, 0.3) 50%,
+    rgba(244, 164, 96, 0.35) 100%) !important;
+  transform: scale(1.02);
+  backdrop-filter: blur(1px);
+}
+
+.darjeeling-day-cell.weekday {
+  background: linear-gradient(135deg, 
+    rgba(255, 248, 220, 0.9) 0%, 
+    rgba(255, 255, 255, 0.8) 100%);
+}
+
+.darjeeling-day-cell.weekend {
+  background: linear-gradient(135deg, 
+    rgba(255, 228, 181, 0.85) 0%, 
+    rgba(245, 245, 220, 0.9) 100%);
+}
+
+.darjeeling-day-cell.today {
+  background: linear-gradient(135deg, 
+    rgba(255, 140, 0, 0.9) 0%, 
+    rgba(255, 215, 0, 0.8) 30%,
+    rgba(244, 164, 96, 0.85) 70%, 
+    rgba(240, 230, 140, 0.8) 100%) !important;
+  border: 3px solid rgba(255, 140, 0, 0.8) !important;
+  border-radius: 0 !important;
+  box-shadow: 
+    inset 0 0 10px rgba(255, 140, 0, 0.5),
+    0 0 15px rgba(244, 164, 96, 0.4);
+  position: relative;
+}
+
+.darjeeling-day-cell.today::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 140, 0, 0.8) 0%,
+    rgba(244, 164, 96, 0.7) 25%,
+    rgba(210, 105, 30, 0.8) 50%,
+    rgba(255, 140, 0, 0.8) 75%,
+    rgba(160, 82, 45, 0.7) 100%
+  );
+}
+
+.darjeeling-day-cell.empty {
+  background: linear-gradient(135deg, 
+    rgba(244, 164, 96, 0.6) 0%, 
+    rgba(210, 180, 140, 0.7) 100%);
+  opacity: 0.7;
+}
+
+/* Day numbers - Saffron gradient text */
+.darjeeling-day-number {
+  font-family: 'Special Elite', 'Courier Prime', monospace;
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(47, 79, 79, 1) 0%, 
+    rgba(255, 140, 0, 0.9) 50%,
+    rgba(139, 105, 20, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(1px 1px 0px rgba(255, 248, 220, 0.8));
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 2px 6px;
+  border-radius: 0;
+  display: inline-block;
+  font-style: normal;
+}
+
+.darjeeling-day-number:hover {
+  background: linear-gradient(45deg, 
+    rgba(255, 140, 0, 1) 0%, 
+    rgba(244, 164, 96, 0.9) 50%,
+    rgba(218, 165, 32, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: scale(1.1);
+  filter: drop-shadow(1px 1px 2px rgba(255, 140, 0, 0.8));
+}
+
+.darjeeling-day-number.today {
+  font-weight: 700;
+  background: linear-gradient(45deg, 
+    rgba(255, 140, 0, 1) 0%, 
+    rgba(244, 164, 96, 0.9) 50%,
+    rgba(160, 82, 45, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(1px 1px 0px rgba(255, 248, 220, 1));
+}
+
+.darjeeling-day-number.weekend {
+  background: linear-gradient(45deg, 
+    rgba(244, 164, 96, 1) 0%, 
+    rgba(255, 140, 0, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.darjeeling-day-number.weekday {
+  background: linear-gradient(45deg, 
+    rgba(139, 105, 20, 1) 0%, 
+    rgba(255, 140, 0, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Activity stripes - Enhanced with saffron */
+.darjeeling-activities {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+}
+
+.darjeeling-activity-stripe {
+  width: 16px;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    currentColor 0%,
+    rgba(255, 140, 0, 0.3) 25%,
+    currentColor 50%,
+    rgba(244, 164, 96, 0.3) 75%,
+    currentColor 100%
+  );
+  opacity: 0.8;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.darjeeling-activity-stripe:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  filter: drop-shadow(0 1px 2px rgba(255, 140, 0, 0.3));
+}
+
+/* Enhanced color palette with prominent saffron */
+.darjeeling-summary-card.therapy { border-color: rgba(45, 139, 139, 0.8); }
+.darjeeling-summary-card.举铁 { border-color: rgba(255, 140, 0, 0.8); }
+.darjeeling-summary-card.学习 { border-color: rgba(244, 164, 96, 0.8); }
+.darjeeling-summary-card.🎾 { border-color: rgba(143, 188, 143, 0.8); }
+.darjeeling-summary-card.🎤 { border-color: rgba(255, 140, 0, 0.8); }
+.darjeeling-summary-card.下厨 { border-color: rgba(244, 164, 96, 0.8); }
+.darjeeling-summary-card.看戏 { border-color: rgba(160, 82, 45, 0.8); }
+.darjeeling-summary-card.看医生 { border-color: rgba(74, 155, 155, 0.8); }
+.darjeeling-summary-card.socializing { border-color: rgba(255, 140, 0, 0.8); }
+.darjeeling-summary-card.work { border-color: rgba(143, 188, 143, 0.8); }
+.darjeeling-summary-card.cooking { border-color: rgba(244, 164, 96, 0.8); }
+.darjeeling-summary-card.travel { border-color: rgba(45, 139, 139, 0.8); }
+.darjeeling-summary-card.creative { border-color: rgba(255, 140, 0, 0.8); }
+.darjeeling-summary-card.social { border-color: rgba(244, 164, 96, 0.8); }
+.darjeeling-summary-card.health { border-color: rgba(143, 188, 143, 0.8); }
+.darjeeling-summary-card.learning { border-color: rgba(255, 140, 0, 0.8); }
+.darjeeling-summary-card.family { border-color: rgba(244, 164, 96, 0.8); }
+.darjeeling-summary-card.hobby { border-color: rgba(160, 82, 45, 0.8); }
+.darjeeling-summary-card.nature { border-color: rgba(143, 188, 143, 0.8); }
+
+/* Saffron-enhanced stripe colors */
+.darjeeling-card-stripe.therapy, .darjeeling-activity-stripe.therapy { color: rgba(45, 139, 139, 0.9) !important; }
+.darjeeling-card-stripe.举铁, .darjeeling-activity-stripe.举铁 { color: rgba(255, 140, 0, 0.9) !important; }
+.darjeeling-card-stripe.学习, .darjeeling-activity-stripe.学习 { color: rgba(244, 164, 96, 0.9) !important; }
+.darjeeling-card-stripe.🎾, .darjeeling-activity-stripe.🎾 { color: rgba(143, 188, 143, 0.9) !important; }
+.darjeeling-card-stripe.🎤, .darjeeling-activity-stripe.🎤 { color: rgba(255, 140, 0, 0.9) !important; }
+.darjeeling-card-stripe.下厨, .darjeeling-activity-stripe.下厨 { color: rgba(244, 164, 96, 0.9) !important; }
+.darjeeling-card-stripe.看戏, .darjeeling-activity-stripe.看戏 { color: rgba(160, 82, 45, 0.9) !important; }
+.darjeeling-card-stripe.看医生, .darjeeling-activity-stripe.看医生 { color: rgba(74, 155, 155, 0.9) !important; }
+.darjeeling-card-stripe.socializing, .darjeeling-activity-stripe.socializing { color: rgba(255, 140, 0, 0.9) !important; }
+.darjeeling-card-stripe.work, .darjeeling-activity-stripe.work { color: rgba(143, 188, 143, 0.9) !important; }
+.darjeeling-card-stripe.cooking, .darjeeling-activity-stripe.cooking { color: rgba(244, 164, 96, 0.9) !important; }
+.darjeeling-card-stripe.travel, .darjeeling-activity-stripe.travel { color: rgba(45, 139, 139, 0.9) !important; }
+.darjeeling-card-stripe.creative, .darjeeling-activity-stripe.creative { color: rgba(255, 140, 0, 0.9) !important; }
+.darjeeling-card-stripe.social, .darjeeling-activity-stripe.social { color: rgba(244, 164, 96, 0.9) !important; }
+.darjeeling-card-stripe.health, .darjeeling-activity-stripe.health { color: rgba(143, 188, 143, 0.9) !important; }
+.darjeeling-card-stripe.learning, .darjeeling-activity-stripe.learning { color: rgba(255, 140, 0, 0.9) !important; }
+.darjeeling-card-stripe.family, .darjeeling-activity-stripe.family { color: rgba(244, 164, 96, 0.9) !important; }
+.darjeeling-card-stripe.hobby, .darjeeling-activity-stripe.hobby { color: rgba(160, 82, 45, 0.9) !important; }
+.darjeeling-card-stripe.nature, .darjeeling-activity-stripe.nature { color: rgba(143, 188, 143, 0.9) !important; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .darjeeling-calendar {
+    width: 100% !important;
+    padding: 20px;
+  }
+  
+  .darjeeling-calendar-grid, .darjeeling-summary {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  
+  .darjeeling-summary {
+    flex-wrap: wrap;
+  }
+  
+  .darjeeling-summary-card {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 150px;
+  }
+  
+  .darjeeling-title {
+    font-size: 2em !important;
+    letter-spacing: 4px !important;
+  }
+}
+
+/* Enhanced saffron-tinted animation */
+.darjeeling-calendar {
+  animation: saffron-journey 1.2s ease-out;
+}
+
+@keyframes saffron-journey {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.98);
+    filter: sepia(60%) hue-rotate(30deg) blur(2px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: sepia(35%) hue-rotate(15deg) blur(1px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: sepia(20%) hue-rotate(0deg) blur(0px);
+  }
+}

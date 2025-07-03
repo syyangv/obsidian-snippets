@@ -1,0 +1,336 @@
+/* Asteroid City Calendar - Exact Poster Colors */
+
+/* Main container */
+.asteroid-calendar {
+  font-family: 'Courier New', 'Monaco', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 50%, #E0F6FF 100%);
+  padding: 28px;
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(255, 127, 80, 0.2);
+  position: relative;
+  border: 3px solid #FF7F50;
+}
+
+.asteroid-calendar::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #FFD700;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.asteroid-calendar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(0deg, #F0E68C 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Month title */
+.asteroid-title {
+  font-family: 'Courier New', 'Monaco', monospace !important;
+  font-weight: 700 !important;
+  color: #FF7F50 !important;
+  margin-bottom: 24px !important;
+  font-size: 2.6em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 6px !important;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 0px #FFFFFF;
+}
+
+/* Summary section */
+.asteroid-summary {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 30px;
+  width: 700px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Summary cards */
+.asteroid-summary-card {
+  padding: 18px;
+  border-radius: 0;
+  border: 3px solid;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  flex: 1;
+  position: relative;
+}
+
+.asteroid-summary-card:hover {
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.15) !important;
+  transform: translate(-2px, -2px);
+}
+
+/* Card header */
+.asteroid-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Card star */
+.asteroid-card-star {
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+/* Card label */
+.asteroid-card-label {
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-size: 0.75em;
+  color: #2F4F4F;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Card count */
+.asteroid-card-count {
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-size: 2.4em;
+  font-weight: 700;
+  color: #2F4F4F;
+  text-shadow: 1px 1px 0px #FFFFFF;
+}
+
+/* Calendar grid */
+.asteroid-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  width: 700px;
+  font-family: 'Courier New', 'Monaco', monospace;
+  background: #FF7F50;
+  border: 4px solid #FF6347;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Day headers */
+.asteroid-day-header {
+  background: #FF7F50;
+  color: #FFFFFF;
+  padding: 14px 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Day cells */
+.asteroid-day-cell {
+  padding: 8px;
+  min-height: 80px;
+  position: relative;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 127, 80, 0.2);
+}
+
+.asteroid-day-cell:hover {
+  background-color: rgba(255, 215, 0, 0.3) !important;
+  transform: scale(1.02);
+}
+
+.asteroid-day-cell.weekday {
+  background: #F0F8FF;
+}
+
+.asteroid-day-cell.weekend {
+  background: #E6F3FF;
+}
+
+.asteroid-day-cell.today {
+  background: #FFD700 !important;
+  border: 3px solid #FFA500 !important;
+  border-radius: 0 !important;
+  box-shadow: inset 0 0 15px rgba(255, 165, 0, 0.4);
+}
+
+.asteroid-day-cell.empty {
+  background: #D3D3D3;
+  opacity: 0.6;
+}
+
+/* Day numbers */
+.asteroid-day-number {
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 0;
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  padding: 3px 6px;
+  border-radius: 0;
+  display: inline-block;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+.asteroid-day-number:hover {
+  background-color: rgba(255, 127, 80, 0.3);
+  transform: scale(1.1);
+}
+
+.asteroid-day-number.today {
+  font-weight: 700;
+  color: #FF6347;
+  text-shadow: 1px 1px 0px #FFFFFF;
+}
+
+.asteroid-day-number.weekend {
+  color: #4682B4;
+}
+
+.asteroid-day-number.weekday {
+  color: #2F4F4F;
+}
+
+/* Activity stars container */
+.asteroid-activities {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+}
+
+/* Activity stars */
+.asteroid-activity-star {
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.asteroid-activity-star:hover {
+  transform: scale(1.4);
+}
+
+/* Bright poster-accurate colors */
+.asteroid-summary-card.therapy { background: #00CED1; border-color: #008B8B; }
+.asteroid-summary-card.举铁 { background: #FF7F50; border-color: #FF6347; }
+.asteroid-summary-card.学习 { background: #FFD700; border-color: #FFA500; }
+.asteroid-summary-card.🎾 { background: #98FB98; border-color: #00FA9A; }
+.asteroid-summary-card.🎤 { background: #FFB6C1; border-color: #FF69B4; }
+.asteroid-summary-card.下厨 { background: #FFA500; border-color: #FF8C00; }
+.asteroid-summary-card.看戏 { background: #DDA0DD; border-color: #DA70D6; }
+.asteroid-summary-card.看医生 { background: #87CEEB; border-color: #4169E1; }
+.asteroid-summary-card.socializing { background: #FFB6C1; border-color: #FF69B4; }
+.asteroid-summary-card.work { background: #B0C4DE; border-color: #6495ED; }
+.asteroid-summary-card.cooking { background: #FFA500; border-color: #FF8C00; }
+.asteroid-summary-card.travel { background: #00CED1; border-color: #008B8B; }
+.asteroid-summary-card.creative { background: #DDA0DD; border-color: #DA70D6; }
+.asteroid-summary-card.social { background: #98FB98; border-color: #00FA9A; }
+.asteroid-summary-card.health { background: #98FB98; border-color: #00FA9A; }
+.asteroid-summary-card.learning { background: #FFD700; border-color: #FFA500; }
+.asteroid-summary-card.family { background: #FFB6C1; border-color: #FF69B4; }
+.asteroid-summary-card.hobby { background: #DDA0DD; border-color: #DA70D6; }
+.asteroid-summary-card.nature { background: #98FB98; border-color: #00FA9A; }
+
+/* Bright dot colors */
+.asteroid-card-star.therapy, .asteroid-activity-star.therapy { color: #008B8B !important; }
+.asteroid-card-star.举铁, .asteroid-activity-star.举铁 { color: #FF6347 !important; }
+.asteroid-card-star.学习, .asteroid-activity-star.学习 { color: #FFA500 !important; }
+.asteroid-card-star.🎾, .asteroid-activity-star.🎾 { color: #00FA9A !important; }
+.asteroid-card-star.🎤, .asteroid-activity-star.🎤 { color: #FF69B4 !important; }
+.asteroid-card-star.下厨, .asteroid-activity-star.下厨 { color: #FF8C00 !important; }
+.asteroid-card-star.看戏, .asteroid-activity-star.看戏 { color: #DA70D6 !important; }
+.asteroid-card-star.看医生, .asteroid-activity-star.看医生 { color: #4169E1 !important; }
+.asteroid-card-star.socializing, .asteroid-activity-star.socializing { color: #FF69B4 !important; }
+.asteroid-card-star.work, .asteroid-activity-star.work { color: #6495ED !important; }
+.asteroid-card-star.cooking, .asteroid-activity-star.cooking { color: #FF8C00 !important; }
+.asteroid-card-star.travel, .asteroid-activity-star.travel { color: #008B8B !important; }
+.asteroid-card-star.creative, .asteroid-activity-star.creative { color: #DA70D6 !important; }
+.asteroid-card-star.social, .asteroid-activity-star.social { color: #00FA9A !important; }
+.asteroid-card-star.health, .asteroid-activity-star.health { color: #00FA9A !important; }
+.asteroid-card-star.learning, .asteroid-activity-star.learning { color: #FFA500 !important; }
+.asteroid-card-star.family, .asteroid-activity-star.family { color: #FF69B4 !important; }
+.asteroid-card-star.hobby, .asteroid-activity-star.hobby { color: #DA70D6 !important; }
+.asteroid-card-star.nature, .asteroid-activity-star.nature { color: #00FA9A !important; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .asteroid-calendar {
+    width: 100% !important;
+    padding: 18px;
+  }
+  
+  .asteroid-calendar-grid, .asteroid-summary {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  
+  .asteroid-summary {
+    flex-wrap: wrap;
+  }
+  
+  .asteroid-summary-card {
+    flex: 1 1 calc(50% - 7px);
+    min-width: 145px;
+  }
+  
+  .asteroid-title {
+    font-size: 2em !important;
+    letter-spacing: 3px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .asteroid-summary-card {
+    flex: 1 1 100%;
+  }
+  
+  .asteroid-title {
+    font-size: 1.6em !important;
+  }
+}
+
+/* Clean entrance animation */
+.asteroid-calendar {
+  animation: poster-appear 0.6s ease-out;
+}
+
+@keyframes poster-appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
