@@ -1,0 +1,190 @@
+/* ===== TICKABLE GRID BOXES - FIXED VERSION ===== */
+
+.tick-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+    padding: 12px;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    width: fit-content;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+/* Hide the actual checkbox */
+.tick-box input[type="checkbox"] {
+    display: none;
+}
+
+/* Style the label as a box */
+.tick-box {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--text-muted);
+    border-radius: 6px;
+    background-color: var(--background-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    user-select: none;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.tick-box:hover {
+    border-color: var(--text-accent);
+    background-color: var(--background-modifier-hover);
+    transform: scale(1.05);
+}
+
+/* When checkbox is checked, style the label */
+.tick-box input[type="checkbox"]:checked + .tick-label,
+.tick-box:has(input[type="checkbox"]:checked) {
+    background-color: var(--text-muted);
+    border-color: var(--text-muted);
+    color: var(--text-on-accent);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Add checkmark when checked */
+.tick-box input[type="checkbox"]:checked + .tick-label::after,
+.tick-box:has(input[type="checkbox"]:checked)::after {
+    content: "✓";
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-on-accent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Style for the number label */
+.tick-label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+/* Alternative: Simple clicked state without checkbox */
+.tick-box.clicked {
+    background-color: var(--text-muted);
+    border-color: var(--text-muted);
+    color: var(--text-on-accent);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.tick-box.clicked::after {
+    content: "✓";
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-on-accent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Alternative: Fixed width containers for specific counts */
+.tick-container.tick-5,
+.tick-container.tick-10,
+.tick-container.tick-15,
+.tick-container.tick-20 {
+    /* Remove fixed widths - let flex handle the layout */
+}
+
+/* Responsive: Stack in rows on smaller screens */
+@media (max-width: 600px) {
+    .tick-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .tick-container.tick-10,
+    .tick-container.tick-15,
+    .tick-container.tick-20 {
+        justify-content: center;
+    }
+}
+
+/* Compact version */
+.tick-container.compact {
+    gap: 4px;
+    padding: 8px;
+}
+
+.tick-container.compact .tick-box {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+}
+
+.tick-container.compact.tick-5 {
+    width: 170px; /* 5 boxes × 30px + 4 gaps × 4px + 16px padding */
+}
+
+.tick-container.compact.tick-10 {
+    width: 324px; /* 10 boxes × 30px + 9 gaps × 4px + 16px padding */
+}
+
+/* Large version */
+.tick-container.large {
+    gap: 12px;
+    padding: 16px;
+}
+
+.tick-container.large .tick-box {
+    width: 50px;
+    height: 50px;
+    font-size: 14px;
+}
+
+.tick-container.large.tick-5 {
+    width: 330px; /* 5 boxes × 50px + 4 gaps × 12px + 32px padding */
+}
+
+.tick-container.large.tick-10 {
+    width: 640px; /* 10 boxes × 50px + 9 gaps × 12px + 32px padding */
+}
+
+/* Color themes */
+.tick-container.success .tick-box.checked {
+    background-color: var(--color-green);
+    border-color: var(--color-green);
+}
+
+.tick-container.warning .tick-box.checked {
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+}
+
+.tick-container.danger .tick-box.checked {
+    background-color: var(--color-red);
+    border-color: var(--color-red);
+}
+
+/* Print styles */
+@media print {
+    .tick-box {
+        background-color: white !important;
+        border-color: black !important;
+        color: black !important;
+    }
+    
+    .tick-box.checked {
+        background-color: #f0f0f0 !important;
+    }
+}

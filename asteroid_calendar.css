@@ -1,119 +1,143 @@
-/* Asteroid City Calendar - Exact Poster Colors */
+/* Asteroid City Calendar - Updated with Movie Typography */
 
 /* Main container */
 .asteroid-calendar {
-  font-family: 'Courier New', 'Monaco', monospace;
+  font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
-  background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 50%, #E0F6FF 100%);
-  padding: 28px;
-  border-radius: 0;
-  box-shadow: 0 4px 20px rgba(255, 127, 80, 0.2);
+  background: linear-gradient(135deg, #F4E4C1 0%, #E8D5B7 100%);
+  padding: 30px;
+  border-radius: 0px;
+  box-shadow: 0 8px 32px rgba(255, 165, 79, 0.15);
   position: relative;
-  border: 3px solid #FF7F50;
+  border: 3px solid #FF7D00;
 }
 
+/* Movie background image overlay */
 .asteroid-calendar::before {
   content: '';
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background: #FFD700;
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-}
-
-.asteroid-calendar::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  height: 40px;
-  background: linear-gradient(0deg, #F0E68C 0%, transparent 100%);
+  bottom: 0;
+  background-image: url('https://www.games-galaxy.it/wp-content/uploads/2023/10/tumblr_7ae3f43d262e60bd88b3aa2640cf35c9_a7c7ca8e_1280.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  border-radius: 0px;
   pointer-events: none;
+  z-index: 0;
 }
 
-/* Month title */
+/* Month title - Courier monospace like movie poster */
 .asteroid-title {
-  font-family: 'Courier New', 'Monaco', monospace !important;
+  font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace !important;
   font-weight: 700 !important;
-  color: #FF7F50 !important;
-  margin-bottom: 24px !important;
-  font-size: 2.6em !important;
+  color: #8B4513 !important;
+  margin-bottom: 30px !important;
+  font-size: 2.2em !important;
   text-transform: uppercase !important;
   letter-spacing: 6px !important;
   text-align: center;
   position: relative;
   z-index: 1;
-  text-shadow: 2px 2px 0px #FFFFFF;
+  text-shadow: 2px 2px 4px rgba(255, 165, 79, 0.3);
+  font-stretch: condensed;
+}
+
+.asteroid-title::after {
+  content: '●';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FF7D00;
+  font-size: 0.2em;
+  letter-spacing: 0;
 }
 
 /* Summary section */
 .asteroid-summary {
   display: flex;
-  gap: 14px;
-  margin-bottom: 30px;
-  width: 700px;
+  gap: 16px;
+  margin-bottom: 38px;
+  width: 750px;
   z-index: 1;
   position: relative;
 }
 
 /* Summary cards */
 .asteroid-summary-card {
-  padding: 18px;
-  border-radius: 0;
-  border: 3px solid;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  padding: 26px 20px;
+  border-radius: 0px;
+  border: 2px solid;
+  box-shadow: 0 4px 16px rgba(255, 165, 79, 0.1);
   transition: all 0.2s ease;
   flex: 1;
   position: relative;
+  background: rgba(255, 248, 240, 0.95);
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(2px);
+}
+
+.asteroid-summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent-color);
 }
 
 .asteroid-summary-card:hover {
-  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.15) !important;
-  transform: translate(-2px, -2px);
+  box-shadow: 0 6px 20px rgba(255, 165, 79, 0.2) !important;
+  transform: translateY(-2px);
+  border-color: var(--card-accent-color) !important;
 }
 
 /* Card header */
 .asteroid-card-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-/* Card star */
+/* Card atom */
 .asteroid-card-star {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   background: currentColor;
-  border-radius: 50%;
-  opacity: 1;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0.9;
 }
 
-/* Card label */
+/* Card label - Courier monospace */
 .asteroid-card-label {
-  font-family: 'Courier New', 'Monaco', monospace;
-  font-size: 0.75em;
-  color: #2F4F4F;
-  font-weight: 600;
+  font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
+  font-size: 0.65em;
+  color: #8B4513;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
-/* Card count */
+/* Card count - Courier monospace */
 .asteroid-card-count {
-  font-family: 'Courier New', 'Monaco', monospace;
-  font-size: 2.4em;
+  font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
+  font-size: 2.2em;
   font-weight: 700;
-  color: #2F4F4F;
-  text-shadow: 1px 1px 0px #FFFFFF;
+  color: #654321;
+  margin-top: auto;
 }
 
 /* Calendar grid */
@@ -121,98 +145,107 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 3px;
-  width: 700px;
-  font-family: 'Courier New', 'Monaco', monospace;
-  background: #FF7F50;
-  border: 4px solid #FF6347;
-  border-radius: 0;
+  width: 750px;
+  font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
+  background: #D2B48C;
+  border: 3px solid #FF7D00;
+  border-radius: 0px;
   overflow: hidden;
-  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
-  position: relative;
+  box-shadow: 0 6px 24px rgba(255, 165, 79, 0.2);
   z-index: 1;
+  position: relative;
 }
 
-/* Day headers */
+/* Day headers - Courier monospace */
 .asteroid-day-header {
-  background: #FF7F50;
+  background: linear-gradient(135deg, #FF7D00, #E6A157);
   color: #FFFFFF;
-  padding: 14px 8px;
+  padding: 16px 8px;
   text-align: center;
   font-weight: 700;
-  font-size: 0.8em;
+  font-size: 0.6em;
   letter-spacing: 2px;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Day cells */
 .asteroid-day-cell {
-  padding: 8px;
-  min-height: 80px;
+  padding: 10px 8px;
+  min-height: 88px;
   position: relative;
   transition: all 0.2s ease;
-  border: 1px solid rgba(255, 127, 80, 0.2);
+  border: none;
 }
 
 .asteroid-day-cell:hover {
-  background-color: rgba(255, 215, 0, 0.3) !important;
+  background-color: rgba(255, 165, 79, 0.15) !important;
   transform: scale(1.02);
 }
 
 .asteroid-day-cell.weekday {
-  background: #F0F8FF;
+  background: #FFF8F0;
 }
 
 .asteroid-day-cell.weekend {
-  background: #E6F3FF;
+  background: #F5E6D3;
 }
 
 .asteroid-day-cell.today {
-  background: #FFD700 !important;
-  border: 3px solid #FFA500 !important;
-  border-radius: 0 !important;
-  box-shadow: inset 0 0 15px rgba(255, 165, 0, 0.4);
+  background: linear-gradient(135deg, #FFE4B5, #F0E68C) !important;
+  border: 2px solid #FF7D00 !important;
+  border-radius: 0px !important;
+  box-shadow: inset 0 2px 4px rgba(255, 165, 79, 0.3);
 }
 
 .asteroid-day-cell.empty {
-  background: #D3D3D3;
+  background: #E8D5B7;
   opacity: 0.6;
 }
 
-/* Day numbers */
+/* Day numbers - Courier monospace */
 .asteroid-day-number {
-  font-family: 'Courier New', 'Monaco', monospace;
+  font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
   font-size: 1.2em;
   font-weight: 700;
   margin-bottom: 0;
   position: absolute;
-  top: 6px;
-  left: 8px;
+  top: 8px;
+  left: 10px;
   text-decoration: none;
   color: inherit;
   transition: all 0.2s ease;
   padding: 3px 6px;
-  border-radius: 0;
+  border-radius: 0px;
   display: inline-block;
-  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
 }
 
 .asteroid-day-number:hover {
-  background-color: rgba(255, 127, 80, 0.3);
+  background-color: rgba(255, 165, 79, 0.2);
   transform: scale(1.1);
+}
+
+/* Style for links specifically */
+a.asteroid-day-number {
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 165, 79, 0.5);
+  text-underline-offset: 2px;
+}
+
+a.asteroid-day-number:hover {
+  text-decoration-color: rgba(255, 165, 79, 0.8);
 }
 
 .asteroid-day-number.today {
   font-weight: 700;
-  color: #FF6347;
-  text-shadow: 1px 1px 0px #FFFFFF;
+  color: #FF7D00;
 }
 
 .asteroid-day-number.weekend {
-  color: #4682B4;
+  color: #A0522D;
 }
 
 .asteroid-day-number.weekday {
-  color: #2F4F4F;
+  color: #654321;
 }
 
 /* Activity stars container */
@@ -221,72 +254,172 @@
   gap: 4px;
   flex-wrap: wrap;
   position: absolute;
-  bottom: 6px;
-  left: 6px;
-  right: 6px;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
 }
 
-/* Activity stars */
+/* Activity stars with atomic aesthetic */
 .asteroid-activity-star {
   width: 10px;
   height: 10px;
-  background: currentColor;
-  border-radius: 50%;
-  opacity: 1;
-  transition: all 0.2s ease;
+  background-color: #FF7D00; /* Default fallback color */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(255, 165, 79, 0.3);
 }
 
 .asteroid-activity-star:hover {
-  transform: scale(1.4);
+  transform: scale(1.3) rotate(360deg);
+  transition: transform 0.3s ease;
 }
 
-/* Bright poster-accurate colors */
-.asteroid-summary-card.therapy { background: #00CED1; border-color: #008B8B; }
-.asteroid-summary-card.举铁 { background: #FF7F50; border-color: #FF6347; }
-.asteroid-summary-card.学习 { background: #FFD700; border-color: #FFA500; }
-.asteroid-summary-card.🎾 { background: #98FB98; border-color: #00FA9A; }
-.asteroid-summary-card.🎤 { background: #FFB6C1; border-color: #FF69B4; }
-.asteroid-summary-card.下厨 { background: #FFA500; border-color: #FF8C00; }
-.asteroid-summary-card.看戏 { background: #DDA0DD; border-color: #DA70D6; }
-.asteroid-summary-card.看医生 { background: #87CEEB; border-color: #4169E1; }
-.asteroid-summary-card.socializing { background: #FFB6C1; border-color: #FF69B4; }
-.asteroid-summary-card.work { background: #B0C4DE; border-color: #6495ED; }
-.asteroid-summary-card.cooking { background: #FFA500; border-color: #FF8C00; }
-.asteroid-summary-card.travel { background: #00CED1; border-color: #008B8B; }
-.asteroid-summary-card.creative { background: #DDA0DD; border-color: #DA70D6; }
-.asteroid-summary-card.social { background: #98FB98; border-color: #00FA9A; }
-.asteroid-summary-card.health { background: #98FB98; border-color: #00FA9A; }
-.asteroid-summary-card.learning { background: #FFD700; border-color: #FFA500; }
-.asteroid-summary-card.family { background: #FFB6C1; border-color: #FF69B4; }
-.asteroid-summary-card.hobby { background: #DDA0DD; border-color: #DA70D6; }
-.asteroid-summary-card.nature { background: #98FB98; border-color: #00FA9A; }
+/* Tag-specific styles for Asteroid City movie palette */
+/* Card backgrounds and borders */
+.asteroid-summary-card.therapy { 
+  background: linear-gradient(135deg, #FFF0E8, #FFE8E0); 
+  border-color: #E74C3C; 
+  --card-accent-color: #E74C3C;
+}
+.asteroid-summary-card.举铁 { 
+  background: linear-gradient(135deg, #F8F5E8, #F5E8E0); 
+  border-color: #D2B48C; 
+  --card-accent-color: #D2B48C;
+}
+.asteroid-summary-card.学习 { 
+  background: linear-gradient(135deg, #FFF8E0, #FFE8C0); 
+  border-color: #FF7D00; 
+  --card-accent-color: #FF7D00;
+}
+.asteroid-summary-card.🎾 { 
+  background: linear-gradient(135deg, #F0F8E8, #E8F0E0); 
+  border-color: #8FBC8F; 
+  --card-accent-color: #8FBC8F;
+}
+.asteroid-summary-card.🎤 { 
+  background: linear-gradient(135deg, #F8F0F0, #F0E8E8); 
+  border-color: #CD853F; 
+  --card-accent-color: #CD853F;
+}
+.asteroid-summary-card.下厨 { 
+  background: linear-gradient(135deg, #FFF0E0, #FFE8D0); 
+  border-color: #FF7D00; 
+  --card-accent-color: #FF7D00;
+}
+.asteroid-summary-card.看戏 { 
+  background: linear-gradient(135deg, #F8F0E8, #F0E8E0); 
+  border-color: #DEB887; 
+  --card-accent-color: #DEB887;
+}
+.asteroid-summary-card.看医生 { 
+  background: linear-gradient(135deg, #F0F0F8, #E8E8F0); 
+  border-color: #4682B4; 
+  --card-accent-color: #4682B4;
+}
+.asteroid-summary-card.socializing { 
+  background: linear-gradient(135deg, #FFFCE0, #FFF8D0); 
+  border-color: #FFD700; 
+  --card-accent-color: #FFD700;
+}
+.asteroid-summary-card.work { 
+  background: linear-gradient(135deg, #F0F0F8, #E8E8F0); 
+  border-color: #4682B4; 
+  --card-accent-color: #4682B4;
+}
+.asteroid-summary-card.cooking { 
+  background: linear-gradient(135deg, #FFF0E0, #FFE8D0); 
+  border-color: #FF7D00; 
+  --card-accent-color: #FF7D00;
+}
+.asteroid-summary-card.travel { 
+  background: linear-gradient(135deg, #F0F8F8, #E8F0F0); 
+  border-color: #87CEEB; 
+  --card-accent-color: #87CEEB;
+}
+.asteroid-summary-card.creative { 
+  background: linear-gradient(135deg, #F8F0F0, #F0E8E8); 
+  border-color: #CD853F; 
+  --card-accent-color: #CD853F;
+}
+.asteroid-summary-card.social { 
+  background: linear-gradient(135deg, #F0F0F8, #E8E8F0); 
+  border-color: #4682B4; 
+  --card-accent-color: #4682B4;
+}
+.asteroid-summary-card.health { 
+  background: linear-gradient(135deg, #F0F8E8, #E8F0E0); 
+  border-color: #8FBC8F; 
+  --card-accent-color: #8FBC8F;
+}
+.asteroid-summary-card.learning { 
+  background: linear-gradient(135deg, #FFF8E0, #FFE8C0); 
+  border-color: #FF7D00; 
+  --card-accent-color: #FF7D00;
+}
+.asteroid-summary-card.family { 
+  background: linear-gradient(135deg, #F8F0E8, #F0E8E0); 
+  border-color: #DEB887; 
+  --card-accent-color: #DEB887;
+}
+.asteroid-summary-card.hobby { 
+  background: linear-gradient(135deg, #FFF0E8, #FFE8E0); 
+  border-color: #E74C3C; 
+  --card-accent-color: #E74C3C;
+}
+.asteroid-summary-card.nature { 
+  background: linear-gradient(135deg, #F0F8E8, #E8F0E0); 
+  border-color: #8FBC8F; 
+  --card-accent-color: #8FBC8F;
+}
 
-/* Bright dot colors */
-.asteroid-card-star.therapy, .asteroid-activity-star.therapy { color: #008B8B !important; }
-.asteroid-card-star.举铁, .asteroid-activity-star.举铁 { color: #FF6347 !important; }
-.asteroid-card-star.学习, .asteroid-activity-star.学习 { color: #FFA500 !important; }
-.asteroid-card-star.🎾, .asteroid-activity-star.🎾 { color: #00FA9A !important; }
-.asteroid-card-star.🎤, .asteroid-activity-star.🎤 { color: #FF69B4 !important; }
-.asteroid-card-star.下厨, .asteroid-activity-star.下厨 { color: #FF8C00 !important; }
-.asteroid-card-star.看戏, .asteroid-activity-star.看戏 { color: #DA70D6 !important; }
-.asteroid-card-star.看医生, .asteroid-activity-star.看医生 { color: #4169E1 !important; }
-.asteroid-card-star.socializing, .asteroid-activity-star.socializing { color: #FF69B4 !important; }
-.asteroid-card-star.work, .asteroid-activity-star.work { color: #6495ED !important; }
-.asteroid-card-star.cooking, .asteroid-activity-star.cooking { color: #FF8C00 !important; }
-.asteroid-card-star.travel, .asteroid-activity-star.travel { color: #008B8B !important; }
-.asteroid-card-star.creative, .asteroid-activity-star.creative { color: #DA70D6 !important; }
-.asteroid-card-star.social, .asteroid-activity-star.social { color: #00FA9A !important; }
-.asteroid-card-star.health, .asteroid-activity-star.health { color: #00FA9A !important; }
-.asteroid-card-star.learning, .asteroid-activity-star.learning { color: #FFA500 !important; }
-.asteroid-card-star.family, .asteroid-activity-star.family { color: #FF69B4 !important; }
-.asteroid-card-star.hobby, .asteroid-activity-star.hobby { color: #DA70D6 !important; }
-.asteroid-card-star.nature, .asteroid-activity-star.nature { color: #00FA9A !important; }
+/* FIXED: Activity star colors - matching the class names actually used */
+.asteroid-card-star.therapy, .asteroid-activity-star.therapy { background: #E74C3C !important; }
+.asteroid-card-star.举铁, .asteroid-activity-star.举铁 { background: #D2B48C !important; }
+.asteroid-card-star.学习, .asteroid-activity-star.学习 { background: #FF7D00 !important; }
+.asteroid-card-star.🎾, .asteroid-activity-star.🎾 { background: #8FBC8F !important; }
+.asteroid-card-star.🎤, .asteroid-activity-star.🎤 { background: #CD853F !important; }
+.asteroid-card-star.下厨, .asteroid-activity-star.下厨 { background: #FF7D00 !important; }
+.asteroid-card-star.看戏, .asteroid-activity-star.看戏 { background: #DEB887 !important; }
+.asteroid-card-star.看医生, .asteroid-activity-star.看医生 { background: #4682B4 !important; }
+.asteroid-card-star.socializing, .asteroid-activity-star.socializing { background: #FFD700 !important; }
+.asteroid-card-star.work, .asteroid-activity-star.work { background: #4682B4 !important; }
+.asteroid-card-star.cooking, .asteroid-activity-star.cooking { background: #FF7D00 !important; }
+.asteroid-card-star.travel, .asteroid-activity-star.travel { background: #87CEEB !important; }
+.asteroid-card-star.creative, .asteroid-activity-star.creative { background: #CD853F !important; }
+.asteroid-card-star.social, .asteroid-activity-star.social { background: #4682B4 !important; }
+.asteroid-card-star.health, .asteroid-activity-star.health { background: #8FBC8F !important; }
+.asteroid-card-star.learning, .asteroid-activity-star.learning { background: #FF7D00 !important; }
+.asteroid-card-star.family, .asteroid-activity-star.family { background: #DEB887 !important; }
+.asteroid-card-star.hobby, .asteroid-activity-star.hobby { background: #E74C3C !important; }
+.asteroid-card-star.nature, .asteroid-activity-star.nature { background: #8FBC8F !important; }
+
+/* Keep the existing atom color definitions for backward compatibility */
+.asteroid-card-atom.therapy, .asteroid-activity-atom.therapy { color: #E74C3C !important; }
+.asteroid-card-atom.举铁, .asteroid-activity-atom.举铁 { color: #D2B48C !important; }
+.asteroid-card-atom.学习, .asteroid-activity-atom.学习 { color: #FF7D00 !important; }
+.asteroid-card-atom.🎾, .asteroid-activity-atom.🎾 { color: #8FBC8F !important; }
+.asteroid-card-atom.🎤, .asteroid-activity-atom.🎤 { color: #CD853F !important; }
+.asteroid-card-atom.下厨, .asteroid-activity-atom.下厨 { color: #FF7D00 !important; }
+.asteroid-card-atom.看戏, .asteroid-activity-atom.看戏 { color: #DEB887 !important; }
+.asteroid-card-atom.看医生, .asteroid-activity-atom.看医生 { color: #4682B4 !important; }
+.asteroid-card-atom.socializing, .asteroid-activity-atom.socializing { color: #FFD700 !important; }
+.asteroid-card-atom.work, .asteroid-activity-atom.work { color: #4682B4 !important; }
+.asteroid-card-atom.cooking, .asteroid-activity-atom.cooking { color: #FF7D00 !important; }
+.asteroid-card-atom.travel, .asteroid-activity-atom.travel { color: #87CEEB !important; }
+.asteroid-card-atom.creative, .asteroid-activity-atom.creative { color: #CD853F !important; }
+.asteroid-card-atom.social, .asteroid-activity-atom.social { color: #4682B4 !important; }
+.asteroid-card-atom.health, .asteroid-activity-atom.health { color: #8FBC8F !important; }
+.asteroid-card-atom.learning, .asteroid-activity-atom.learning { color: #FF7D00 !important; }
+.asteroid-card-atom.family, .asteroid-activity-atom.family { color: #DEB887 !important; }
+.asteroid-card-atom.hobby, .asteroid-activity-atom.hobby { color: #E74C3C !important; }
+.asteroid-card-atom.nature, .asteroid-activity-atom.nature { color: #8FBC8F !important; }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .asteroid-calendar {
     width: 100% !important;
-    padding: 18px;
+    padding: 20px;
   }
   
   .asteroid-calendar-grid, .asteroid-summary {
@@ -299,13 +432,13 @@
   }
   
   .asteroid-summary-card {
-    flex: 1 1 calc(50% - 7px);
-    min-width: 145px;
+    flex: 1 1 calc(50% - 8px);
+    min-width: 160px;
   }
   
   .asteroid-title {
-    font-size: 2em !important;
-    letter-spacing: 3px !important;
+    font-size: 2.2em !important;
+    letter-spacing: 4px !important;
   }
 }
 
@@ -315,22 +448,60 @@
   }
   
   .asteroid-title {
-    font-size: 1.6em !important;
+    font-size: 1.8em !important;
+    letter-spacing: 2px !important;
   }
 }
 
-/* Clean entrance animation */
-.asteroid-calendar {
-  animation: poster-appear 0.6s ease-out;
+/* Print styles */
+@media print {
+  .asteroid-calendar {
+    break-inside: avoid;
+    width: 100% !important;
+    background: white !important;
+    box-shadow: none !important;
+    border: 1px solid #333 !important;
+  }
+  
+  .asteroid-calendar::before {
+    display: none !important;
+  }
+  
+  .asteroid-summary-card {
+    break-inside: avoid;
+  }
+  
+  .asteroid-calendar-grid {
+    break-inside: avoid;
+  }
 }
 
-@keyframes poster-appear {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
+/* Desert shimmer animations */
+@keyframes desert-shimmer {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
   }
-  to {
+  50% {
+    transform: scale(1.05);
     opacity: 1;
-    transform: translateY(0);
   }
+}
+
+.asteroid-activity-star:hover {
+  animation: desert-shimmer 1.5s ease-in-out;
+}
+
+/* Mid-century modern geometric accent */
+.asteroid-calendar::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
+  background: #FF7D00;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  opacity: 0.4;
+  z-index: 2;
 }
