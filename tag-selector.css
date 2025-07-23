@@ -1,7 +1,16 @@
 /* Compact Button-Style Tag Selector */
 
 /* Hide the actual toggle UI and style as buttons */
-.meta-bind-input-toggle {
+/* Fix for reading view */
+.markdown-reading-view .meta-bind-input-toggle {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 4px 4px 0;
+}
+
+/* Keep existing for editing view */
+.markdown-source-view .meta-bind-input-toggle {
   display: inline-block;
   margin: 0 4px 4px 0;
 }
@@ -136,12 +145,41 @@ h2 {
 }
 
 /* Remove any extra spacing */
-.meta-bind-input-toggle input {
+/* Only hide for your custom button-style selectors */
+.tag-selector .meta-bind-input-toggle input {
   display: none !important;
 }
 
+/* Ensure Meta-Bind toggles work normally */
+.meta-bind-input-toggle:not(.tag-selector .meta-bind-input-toggle) input {
+  display: initial !important;
+}
+
 /* Ensure buttons are inline and compact */
-p {
+/* Instead of global p styling */
+.tag-selector p {
   line-height: 1.3;
   margin: 0 0 8px 0;
+}
+
+/* Fix meta-bind alignment */
+.markdown-reading-view p:has(.meta-bind-input-toggle) {
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Exclude Meta-Bind toggles from your custom button styling */
+.meta-bind-button:not(.meta-bind-input-toggle .meta-bind-button) {
+  /* Your existing button styles here */
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  /* ... rest of your styles */
+}
+
+/* Reset Meta-Bind toggles to default */
+.meta-bind-input-toggle .meta-bind-button {
+  all: revert !important;
 }

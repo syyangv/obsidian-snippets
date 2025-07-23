@@ -133,6 +133,14 @@ Blur intensity: Adjust blur(10px) values - higher numbers = more blur*/
   backdrop-filter: blur(10px);
 }
 
+/* Ensure left sidebar toggle button doesn't overlap */
+.sidebar-toggle-button,
+.workspace-ribbon-collapse-btn {
+  position: relative !important;
+  z-index: 100 !important;
+  pointer-events: auto !important;
+}
+
 /* Graph view translucency */
 .workspace-leaf-content[data-type="graph"] {
   background-color: rgba(var(--background-primary-rgb), 0.8) !important;

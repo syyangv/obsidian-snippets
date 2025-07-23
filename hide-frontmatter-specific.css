@@ -1,0 +1,62 @@
+/* Hide Frontmatter in Specific Notes */
+
+/* Method 1: Hide frontmatter using CSS class */
+/* Add "cssClasses: hide-frontmatter" to the frontmatter of the note */
+.hide-frontmatter .frontmatter,
+.hide-frontmatter .frontmatter-container,
+.hide-frontmatter .metadata-container,
+.hide-frontmatter .cm-embed-block.cm-callout[data-callout="metadata"],
+.hide-frontmatter .markdown-preview-view .frontmatter,
+.hide-frontmatter .markdown-source-view .frontmatter {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Method 2: Hide frontmatter by specific file name */
+/* Replace "Your Note Name" with the actual note name */
+/*
+.workspace-leaf-content[data-path="Your Note Name.md"] .frontmatter,
+.workspace-leaf-content[data-path="Your Note Name.md"] .frontmatter-container,
+.workspace-leaf-content[data-path="Your Note Name.md"] .metadata-container {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+*/
+
+/* Method 3: Hide frontmatter in notes within a specific folder */
+/* Replace "folder-name" with your folder name */
+/*
+.workspace-leaf-content[data-path*="folder-name/"] .frontmatter,
+.workspace-leaf-content[data-path*="folder-name/"] .frontmatter-container,
+.workspace-leaf-content[data-path*="folder-name/"] .metadata-container {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+*/
+
+/* Clean up spacing after hiding frontmatter */
+.hide-frontmatter .markdown-preview-view,
+.hide-frontmatter .markdown-source-view {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Hide frontmatter in both edit and reading mode */
+.hide-frontmatter .cm-line:has(.cm-meta) {
+  display: none !important;
+}
+
+/* Hide YAML frontmatter blocks specifically */
+.hide-frontmatter .cm-hmd-frontmatter {
+  display: none !important;
+}
+
+.hide-frontmatter .HyperMD-header-line {
+  display: none !important;
+}

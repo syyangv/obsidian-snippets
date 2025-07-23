@@ -394,3 +394,39 @@ settings:
         default: 750px
 
 */
+
+/* === Meta-Bind Integration === */
+
+/* Prevent wide page effects on meta-bind elements */
+.wide-page .meta-bind-input-toggle,
+.tag-column .meta-bind-input-toggle {
+  max-width: none !important;
+  width: auto !important;
+}
+
+/* Meta-Bind Toggle Styling - Fixed to match plugin structure */
+.mb-input-wrapper .checkbox-container {
+  vertical-align: middle;
+}
+
+/* Fix layout issues with toggle + button combinations */
+.mb-input-wrapper:has(.checkbox-container) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Hide any unwanted buttons in toggle inputs */
+.mb-input-type-toggle .mb-button {
+  display: none;
+}
+
+/* Ensure checkbox container stays properly aligned */
+.mb-input-wrapper .checkbox-container {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+/* Meta-bind styling moved to meta-bind-complete.css */
+

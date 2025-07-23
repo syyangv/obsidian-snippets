@@ -1,0 +1,142 @@
+/* Hide edit block button for meta-bind elements */
+/* This overrides the Zen theme's edit button styling */
+
+/* Note: Global edit button hiding removed to keep edit buttons for other code blocks */
+
+/* More specific targeting for meta-bind */
+.block-language-meta-bind ~ .edit-block-button,
+.block-language-meta-bind + .edit-block-button,
+div:has(.block-language-meta-bind) .edit-block-button,
+.cm-preview-code-block:has(.block-language-meta-bind) .edit-block-button,
+.cm-embed-block:has(.block-language-meta-bind) .edit-block-button {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Target parent containers */
+.cm-line:has(.block-language-meta-bind) .edit-block-button,
+.cm-content:has(.block-language-meta-bind) .edit-block-button,
+.markdown-source-view:has(.block-language-meta-bind) .edit-block-button {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Also target the wrapper structure */
+.mb-input.mb-input-block ~ .edit-block-button,
+.mb-input.mb-input-block + .edit-block-button,
+div:has(.mb-input.mb-input-block) .edit-block-button,
+div:has(.mb-input-type-toggle) .edit-block-button,
+div:has(.checkbox-container) .edit-block-button {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Target enabled state */
+div:has(.checkbox-container.is-enabled) .edit-block-button,
+div:has([data-internal-value="true"]) .edit-block-button,
+div:has([data-internal-value="false"]) .edit-block-button {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Fallback: hide any edit button near meta-bind classes */
+[class*="meta-bind"] ~ .edit-block-button,
+[class*="mb-input"] ~ .edit-block-button,
+[class*="mb-input"] .edit-block-button {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* === Meta-bind toggle styling (consolidated from mcl-wide-views.css) === */
+
+/* Style the actual toggle input (meta-bind uses standard checkboxes) */
+.mb-input-type-toggle input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 44px;
+  height: 24px;
+  background: var(--background-modifier-border);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Toggle switch handle/knob */
+.mb-input-type-toggle input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Active/Checked state */
+.mb-input-type-toggle input[type="checkbox"]:checked {
+  background: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+/* Active handle position */
+.mb-input-type-toggle input[type="checkbox"]:checked::before {
+  transform: translateX(20px);
+}
+
+/* Hover states */
+.mb-input-type-toggle input[type="checkbox"]:hover {
+  background: var(--background-modifier-hover);
+}
+
+.mb-input-type-toggle input[type="checkbox"]:checked:hover {
+  background: var(--interactive-accent-hover);
+}
+
+/* Ensure proper alignment and containment */
+.mb-input-type-toggle .checkbox-container {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.mb-input-type-toggle {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* Force checkbox to stay contained */
+.mb-input-type-toggle .checkbox-container input[type="checkbox"] {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Ensure handle stays inside */
+.mb-input-type-toggle .checkbox-container input[type="checkbox"]::before {
+  position: absolute !important;
+  top: 2px !important;
+  left: 2px !important;
+  z-index: 2 !important;
+}
