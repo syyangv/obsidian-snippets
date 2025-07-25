@@ -1,0 +1,99 @@
+/* Enhanced Inline Code Visibility */
+/* Improves contrast against light yellow backgrounds */
+/* Compatible with light and dark themes */
+
+/* Main inline code styling */
+code:not(pre code) {
+    background-color: var(--background-secondary) !important;
+    color: var(--text-normal) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+    font-family: var(--font-monospace) !important;
+    font-size: 0.9em !important;
+    font-weight: 500 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 1px !important;
+}
+
+/* Hover effect for better interactivity */
+code:not(pre code):hover {
+    background-color: var(--background-modifier-hover) !important;
+    border-color: var(--text-accent) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Dark theme specific adjustments */
+.theme-dark code:not(pre code) {
+    background-color: var(--background-primary-alt) !important;
+    border-color: var(--background-modifier-border-hover) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.theme-dark code:not(pre code):hover {
+    background-color: var(--background-modifier-hover) !important;
+    border-color: var(--text-accent) !important;
+}
+
+/* Light theme specific adjustments */
+.theme-light code:not(pre code) {
+    background-color: #f8f9fa !important;
+    color: #2d3748 !important;
+    border-color: #cbd5e0 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.theme-light code:not(pre code):hover {
+    background-color: #e2e8f0 !important;
+    border-color: var(--text-accent) !important;
+}
+
+/* High contrast option for accessibility */
+body.high-contrast code:not(pre code) {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Ensure code blocks (pre code) remain unchanged */
+pre code {
+    background: inherit !important;
+    color: inherit !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+/* Special handling for code within links */
+a code:not(pre code) {
+    color: var(--text-accent) !important;
+    border-color: var(--text-accent) !important;
+}
+
+a:hover code:not(pre code) {
+    background-color: var(--text-accent) !important;
+    color: var(--text-on-accent) !important;
+}
+
+/* Code within callouts */
+.callout code:not(pre code) {
+    background-color: rgba(var(--callout-color), 0.1) !important;
+    border-color: rgba(var(--callout-color), 0.3) !important;
+}
+
+/* Code within tables */
+table code:not(pre code) {
+    margin: 0 !important;
+    padding: 1px 4px !important;
+    font-size: 0.85em !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    code:not(pre code) {
+        padding: 1px 4px !important;
+        font-size: 0.85em !important;
+    }
+}
