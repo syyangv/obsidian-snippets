@@ -29,16 +29,14 @@
 
 /* Method 3: Hide frontmatter in notes within a specific folder */
 /* Replace "folder-name" with your folder name */
-/*
-.workspace-leaf-content[data-path*="folder-name/"] .frontmatter,
-.workspace-leaf-content[data-path*="folder-name/"] .frontmatter-container,
-.workspace-leaf-content[data-path*="folder-name/"] .metadata-container {
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .frontmatter,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .frontmatter-container,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .metadata-container {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
   overflow: hidden !important;
 }
-*/
 
 /* Clean up spacing after hiding frontmatter */
 .hide-frontmatter .markdown-preview-view,
