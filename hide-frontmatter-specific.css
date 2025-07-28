@@ -31,7 +31,15 @@
 /* Replace "folder-name" with your folder name */
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .frontmatter,
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .frontmatter-container,
-.workspace-leaf-content[data-path*="知识库/读书笔记/"] .metadata-container {
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .metadata-container,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-embed-block.cm-callout[data-callout="metadata"],
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .markdown-preview-view .frontmatter,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .markdown-source-view .frontmatter,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-hmd-frontmatter,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .frontmatter-block,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .properties,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .metadata-properties,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .metadata-properties-container {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
@@ -56,5 +64,23 @@
 }
 
 .hide-frontmatter .HyperMD-header-line {
+  display: none !important;
+}
+
+/* Additional selectors for hiding frontmatter in edit mode for specific folder */
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-line:has(.cm-meta),
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-line:has(.cm-def),
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-line:has(.cm-atom),
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .HyperMD-header-line,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-yaml-start,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-yaml-end {
+  display: none !important;
+  height: 0 !important;
+  line-height: 0 !important;
+}
+
+/* Hide the entire YAML block in edit mode */
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-editor .cm-line:has(.cm-meta):first-child,
+.workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-editor .cm-line:has(.cm-meta) {
   display: none !important;
 }
