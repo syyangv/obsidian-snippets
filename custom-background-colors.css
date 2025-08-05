@@ -1,0 +1,29 @@
+/* Custom Background Colors Override - Main Background Only */
+/* This snippet only changes the main editor background while preserving theme-zen-translucency.css effects */
+
+:root {
+  /* Primary background (main editor area only) */
+  --background-primary: #ffffff;
+  --background-primary-rgb: 255, 255, 255;
+  /* Alternative colors - uncomment one line below to try different main background colors */
+}
+
+/* Uncomment one of these to try different main background colors */
+
+/* Dark Blue Background */
+/* --background-primary: #1a1f2e; --background-primary-rgb: 26, 31, 46; */
+
+/* Warm Dark Background */
+/* --background-primary: #2a1f1a; --background-primary-rgb: 42, 31, 26; */
+
+/* Purple Background */
+/* --background-primary: #1f1a2e; --background-primary-rgb: 31, 26, 46; */
+
+/* Forest Green Background */
+/* --background-primary: #1a2e1f; --background-primary-rgb: 26, 46, 31; */
+
+/* Lighter Dark Background */
+/* --background-primary: #2d2d2d; --background-primary-rgb: 45, 45, 45; */
+
+/* Custom Color - Replace with your preferred hex code */
+/* --background-primary: #YOUR_HEX_HERE; --background-primary-rgb: R, G, B; */

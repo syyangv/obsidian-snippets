@@ -1,469 +1,775 @@
+/* ===== MOONRISE COLOR PALETTE (THEME-INDEPENDENT) ===== */
+/* Force these colors to override any theme with maximum specificity */
+:root,
+body,
+.app-container,
+.theme-light,
+.theme-dark,
+.obsidian-app {
+    /* Primary Moonrise Kingdom colors */
+    --mcl-moonrise-yellow: rgb(194, 156, 38) !important;
+    --mcl-moonrise-khaki: rgb(149, 134, 82) !important;
+    --mcl-moonrise-red: rgb(138, 24, 24) !important;
+    --mcl-moonrise-green: rgb(65, 87, 27) !important;
+    --mcl-moonrise-teal: rgb(75, 138, 140) !important;
+    --mcl-moonrise-blue: rgb(50, 110, 160) !important;
+    --mcl-moonrise-pine: rgb(33, 74, 39) !important;
+    --mcl-moonrise-sand: rgb(178, 154, 108) !important;
+    --mcl-moonrise-orange: rgb(215, 100, 0) !important;
+    --mcl-moonrise-magenta: rgb(159, 1, 93) !important;
+    
+    /* Additional moonrise colors found in the file */
+    --mcl-moonrise-pink: rgb(205, 131, 145) !important;
+    --mcl-moonrise-purple: rgb(62, 31, 113) !important;
+    --mcl-moonrise-gold: rgb(178, 125, 12) !important;
+    --mcl-moonrise-maroon: rgb(99, 0, 0) !important;
+    --mcl-moonrise-cream: rgb(215, 208, 180) !important;
+    --mcl-moonrise-cyan: rgb(0, 88, 88) !important;
+    --mcl-moonrise-brown: rgb(27, 59, 59) !important;
+    --mcl-moonrise-amber: rgb(164, 113, 31) !important;
+    --mcl-moonrise-mint: rgb(119, 186, 151) !important;
+    --mcl-moonrise-olive: rgb(141, 126, 46) !important;
+    --mcl-moonrise-turquoise: rgb(24, 184, 168) !important;
+    --mcl-moonrise-bronze: rgb(144, 94, 0) !important;
+    --mcl-moonrise-navy: rgb(5, 5, 92) !important;
+    --mcl-moonrise-mustard: rgb(204, 156, 28) !important;
+    --mcl-moonrise-rust: rgb(215, 125, 0) !important;
+    --mcl-moonrise-sienna: rgb(99, 49, 9) !important;
+    --mcl-moonrise-crimson: rgb(180, 0, 40) !important;
+    --mcl-moonrise-forest: rgb(14, 99, 14) !important;
+    
+    /* Extended callout colors */
+    --mcl-callout-pink: var(--mcl-moonrise-pink) !important;
+    --mcl-callout-purple: var(--mcl-moonrise-purple) !important;
+    --mcl-callout-gold: var(--mcl-moonrise-gold) !important;
+    --mcl-callout-maroon: var(--mcl-moonrise-maroon) !important;
+    --mcl-callout-cream: var(--mcl-moonrise-cream) !important;
+    --mcl-callout-darkgreen: var(--mcl-moonrise-cyan) !important;
+    --mcl-callout-darkteal: var(--mcl-moonrise-brown) !important;
+    --mcl-callout-brown: var(--mcl-moonrise-amber) !important;
+    --mcl-callout-mint: var(--mcl-moonrise-mint) !important;
+    --mcl-callout-olive: var(--mcl-moonrise-olive) !important;
+    --mcl-callout-cyan: var(--mcl-moonrise-turquoise) !important;
+    --mcl-callout-bronze: var(--mcl-moonrise-bronze) !important;
+    --mcl-callout-navy: var(--mcl-moonrise-navy) !important;
+    --mcl-callout-amber: var(--mcl-moonrise-mustard) !important;
+    --mcl-callout-orangered: var(--mcl-moonrise-rust) !important;
+    --mcl-callout-darkbrown: var(--mcl-moonrise-sienna) !important;
+    --mcl-callout-crimson: var(--mcl-moonrise-crimson) !important;
+    --mcl-callout-forestgreen: var(--mcl-moonrise-forest) !important;
+    --mcl-callout-tan: rgb(198, 163, 133) !important;
+    --mcl-callout-coral: rgb(215, 59, 31) !important;
+    --mcl-callout-rust: rgb(143, 45, 0) !important;
+    --mcl-callout-sage: rgb(118, 129, 99) !important;
+    --mcl-callout-steel: rgb(30, 90, 140) !important;
+    --mcl-callout-rose: rgb(215, 142, 153) !important;
+    --mcl-callout-beige: rgb(215, 215, 184) !important;
+    
+    /* iOS System Colors */
+    --mcl-ios-red: rgb(255, 59, 48) !important;
+    --mcl-ios-blue: rgb(0, 122, 255) !important;
+    --mcl-ios-green: rgb(52, 199, 89) !important;
+    --mcl-ios-orange: rgb(255, 149, 0) !important;
+    --mcl-ios-purple: rgb(175, 82, 222) !important;
+    --mcl-ios-yellow: rgb(255, 204, 0) !important;
+    --mcl-ios-pink: rgb(255, 45, 85) !important;
+    --mcl-ios-teal: rgb(48, 176, 199) !important;
+    --mcl-ios-indigo: rgb(88, 86, 214) !important;
+    --mcl-ios-gray: rgb(142, 142, 147) !important;
+    
+    /* Additional themed colors */
+    --mcl-red-bright: rgb(215, 19, 8) !important;
+    --mcl-blue-bright: rgb(0, 82, 215) !important;
+    --mcl-green-bright: rgb(12, 159, 49) !important;
+    --mcl-orange-bright: rgb(215, 109, 0) !important;
+    --mcl-purple-bright: rgb(135, 42, 182) !important;
+    --mcl-yellow-bright: rgb(215, 164, 0) !important;
+    --mcl-pink-bright: rgb(215, 5, 45) !important;
+    --mcl-teal-bright: rgb(8, 136, 159) !important;
+    --mcl-indigo-bright: rgb(48, 46, 174) !important;
+    --mcl-gray-bright: rgb(102, 102, 107) !important;
+    --mcl-lavender: rgb(190, 190, 210) !important;
+    --mcl-lightgreen: rgb(148, 172, 139) !important;
+    --mcl-lightpink: rgb(215, 188, 185) !important;
+    --mcl-lightblue: rgb(136, 184, 190) !important;
+    --mcl-lightyellow: rgb(215, 179, 48) !important;
+    --mcl-darkred: rgb(143, 25, 0) !important;
+    --mcl-darkgreen-alt: rgb(25, 49, 12) !important;
+    
+    /* Extended theme colors */
+    --mcl-steelblue: rgb(70, 130, 180) !important;
+    --mcl-lightpink-alt: rgb(255, 182, 193) !important;
+    --mcl-darkslategray: rgb(47, 79, 79) !important;
+    --mcl-lightyellow-alt: rgb(255, 255, 224) !important;
+    --mcl-lavender-alt: rgb(230, 230, 250) !important;
+    --mcl-lightgreen-alt: rgb(188, 212, 179) !important;
+    --mcl-mistyrose: rgb(255, 228, 225) !important;
+    --mcl-powderblue: rgb(176, 224, 230) !important;
+    --mcl-gold-bright: rgb(255, 219, 88) !important;
+    --mcl-saddlebrown: rgb(183, 65, 14) !important;
+    --mcl-darkslategray-alt: rgb(45, 69, 32) !important;
+    
+    /* Gradient colors */
+    --mcl-gradient-pink: rgb(245, 171, 185) !important;
+    --mcl-gradient-gold: rgb(218, 165, 32) !important;
+    --mcl-gradient-yellow: rgb(244, 196, 48) !important;
+    --mcl-gradient-olive: rgb(85, 107, 47) !important;
+    --mcl-gradient-teal: rgb(0, 128, 128) !important;
+    --mcl-gradient-navy: rgb(25, 25, 112) !important;
+    --mcl-gradient-peach: rgb(238, 203, 173) !important;
+    --mcl-gradient-tomato: rgb(255, 99, 71) !important;
+}
+
+/* ===== THEME OVERRIDE PROTECTION FOR CALLOUTS ===== */
+/* Ensure moonrise callouts always display with proper colors regardless of theme */
+.app-container .callout[data-callout-metadata*="moonrise-"],
+.obsidian-app .callout[data-callout-metadata*="moonrise-"],
+body .callout[data-callout-metadata*="moonrise-"],
+.callout[data-callout-metadata*="moonrise-"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Force moonrise callout titles to display with proper colors */
+.app-container .callout[data-callout-metadata*="moonrise-"] .callout-title,
+.obsidian-app .callout[data-callout-metadata*="moonrise-"] .callout-title,
+body .callout[data-callout-metadata*="moonrise-"] .callout-title {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* ===== NEUTRALIZE DEFAULT CALLOUT BACKGROUNDS ===== */
+/* Remove theme-imposed backgrounds on standard callouts to prevent color conflicts */
+.callout[data-callout="note"],
+.callout[data-callout="info"],
+.callout[data-callout="tip"],
+.callout[data-callout="warning"],
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="example"],
+.callout[data-callout="quote"],
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"] {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Also neutralize callout content backgrounds and fix text styling */
+.callout[data-callout="note"] .callout-content,
+.callout[data-callout="info"] .callout-content,
+.callout[data-callout="tip"] .callout-content,
+.callout[data-callout="warning"] .callout-content,
+.callout[data-callout="danger"] .callout-content,
+.callout[data-callout="error"] .callout-content,
+.callout[data-callout="example"] .callout-content,
+.callout[data-callout="quote"] .callout-content,
+.callout[data-callout="abstract"] .callout-content,
+.callout[data-callout="summary"] .callout-content {
+    background-color: transparent !important;
+    background: transparent !important;
+    font-style: normal !important;
+    transform: none !important;
+    text-align: left !important;
+}
+
+/* Normalize text within callout content */
+.callout[data-callout="note"] .callout-content p,
+.callout[data-callout="info"] .callout-content p,
+.callout[data-callout="tip"] .callout-content p,
+.callout[data-callout="warning"] .callout-content p,
+.callout[data-callout="danger"] .callout-content p,
+.callout[data-callout="error"] .callout-content p,
+.callout[data-callout="example"] .callout-content p,
+.callout[data-callout="quote"] .callout-content p,
+.callout[data-callout="abstract"] .callout-content p,
+.callout[data-callout="summary"] .callout-content p {
+    font-style: normal !important;
+    transform: none !important;
+    text-align: left !important;
+}
+
+/* ===== CALLOUT TITLE SPACING ===== */
+/* Add very generous space for callout titles ONLY - preserve default spacing between callouts */
+.callout .callout-title {
+    padding-top: 32px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+    padding-bottom: 24px !important;
+}
+
+/* NUCLEAR OPTION: Maximum specificity override for title spacing */
+body.theme-light .workspace-leaf-content .markdown-preview-view .callout[data-callout-metadata*="moonrise-"] .callout-title,
+body.theme-dark .workspace-leaf-content .markdown-preview-view .callout[data-callout-metadata*="moonrise-"] .callout-title,
+body .workspace-leaf-content .markdown-preview-view .callout[data-callout-metadata*="moonrise-"] .callout-title,
+.workspace-leaf-content .markdown-preview-view .callout[data-callout-metadata*="moonrise-"] .callout-title,
+.markdown-preview-view .callout[data-callout-metadata*="moonrise-"] .callout-title,
+.callout[data-callout-metadata*="moonrise-"] .callout-title,
+body.theme-light .workspace-leaf-content .markdown-preview-view .callout[data-callout-metadata*="mk-"] .callout-title,
+body.theme-dark .workspace-leaf-content .markdown-preview-view .callout[data-callout-metadata*="mk-"] .callout-title,
+body .workspace-leaf-content .markdown-preview-view .callout[data-callout-metadata*="mk-"] .callout-title,
+.workspace-leaf-content .markdown-preview-view .callout[data-callout-metadata*="mk-"] .callout-title,
+.markdown-preview-view .callout[data-callout-metadata*="mk-"] .callout-title,
+.callout[data-callout-metadata*="mk-"] .callout-title,
+body.theme-light .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+body.theme-dark .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+body .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+.workspace-leaf-content .markdown-preview-view .callout .callout-title,
+.markdown-preview-view .callout .callout-title,
+.callout .callout-title {
+    padding-top: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-bottom: 12px !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Revert content spacing to default */
+
+/* But preserve default spacing between sub-callouts in multi-column layouts */
+.callout[data-callout="multi-column"] > .callout-content > .callout {
+    margin: var(--size-4-2) 0 !important;
+}
+
+/* Ensure sub-callout titles still get proper spacing */
+.callout .callout .callout-title {
+    padding-top: 32px !important;
+    padding-left: 32px !important;  
+    padding-right: 32px !important;
+    padding-bottom: 24px !important;
+}
+
+/* Revert callout container spacing to default */
+
 /* Remove border from callout titles and set title colors to match borders */
 /* Default callout title styling (when no custom heading is used) */
 .callout[data-callout-metadata*="moonrise-yellow"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-yellow"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(194, 156, 38) !important;
+    color: var(--mcl-moonrise-yellow) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-khaki"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-khaki"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(149, 134, 82) !important;
+    color: var(--mcl-moonrise-khaki) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-red"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-red"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(138, 24, 24) !important;
+    color: var(--mcl-moonrise-red) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-green"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-green"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(65, 87, 27) !important;
+    color: var(--mcl-moonrise-green) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-teal"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-teal"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(75, 138, 140) !important;
+    color: var(--mcl-moonrise-teal) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-pine"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-pine"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(33, 74, 39) !important;
+    color: var(--mcl-moonrise-pine) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-sand"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-sand"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(178, 154, 108) !important;
+    color: var(--mcl-moonrise-sand) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-orange"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-orange"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 100, 0) !important;
+    color: var(--mcl-moonrise-orange) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="moonrise-magenta"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="mk-magenta"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(159, 1, 93) !important;
+    color: var(--mcl-moonrise-magenta) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="budapest-pink"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="gbh-pink"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(205, 131, 145) !important;
+    color: var(--mcl-callout-pink) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="budapest-purple"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="gbh-purple"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(62, 31, 113) !important;
+    color: var(--mcl-callout-purple) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="budapest-gold"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="gbh-gold"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(178, 125, 12) !important;
+    color: var(--mcl-callout-gold) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="budapest-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="gbh-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="budapest-red"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="gbh-red"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(99, 0, 0) !important;
+    color: var(--mcl-callout-maroon) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="budapest-cream"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="gbh-cream"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 208, 180) !important;
+    color: var(--mcl-callout-cream) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="cavalier-teal"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="hc-teal"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(0, 88, 88) !important;
+    color: var(--mcl-callout-darkgreen) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="cavalier-mustard"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="hc-mustard"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(178, 125, 12) !important;
+    color: var(--mcl-callout-gold) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="cavalier-darkteal"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="hc-darkteal"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(27, 59, 59) !important;
+    color: var(--mcl-callout-darkteal) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="cavalier-vintage"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="hc-vintage"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(164, 113, 31) !important;
+    color: var(--mcl-callout-brown) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="cavalier-seafoam"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="hc-seafoam"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(119, 186, 151) !important;
+    color: var(--mcl-callout-mint) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="cavalier-brass"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="hc-brass"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(141, 126, 46) !important;
+    color: var(--mcl-callout-olive) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="cavalier-turquoise"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="hc-turquoise"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(24, 184, 168) !important;
+    color: var(--mcl-callout-cyan) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="cavalier-deepmustard"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="hc-deepmustard"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(144, 94, 0) !important;
+    color: var(--mcl-callout-bronze) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="dl-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(5, 5, 92) !important;
+    color: var(--mcl-callout-navy) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-saffron"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="dl-saffron"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(204, 156, 28) !important;
+    color: var(--mcl-callout-amber) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-curry"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="dl-curry"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 125, 0) !important;
+    color: var(--mcl-callout-orangered) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-brown"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="dl-brown"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(99, 49, 9) !important;
+    color: var(--mcl-callout-darkbrown) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-red"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="dl-red"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(180, 0, 40) !important;
+    color: var(--mcl-callout-crimson) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-green"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="dl-green"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(14, 99, 14) !important;
+    color: var(--mcl-callout-forestgreen) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-sand"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-sand"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(198, 163, 133) !important;
+    color: var(--mcl-callout-tan) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-orange"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-orange"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 59, 31) !important;
+    color: var(--mcl-callout-coral) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-turquoise"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-turquoise"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(24, 184, 168) !important;
+    color: var(--mcl-callout-cyan) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-rust"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-rust"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(143, 45, 0) !important;
+    color: var(--mcl-callout-rust) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-sage"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-sage"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(118, 129, 99) !important;
+    color: var(--mcl-callout-sage) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(30, 90, 140) !important;
+    color: var(--mcl-callout-steel) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-pink"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-pink"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 142, 153) !important;
+    color: var(--mcl-callout-rose) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-black"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-black"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(27, 59, 59) !important;
+    color: var(--mcl-callout-darkteal) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="asteroid-yellow"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)),
 .callout[data-callout-metadata*="ac-yellow"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 215, 184) !important;
+    color: var(--mcl-callout-beige) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-red"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 19, 8) !important;
+    color: var(--mcl-red-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(0, 82, 215) !important;
+    color: var(--mcl-blue-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-green"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(12, 159, 49) !important;
+    color: var(--mcl-green-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-orange"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 109, 0) !important;
+    color: var(--mcl-orange-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-purple"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(135, 42, 182) !important;
+    color: var(--mcl-purple-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-yellow"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 164, 0) !important;
+    color: var(--mcl-yellow-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-pink"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 5, 45) !important;
+    color: var(--mcl-pink-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-teal"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(8, 136, 159) !important;
+    color: var(--mcl-teal-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-indigo"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(48, 46, 174) !important;
+    color: var(--mcl-indigo-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="bg-gray"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(102, 102, 107) !important;
+    color: var(--mcl-gray-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="color-red"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 19, 8) !important;
+    color: var(--mcl-red-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="color-blue"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(0, 82, 215) !important;
+    color: var(--mcl-blue-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="color-green"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(12, 159, 49) !important;
+    color: var(--mcl-green-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="color-orange"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 109, 0) !important;
+    color: var(--mcl-orange-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="color-purple"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(135, 42, 182) !important;
+    color: var(--mcl-purple-bright) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="pastel-lavender"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(190, 190, 210) !important;
+    color: var(--mcl-lavender) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="pastel-sage"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(148, 172, 139) !important;
+    color: var(--mcl-lightgreen) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="pastel-blush"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 188, 185) !important;
+    color: var(--mcl-lightpink) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="pastel-sky"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(136, 184, 190) !important;
+    color: var(--mcl-lightblue) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="vintage-mustard"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(215, 179, 48) !important;
+    color: var(--mcl-lightyellow) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="vintage-rust"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(143, 25, 0) !important;
+    color: var(--mcl-darkred) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 .callout[data-callout-metadata*="vintage-forest"] .callout-title:not(:has(h1,h2,h3,h4,h5,h6)) {
     border: none !important;
-    color: rgb(25, 49, 12) !important;
+    color: var(--mcl-darkgreen-alt) !important;
     font-size: 1.3em !important;
     font-weight: 700 !important;
+    padding: 32px 32px 24px 32px !important;
 }
 
 /* For headings inside callout titles - preserve original formatting and ensure TOC visibility */
@@ -742,7 +1048,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(194, 156, 38) !important;
+    color: var(--mcl-moonrise-yellow) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -755,7 +1061,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(149, 134, 82) !important;
+    color: var(--mcl-moonrise-khaki) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -768,7 +1074,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(138, 24, 24) !important;
+    color: var(--mcl-moonrise-red) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -781,7 +1087,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(65, 87, 27) !important;
+    color: var(--mcl-moonrise-green) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -794,7 +1100,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(75, 138, 140) !important;
+    color: var(--mcl-moonrise-teal) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -807,7 +1113,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -820,7 +1126,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(33, 74, 39) !important;
+    color: var(--mcl-moonrise-pine) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -833,7 +1139,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(178, 154, 108) !important;
+    color: var(--mcl-moonrise-sand) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -846,7 +1152,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(215, 100, 0) !important;
+    color: var(--mcl-moonrise-orange) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -859,7 +1165,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(159, 1, 93) !important;
+    color: var(--mcl-moonrise-magenta) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -873,7 +1179,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(205, 131, 145) !important;
+    color: var(--mcl-callout-pink) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -886,7 +1192,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(62, 31, 113) !important;
+    color: var(--mcl-callout-purple) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -899,7 +1205,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(178, 125, 12) !important;
+    color: var(--mcl-callout-gold) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -912,7 +1218,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -925,7 +1231,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(99, 0, 0) !important;
+    color: var(--mcl-callout-maroon) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -938,7 +1244,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     font-size: 0.85em !important;
-    color: rgb(215, 208, 180) !important;
+    color: var(--mcl-callout-cream) !important;
     line-height: 1 !important;
     font-weight: bold !important;
 }
@@ -967,7 +1273,7 @@
 .callout[data-callout-metadata*="moonrise-yellow"] .callout-title,
 .callout[data-callout-metadata*="mk-yellow"] .callout-title {
     border: none !important;
-    color: rgb(194, 156, 38) !important;
+    color: var(--mcl-moonrise-yellow) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -975,7 +1281,7 @@
 .callout[data-callout-metadata*="moonrise-khaki"] .callout-title,
 .callout[data-callout-metadata*="mk-khaki"] .callout-title {
     border: none !important;
-    color: rgb(149, 134, 82) !important;
+    color: var(--mcl-moonrise-khaki) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -983,7 +1289,7 @@
 .callout[data-callout-metadata*="moonrise-red"] .callout-title,
 .callout[data-callout-metadata*="mk-red"] .callout-title {
     border: none !important;
-    color: rgb(138, 24, 24) !important;
+    color: var(--mcl-moonrise-red) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -991,7 +1297,7 @@
 .callout[data-callout-metadata*="moonrise-green"] .callout-title,
 .callout[data-callout-metadata*="mk-green"] .callout-title {
     border: none !important;
-    color: rgb(65, 87, 27) !important;
+    color: var(--mcl-moonrise-green) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -999,7 +1305,7 @@
 .callout[data-callout-metadata*="moonrise-teal"] .callout-title,
 .callout[data-callout-metadata*="mk-teal"] .callout-title {
     border: none !important;
-    color: rgb(75, 138, 140) !important;
+    color: var(--mcl-moonrise-teal) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1007,7 +1313,7 @@
 .callout[data-callout-metadata*="moonrise-blue"] .callout-title,
 .callout[data-callout-metadata*="mk-blue"] .callout-title {
     border: none !important;
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1015,7 +1321,7 @@
 .callout[data-callout-metadata*="moonrise-pine"] .callout-title,
 .callout[data-callout-metadata*="mk-pine"] .callout-title {
     border: none !important;
-    color: rgb(33, 74, 39) !important;
+    color: var(--mcl-moonrise-pine) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1023,7 +1329,7 @@
 .callout[data-callout-metadata*="moonrise-sand"] .callout-title,
 .callout[data-callout-metadata*="mk-sand"] .callout-title {
     border: none !important;
-    color: rgb(178, 154, 108) !important;
+    color: var(--mcl-moonrise-sand) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1031,7 +1337,7 @@
 .callout[data-callout-metadata*="moonrise-orange"] .callout-title,
 .callout[data-callout-metadata*="mk-orange"] .callout-title {
     border: none !important;
-    color: rgb(215, 100, 0) !important;
+    color: var(--mcl-moonrise-orange) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1039,7 +1345,7 @@
 .callout[data-callout-metadata*="budapest-pink"] .callout-title,
 .callout[data-callout-metadata*="gbh-pink"] .callout-title {
     border: none !important;
-    color: rgb(205, 131, 145) !important;
+    color: var(--mcl-callout-pink) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1047,7 +1353,7 @@
 .callout[data-callout-metadata*="budapest-purple"] .callout-title,
 .callout[data-callout-metadata*="gbh-purple"] .callout-title {
     border: none !important;
-    color: rgb(62, 31, 113) !important;
+    color: var(--mcl-callout-purple) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1055,7 +1361,7 @@
 .callout[data-callout-metadata*="budapest-gold"] .callout-title,
 .callout[data-callout-metadata*="gbh-gold"] .callout-title {
     border: none !important;
-    color: rgb(178, 125, 12) !important;
+    color: var(--mcl-callout-gold) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1063,7 +1369,7 @@
 .callout[data-callout-metadata*="budapest-blue"] .callout-title,
 .callout[data-callout-metadata*="gbh-blue"] .callout-title {
     border: none !important;
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1071,7 +1377,7 @@
 .callout[data-callout-metadata*="budapest-red"] .callout-title,
 .callout[data-callout-metadata*="gbh-red"] .callout-title {
     border: none !important;
-    color: rgb(99, 0, 0) !important;
+    color: var(--mcl-callout-maroon) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1079,7 +1385,7 @@
 .callout[data-callout-metadata*="budapest-cream"] .callout-title,
 .callout[data-callout-metadata*="gbh-cream"] .callout-title {
     border: none !important;
-    color: rgb(215, 208, 180) !important;
+    color: var(--mcl-callout-cream) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1087,7 +1393,7 @@
 .callout[data-callout-metadata*="cavalier-teal"] .callout-title,
 .callout[data-callout-metadata*="hc-teal"] .callout-title {
     border: none !important;
-    color: rgb(0, 88, 88) !important;
+    color: var(--mcl-callout-darkgreen) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1095,7 +1401,7 @@
 .callout[data-callout-metadata*="cavalier-mustard"] .callout-title,
 .callout[data-callout-metadata*="hc-mustard"] .callout-title {
     border: none !important;
-    color: rgb(178, 125, 12) !important;
+    color: var(--mcl-callout-gold) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1103,7 +1409,7 @@
 .callout[data-callout-metadata*="cavalier-darkteal"] .callout-title,
 .callout[data-callout-metadata*="hc-darkteal"] .callout-title {
     border: none !important;
-    color: rgb(27, 59, 59) !important;
+    color: var(--mcl-callout-darkteal) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1111,7 +1417,7 @@
 .callout[data-callout-metadata*="cavalier-vintage"] .callout-title,
 .callout[data-callout-metadata*="hc-vintage"] .callout-title {
     border: none !important;
-    color: rgb(164, 113, 31) !important;
+    color: var(--mcl-callout-brown) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1119,7 +1425,7 @@
 .callout[data-callout-metadata*="cavalier-seafoam"] .callout-title,
 .callout[data-callout-metadata*="hc-seafoam"] .callout-title {
     border: none !important;
-    color: rgb(119, 186, 151) !important;
+    color: var(--mcl-callout-mint) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1127,7 +1433,7 @@
 .callout[data-callout-metadata*="cavalier-brass"] .callout-title,
 .callout[data-callout-metadata*="hc-brass"] .callout-title {
     border: none !important;
-    color: rgb(141, 126, 46) !important;
+    color: var(--mcl-callout-olive) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1135,7 +1441,7 @@
 .callout[data-callout-metadata*="cavalier-turquoise"] .callout-title,
 .callout[data-callout-metadata*="hc-turquoise"] .callout-title {
     border: none !important;
-    color: rgb(24, 184, 168) !important;
+    color: var(--mcl-callout-cyan) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1143,7 +1449,7 @@
 .callout[data-callout-metadata*="cavalier-deepmustard"] .callout-title,
 .callout[data-callout-metadata*="hc-deepmustard"] .callout-title {
     border: none !important;
-    color: rgb(144, 94, 0) !important;
+    color: var(--mcl-callout-bronze) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1151,7 +1457,7 @@
 .callout[data-callout-metadata*="darjeeling-blue"] .callout-title,
 .callout[data-callout-metadata*="dl-blue"] .callout-title {
     border: none !important;
-    color: rgb(5, 5, 92) !important;
+    color: var(--mcl-callout-navy) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1159,7 +1465,7 @@
 .callout[data-callout-metadata*="darjeeling-saffron"] .callout-title,
 .callout[data-callout-metadata*="dl-saffron"] .callout-title {
     border: none !important;
-    color: rgb(204, 156, 28) !important;
+    color: var(--mcl-callout-amber) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1167,7 +1473,7 @@
 .callout[data-callout-metadata*="darjeeling-curry"] .callout-title,
 .callout[data-callout-metadata*="dl-curry"] .callout-title {
     border: none !important;
-    color: rgb(215, 125, 0) !important;
+    color: var(--mcl-callout-orangered) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1175,7 +1481,7 @@
 .callout[data-callout-metadata*="darjeeling-brown"] .callout-title,
 .callout[data-callout-metadata*="dl-brown"] .callout-title {
     border: none !important;
-    color: rgb(99, 49, 9) !important;
+    color: var(--mcl-callout-darkbrown) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1183,7 +1489,7 @@
 .callout[data-callout-metadata*="darjeeling-red"] .callout-title,
 .callout[data-callout-metadata*="dl-red"] .callout-title {
     border: none !important;
-    color: rgb(180, 0, 40) !important;
+    color: var(--mcl-callout-crimson) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1191,7 +1497,7 @@
 .callout[data-callout-metadata*="darjeeling-green"] .callout-title,
 .callout[data-callout-metadata*="dl-green"] .callout-title {
     border: none !important;
-    color: rgb(14, 99, 14) !important;
+    color: var(--mcl-callout-forestgreen) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1199,7 +1505,7 @@
 .callout[data-callout-metadata*="asteroid-sand"] .callout-title,
 .callout[data-callout-metadata*="ac-sand"] .callout-title {
     border: none !important;
-    color: rgb(198, 163, 133) !important;
+    color: var(--mcl-callout-tan) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1207,7 +1513,7 @@
 .callout[data-callout-metadata*="asteroid-orange"] .callout-title,
 .callout[data-callout-metadata*="ac-orange"] .callout-title {
     border: none !important;
-    color: rgb(215, 59, 31) !important;
+    color: var(--mcl-callout-coral) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1215,7 +1521,7 @@
 .callout[data-callout-metadata*="asteroid-turquoise"] .callout-title,
 .callout[data-callout-metadata*="ac-turquoise"] .callout-title {
     border: none !important;
-    color: rgb(24, 184, 168) !important;
+    color: var(--mcl-callout-cyan) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1223,7 +1529,7 @@
 .callout[data-callout-metadata*="asteroid-rust"] .callout-title,
 .callout[data-callout-metadata*="ac-rust"] .callout-title {
     border: none !important;
-    color: rgb(143, 45, 0) !important;
+    color: var(--mcl-callout-rust) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1231,7 +1537,7 @@
 .callout[data-callout-metadata*="asteroid-sage"] .callout-title,
 .callout[data-callout-metadata*="ac-sage"] .callout-title {
     border: none !important;
-    color: rgb(118, 129, 99) !important;
+    color: var(--mcl-callout-sage) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1239,7 +1545,7 @@
 .callout[data-callout-metadata*="asteroid-blue"] .callout-title,
 .callout[data-callout-metadata*="ac-blue"] .callout-title {
     border: none !important;
-    color: rgb(30, 90, 140) !important;
+    color: var(--mcl-callout-steel) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1247,7 +1553,7 @@
 .callout[data-callout-metadata*="asteroid-pink"] .callout-title,
 .callout[data-callout-metadata*="ac-pink"] .callout-title {
     border: none !important;
-    color: rgb(215, 142, 153) !important;
+    color: var(--mcl-callout-rose) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1255,7 +1561,7 @@
 .callout[data-callout-metadata*="asteroid-black"] .callout-title,
 .callout[data-callout-metadata*="ac-black"] .callout-title {
     border: none !important;
-    color: rgb(27, 59, 59) !important;
+    color: var(--mcl-callout-darkteal) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1263,161 +1569,161 @@
 .callout[data-callout-metadata*="asteroid-yellow"] .callout-title,
 .callout[data-callout-metadata*="ac-yellow"] .callout-title {
     border: none !important;
-    color: rgb(215, 215, 184) !important;
+    color: var(--mcl-callout-beige) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-red"] .callout-title {
     border: none !important;
-    color: rgb(215, 19, 8) !important;
+    color: var(--mcl-red-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-blue"] .callout-title {
     border: none !important;
-    color: rgb(0, 82, 215) !important;
+    color: var(--mcl-blue-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-green"] .callout-title {
     border: none !important;
-    color: rgb(12, 159, 49) !important;
+    color: var(--mcl-green-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-orange"] .callout-title {
     border: none !important;
-    color: rgb(215, 109, 0) !important;
+    color: var(--mcl-orange-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-purple"] .callout-title {
     border: none !important;
-    color: rgb(135, 42, 182) !important;
+    color: var(--mcl-purple-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-yellow"] .callout-title {
     border: none !important;
-    color: rgb(215, 164, 0) !important;
+    color: var(--mcl-yellow-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-pink"] .callout-title {
     border: none !important;
-    color: rgb(215, 5, 45) !important;
+    color: var(--mcl-pink-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-teal"] .callout-title {
     border: none !important;
-    color: rgb(8, 136, 159) !important;
+    color: var(--mcl-teal-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-indigo"] .callout-title {
     border: none !important;
-    color: rgb(48, 46, 174) !important;
+    color: var(--mcl-indigo-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="bg-gray"] .callout-title {
     border: none !important;
-    color: rgb(102, 102, 107) !important;
+    color: var(--mcl-gray-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="color-red"] .callout-title {
     border: none !important;
-    color: rgb(215, 19, 8) !important;
+    color: var(--mcl-red-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="color-blue"] .callout-title {
     border: none !important;
-    color: rgb(0, 82, 215) !important;
+    color: var(--mcl-blue-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="color-green"] .callout-title {
     border: none !important;
-    color: rgb(12, 159, 49) !important;
+    color: var(--mcl-green-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="color-orange"] .callout-title {
     border: none !important;
-    color: rgb(215, 109, 0) !important;
+    color: var(--mcl-orange-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="color-purple"] .callout-title {
     border: none !important;
-    color: rgb(135, 42, 182) !important;
+    color: var(--mcl-purple-bright) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="pastel-lavender"] .callout-title {
     border: none !important;
-    color: rgb(190, 190, 210) !important;
+    color: var(--mcl-lavender) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="pastel-sage"] .callout-title {
     border: none !important;
-    color: rgb(148, 172, 139) !important;
+    color: var(--mcl-lightgreen) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="pastel-blush"] .callout-title {
     border: none !important;
-    color: rgb(215, 188, 185) !important;
+    color: var(--mcl-lightpink) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="pastel-sky"] .callout-title {
     border: none !important;
-    color: rgb(136, 184, 190) !important;
+    color: var(--mcl-lightblue) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="vintage-mustard"] .callout-title {
     border: none !important;
-    color: rgb(215, 179, 48) !important;
+    color: var(--mcl-lightyellow) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="vintage-rust"] .callout-title {
     border: none !important;
-    color: rgb(143, 25, 0) !important;
+    color: var(--mcl-darkred) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
 
 .callout[data-callout-metadata*="vintage-forest"] .callout-title {
     border: none !important;
-    color: rgb(25, 49, 12) !important;
+    color: var(--mcl-darkgreen-alt) !important;
     font-size: 1.2em !important;
     font-weight: 600 !important;
 }
@@ -1663,98 +1969,98 @@
 /* Style backlinks in Moonrise Kingdom titles */
 .callout[data-callout-metadata*="moonrise-yellow"] .callout-title a,
 .callout[data-callout-metadata*="mk-yellow"] .callout-title a {
-    color: rgb(194, 156, 38) !important;
+    color: var(--mcl-moonrise-yellow) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-khaki"] .callout-title a,
 .callout[data-callout-metadata*="mk-khaki"] .callout-title a {
-    color: rgb(149, 134, 82) !important;
+    color: var(--mcl-moonrise-khaki) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-red"] .callout-title a,
 .callout[data-callout-metadata*="mk-red"] .callout-title a {
-    color: rgb(138, 24, 24) !important;
+    color: var(--mcl-moonrise-red) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-green"] .callout-title a,
 .callout[data-callout-metadata*="mk-green"] .callout-title a {
-    color: rgb(65, 87, 27) !important;
+    color: var(--mcl-moonrise-green) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-teal"] .callout-title a,
 .callout[data-callout-metadata*="mk-teal"] .callout-title a {
-    color: rgb(75, 138, 140) !important;
+    color: var(--mcl-moonrise-teal) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-blue"] .callout-title a,
 .callout[data-callout-metadata*="mk-blue"] .callout-title a {
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-pine"] .callout-title a,
 .callout[data-callout-metadata*="mk-pine"] .callout-title a {
-    color: rgb(33, 74, 39) !important;
+    color: var(--mcl-moonrise-pine) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-sand"] .callout-title a,
 .callout[data-callout-metadata*="mk-sand"] .callout-title a {
-    color: rgb(178, 154, 108) !important;
+    color: var(--mcl-moonrise-sand) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-orange"] .callout-title a,
 .callout[data-callout-metadata*="mk-orange"] .callout-title a {
-    color: rgb(215, 100, 0) !important;
+    color: var(--mcl-moonrise-orange) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="moonrise-magenta"] .callout-title a,
 .callout[data-callout-metadata*="mk-magenta"] .callout-title a {
-    color: rgb(159, 1, 93) !important;
+    color: var(--mcl-moonrise-magenta) !important;
     text-decoration: underline !important;
 }
 
 /* Style backlinks in Grand Budapest Hotel titles */
 .callout[data-callout-metadata*="budapest-pink"] .callout-title a,
 .callout[data-callout-metadata*="gbh-pink"] .callout-title a {
-    color: rgb(205, 131, 145) !important;
+    color: var(--mcl-callout-pink) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="budapest-purple"] .callout-title a,
 .callout[data-callout-metadata*="gbh-purple"] .callout-title a {
-    color: rgb(62, 31, 113) !important;
+    color: var(--mcl-callout-purple) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="budapest-gold"] .callout-title a,
 .callout[data-callout-metadata*="gbh-gold"] .callout-title a {
-    color: rgb(178, 125, 12) !important;
+    color: var(--mcl-callout-gold) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="budapest-blue"] .callout-title a,
 .callout[data-callout-metadata*="gbh-blue"] .callout-title a {
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="budapest-red"] .callout-title a,
 .callout[data-callout-metadata*="gbh-red"] .callout-title a {
-    color: rgb(99, 0, 0) !important;
+    color: var(--mcl-callout-maroon) !important;
     text-decoration: underline !important;
 }
 
 .callout[data-callout-metadata*="budapest-cream"] .callout-title a,
 .callout[data-callout-metadata*="gbh-cream"] .callout-title a {
-    color: rgb(215, 208, 180) !important;
+    color: var(--mcl-callout-cream) !important;
     text-decoration: underline !important;
 }
 
@@ -1860,339 +2166,339 @@
 .callout[data-callout-metadata*="moonrise-yellow"] .callout-title,
 .callout[data-callout-metadata*="mk-yellow"] .callout-title {
     border: none !important;
-    color: rgb(194, 156, 38) !important;
+    color: var(--mcl-moonrise-yellow) !important;
 }
 
 .callout[data-callout-metadata*="moonrise-khaki"] .callout-title,
 .callout[data-callout-metadata*="mk-khaki"] .callout-title {
     border: none !important;
-    color: rgb(149, 134, 82) !important;
+    color: var(--mcl-moonrise-khaki) !important;
 }
 
 .callout[data-callout-metadata*="moonrise-red"] .callout-title,
 .callout[data-callout-metadata*="mk-red"] .callout-title {
     border: none !important;
-    color: rgb(138, 24, 24) !important;
+    color: var(--mcl-moonrise-red) !important;
 }
 
 .callout[data-callout-metadata*="moonrise-green"] .callout-title,
 .callout[data-callout-metadata*="mk-green"] .callout-title {
     border: none !important;
-    color: rgb(65, 87, 27) !important;
+    color: var(--mcl-moonrise-green) !important;
 }
 
 .callout[data-callout-metadata*="moonrise-teal"] .callout-title,
 .callout[data-callout-metadata*="mk-teal"] .callout-title {
     border: none !important;
-    color: rgb(75, 138, 140) !important;
+    color: var(--mcl-moonrise-teal) !important;
 }
 
 .callout[data-callout-metadata*="moonrise-blue"] .callout-title,
 .callout[data-callout-metadata*="mk-blue"] .callout-title {
     border: none !important;
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
 }
 
 .callout[data-callout-metadata*="moonrise-pine"] .callout-title,
 .callout[data-callout-metadata*="mk-pine"] .callout-title {
     border: none !important;
-    color: rgb(33, 74, 39) !important;
+    color: var(--mcl-moonrise-pine) !important;
 }
 
 .callout[data-callout-metadata*="moonrise-sand"] .callout-title,
 .callout[data-callout-metadata*="mk-sand"] .callout-title {
     border: none !important;
-    color: rgb(178, 154, 108) !important;
+    color: var(--mcl-moonrise-sand) !important;
 }
 
 .callout[data-callout-metadata*="moonrise-orange"] .callout-title,
 .callout[data-callout-metadata*="mk-orange"] .callout-title {
     border: none !important;
-    color: rgb(215, 100, 0) !important;
+    color: var(--mcl-moonrise-orange) !important;
 }
 
 .callout[data-callout-metadata*="budapest-pink"] .callout-title,
 .callout[data-callout-metadata*="gbh-pink"] .callout-title {
     border: none !important;
-    color: rgb(205, 131, 145) !important;
+    color: var(--mcl-callout-pink) !important;
 }
 
 .callout[data-callout-metadata*="budapest-purple"] .callout-title,
 .callout[data-callout-metadata*="gbh-purple"] .callout-title {
     border: none !important;
-    color: rgb(62, 31, 113) !important;
+    color: var(--mcl-callout-purple) !important;
 }
 
 .callout[data-callout-metadata*="budapest-gold"] .callout-title,
 .callout[data-callout-metadata*="gbh-gold"] .callout-title {
     border: none !important;
-    color: rgb(178, 125, 12) !important;
+    color: var(--mcl-callout-gold) !important;
 }
 
 .callout[data-callout-metadata*="budapest-blue"] .callout-title,
 .callout[data-callout-metadata*="gbh-blue"] .callout-title {
     border: none !important;
-    color: rgb(50, 110, 160) !important;
+    color: var(--mcl-moonrise-blue) !important;
 }
 
 .callout[data-callout-metadata*="budapest-red"] .callout-title,
 .callout[data-callout-metadata*="gbh-red"] .callout-title {
     border: none !important;
-    color: rgb(99, 0, 0) !important;
+    color: var(--mcl-callout-maroon) !important;
 }
 
 .callout[data-callout-metadata*="budapest-cream"] .callout-title,
 .callout[data-callout-metadata*="gbh-cream"] .callout-title {
     border: none !important;
-    color: rgb(215, 208, 180) !important;
+    color: var(--mcl-callout-cream) !important;
 }
 
 .callout[data-callout-metadata*="cavalier-teal"] .callout-title,
 .callout[data-callout-metadata*="hc-teal"] .callout-title {
     border: none !important;
-    color: rgb(0, 88, 88) !important;
+    color: var(--mcl-callout-darkgreen) !important;
 }
 
 .callout[data-callout-metadata*="cavalier-mustard"] .callout-title,
 .callout[data-callout-metadata*="hc-mustard"] .callout-title {
     border: none !important;
-    color: rgb(178, 125, 12) !important;
+    color: var(--mcl-callout-gold) !important;
 }
 
 .callout[data-callout-metadata*="cavalier-darkteal"] .callout-title,
 .callout[data-callout-metadata*="hc-darkteal"] .callout-title {
     border: none !important;
-    color: rgb(27, 59, 59) !important;
+    color: var(--mcl-callout-darkteal) !important;
 }
 
 .callout[data-callout-metadata*="cavalier-vintage"] .callout-title,
 .callout[data-callout-metadata*="hc-vintage"] .callout-title {
     border: none !important;
-    color: rgb(164, 113, 31) !important;
+    color: var(--mcl-callout-brown) !important;
 }
 
 .callout[data-callout-metadata*="cavalier-seafoam"] .callout-title,
 .callout[data-callout-metadata*="hc-seafoam"] .callout-title {
     border: none !important;
-    color: rgb(119, 186, 151) !important;
+    color: var(--mcl-callout-mint) !important;
 }
 
 .callout[data-callout-metadata*="cavalier-brass"] .callout-title,
 .callout[data-callout-metadata*="hc-brass"] .callout-title {
     border: none !important;
-    color: rgb(141, 126, 46) !important;
+    color: var(--mcl-callout-olive) !important;
 }
 
 .callout[data-callout-metadata*="cavalier-turquoise"] .callout-title,
 .callout[data-callout-metadata*="hc-turquoise"] .callout-title {
     border: none !important;
-    color: rgb(24, 184, 168) !important;
+    color: var(--mcl-callout-cyan) !important;
 }
 
 .callout[data-callout-metadata*="cavalier-deepmustard"] .callout-title,
 .callout[data-callout-metadata*="hc-deepmustard"] .callout-title {
     border: none !important;
-    color: rgb(144, 94, 0) !important;
+    color: var(--mcl-callout-bronze) !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-blue"] .callout-title,
 .callout[data-callout-metadata*="dl-blue"] .callout-title {
     border: none !important;
-    color: rgb(5, 5, 92) !important;
+    color: var(--mcl-callout-navy) !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-saffron"] .callout-title,
 .callout[data-callout-metadata*="dl-saffron"] .callout-title {
     border: none !important;
-    color: rgb(204, 156, 28) !important;
+    color: var(--mcl-callout-amber) !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-curry"] .callout-title,
 .callout[data-callout-metadata*="dl-curry"] .callout-title {
     border: none !important;
-    color: rgb(215, 125, 0) !important;
+    color: var(--mcl-callout-orangered) !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-brown"] .callout-title,
 .callout[data-callout-metadata*="dl-brown"] .callout-title {
     border: none !important;
-    color: rgb(99, 49, 9) !important;
+    color: var(--mcl-callout-darkbrown) !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-red"] .callout-title,
 .callout[data-callout-metadata*="dl-red"] .callout-title {
     border: none !important;
-    color: rgb(180, 0, 40) !important;
+    color: var(--mcl-callout-crimson) !important;
 }
 
 .callout[data-callout-metadata*="darjeeling-green"] .callout-title,
 .callout[data-callout-metadata*="dl-green"] .callout-title {
     border: none !important;
-    color: rgb(14, 99, 14) !important;
+    color: var(--mcl-callout-forestgreen) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-sand"] .callout-title,
 .callout[data-callout-metadata*="ac-sand"] .callout-title {
     border: none !important;
-    color: rgb(198, 163, 133) !important;
+    color: var(--mcl-callout-tan) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-orange"] .callout-title,
 .callout[data-callout-metadata*="ac-orange"] .callout-title {
     border: none !important;
-    color: rgb(215, 59, 31) !important;
+    color: var(--mcl-callout-coral) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-turquoise"] .callout-title,
 .callout[data-callout-metadata*="ac-turquoise"] .callout-title {
     border: none !important;
-    color: rgb(24, 184, 168) !important;
+    color: var(--mcl-callout-cyan) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-rust"] .callout-title,
 .callout[data-callout-metadata*="ac-rust"] .callout-title {
     border: none !important;
-    color: rgb(143, 45, 0) !important;
+    color: var(--mcl-callout-rust) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-sage"] .callout-title,
 .callout[data-callout-metadata*="ac-sage"] .callout-title {
     border: none !important;
-    color: rgb(118, 129, 99) !important;
+    color: var(--mcl-callout-sage) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-blue"] .callout-title,
 .callout[data-callout-metadata*="ac-blue"] .callout-title {
     border: none !important;
-    color: rgb(30, 90, 140) !important;
+    color: var(--mcl-callout-steel) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-pink"] .callout-title,
 .callout[data-callout-metadata*="ac-pink"] .callout-title {
     border: none !important;
-    color: rgb(215, 142, 153) !important;
+    color: var(--mcl-callout-rose) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-black"] .callout-title,
 .callout[data-callout-metadata*="ac-black"] .callout-title {
     border: none !important;
-    color: rgb(27, 59, 59) !important;
+    color: var(--mcl-callout-darkteal) !important;
 }
 
 .callout[data-callout-metadata*="asteroid-yellow"] .callout-title,
 .callout[data-callout-metadata*="ac-yellow"] .callout-title {
     border: none !important;
-    color: rgb(215, 215, 184) !important;
+    color: var(--mcl-callout-beige) !important;
 }
 
 .callout[data-callout-metadata*="bg-red"] .callout-title {
     border: none !important;
-    color: rgb(215, 19, 8) !important;
+    color: var(--mcl-red-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-blue"] .callout-title {
     border: none !important;
-    color: rgb(0, 82, 215) !important;
+    color: var(--mcl-blue-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-green"] .callout-title {
     border: none !important;
-    color: rgb(12, 159, 49) !important;
+    color: var(--mcl-green-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-orange"] .callout-title {
     border: none !important;
-    color: rgb(215, 109, 0) !important;
+    color: var(--mcl-orange-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-purple"] .callout-title {
     border: none !important;
-    color: rgb(135, 42, 182) !important;
+    color: var(--mcl-purple-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-yellow"] .callout-title {
     border: none !important;
-    color: rgb(215, 164, 0) !important;
+    color: var(--mcl-yellow-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-pink"] .callout-title {
     border: none !important;
-    color: rgb(215, 5, 45) !important;
+    color: var(--mcl-pink-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-teal"] .callout-title {
     border: none !important;
-    color: rgb(8, 136, 159) !important;
+    color: var(--mcl-teal-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-indigo"] .callout-title {
     border: none !important;
-    color: rgb(48, 46, 174) !important;
+    color: var(--mcl-indigo-bright) !important;
 }
 
 .callout[data-callout-metadata*="bg-gray"] .callout-title {
     border: none !important;
-    color: rgb(102, 102, 107) !important;
+    color: var(--mcl-gray-bright) !important;
 }
 
 .callout[data-callout-metadata*="color-red"] .callout-title {
     border: none !important;
-    color: rgb(215, 19, 8) !important;
+    color: var(--mcl-red-bright) !important;
 }
 
 .callout[data-callout-metadata*="color-blue"] .callout-title {
     border: none !important;
-    color: rgb(0, 82, 215) !important;
+    color: var(--mcl-blue-bright) !important;
 }
 
 .callout[data-callout-metadata*="color-green"] .callout-title {
     border: none !important;
-    color: rgb(12, 159, 49) !important;
+    color: var(--mcl-green-bright) !important;
 }
 
 .callout[data-callout-metadata*="color-orange"] .callout-title {
     border: none !important;
-    color: rgb(215, 109, 0) !important;
+    color: var(--mcl-orange-bright) !important;
 }
 
 .callout[data-callout-metadata*="color-purple"] .callout-title {
     border: none !important;
-    color: rgb(135, 42, 182) !important;
+    color: var(--mcl-purple-bright) !important;
 }
 
 .callout[data-callout-metadata*="pastel-lavender"] .callout-title {
     border: none !important;
-    color: rgb(190, 190, 210) !important;
+    color: var(--mcl-lavender) !important;
 }
 
 .callout[data-callout-metadata*="pastel-sage"] .callout-title {
     border: none !important;
-    color: rgb(148, 172, 139) !important;
+    color: var(--mcl-lightgreen) !important;
 }
 
 .callout[data-callout-metadata*="pastel-blush"] .callout-title {
     border: none !important;
-    color: rgb(215, 188, 185) !important;
+    color: var(--mcl-lightpink) !important;
 }
 
 .callout[data-callout-metadata*="pastel-sky"] .callout-title {
     border: none !important;
-    color: rgb(136, 184, 190) !important;
+    color: var(--mcl-lightblue) !important;
 }
 
 .callout[data-callout-metadata*="vintage-mustard"] .callout-title {
     border: none !important;
-    color: rgb(215, 179, 48) !important;
+    color: var(--mcl-lightyellow) !important;
 }
 
 .callout[data-callout-metadata*="vintage-rust"] .callout-title {
     border: none !important;
-    color: rgb(143, 25, 0) !important;
+    color: var(--mcl-darkred) !important;
 }
 
 .callout[data-callout-metadata*="vintage-forest"] .callout-title {
     border: none !important;
-    color: rgb(25, 49, 12) !important;
+    color: var(--mcl-darkgreen-alt) !important;
 }
 
 /* Remove any :before/:after outline effects */
@@ -2257,52 +2563,52 @@
 /* Background color variants */
 .callout[data-callout-metadata*="bg-red"] {
     background-color: rgba(255, 59, 48, 0.1) !important;
-    border-color: rgb(255, 59, 48) !important;
+    border-color: var(--mcl-ios-red) !important;
 }
 
 .callout[data-callout-metadata*="bg-blue"] {
     background-color: rgba(0, 122, 255, 0.1) !important;
-    border-color: rgb(0, 122, 255) !important;
+    border-color: var(--mcl-ios-blue) !important;
 }
 
 .callout[data-callout-metadata*="bg-green"] {
     background-color: rgba(52, 199, 89, 0.1) !important;
-    border-color: rgb(52, 199, 89) !important;
+    border-color: var(--mcl-ios-green) !important;
 }
 
 .callout[data-callout-metadata*="bg-orange"] {
     background-color: rgba(255, 149, 0, 0.1) !important;
-    border-color: rgb(255, 149, 0) !important;
+    border-color: var(--mcl-ios-orange) !important;
 }
 
 .callout[data-callout-metadata*="bg-purple"] {
     background-color: rgba(175, 82, 222, 0.1) !important;
-    border-color: rgb(175, 82, 222) !important;
+    border-color: var(--mcl-ios-purple) !important;
 }
 
 .callout[data-callout-metadata*="bg-yellow"] {
     background-color: rgba(255, 204, 0, 0.1) !important;
-    border-color: rgb(255, 204, 0) !important;
+    border-color: var(--mcl-ios-yellow) !important;
 }
 
 .callout[data-callout-metadata*="bg-pink"] {
     background-color: rgba(255, 45, 85, 0.1) !important;
-    border-color: rgb(255, 45, 85) !important;
+    border-color: var(--mcl-ios-pink) !important;
 }
 
 .callout[data-callout-metadata*="bg-teal"] {
     background-color: rgba(48, 176, 199, 0.1) !important;
-    border-color: rgb(48, 176, 199) !important;
+    border-color: var(--mcl-ios-teal) !important;
 }
 
 .callout[data-callout-metadata*="bg-indigo"] {
     background-color: rgba(88, 86, 214, 0.1) !important;
-    border-color: rgb(88, 86, 214) !important;
+    border-color: var(--mcl-ios-indigo) !important;
 }
 
 .callout[data-callout-metadata*="bg-gray"] {
     background-color: rgba(142, 142, 147, 0.1) !important;
-    border-color: rgb(142, 142, 147) !important;
+    border-color: var(--mcl-ios-gray) !important;
 }
 
 /* ===== WES ANDERSON INSPIRED COLOR SCHEMES ===== */
@@ -2312,7 +2618,7 @@
 .callout[data-callout-metadata*="moonrise-yellow"],
 .callout[data-callout-metadata*="mk-yellow"] {
     background-color: rgba(244, 196, 48, 0.12) !important;
-    border: 4px solid rgb(194, 156, 38) !important;
+    border: 4px solid var(--mcl-moonrise-yellow) !important;
     border-radius: 12px !important;
 }
 
@@ -2320,7 +2626,7 @@
 .callout[data-callout-metadata*="moonrise-khaki"],
 .callout[data-callout-metadata*="mk-khaki"] {
     background-color: rgba(189, 164, 102, 0.12) !important;
-    border: 4px solid rgb(149, 134, 82) !important;
+    border: 4px solid var(--mcl-moonrise-khaki) !important;
     border-radius: 12px !important;
 }
 
@@ -2328,7 +2634,7 @@
 .callout[data-callout-metadata*="moonrise-red"],
 .callout[data-callout-metadata*="mk-red"] {
     background-color: rgba(178, 34, 34, 0.12) !important;
-    border: 4px solid rgb(138, 24, 24) !important;
+    border: 4px solid var(--mcl-moonrise-red) !important;
     border-radius: 12px !important;
 }
 
@@ -2336,7 +2642,7 @@
 .callout[data-callout-metadata*="moonrise-green"],
 .callout[data-callout-metadata*="mk-green"] {
     background-color: rgba(85, 107, 47, 0.12) !important;
-    border: 4px solid rgb(65, 87, 27) !important;
+    border: 4px solid var(--mcl-moonrise-green) !important;
     border-radius: 12px !important;
 }
 
@@ -2344,7 +2650,7 @@
 .callout[data-callout-metadata*="moonrise-teal"],
 .callout[data-callout-metadata*="mk-teal"] {
     background-color: rgba(95, 158, 160, 0.12) !important;
-    border: 4px solid rgb(75, 138, 140) !important;
+    border: 4px solid var(--mcl-moonrise-teal) !important;
     border-radius: 12px !important;
 }
 
@@ -2352,7 +2658,7 @@
 .callout[data-callout-metadata*="moonrise-blue"],
 .callout[data-callout-metadata*="mk-blue"] {
     background-color: rgba(70, 130, 180, 0.12) !important;
-    border: 4px solid rgb(50, 110, 160) !important;
+    border: 4px solid var(--mcl-moonrise-blue) !important;
     border-radius: 12px !important;
 }
 
@@ -2360,7 +2666,7 @@
 .callout[data-callout-metadata*="moonrise-pine"],
 .callout[data-callout-metadata*="mk-pine"] {
     background-color: rgba(53, 94, 59, 0.12) !important;
-    border: 4px solid rgb(33, 74, 39) !important;
+    border: 4px solid var(--mcl-moonrise-pine) !important;
     border-radius: 12px !important;
 }
 
@@ -2368,7 +2674,7 @@
 .callout[data-callout-metadata*="moonrise-sand"],
 .callout[data-callout-metadata*="mk-sand"] {
     background-color: rgba(218, 194, 148, 0.12) !important;
-    border: 4px solid rgb(178, 154, 108) !important;
+    border: 4px solid var(--mcl-moonrise-sand) !important;
     border-radius: 12px !important;
 }
 
@@ -2376,7 +2682,7 @@
 .callout[data-callout-metadata*="moonrise-orange"],
 .callout[data-callout-metadata*="mk-orange"] {
     background-color: rgba(255, 140, 0, 0.12) !important;
-    border: 4px solid rgb(215, 100, 0) !important;
+    border: 4px solid var(--mcl-moonrise-orange) !important;
     border-radius: 12px !important;
 }
 
@@ -2384,7 +2690,7 @@
 .callout[data-callout-metadata*="moonrise-magenta"],
 .callout[data-callout-metadata*="mk-magenta"] {
     background-color: rgba(199, 21, 133, 0.12) !important;
-    border: 4px solid rgb(159, 1, 93) !important;
+    border: 4px solid var(--mcl-moonrise-magenta) !important;
     border-radius: 12px !important;
 }
 
@@ -2393,7 +2699,7 @@
 .callout[data-callout-metadata*="budapest-pink"],
 .callout[data-callout-metadata*="gbh-pink"] {
     background-color: rgba(245, 171, 185, 0.15) !important;
-    border: 4px solid rgb(205, 131, 145) !important;
+    border: 4px solid var(--mcl-moonrise-pink) !important;
     border-radius: 12px !important;
 }
 
@@ -2401,7 +2707,7 @@
 .callout[data-callout-metadata*="budapest-purple"],
 .callout[data-callout-metadata*="gbh-purple"] {
     background-color: rgba(102, 51, 153, 0.12) !important;
-    border: 4px solid rgb(62, 31, 113) !important;
+    border: 4px solid var(--mcl-moonrise-purple) !important;
     border-radius: 12px !important;
 }
 
@@ -2409,7 +2715,7 @@
 .callout[data-callout-metadata*="budapest-gold"],
 .callout[data-callout-metadata*="gbh-gold"] {
     background-color: rgba(218, 165, 32, 0.12) !important;
-    border: 4px solid rgb(178, 125, 12) !important;
+    border: 4px solid var(--mcl-moonrise-gold) !important;
     border-radius: 12px !important;
 }
 
@@ -2417,7 +2723,7 @@
 .callout[data-callout-metadata*="budapest-blue"],
 .callout[data-callout-metadata*="gbh-blue"] {
     background-color: rgba(70, 130, 180, 0.12) !important;
-    border: 4px solid rgb(50, 110, 160) !important;
+    border: 4px solid var(--mcl-moonrise-blue) !important;
     border-radius: 12px !important;
 }
 
@@ -2425,7 +2731,7 @@
 .callout[data-callout-metadata*="budapest-red"],
 .callout[data-callout-metadata*="gbh-red"] {
     background-color: rgba(139, 0, 0, 0.12) !important;
-    border: 4px solid rgb(99, 0, 0) !important;
+    border: 4px solid var(--mcl-moonrise-maroon) !important;
     border-radius: 12px !important;
 }
 
@@ -2433,7 +2739,7 @@
 .callout[data-callout-metadata*="budapest-cream"],
 .callout[data-callout-metadata*="gbh-cream"] {
     background-color: rgba(255, 248, 220, 0.15) !important;
-    border: 4px solid rgb(215, 208, 180) !important;
+    border: 4px solid var(--mcl-moonrise-cream) !important;
     border-radius: 12px !important;
 }
 
@@ -2442,7 +2748,7 @@
 .callout[data-callout-metadata*="cavalier-teal"],
 .callout[data-callout-metadata*="hc-teal"] {
     background-color: rgba(0, 128, 128, 0.12) !important;
-    border: 4px solid rgb(0, 88, 88) !important;
+    border: 4px solid var(--mcl-moonrise-cyan) !important;
     border-radius: 12px !important;
 }
 
@@ -2450,7 +2756,7 @@
 .callout[data-callout-metadata*="cavalier-mustard"],
 .callout[data-callout-metadata*="hc-mustard"] {
     background-color: rgba(218, 165, 32, 0.12) !important;
-    border: 4px solid rgb(178, 125, 12) !important;
+    border: 4px solid var(--mcl-moonrise-gold) !important;
     border-radius: 12px !important;
 }
 
@@ -2458,7 +2764,7 @@
 .callout[data-callout-metadata*="cavalier-darkteal"],
 .callout[data-callout-metadata*="hc-darkteal"] {
     background-color: rgba(47, 79, 79, 0.12) !important;
-    border: 4px solid rgb(27, 59, 59) !important;
+    border: 4px solid var(--mcl-moonrise-brown) !important;
     border-radius: 12px !important;
 }
 
@@ -2466,7 +2772,7 @@
 .callout[data-callout-metadata*="cavalier-vintage"],
 .callout[data-callout-metadata*="hc-vintage"] {
     background-color: rgba(204, 153, 51, 0.12) !important;
-    border: 4px solid rgb(164, 113, 31) !important;
+    border: 4px solid var(--mcl-moonrise-amber) !important;
     border-radius: 12px !important;
 }
 
@@ -2474,7 +2780,7 @@
 .callout[data-callout-metadata*="cavalier-seafoam"],
 .callout[data-callout-metadata*="hc-seafoam"] {
     background-color: rgba(159, 226, 191, 0.12) !important;
-    border: 4px solid rgb(119, 186, 151) !important;
+    border: 4px solid var(--mcl-moonrise-mint) !important;
     border-radius: 12px !important;
 }
 
@@ -2482,7 +2788,7 @@
 .callout[data-callout-metadata*="cavalier-brass"],
 .callout[data-callout-metadata*="hc-brass"] {
     background-color: rgba(181, 166, 66, 0.12) !important;
-    border: 4px solid rgb(141, 126, 46) !important;
+    border: 4px solid var(--mcl-moonrise-olive) !important;
     border-radius: 12px !important;
 }
 
@@ -2490,7 +2796,7 @@
 .callout[data-callout-metadata*="cavalier-turquoise"],
 .callout[data-callout-metadata*="hc-turquoise"] {
     background-color: rgba(64, 224, 208, 0.12) !important;
-    border: 4px solid rgb(24, 184, 168) !important;
+    border: 4px solid var(--mcl-moonrise-turquoise) !important;
     border-radius: 12px !important;
 }
 
@@ -2498,7 +2804,7 @@
 .callout[data-callout-metadata*="cavalier-deepmustard"],
 .callout[data-callout-metadata*="hc-deepmustard"] {
     background-color: rgba(184, 134, 11, 0.12) !important;
-    border: 4px solid rgb(144, 94, 0) !important;
+    border: 4px solid var(--mcl-moonrise-bronze) !important;
     border-radius: 12px !important;
 }
 
@@ -2507,7 +2813,7 @@
 .callout[data-callout-metadata*="darjeeling-blue"],
 .callout[data-callout-metadata*="dl-blue"] {
     background-color: rgba(25, 25, 112, 0.12) !important;
-    border: 4px solid rgb(5, 5, 92) !important;
+    border: 4px solid var(--mcl-moonrise-navy) !important;
     border-radius: 12px !important;
 }
 
@@ -2515,7 +2821,7 @@
 .callout[data-callout-metadata*="darjeeling-saffron"],
 .callout[data-callout-metadata*="dl-saffron"] {
     background-color: rgba(244, 196, 48, 0.12) !important;
-    border: 4px solid rgb(204, 156, 28) !important;
+    border: 4px solid var(--mcl-moonrise-mustard) !important;
     border-radius: 12px !important;
 }
 
@@ -2523,7 +2829,7 @@
 .callout[data-callout-metadata*="darjeeling-curry"],
 .callout[data-callout-metadata*="dl-curry"] {
     background-color: rgba(255, 165, 0, 0.12) !important;
-    border: 4px solid rgb(215, 125, 0) !important;
+    border: 4px solid var(--mcl-moonrise-rust) !important;
     border-radius: 12px !important;
 }
 
@@ -2531,7 +2837,7 @@
 .callout[data-callout-metadata*="darjeeling-brown"],
 .callout[data-callout-metadata*="dl-brown"] {
     background-color: rgba(139, 69, 19, 0.12) !important;
-    border: 4px solid rgb(99, 49, 9) !important;
+    border: 4px solid var(--mcl-moonrise-sienna) !important;
     border-radius: 12px !important;
 }
 
@@ -2539,7 +2845,7 @@
 .callout[data-callout-metadata*="darjeeling-red"],
 .callout[data-callout-metadata*="dl-red"] {
     background-color: rgba(220, 20, 60, 0.12) !important;
-    border: 4px solid rgb(180, 0, 40) !important;
+    border: 4px solid var(--mcl-moonrise-crimson) !important;
     border-radius: 12px !important;
 }
 
@@ -2547,7 +2853,7 @@
 .callout[data-callout-metadata*="darjeeling-green"],
 .callout[data-callout-metadata*="dl-green"] {
     background-color: rgba(34, 139, 34, 0.12) !important;
-    border: 4px solid rgb(14, 99, 14) !important;
+    border: 4px solid var(--mcl-moonrise-forest) !important;
     border-radius: 12px !important;
 }
 
@@ -2572,7 +2878,7 @@
 .callout[data-callout-metadata*="asteroid-turquoise"],
 .callout[data-callout-metadata*="ac-turquoise"] {
     background-color: rgba(64, 224, 208, 0.12) !important;
-    border: 4px solid rgb(24, 184, 168) !important;
+    border: 4px solid var(--mcl-moonrise-turquoise) !important;
     border-radius: 12px !important;
 }
 
@@ -2612,7 +2918,7 @@
 .callout[data-callout-metadata*="asteroid-black"],
 .callout[data-callout-metadata*="ac-black"] {
     background-color: rgba(47, 79, 79, 0.12) !important;
-    border: 4px solid rgb(27, 59, 59) !important;
+    border: 4px solid var(--mcl-moonrise-brown) !important;
     border-radius: 12px !important;
 }
 
@@ -2705,31 +3011,31 @@
 /* ===== SOLID COLOR VARIANTS (ORIGINAL, PRESERVED) ===== */
 .callout[data-callout-metadata*="color-red"] {
     background-color: rgba(255, 59, 48, 0.2) !important;
-    border-color: rgb(255, 59, 48) !important;
+    border-color: var(--mcl-ios-red) !important;
     color: rgb(255, 59, 48) !important;
 }
 
 .callout[data-callout-metadata*="color-blue"] {
     background-color: rgba(0, 122, 255, 0.2) !important;
-    border-color: rgb(0, 122, 255) !important;
+    border-color: var(--mcl-ios-blue) !important;
     color: rgb(0, 122, 255) !important;
 }
 
 .callout[data-callout-metadata*="color-green"] {
     background-color: rgba(52, 199, 89, 0.2) !important;
-    border-color: rgb(52, 199, 89) !important;
+    border-color: var(--mcl-ios-green) !important;
     color: rgb(52, 199, 89) !important;
 }
 
 .callout[data-callout-metadata*="color-orange"] {
     background-color: rgba(255, 149, 0, 0.2) !important;
-    border-color: rgb(255, 149, 0) !important;
+    border-color: var(--mcl-ios-orange) !important;
     color: rgb(255, 149, 0) !important;
 }
 
 .callout[data-callout-metadata*="color-purple"] {
     background-color: rgba(175, 82, 222, 0.2) !important;
-    border-color: rgb(175, 82, 222) !important;
+    border-color: var(--mcl-ios-purple) !important;
     color: rgb(175, 82, 222) !important;
 }
 

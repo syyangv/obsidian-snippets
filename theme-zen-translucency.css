@@ -1,5 +1,5 @@
-/* Zen Theme Translucency Enhancement */
-/* Save this as a CSS snippet in Obsidian: Settings > Appearance > CSS snippets */
+/* Universal Theme Translucency Enhancement */
+/* Works with any Obsidian theme - Save this as a CSS snippet in Obsidian: Settings > Appearance > CSS snippets */
 /*Customization options:
 
 Less transparent: Change 0.75 to 0.85 or 0.9 for more opacity
@@ -24,7 +24,7 @@ Blur intensity: Adjust blur(10px) values - higher numbers = more blur*/
 /* Sidebar translucency */
 .workspace-split.mod-left-split,
 .workspace-split.mod-right-split {
-  background-color: rgba(var(--background-secondary-rgb), 0.8) !important;
+  background-color: rgba(var(--background-secondary-rgb), 0.5) !important;
   backdrop-filter: blur(12px);
 }
 
@@ -36,7 +36,7 @@ Blur intensity: Adjust blur(10px) values - higher numbers = more blur*/
 .workspace-leaf-content[data-type="starred"],
 .workspace-leaf-content[data-type="tag"],
 .workspace-leaf-content[data-type="outline"] {
-  background-color: rgba(var(--background-secondary-rgb), 0.7) !important;
+  background-color: rgba(var(--background-secondary-rgb), 0.5) !important;
 }
 
 /* Title bar translucency (macOS) */
@@ -69,7 +69,7 @@ Blur intensity: Adjust blur(10px) values - higher numbers = more blur*/
 .modal,
 .suggestion-container,
 .menu {
-  background-color: rgba(var(--background-primary-rgb), 0.9) !important;
+  background-color: rgba(var(--background-primary-rgb), 0.5) !important;
   backdrop-filter: blur(15px);
   border: 1px solid rgba(var(--background-modifier-border-rgb), 0.3);
 }

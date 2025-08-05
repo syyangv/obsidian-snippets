@@ -1,0 +1,28 @@
+/* Hide Completed Tasks CSS Class */
+/* Apply this to specific notes by adding "cssclasses: hide-completed-tasks" to the note's frontmatter */
+
+.hide-completed-tasks .task-list-item[data-task="x"],
+.hide-completed-tasks li[data-task="x"],
+.hide-completed-tasks .HyperMD-task-line[data-task="x"],
+.hide-completed-tasks .cm-line .task-list-item[data-task="x"] {
+    display: none !important;
+}
+
+/* Also hide completed tasks with checkmark unicode */
+.hide-completed-tasks .task-list-item:has(input[type="checkbox"]:checked),
+.hide-completed-tasks li:has(input[type="checkbox"]:checked) {
+    display: none !important;
+}
+
+/* Hide completed tasks in reading view */
+.hide-completed-tasks .markdown-reading-view .task-list-item[data-task="x"],
+.hide-completed-tasks .markdown-reading-view li[data-task="x"] {
+    display: none !important;
+}
+
+/* Hide completed tasks in editing view */
+.hide-completed-tasks .markdown-source-view .task-list-item[data-task="x"],
+.hide-completed-tasks .markdown-source-view li[data-task="x"],
+.hide-completed-tasks .cm-editor .task-list-item[data-task="x"] {
+    display: none !important;
+}
