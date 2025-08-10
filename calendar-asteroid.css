@@ -8,12 +8,13 @@
   align-items: center;
   max-width: 100%;
   margin: 0 auto;
-  background: linear-gradient(135deg, #F4E4C1 0%, #E8D5B7 100%);
-  padding: 30px;
+  background: linear-gradient(135deg, #F4E4C1 0%, #E8D5B7 50%, #D2B48C 100%);
+  padding: 44px;
   border-radius: 0px;
-  box-shadow: 0 8px 32px rgba(255, 165, 79, 0.15);
+  box-shadow: 0 12px 48px rgba(255, 165, 79, 0.18), 0 4px 16px rgba(255, 165, 79, 0.12);
   position: relative;
-  border: 3px solid #FF7D00;
+  border: 4px solid #FF7D00;
+  min-height: 740px;
 }
 
 /* Movie background image overlay */
@@ -38,16 +39,18 @@
 .asteroid-title {
   font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace !important;
   font-weight: 700 !important;
-  color: #8B4513 !important;
-  margin-bottom: 30px !important;
-  font-size: 2.2em !important;
+  color: #654321 !important;
+  margin-bottom: 42px !important;
+  font-size: 2.8em !important;
   text-transform: uppercase !important;
-  letter-spacing: 6px !important;
+  letter-spacing: 8px !important;
   text-align: center;
   position: relative;
   z-index: 1;
-  text-shadow: 2px 2px 4px rgba(255, 165, 79, 0.3);
-  font-stretch: condensed;
+  text-shadow: 3px 3px 8px rgba(255, 165, 79, 0.25), 0 0 16px rgba(255, 125, 0, 0.4);
+  font-stretch: normal;
+  line-height: 1.1;
+  margin-top: 8px;
 }
 
 .asteroid-title::after {
@@ -64,28 +67,29 @@
 /* Summary section */
 .asteroid-summary {
   display: flex;
-  gap: 16px;
-  margin-bottom: 38px;
-  width: 750px;
+  gap: 20px;
+  margin-bottom: 46px;
+  width: 880px;
+  max-width: 100%;
   z-index: 1;
   position: relative;
 }
 
 /* Summary cards */
 .asteroid-summary-card {
-  padding: 26px 20px;
-  border-radius: 0px;
-  border: 2px solid;
-  box-shadow: 0 4px 16px rgba(255, 165, 79, 0.1);
-  transition: all 0.2s ease;
+  padding: 30px 24px;
+  border-radius: 2px;
+  border: 3px solid;
+  box-shadow: 0 6px 24px rgba(255, 165, 79, 0.12), 0 2px 8px rgba(255, 165, 79, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   flex: 1;
   position: relative;
-  background: rgba(255, 248, 240, 0.95);
-  min-height: 100px;
+  background: rgba(255, 248, 240, 0.96);
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
 }
 
 .asteroid-summary-card::before {
@@ -99,9 +103,10 @@
 }
 
 .asteroid-summary-card:hover {
-  box-shadow: 0 6px 20px rgba(255, 165, 79, 0.2) !important;
-  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255, 165, 79, 0.18), 0 4px 12px rgba(255, 165, 79, 0.12) !important;
+  transform: translateY(-4px);
   border-color: var(--card-accent-color) !important;
+  background: rgba(255, 248, 240, 0.98);
 }
 
 /* Card header */
@@ -114,44 +119,50 @@
 
 /* Card atom */
 .asteroid-card-star {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   background: currentColor;
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   opacity: 0.9;
+  box-shadow: 0 1px 3px rgba(255, 165, 79, 0.2);
 }
 
 /* Card label - Courier monospace */
 .asteroid-card-label {
   font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
-  font-size: 0.65em;
+  font-size: 0.6em;
   color: #8B4513;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 2px rgba(255, 248, 240, 0.8);
 }
 
 /* Card count - Courier monospace */
 .asteroid-card-count {
   font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
-  font-size: 2.2em;
-  font-weight: 700;
+  font-size: 2.6em;
+  font-weight: 400;
   color: #654321;
   margin-top: auto;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(255, 165, 79, 0.15), 0 0 8px rgba(255, 125, 0, 0.2);
 }
 
 /* Calendar grid */
 .asteroid-calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 3px;
-  width: 750px;
+  gap: 4px;
+  width: 880px;
+  max-width: 100%;
   font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
-  background: #D2B48C;
-  border: 3px solid #FF7D00;
-  border-radius: 0px;
+  background: linear-gradient(135deg, #D2B48C, #C8A882);
+  border: 4px solid #FF7D00;
+  border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 6px 24px rgba(255, 165, 79, 0.2);
+  box-shadow: 0 10px 36px rgba(255, 165, 79, 0.2), 0 4px 16px rgba(255, 165, 79, 0.15);
   z-index: 1;
   position: relative;
 }
@@ -160,21 +171,22 @@
 .asteroid-day-header {
   background: linear-gradient(135deg, #FF7D00, #E6A157);
   color: #FFFFFF;
-  padding: 16px 8px;
+  padding: 20px 8px;
   text-align: center;
   font-weight: 700;
-  font-size: 0.6em;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 0.55em;
+  letter-spacing: 2.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
 }
 
 /* Day cells */
 .asteroid-day-cell {
-  padding: 10px 8px;
-  min-height: 88px;
+  padding: 14px 12px;
+  min-height: 100px;
   position: relative;
-  transition: all 0.2s ease;
-  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 165, 79, 0.1);
 }
 
 .asteroid-day-cell:hover {
@@ -205,18 +217,20 @@
 /* Day numbers - Courier monospace */
 .asteroid-day-number {
   font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
-  font-size: 1.2em;
-  font-weight: 700;
+  font-size: 1.35em;
+  font-weight: 600;
   margin-bottom: 0;
   position: absolute;
-  top: 8px;
-  left: 10px;
+  top: 12px;
+  left: 14px;
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
-  padding: 3px 6px;
-  border-radius: 0px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 4px 8px;
+  border-radius: 2px;
   display: inline-block;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(255, 165, 79, 0.3);
 }
 
 .asteroid-day-number:hover {
@@ -261,18 +275,19 @@ a.asteroid-day-number:hover {
 
 /* Activity stars with atomic aesthetic */
 .asteroid-activity-star {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: #FF7D00; /* Default fallback color */
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   opacity: 0.9;
-  transition: transform 0.2s ease;
-  box-shadow: 0 1px 3px rgba(255, 165, 79, 0.3);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(255, 165, 79, 0.25), 0 1px 2px rgba(255, 165, 79, 0.15);
 }
 
 .asteroid-activity-star:hover {
-  transform: scale(1.3) rotate(360deg);
-  transition: transform 0.3s ease;
+  transform: scale(1.4) rotate(360deg);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 3px 6px rgba(255, 165, 79, 0.3), 0 1px 3px rgba(255, 165, 79, 0.2);
 }
 
 /* Tag-specific styles for Asteroid City movie palette */

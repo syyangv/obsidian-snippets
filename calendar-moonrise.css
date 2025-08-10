@@ -2,7 +2,7 @@
 
 /* Main container with scout camp background */
 .moonrise-calendar {
-  font-family: Arial, sans-serif;
+  font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,10 +16,10 @@
   background-attachment: fixed;
   /* Overlay for readability */
   position: relative;
-  padding: 32px;
-  border-radius: 12px;
-  min-height: 600px;
-  box-shadow: 0 4px 16px rgba(139, 69, 19, 0.15);
+  padding: 40px;
+  border-radius: 16px;
+  min-height: 700px;
+  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.2), 0 2px 8px rgba(139, 69, 19, 0.1);
 }
 
 /* Warm, vintage overlay to ensure text readability */
@@ -49,19 +49,21 @@
 /* Month title with clear background */
 .moonrise-title {
   font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif !important;
-  font-weight: 700 !important;
-  color: #8B4513 !important;
-  margin-bottom: 24px !important;
-  font-size: 1.6em !important;
+  font-weight: 600 !important;
+  color: #5D4037 !important;
+  margin-bottom: 36px !important;
+  font-size: 2.4em !important;
   text-transform: uppercase !important;
-  letter-spacing: 2px !important;
+  letter-spacing: 3px !important;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3), 0 0 8px rgba(255, 248, 240, 0.9);
-  background: transparent !important;
-  padding: 16px 24px;
+  text-shadow: 2px 2px 8px rgba(139, 69, 19, 0.2), 0 0 16px rgba(255, 248, 240, 0.8);
+  background: rgba(254, 252, 248, 0.15) !important;
+  padding: 24px 32px;
   border: none !important;
   position: relative;
-  backdrop-filter: none !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 12px;
+  margin-top: 8px;
 }
 
 /* Remove camp emoji */
@@ -72,29 +74,34 @@
 /* Summary section */
 .moonrise-summary {
   display: flex;
-  gap: 12px;
-  margin-bottom: 32px;
-  width: 700px;
+  gap: 16px;
+  margin-bottom: 40px;
+  width: 800px;
+  max-width: 100%;
 }
 
 /* Summary cards with vintage scout aesthetic */
 .moonrise-summary-card {
-  padding: 20px;
-  border-radius: 8px;
-  backdrop-filter: blur(3px);
-  background: rgba(254, 252, 248, 0.3) !important;
-  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  transition: all 0.3s ease;
+  padding: 24px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  background: rgba(254, 252, 248, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(139, 69, 19, 0.12), 0 1px 4px rgba(139, 69, 19, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex: 1;
-  border: 1px solid rgba(212, 165, 116, 0.3);
+  border: 1.5px solid rgba(212, 165, 116, 0.25);
   position: relative;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .moonrise-summary-card:hover {
-  background: rgba(254, 252, 248, 0.4) !important;
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.25) !important;
-  transform: translateY(-2px) rotate(0.5deg);
-  border-color: rgba(212, 165, 116, 0.6);
+  background: rgba(254, 252, 248, 0.55) !important;
+  box-shadow: 0 8px 24px rgba(139, 69, 19, 0.18), 0 2px 8px rgba(139, 69, 19, 0.12) !important;
+  transform: translateY(-4px) rotate(0.3deg);
+  border-color: rgba(212, 165, 116, 0.5);
 }
 
 /* Card header */
@@ -117,49 +124,54 @@
 /* Card label with enhanced readability */
 .moonrise-card-label {
   font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
-  font-size: 0.75em;
+  font-size: 0.7em;
   color: #8B4513;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(255, 248, 240, 0.8);
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 3px rgba(255, 248, 240, 0.9);
+  margin-bottom: 4px;
 }
 
 /* Card count with enhanced visibility */
 .moonrise-card-count {
   font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
-  font-size: 1.8em;
-  font-weight: 400;
+  font-size: 2.2em;
+  font-weight: 300;
   color: #5D4037;
-  text-shadow: 2px 2px 4px rgba(255, 248, 240, 0.9), 0 0 6px rgba(255, 255, 255, 0.7);
+  text-shadow: 2px 2px 6px rgba(255, 248, 240, 0.9), 0 0 8px rgba(255, 255, 255, 0.6);
+  line-height: 1.1;
+  margin-top: auto;
 }
 
 /* Calendar grid with vintage camp aesthetic */
 .moonrise-calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 1px;
-  width: 700px;
+  gap: 2px;
+  width: 800px;
+  max-width: 100%;
   font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
-  background: rgba(232, 213, 183, 0.9);
-  border: 2px solid #D4A574;
-  border-radius: 8px;
+  background: rgba(232, 213, 183, 0.95);
+  border: 3px solid #D4A574;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
-  backdrop-filter: blur(3px);
+  box-shadow: 0 8px 24px rgba(139, 69, 19, 0.15), 0 2px 8px rgba(139, 69, 19, 0.1);
+  backdrop-filter: blur(6px);
 }
 
 /* Day headers with scout badge styling */
 .moonrise-day-header {
   background: linear-gradient(135deg, #D4A574, #C4956A);
   color: #5D4037;
-  padding: 12px 8px;
+  padding: 16px 8px;
   text-align: center;
-  font-weight: 600;
-  font-size: 0.7em;
-  letter-spacing: 1px;
-  border-bottom: 1px solid #E8D5B7;
-  text-shadow: 1px 1px 2px rgba(255, 248, 240, 0.7);
+  font-weight: 700;
+  font-size: 0.65em;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid #E8D5B7;
+  text-shadow: 1px 1px 3px rgba(255, 248, 240, 0.8);
+  text-transform: uppercase;
 }
 
 .moonrise-day-header.weekend {
@@ -173,11 +185,12 @@
 
 /* Day cells with enhanced camp aesthetic */
 .moonrise-day-cell {
-  padding: 8px;
-  min-height: 80px;
+  padding: 12px 10px;
+  min-height: 90px;
   position: relative;
-  transition: all 0.2s ease;
-  backdrop-filter: blur(1px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(212, 165, 116, 0.1);
 }
 
 .moonrise-day-cell:hover {
@@ -209,19 +222,20 @@
 /* Day numbers with scout handbook styling */
 .moonrise-day-number {
   font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
-  font-size: 1.1em;
-  font-weight: 500;
+  font-size: 1.2em;
+  font-weight: 600;
   margin-bottom: 0;
   position: absolute;
-  top: 6px;
-  left: 8px;
+  top: 8px;
+  left: 10px;
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
-  padding: 2px 4px;
-  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 4px 6px;
+  border-radius: 6px;
   display: inline-block;
-  text-shadow: 1px 1px 2px rgba(255, 248, 240, 0.8);
+  text-shadow: 1px 1px 3px rgba(255, 248, 240, 0.9);
+  line-height: 1;
 }
 
 .moonrise-day-number:hover {
