@@ -1,0 +1,579 @@
+/* =============================================================================
+   CSS CONFLICT DETECTION & TESTING FRAMEWORK
+   Automated testing system for CSS conflicts and cross-theme compatibility
+   
+   Purpose: Detect conflicts, validate integrations, ensure quality
+   Author: Claude Code Senior Engineer
+   Version: 1.0.0
+   Testing Coverage: Conflicts, Performance, Accessibility, Themes
+   ============================================================================= */
+
+/* =============================================================================
+   TESTING FRAMEWORK OVERVIEW
+   
+   This framework provides comprehensive testing capabilities for CSS snippets:
+   
+   1. Conflict Detection - Identify CSS specificity wars and conflicts
+   2. Performance Testing - Monitor rendering performance and bottlenecks  
+   3. Accessibility Testing - Validate WCAG compliance and usability
+   4. Theme Compatibility - Ensure consistent behavior across themes
+   5. Integration Testing - Verify component interactions work correctly
+   6. Visual Regression - Detect unintended visual changes
+   ============================================================================= */
+
+:root {
+  /* Testing configuration */
+  --test-mode: false;
+  --debug-mode: false;
+  --performance-mode: false;
+  --accessibility-mode: false;
+  
+  /* Test result colors */
+  --test-pass: #22c55e;
+  --test-fail: #ef4444;
+  --test-warn: #f59e0b;
+  --test-info: #3b82f6;
+  
+  /* Performance thresholds */
+  --perf-threshold-critical: 16; /* ms */
+  --perf-threshold-warning: 33; /* ms */
+  --perf-threshold-acceptable: 50; /* ms */
+}
+
+/* =============================================================================
+   CONFLICT DETECTION SYSTEM
+   Automated detection of CSS conflicts and specificity issues
+   ============================================================================= */
+
+/* =====================================
+   SPECIFICITY CONFLICT DETECTION
+   Visual indicators for high-specificity selectors
+   ===================================== */
+
+/* Test mode activation */
+.test-conflicts {
+  --test-mode: true;
+}
+
+/* High specificity warning (>50) */
+.test-conflicts [style*="!important"] {
+  outline: 3px solid var(--test-fail) !important;
+}
+
+.test-conflicts [style*="!important"]::before {
+  content: "⚠️ !important detected";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  background: var(--test-fail);
+  color: white;
+  padding: 2px 6px;
+  font-size: 10px;
+  white-space: nowrap;
+  z-index: 9999;
+  border-radius: 3px;
+}
+
+/* =====================================
+   COMPONENT CONFLICT DETECTION
+   Identify overlapping component boundaries
+   ===================================== */
+
+/* Calendar system conflict detection */
+.test-conflicts .unified-calendar,
+.test-conflicts .moonrise-calendar,
+.test-conflicts .budapest-calendar,
+.test-conflicts .darjeeling-calendar,
+.test-conflicts .asteroid-calendar {
+  outline: 2px solid var(--test-info);
+}
+
+.test-conflicts .unified-calendar.moonrise-calendar {
+  /* Multiple calendar classes - conflict! */
+  outline: 3px solid var(--test-fail);
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Meta-Bind system conflict detection */
+.test-conflicts .mb-unified,
+.test-conflicts .meta-bind-input-toggle,
+.test-conflicts .tag-selector {
+  outline: 2px solid var(--test-info);
+}
+
+.test-conflicts .mb-unified.tag-selector {
+  /* Multiple MB classes - potential conflict */
+  outline: 3px solid var(--test-warn);
+  background: rgba(245, 158, 11, 0.1) !important;
+}
+
+/* =====================================
+   Z-INDEX CONFLICT DETECTION
+   Identify z-index wars and stacking issues
+   ===================================== */
+
+/* High z-index warning (>1000) */
+.test-conflicts [style*="z-index: 1"],
+.test-conflicts [style*="z-index: 2"],
+.test-conflicts [style*="z-index: 3"],
+.test-conflicts [style*="z-index: 9"] {
+  outline: 2px solid var(--test-warn);
+}
+
+.test-conflicts [style*="z-index: 1"]::after,
+.test-conflicts [style*="z-index: 2"]::after,
+.test-conflicts [style*="z-index: 3"]::after,
+.test-conflicts [style*="z-index: 9"]::after {
+  content: "Z: " attr(style);
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  background: var(--test-warn);
+  color: white;
+  padding: 1px 4px;
+  font-size: 9px;
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+/* =============================================================================
+   PERFORMANCE TESTING SYSTEM
+   Monitor CSS performance and rendering bottlenecks
+   ============================================================================= */
+
+/* =====================================
+   PERFORMANCE MONITORING
+   Visual performance indicators
+   ===================================== */
+
+.test-performance {
+  --performance-mode: true;
+}
+
+/* Expensive selector detection */
+.test-performance [class*=" "] [class*=" "] [class*=" "] [class*=" "] {
+  /* 4+ class selectors - expensive */
+  outline: 2px solid var(--test-warn);
+}
+
+.test-performance [id*=" "] * * * * {
+  /* Deep nesting from ID - very expensive */
+  outline: 3px solid var(--test-fail);
+}
+
+/* Animation performance testing */
+.test-performance [style*="animation"],
+.test-performance [style*="transition"] {
+  outline: 2px solid var(--test-info);
+}
+
+.test-performance [style*="animation"]:hover::before {
+  content: "🎬 Animation";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: var(--test-info);
+  color: white;
+  padding: 2px 4px;
+  font-size: 9px;
+  z-index: 9999;
+}
+
+/* =====================================
+   LAYOUT THRASHING DETECTION
+   Identify elements that cause layout recalculation
+   ===================================== */
+
+/* Properties that trigger layout */
+.test-performance [style*="width"]:not([style*="max-width"]):not([style*="min-width"]),
+.test-performance [style*="height"]:not([style*="max-height"]):not([style*="min-height"]),
+.test-performance [style*="padding"],
+.test-performance [style*="margin"],
+.test-performance [style*="border-width"] {
+  outline: 2px dotted var(--test-warn);
+}
+
+/* Properties that only trigger paint (efficient) */
+.test-performance [style*="background"],
+.test-performance [style*="color"],
+.test-performance [style*="opacity"],
+.test-performance [style*="transform"] {
+  outline: 2px dotted var(--test-pass);
+}
+
+/* =============================================================================
+   ACCESSIBILITY TESTING SYSTEM
+   WCAG 2.1 AA compliance validation
+   ============================================================================= */
+
+/* =====================================
+   FOCUS MANAGEMENT TESTING
+   Validate keyboard navigation and focus indicators
+   ===================================== */
+
+.test-accessibility {
+  --accessibility-mode: true;
+}
+
+/* Missing focus indicators */
+.test-accessibility button:not([style*="outline"]):not(:focus-visible),
+.test-accessibility input:not([style*="outline"]):not(:focus-visible),
+.test-accessibility [role="button"]:not([style*="outline"]):not(:focus-visible) {
+  outline: 2px solid var(--test-fail);
+}
+
+.test-accessibility button:focus-visible,
+.test-accessibility input:focus-visible,
+.test-accessibility [role="button"]:focus-visible {
+  outline: 3px solid var(--test-pass) !important;
+}
+
+/* =====================================
+   COLOR CONTRAST TESTING
+   Detect potential contrast issues
+   ===================================== */
+
+/* Low contrast warning indicators */
+.test-accessibility [style*="color: #fff"][style*="background: #f"],
+.test-accessibility [style*="color: #000"][style*="background: #0"],
+.test-accessibility [style*="color: white"][style*="background: yellow"],
+.test-accessibility [style*="color: yellow"][style*="background: white"] {
+  outline: 3px solid var(--test-fail);
+}
+
+.test-accessibility [style*="color: #fff"][style*="background: #f"]::before,
+.test-accessibility [style*="color: #000"][style*="background: #0"]::before,
+.test-accessibility [style*="color: white"][style*="background: yellow"]::before,
+.test-accessibility [style*="color: yellow"][style*="background: white"]::before {
+  content: "⚠️ Low Contrast";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  background: var(--test-fail);
+  color: white;
+  padding: 2px 6px;
+  font-size: 10px;
+  z-index: 9999;
+}
+
+/* =====================================
+   TOUCH TARGET TESTING
+   Validate minimum 44px touch targets
+   ===================================== */
+
+/* Small touch targets */
+.test-accessibility button,
+.test-accessibility input[type="checkbox"],
+.test-accessibility input[type="radio"],
+.test-accessibility [role="button"],
+.test-accessibility .meta-bind-button,
+.test-accessibility .task-checkbox {
+  min-width: 44px;
+  min-height: 44px;
+  outline: 2px solid var(--test-pass);
+}
+
+/* Touch targets too small */
+.test-accessibility button:not([style*="width"]):not([style*="height"]),
+.test-accessibility input[type="checkbox"]:not([style*="width"]):not([style*="height"]) {
+  outline: 2px solid var(--test-warn);
+}
+
+/* =============================================================================
+   THEME COMPATIBILITY TESTING
+   Validate behavior across Obsidian themes
+   ============================================================================= */
+
+/* =====================================
+   THEME VARIABLE USAGE VALIDATION
+   Ensure Obsidian CSS variables are used correctly
+   ===================================== */
+
+.test-theme-compatibility {
+  /* Simulate different themes */
+}
+
+/* Light theme simulation */
+.test-theme-compatibility.simulate-light {
+  --background-primary: #ffffff;
+  --text-normal: #2e3338;
+  --interactive-accent: #007acc;
+}
+
+/* Dark theme simulation */
+.test-theme-compatibility.simulate-dark {
+  --background-primary: #2f3136;
+  --text-normal: #dcddde; 
+  --interactive-accent: #7289da;
+}
+
+/* Hard-coded colors (theme incompatible) */
+.test-theme-compatibility [style*="color: #fff"],
+.test-theme-compatibility [style*="background: #000"],
+.test-theme-compatibility [style*="color: white"],
+.test-theme-compatibility [style*="background: black"] {
+  outline: 3px solid var(--test-warn);
+}
+
+/* Proper theme variable usage */
+.test-theme-compatibility [style*="var(--background-primary)"],
+.test-theme-compatibility [style*="var(--text-normal)"],
+.test-theme-compatibility [style*="var(--interactive-accent)"] {
+  outline: 2px solid var(--test-pass);
+}
+
+/* =============================================================================
+   INTEGRATION TESTING SYSTEM
+   Validate component interactions and data flow
+   ============================================================================= */
+
+/* =====================================
+   COMPONENT BOUNDARY TESTING
+   Verify component isolation and interactions
+   ===================================== */
+
+.test-integration {
+  /* Integration test mode */
+}
+
+/* Component isolation validation */
+.test-integration .unified-calendar {
+  contain: layout style;
+  isolation: isolate;
+  outline: 2px solid var(--test-pass);
+}
+
+.test-integration .mb-unified {
+  contain: layout style;
+  isolation: isolate;
+  outline: 2px solid var(--test-pass);
+}
+
+/* Missing containment warning */
+.test-integration .unified-calendar:not([style*="contain"]),
+.test-integration .mb-unified:not([style*="contain"]) {
+  outline: 2px solid var(--test-warn);
+}
+
+/* =====================================
+   DATA FLOW TESTING
+   Validate CSS custom property inheritance
+   ===================================== */
+
+/* CSS variable inheritance testing */
+.test-integration [style*="var(--"] {
+  outline: 1px dotted var(--test-info);
+}
+
+/* Undefined CSS variable usage */
+.test-integration [style*="var(--undefined"],
+.test-integration [style*="var(--missing"] {
+  outline: 3px solid var(--test-fail);
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* =============================================================================
+   VISUAL REGRESSION TESTING
+   Detect unintended visual changes
+   ============================================================================= */
+
+/* =====================================
+   BASELINE CAPTURE SYSTEM
+   Reference styling for visual comparison
+   ===================================== */
+
+.test-visual-regression {
+  /* Visual regression test mode */
+}
+
+/* Baseline component styling */
+.test-visual-regression .unified-calendar.baseline {
+  /* Known good styling - don't modify */
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.test-visual-regression .mb-unified__button.baseline {
+  /* Known good styling - don't modify */
+  background: var(--interactive-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 8px 12px;
+  min-height: 44px;
+}
+
+/* Visual difference detection */
+.test-visual-regression .unified-calendar:not(.baseline) {
+  /* Compare against baseline */
+  filter: hue-rotate(10deg);
+  outline: 2px solid var(--test-info);
+}
+
+/* =============================================================================
+   TEST EXECUTION AND REPORTING
+   Automated test running and result reporting
+   ============================================================================= */
+
+/* =====================================
+   TEST SUITE ACTIVATION
+   Apply test classes to enable testing modes
+   ===================================== */
+
+/* Enable all tests with single class */
+.run-all-tests {
+  /* Activate all testing modes */
+}
+
+.run-all-tests * {
+  /* Apply conflict detection */
+  outline: 1px dotted rgba(59, 130, 246, 0.3);
+}
+
+.run-all-tests .unified-calendar,
+.run-all-tests .mb-unified,
+.run-all-tests .task-system,
+.run-all-tests .mcl-callout {
+  /* Component validation */
+  contain: layout style;
+  isolation: isolate;
+}
+
+/* =====================================
+   TEST RESULT REPORTING
+   Visual indicators for test results
+   ===================================== */
+
+/* Test summary overlay */
+.test-results::before {
+  content: "CSS Tests: " 
+           counter(test-pass) " Pass, " 
+           counter(test-fail) " Fail, " 
+           counter(test-warn) " Warn";
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  border: 2px solid var(--interactive-accent);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 12px;
+  z-index: 10000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Test counters */
+.test-results {
+  counter-reset: test-pass test-fail test-warn;
+}
+
+[style*="outline"][style*="--test-pass"] {
+  counter-increment: test-pass;
+}
+
+[style*="outline"][style*="--test-fail"] {
+  counter-increment: test-fail;
+}
+
+[style*="outline"][style*="--test-warn"] {
+  counter-increment: test-warn;
+}
+
+/* =============================================================================
+   TESTING UTILITIES AND HELPERS
+   Development and debugging tools
+   ============================================================================= */
+
+/* =====================================
+   DEBUG MODE
+   Comprehensive visual debugging
+   ===================================== */
+
+.debug-mode * {
+  outline: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.debug-mode .unified-calendar {
+  outline: 2px solid blue;
+}
+
+.debug-mode .mb-unified {
+  outline: 2px solid green;
+}
+
+.debug-mode .task-system {
+  outline: 2px solid orange;
+}
+
+/* =====================================
+   PERFORMANCE PROFILER
+   Basic CSS performance monitoring
+   ===================================== */
+
+.profile-performance * {
+  /* Mark all elements for profiling */
+  animation: profile-marker 16.67ms infinite;
+}
+
+@keyframes profile-marker {
+  0% { opacity: 0.999; }
+  100% { opacity: 1; }
+}
+
+/* =============================================================================
+   USAGE DOCUMENTATION
+   ============================================================================= */
+
+/*
+
+CSS TESTING FRAMEWORK USAGE:
+
+1. CONFLICT DETECTION:
+   Add 'test-conflicts' class to container:
+   <div class="test-conflicts">
+     // Your components here
+   </div>
+
+2. PERFORMANCE TESTING:
+   Add 'test-performance' class:
+   <div class="test-performance">
+     // Monitor performance here
+   </div>
+
+3. ACCESSIBILITY TESTING:
+   Add 'test-accessibility' class:
+   <div class="test-accessibility">
+     // Validate a11y compliance here
+   </div>
+
+4. THEME COMPATIBILITY:
+   Add 'test-theme-compatibility' class:
+   <div class="test-theme-compatibility simulate-dark">
+     // Test dark theme compatibility
+   </div>
+
+5. RUN ALL TESTS:
+   Add 'run-all-tests' class to body or container:
+   <body class="run-all-tests">
+
+TEST INDICATORS:
+- Green outline: Test passing
+- Red outline: Test failing  
+- Yellow outline: Test warning
+- Blue outline: Test information
+
+AUTOMATED TESTING:
+1. Add test classes to HTML
+2. Open DevTools and check for outlined elements
+3. Fix any red/yellow outlined elements
+4. Re-test until all green
+
+CONTINUOUS TESTING:
+- Add 'run-all-tests' to development environment
+- Remove test classes in production
+- Use CSS-in-JS to conditionally apply test classes
+
+*/

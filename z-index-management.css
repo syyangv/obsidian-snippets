@@ -1,0 +1,436 @@
+/* =============================================================================
+   Z-INDEX MANAGEMENT SYSTEM
+   Centralized layering system to prevent z-index conflicts across snippets
+   
+   Architecture: Semantic z-index values with clear hierarchy
+   Purpose: Eliminate z-index wars and ensure proper layering
+   Author: Claude Code Senior Engineer  
+   Version: 1.0.0
+   ============================================================================= */
+
+/* =============================================================================
+   Z-INDEX ARCHITECTURE OVERVIEW
+   
+   This system establishes a clear hierarchy of z-index values to prevent
+   conflicts between different UI components across all CSS snippets.
+   
+   Layer Structure:
+   - Base Content: 0-9 (default document flow)
+   - Interactive Elements: 10-99 (buttons, hover effects, transitions)
+   - UI Components: 100-999 (dropdowns, tooltips, calendar overlays)
+   - Navigation: 1000-1999 (menus, sidebars, mobile navigation)
+   - Modals & Overlays: 2000-2999 (dialogs, lightboxes, full-screen overlays)
+   - Critical System: 3000+ (emergency notifications, system alerts)
+   ============================================================================= */
+
+:root {
+  /* =================================================================
+     BASE LAYER (0-9)
+     Standard document flow and basic content
+     ================================================================= */
+  --z-base-content: 0;
+  --z-base-background: -1;
+  --z-base-decoration: 1;
+  
+  /* =================================================================
+     INTERACTIVE LAYER (10-99)  
+     Interactive elements, hover effects, transitions
+     ================================================================= */
+  --z-interactive-hover: 10;
+  --z-interactive-focus: 15;
+  --z-interactive-active: 20;
+  --z-interactive-transition: 25;
+  
+  /* Calendar activity indicators */
+  --z-calendar-activity-dot: 30;
+  --z-calendar-activity-hover: 35;
+  
+  /* Meta-Bind toggles and buttons */
+  --z-metabind-toggle: 40;
+  --z-metabind-button: 45;
+  --z-metabind-active: 50;
+  
+  /* Task status indicators */
+  --z-task-checkbox: 55;
+  --z-task-progress: 60;
+  
+  /* =================================================================
+     UI COMPONENTS LAYER (100-999)
+     Dropdowns, tooltips, calendar overlays, complex components
+     ================================================================= */
+  --z-tooltip: 100;
+  --z-dropdown: 150;
+  --z-calendar-popup: 200;
+  --z-tag-selector-panel: 250;
+  --z-progress-widget: 300;
+  --z-dashboard-card: 350;
+  --z-mcl-callout-hover: 400;
+  --z-timeline-overlay: 450;
+  --z-gallery-zoom: 500;
+  --z-mermaid-overlay: 550;
+  
+  /* =================================================================
+     NAVIGATION LAYER (1000-1999)
+     Menus, sidebars, navigation elements
+     ================================================================= */
+  --z-sidebar-toggle: 1000;
+  --z-sidebar-panel: 1100;
+  --z-navigation-menu: 1200;
+  --z-mobile-nav: 1300;
+  --z-breadcrumb-dropdown: 1400;
+  
+  /* =================================================================
+     MODAL & OVERLAY LAYER (2000-2999)
+     Dialogs, lightboxes, full-screen overlays
+     ================================================================= */
+  --z-modal-backdrop: 2000;
+  --z-modal-content: 2100;
+  --z-lightbox-backdrop: 2200;
+  --z-lightbox-content: 2300;
+  --z-fullscreen-overlay: 2400;
+  --z-image-preview: 2500;
+  
+  /* =================================================================
+     CRITICAL SYSTEM LAYER (3000+)
+     Emergency notifications, system alerts, debugging
+     ================================================================= */
+  --z-notification: 3000;
+  --z-alert: 3100;
+  --z-debug-overlay: 3200;
+  --z-emergency-modal: 3300;
+  --z-system-critical: 9999;
+}
+
+/* =============================================================================
+   CALENDAR SYSTEM Z-INDEX MANAGEMENT
+   Proper layering for all calendar themes and components
+   ============================================================================= */
+
+/* Base calendar container */
+.unified-calendar,
+.moonrise-calendar,
+.budapest-calendar,
+.darjeeling-calendar,
+.asteroid-calendar {
+  z-index: var(--z-base-content);
+  position: relative;
+}
+
+/* Calendar activity indicators */
+.unified-calendar__activity,
+.moonrise-activity-dot,
+.budapest-activity-ornament,
+.darjeeling-activity-stripe,
+.asteroid-activity-star {
+  z-index: var(--z-calendar-activity-dot);
+  position: relative;
+}
+
+/* Calendar activity hover states */
+.unified-calendar__activity:hover,
+.moonrise-activity-dot:hover,
+.budapest-activity-ornament:hover,
+.darjeeling-activity-stripe:hover,
+.asteroid-activity-star:hover {
+  z-index: var(--z-calendar-activity-hover);
+}
+
+/* Calendar popup/tooltip overlays */
+.calendar-tooltip,
+.calendar-popup,
+.activity-details {
+  z-index: var(--z-calendar-popup);
+  position: absolute;
+}
+
+/* =============================================================================
+   META-BIND SYSTEM Z-INDEX MANAGEMENT
+   Proper layering for toggles, buttons, and tag selectors
+   ============================================================================= */
+
+/* Standard Meta-Bind toggles */
+.mb-input-type-toggle,
+.meta-bind-input-toggle {
+  z-index: var(--z-metabind-toggle);
+  position: relative;
+}
+
+/* Meta-Bind toggle handles/knobs */
+.mb-input-type-toggle input[type="checkbox"]::before {
+  z-index: var(--z-metabind-active);
+  position: absolute;
+}
+
+/* Tag selector buttons */
+.tag-selector .meta-bind-button {
+  z-index: var(--z-metabind-button);
+  position: relative;
+}
+
+/* Active tag selector buttons */
+.tag-selector .meta-bind-button[data-mb-active="true"] {
+  z-index: var(--z-metabind-active);
+}
+
+/* Tag selector panel */
+.tag-selector {
+  z-index: var(--z-tag-selector-panel);
+  position: relative;
+}
+
+/* =============================================================================
+   TASK MANAGEMENT Z-INDEX MANAGEMENT
+   Custom task statuses and progress indicators
+   ============================================================================= */
+
+/* Custom task checkboxes */
+.task-list-item .task-list-item-checkbox,
+input[type="checkbox"][data-task] {
+  z-index: var(--z-task-checkbox);
+  position: relative;
+}
+
+/* Task progress indicators */
+.task-progress,
+.tick-grid .tick-box {
+  z-index: var(--z-task-progress);
+  position: relative;
+}
+
+/* Year progress widgets */
+.year-progress-widget,
+.year-progress-sidebar {
+  z-index: var(--z-progress-widget);
+  position: relative;
+}
+
+/* =============================================================================
+   MCL MULTI-COLUMN LAYOUT Z-INDEX MANAGEMENT
+   Callouts, columns, and themed components
+   ============================================================================= */
+
+/* Base MCL callouts */
+.callout[data-callout-metadata] {
+  z-index: var(--z-base-content);
+  position: relative;
+}
+
+/* MCL callout hover effects */
+.callout[data-callout-metadata]:hover {
+  z-index: var(--z-mcl-callout-hover);
+}
+
+/* MCL gallery cards with zoom */
+.mcl-gallery-card {
+  z-index: var(--z-base-content);
+  position: relative;
+}
+
+.mcl-gallery-card.zoomed,
+.mcl-gallery-card:hover {
+  z-index: var(--z-gallery-zoom);
+}
+
+/* =============================================================================
+   DASHBOARD AND LAYOUT Z-INDEX MANAGEMENT
+   Dashboard cards, widgets, and layout components
+   ============================================================================= */
+
+/* Dashboard cards */
+.dashboard-card,
+.dashboard-widget {
+  z-index: var(--z-dashboard-card);
+  position: relative;
+}
+
+/* Dashboard navigation */
+.dashboard-nav,
+.dashboard-sidebar {
+  z-index: var(--z-navigation-menu);
+  position: relative;
+}
+
+/* Wide view layouts */
+.mcl-wide-view,
+.full-width-view {
+  z-index: var(--z-base-content);
+  position: relative;
+}
+
+/* =============================================================================
+   TIMELINE AND VISUALIZATION Z-INDEX MANAGEMENT
+   Timelines, Mermaid diagrams, and visual components
+   ============================================================================= */
+
+/* Timeline components */
+.timeline-callout,
+.timeline-item {
+  z-index: var(--z-base-content);
+  position: relative;
+}
+
+.timeline-overlay,
+.timeline-popup {
+  z-index: var(--z-timeline-overlay);
+  position: absolute;
+}
+
+/* Mermaid diagram overlays */
+.mermaid-container {
+  z-index: var(--z-base-content);
+  position: relative;
+}
+
+.mermaid-fullscreen {
+  z-index: var(--z-mermaid-overlay);
+  position: fixed;
+}
+
+/* =============================================================================
+   OBSIDIAN UI INTEGRATION
+   Proper layering with Obsidian's native UI elements
+   ============================================================================= */
+
+/* Sidebar toggle buttons */
+.sidebar-toggle-button {
+  z-index: var(--z-sidebar-toggle);
+}
+
+/* Modal containers */
+.modal-container,
+.modal {
+  z-index: var(--z-modal-backdrop);
+}
+
+.modal-content {
+  z-index: var(--z-modal-content);
+}
+
+/* Suggestion containers and menus */
+.suggestion-container,
+.menu {
+  z-index: var(--z-dropdown);
+}
+
+/* Edit block buttons */
+.edit-block-button {
+  z-index: var(--z-interactive-hover);
+  position: relative;
+}
+
+/* =============================================================================
+   THEME COMPATIBILITY
+   Ensure z-index works across all themes
+   ============================================================================= */
+
+/* Theme-specific overrides if needed */
+.theme-light .unified-calendar,
+.theme-dark .unified-calendar {
+  /* Inherit z-index from base system */
+}
+
+/* Zen theme compatibility */
+.theme-zen .modal,
+.theme-zen .sidebar-toggle-button {
+  /* Use system z-index values */
+  z-index: var(--z-modal-backdrop);
+}
+
+/* =============================================================================
+   RESPONSIVE Z-INDEX ADJUSTMENTS
+   Mobile-specific layering considerations
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  /* Mobile navigation gets higher priority */
+  .mobile-nav,
+  .hamburger-menu {
+    z-index: var(--z-mobile-nav);
+  }
+  
+  /* Reduce modal z-index on mobile to prevent conflicts */
+  .modal-container {
+    z-index: calc(var(--z-modal-backdrop) - 100);
+  }
+  
+  /* Calendar popups appear above mobile UI */
+  .calendar-popup {
+    z-index: var(--z-modal-content);
+  }
+}
+
+/* =============================================================================
+   DEBUGGING AND DEVELOPMENT
+   Visual helpers for z-index debugging
+   ============================================================================= */
+
+/* Uncomment for z-index debugging */
+/*
+[style*="z-index"] {
+  outline: 2px solid red !important;
+}
+
+[style*="z-index"]::before {
+  content: attr(style);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  white-space: nowrap;
+  z-index: 9998;
+}
+*/
+
+/* =============================================================================
+   CONFLICT PREVENTION
+   Rules to prevent z-index wars between snippets
+   ============================================================================= */
+
+/* Prevent accidental z-index inheritance */
+* {
+  /* Reset z-index inheritance where not intended */
+}
+
+/* Force consistent stacking context */
+.unified-calendar,
+.tag-selector,
+.mcl-multi-column-layout,
+.dashboard-container {
+  /* Create new stacking contexts to contain z-index values */
+  isolation: isolate;
+}
+
+/* =============================================================================
+   USAGE DOCUMENTATION
+   ============================================================================= */
+
+/*
+
+Z-INDEX USAGE GUIDELINES:
+
+1. Always use CSS custom properties (variables) instead of hard-coded values
+2. Choose the appropriate layer for your component:
+   - Base Content (0-9): Standard document flow
+   - Interactive (10-99): Hover effects, focus states
+   - UI Components (100-999): Tooltips, dropdowns
+   - Navigation (1000-1999): Menus, sidebars
+   - Modals (2000-2999): Overlays, dialogs
+   - Critical (3000+): Alerts, system messages
+
+3. Example usage:
+   .my-tooltip {
+     z-index: var(--z-tooltip);
+   }
+   
+   .my-dropdown:hover {
+     z-index: var(--z-dropdown);
+   }
+
+4. When adding new components, add appropriate variables to the :root section
+5. Test z-index behavior across different themes and screen sizes
+6. Use isolation: isolate to create new stacking contexts when needed
+
+*/

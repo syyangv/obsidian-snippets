@@ -1,0 +1,429 @@
+/* =============================================================================
+   MCL MULTI-COLUMN LAYOUT - OPTIMIZED VERSION
+   Refactored to eliminate architectural violations and improve performance
+   
+   Architecture: Proper CSS specificity without !important pollution
+   Replaces: mcl-customized.css
+   Author: Claude Code Senior Engineer
+   Version: 2.0.0 (Performance Optimized)
+   ============================================================================= */
+
+/* =============================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================================================= */
+
+/* CSS Containment for better rendering performance */
+.callout[data-callout-metadata] {
+  contain: layout style;
+  will-change: auto;
+}
+
+/* =============================================================================
+   MCL COLOR SYSTEM - SCOPED ARCHITECTURE
+   Proper CSS cascade without global variable pollution
+   ============================================================================= */
+
+/* Base MCL namespace - contains all MCL-specific variables */
+.mcl-multi-column-layout,
+.callout[data-callout-metadata] {
+  /* Moonrise Kingdom Color Palette */
+  --mcl-moonrise-yellow: rgb(194, 156, 38);
+  --mcl-moonrise-khaki: rgb(149, 134, 82);
+  --mcl-moonrise-red: rgb(138, 24, 24);
+  --mcl-moonrise-green: rgb(65, 87, 27);
+  --mcl-moonrise-teal: rgb(75, 138, 140);
+  --mcl-moonrise-blue: rgb(50, 110, 160);
+  --mcl-moonrise-pine: rgb(33, 74, 39);
+  --mcl-moonrise-sand: rgb(178, 154, 108);
+  --mcl-moonrise-orange: rgb(215, 100, 0);
+  --mcl-moonrise-magenta: rgb(159, 1, 93);
+  
+  /* Extended Moonrise Colors */
+  --mcl-moonrise-pink: rgb(205, 131, 145);
+  --mcl-moonrise-purple: rgb(62, 31, 113);
+  --mcl-moonrise-gold: rgb(178, 125, 12);
+  --mcl-moonrise-maroon: rgb(99, 0, 0);
+  --mcl-moonrise-cream: rgb(215, 208, 180);
+  --mcl-moonrise-cyan: rgb(0, 88, 88);
+  --mcl-moonrise-brown: rgb(27, 59, 59);
+  --mcl-moonrise-amber: rgb(164, 113, 31);
+  --mcl-moonrise-mint: rgb(119, 186, 151);
+  --mcl-moonrise-olive: rgb(141, 126, 46);
+  --mcl-moonrise-turquoise: rgb(24, 184, 168);
+  --mcl-moonrise-bronze: rgb(144, 94, 0);
+  --mcl-moonrise-navy: rgb(5, 5, 92);
+  --mcl-moonrise-mustard: rgb(204, 156, 28);
+  --mcl-moonrise-rust: rgb(215, 125, 0);
+  --mcl-moonrise-sienna: rgb(99, 49, 9);
+  --mcl-moonrise-crimson: rgb(180, 0, 40);
+  --mcl-moonrise-forest: rgb(14, 99, 14);
+  
+  /* Grand Budapest Hotel Color Palette */
+  --mcl-budapest-pink: rgb(215, 59, 127);
+  --mcl-budapest-purple: rgb(159, 31, 113);
+  --mcl-budapest-gold: rgb(178, 125, 12);
+  --mcl-budapest-maroon: rgb(99, 0, 0);
+  --mcl-budapest-cream: rgb(215, 208, 180);
+  --mcl-budapest-burgundy: rgb(128, 0, 32);
+  --mcl-budapest-rose: rgb(215, 142, 153);
+  --mcl-budapest-champagne: rgb(247, 231, 206);
+  
+  /* Hotel Cavalier Color Palette */
+  --mcl-cavalier-coral: rgb(215, 107, 59);
+  --mcl-cavalier-teal: rgb(75, 138, 140);
+  --mcl-cavalier-mint: rgb(119, 186, 151);
+  --mcl-cavalier-navy: rgb(5, 5, 92);
+  --mcl-cavalier-cream: rgb(215, 208, 180);
+  --mcl-cavalier-seafoam: rgb(159, 226, 191);
+  --mcl-cavalier-deco-blue: rgb(70, 130, 180);
+  
+  /* Darjeeling Limited Color Palette */
+  --mcl-darjeeling-blue: rgb(50, 110, 160);
+  --mcl-darjeeling-saffron: rgb(228, 155, 15);
+  --mcl-darjeeling-curry: rgb(204, 119, 34);
+  --mcl-darjeeling-turmeric: rgb(227, 190, 44);
+  --mcl-darjeeling-paprika: rgb(186, 85, 68);
+  --mcl-darjeeling-cardamom: rgb(141, 126, 46);
+  --mcl-darjeeling-cinnamon: rgb(164, 113, 31);
+  
+  /* Asteroid City Color Palette */
+  --mcl-asteroid-desert: rgb(215, 179, 48);
+  --mcl-asteroid-atomic: rgb(255, 149, 0);
+  --mcl-asteroid-uranium: rgb(186, 218, 85);
+  --mcl-asteroid-mars: rgb(205, 92, 92);
+  --mcl-asteroid-space: rgb(25, 25, 112);
+  --mcl-asteroid-sand: rgb(194, 178, 128);
+  --mcl-asteroid-sage: rgb(158, 169, 141);
+  
+  /* iOS System Colors (Scoped) */
+  --mcl-ios-red: rgb(255, 59, 48);
+  --mcl-ios-blue: rgb(0, 122, 255);
+  --mcl-ios-green: rgb(52, 199, 89);
+  --mcl-ios-orange: rgb(255, 149, 0);
+  --mcl-ios-purple: rgb(175, 82, 222);
+  --mcl-ios-yellow: rgb(255, 204, 0);
+  --mcl-ios-pink: rgb(255, 45, 85);
+  --mcl-ios-teal: rgb(48, 176, 199);
+  --mcl-ios-indigo: rgb(88, 86, 214);
+  --mcl-ios-gray: rgb(142, 142, 147);
+  
+  /* Pastel Variants */
+  --mcl-pastel-lavender: rgb(190, 190, 210);
+  --mcl-pastel-mint: rgb(170, 255, 195);
+  --mcl-pastel-peach: rgb(255, 218, 185);
+  --mcl-pastel-sky: rgb(135, 206, 235);
+  --mcl-pastel-rose: rgb(255, 182, 193);
+  --mcl-pastel-butter: rgb(255, 250, 205);
+}
+
+/* =============================================================================
+   MOONRISE KINGDOM THEMED CALLOUTS
+   Scout camp aesthetic with hand-drawn elements
+   ============================================================================= */
+
+.callout[data-callout-metadata*="moonrise-"],
+.callout[data-callout-metadata*="mk-"] {
+  font-family: 'Courier New', 'Monaco', monospace;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.callout[data-callout-metadata*="moonrise-"] .callout-title,
+.callout[data-callout-metadata*="mk-"] .callout-title {
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Moonrise Color Variants */
+.callout[data-callout-metadata*="moonrise-yellow"] { background: rgba(194, 156, 38, 0.15); border-color: var(--mcl-moonrise-yellow); }
+.callout[data-callout-metadata*="mk-khaki"] { background: rgba(149, 134, 82, 0.15); border-color: var(--mcl-moonrise-khaki); }
+.callout[data-callout-metadata*="mk-red"] { background: rgba(138, 24, 24, 0.15); border-color: var(--mcl-moonrise-red); }
+.callout[data-callout-metadata*="mk-green"] { background: rgba(65, 87, 27, 0.15); border-color: var(--mcl-moonrise-green); }
+.callout[data-callout-metadata*="mk-teal"] { background: rgba(75, 138, 140, 0.15); border-color: var(--mcl-moonrise-teal); }
+.callout[data-callout-metadata*="mk-blue"] { background: rgba(50, 110, 160, 0.15); border-color: var(--mcl-moonrise-blue); }
+.callout[data-callout-metadata*="mk-orange"] { background: rgba(215, 100, 0, 0.15); border-color: var(--mcl-moonrise-orange); }
+.callout[data-callout-metadata*="mk-pink"] { background: rgba(205, 131, 145, 0.15); border-color: var(--mcl-moonrise-pink); }
+.callout[data-callout-metadata*="mk-gold"] { background: rgba(178, 125, 12, 0.15); border-color: var(--mcl-moonrise-gold); }
+
+/* =============================================================================
+   GRAND BUDAPEST HOTEL THEMED CALLOUTS
+   Luxury hotel aesthetic with elegant typography
+   ============================================================================= */
+
+.callout[data-callout-metadata*="budapest-"],
+.callout[data-callout-metadata*="gbh-"] {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(245,245,245,0.95));
+  position: relative;
+}
+
+.callout[data-callout-metadata*="budapest-"] .callout-title,
+.callout[data-callout-metadata*="gbh-"] .callout-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Budapest Color Variants */
+.callout[data-callout-metadata*="budapest-pink"] { background: rgba(215, 59, 127, 0.12); border-color: var(--mcl-budapest-pink); }
+.callout[data-callout-metadata*="gbh-purple"] { background: rgba(159, 31, 113, 0.12); border-color: var(--mcl-budapest-purple); }
+.callout[data-callout-metadata*="gbh-gold"] { background: rgba(178, 125, 12, 0.12); border-color: var(--mcl-budapest-gold); }
+.callout[data-callout-metadata*="gbh-cream"] { background: rgba(215, 208, 180, 0.12); border-color: var(--mcl-budapest-cream); }
+.callout[data-callout-metadata*="gbh-rose"] { background: rgba(215, 142, 153, 0.12); border-color: var(--mcl-budapest-rose); }
+
+/* =============================================================================
+   HOTEL CAVALIER THEMED CALLOUTS
+   Art Deco nautical aesthetic
+   ============================================================================= */
+
+.callout[data-callout-metadata*="cavalier-"],
+.callout[data-callout-metadata*="hc-"] {
+  font-family: 'Futura', 'Century Gothic', sans-serif;
+  border-radius: 4px;
+  box-shadow: 3px 0 6px rgba(0,0,0,0.1);
+  background: linear-gradient(90deg, rgba(255,255,255,0.98), rgba(248,248,248,0.98));
+  border-left: 6px solid;
+}
+
+.callout[data-callout-metadata*="cavalier-"] .callout-title,
+.callout[data-callout-metadata*="hc-"] .callout-title {
+  font-family: 'Futura', 'Century Gothic', sans-serif;
+  font-weight: 600;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Cavalier Color Variants */
+.callout[data-callout-metadata*="cavalier-coral"] { background: rgba(215, 107, 59, 0.12); border-color: var(--mcl-cavalier-coral); }
+.callout[data-callout-metadata*="hc-teal"] { background: rgba(75, 138, 140, 0.12); border-color: var(--mcl-cavalier-teal); }
+.callout[data-callout-metadata*="hc-mint"] { background: rgba(119, 186, 151, 0.12); border-color: var(--mcl-cavalier-mint); }
+.callout[data-callout-metadata*="hc-navy"] { background: rgba(5, 5, 92, 0.12); border-color: var(--mcl-cavalier-navy); }
+
+/* =============================================================================
+   DARJEELING LIMITED THEMED CALLOUTS
+   Spice route train journey aesthetic
+   ============================================================================= */
+
+.callout[data-callout-metadata*="darjeeling-"],
+.callout[data-callout-metadata*="dl-"] {
+  font-family: 'Futura', 'Helvetica Neue', sans-serif;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 2px;
+  background: linear-gradient(135deg, rgba(255,248,240,0.95), rgba(253,245,230,0.95));
+  position: relative;
+}
+
+.callout[data-callout-metadata*="darjeeling-"] .callout-title,
+.callout[data-callout-metadata*="dl-"] .callout-title {
+  font-family: 'Futura', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-size: 1.05em;
+  text-transform: capitalize;
+}
+
+/* Darjeeling Color Variants */
+.callout[data-callout-metadata*="darjeeling-blue"] { background: rgba(50, 110, 160, 0.12); border-color: var(--mcl-darjeeling-blue); }
+.callout[data-callout-metadata*="dl-saffron"] { background: rgba(228, 155, 15, 0.12); border-color: var(--mcl-darjeeling-saffron); }
+.callout[data-callout-metadata*="dl-curry"] { background: rgba(204, 119, 34, 0.12); border-color: var(--mcl-darjeeling-curry); }
+.callout[data-callout-metadata*="dl-turmeric"] { background: rgba(227, 190, 44, 0.12); border-color: var(--mcl-darjeeling-turmeric); }
+
+/* =============================================================================
+   ASTEROID CITY THEMED CALLOUTS
+   Desert atomic age aesthetic
+   ============================================================================= */
+
+.callout[data-callout-metadata*="asteroid-"],
+.callout[data-callout-metadata*="ac-"] {
+  font-family: 'Courier New', 'Monaco', monospace;
+  border-radius: 0;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  background: linear-gradient(180deg, rgba(245,245,220,0.95), rgba(240,240,210,0.95));
+  border: 2px solid;
+}
+
+.callout[data-callout-metadata*="asteroid-"] .callout-title,
+.callout[data-callout-metadata*="ac-"] .callout-title {
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-weight: bold;
+  font-size: 1.0em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Asteroid Color Variants */
+.callout[data-callout-metadata*="asteroid-desert"] { background: rgba(215, 179, 48, 0.12); border-color: var(--mcl-asteroid-desert); }
+.callout[data-callout-metadata*="ac-atomic"] { background: rgba(255, 149, 0, 0.12); border-color: var(--mcl-asteroid-atomic); }
+.callout[data-callout-metadata*="ac-uranium"] { background: rgba(186, 218, 85, 0.12); border-color: var(--mcl-asteroid-uranium); }
+.callout[data-callout-metadata*="ac-mars"] { background: rgba(205, 92, 92, 0.12); border-color: var(--mcl-asteroid-mars); }
+
+/* =============================================================================
+   PASTEL AND VINTAGE THEMED CALLOUTS
+   Soft dreamy aesthetics
+   ============================================================================= */
+
+.callout[data-callout-metadata*="pastel-"] {
+  font-family: 'Georgia', serif;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  backdrop-filter: blur(0.5px);
+}
+
+.callout[data-callout-metadata*="pastel-"] .callout-title {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.95em;
+  color: rgba(0,0,0,0.7);
+}
+
+/* Pastel Color Variants */
+.callout[data-callout-metadata*="pastel-lavender"] { background: rgba(190, 190, 210, 0.15); border-color: var(--mcl-pastel-lavender); }
+.callout[data-callout-metadata*="pastel-mint"] { background: rgba(170, 255, 195, 0.15); border-color: var(--mcl-pastel-mint); }
+.callout[data-callout-metadata*="pastel-peach"] { background: rgba(255, 218, 185, 0.15); border-color: var(--mcl-pastel-peach); }
+.callout[data-callout-metadata*="pastel-sky"] { background: rgba(135, 206, 235, 0.15); border-color: var(--mcl-pastel-sky); }
+.callout[data-callout-metadata*="pastel-rose"] { background: rgba(255, 182, 193, 0.15); border-color: var(--mcl-pastel-rose); }
+
+/* =============================================================================
+   HOVER EFFECTS AND INTERACTIONS
+   Theme-specific hover animations
+   ============================================================================= */
+
+.callout[data-callout-metadata*="moonrise-"]:hover,
+.callout[data-callout-metadata*="mk-"]:hover {
+  transform: translateY(-1px) rotate(0deg);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.callout[data-callout-metadata*="budapest-"]:hover,
+.callout[data-callout-metadata*="gbh-"]:hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.01);
+}
+
+.callout[data-callout-metadata*="cavalier-"]:hover,
+.callout[data-callout-metadata*="hc-"]:hover {
+  transform: translateX(2px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.callout[data-callout-metadata*="darjeeling-"]:hover,
+.callout[data-callout-metadata*="dl-"]:hover {
+  filter: sepia(10%);
+  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.callout[data-callout-metadata*="asteroid-"]:hover,
+.callout[data-callout-metadata*="ac-"]:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   Mobile-optimized layouts
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .callout[data-callout-metadata] .callout-title {
+    font-size: 0.95em;
+  }
+  
+  .callout[data-callout-metadata*="budapest-"] .callout-title,
+  .callout[data-callout-metadata*="gbh-"] .callout-title {
+    font-size: 1.05em;
+  }
+  
+  .callout[data-callout-metadata*="cavalier-"] .callout-title,
+  .callout[data-callout-metadata*="hc-"] .callout-title {
+    letter-spacing: 1px;
+  }
+}
+
+/* =============================================================================
+   ACCESSIBILITY FEATURES
+   ============================================================================= */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .callout[data-callout-metadata]:hover {
+    transition-duration: 0.01ms;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .callout[data-callout-metadata] {
+    border-width: 3px;
+    box-shadow: none;
+  }
+}
+
+/* =============================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================================================= */
+
+/* Use hardware acceleration for animations */
+.callout[data-callout-metadata] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize font rendering */
+.callout[data-callout-metadata] .callout-title {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================================================
+   USAGE EXAMPLES (Comments)
+   ============================================================================= */
+
+/*
+
+USAGE EXAMPLES:
+
+Moonrise Kingdom themed columns:
+> [!info|moonrise-yellow] Scout Activities  
+> [!note|mk-khaki] Camping Gear
+> [!warning|mk-red] Emergency Procedures
+
+Grand Budapest Hotel themed columns:
+> [!quote|budapest-pink] Concierge Notes
+> [!tip|gbh-purple] Hotel Services  
+> [!example|gbh-gold] Pastry Recipes
+
+Hotel Cavalier themed columns:
+> [!info|cavalier-coral] Art Deco Design
+> [!note|hc-teal] Ocean View Rooms
+> [!success|hc-mint] Retro Amenities
+
+Darjeeling Limited themed columns:
+> [!info|darjeeling-blue] Train Schedule
+> [!note|dl-saffron] Spice Markets
+> [!warning|dl-curry] Travel Warnings
+
+Asteroid City themed columns:
+> [!info|asteroid-desert] Desert Research
+> [!note|ac-atomic] Nuclear Testing
+> [!warning|ac-uranium] Radiation Safety
+
+Pastel options:
+> [!info|pastel-lavender] Soft & Dreamy
+> [!note|pastel-mint] Fresh & Light
+> [!tip|pastel-sky] Airy & Open
+
+*/

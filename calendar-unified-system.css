@@ -1,0 +1,668 @@
+/* =============================================================================
+   UNIFIED CALENDAR COLOR SYSTEM
+   Wes Anderson Inspired Semantic Calendar Themes
+   
+   Architecture: CSS Custom Properties + Component-Based Design
+   Author: Claude Code Visual Designer + Senior Engineer
+   Version: 1.0.0
+   ============================================================================= */
+
+/* =============================================================================
+   ROOT SEMANTIC COLOR SYSTEM
+   ============================================================================= */
+
+:root {
+  /* Core Semantic Color Categories */
+  
+  /* Health & Wellness - Physical health, fitness, medical care */
+  --cal-semantic-health: #2d5a3d;
+  --cal-semantic-health-light: #52c49a;
+  --cal-semantic-health-accent: #27ae60;
+  --cal-semantic-health-desert: #8fbc8f;
+  
+  /* Learning & Growth - Education, skill development */
+  --cal-semantic-learning: #d4a574;
+  --cal-semantic-learning-luxury: #f1c40f;
+  --cal-semantic-learning-spice: #f4c430;
+  --cal-semantic-learning-atomic: #ff7d00;
+  
+  /* Work & Professional - Career, productivity */
+  --cal-semantic-work: #34495e;
+  --cal-semantic-work-luxury: #2c3e50;
+  --cal-semantic-work-spice: #4682b4;
+  --cal-semantic-work-atomic: #4682b4;
+  
+  /* Social & Relationships - Family, connections */
+  --cal-semantic-social: #c8756d;
+  --cal-semantic-social-luxury: #e487a8;
+  --cal-semantic-social-spice: #e74c6c;
+  --cal-semantic-social-atomic: #cd853f;
+  
+  /* Creative & Expression - Art, performance, entertainment */
+  --cal-semantic-creative: #e67e22;
+  --cal-semantic-creative-luxury: #9b59b6;
+  --cal-semantic-creative-spice: #dc143c;
+  --cal-semantic-creative-atomic: #e74c3c;
+  
+  /* Daily Life & Maintenance - Routine, household */
+  --cal-semantic-daily: #8b6914;
+  --cal-semantic-daily-luxury: #d68c45;
+  --cal-semantic-daily-spice: #b8860b;
+  --cal-semantic-daily-atomic: #deb887;
+  
+  /* Exploration & Adventure - Travel, discovery */
+  --cal-semantic-adventure: #16a085;
+  --cal-semantic-adventure-luxury: #1abc9c;
+  --cal-semantic-adventure-spice: #20b2aa;
+  --cal-semantic-adventure-atomic: #87ceeb;
+  
+  /* Base Layout Variables */
+  --cal-base-width: 850px;
+  --cal-base-padding: 48px;
+  --cal-base-border-radius: 16px;
+  --cal-base-shadow: 0 12px 48px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1);
+  --cal-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Z-Index Management */
+  --cal-z-background: -1;
+  --cal-z-base: 0;
+  --cal-z-content: 1;
+  --cal-z-overlay: 2;
+  --cal-z-elevated: 10;
+}
+
+/* =============================================================================
+   MOONRISE KINGDOM THEME VARIABLES
+   Scout Camp Aesthetic - Warm earth tones, vintage camp colors
+   ============================================================================= */
+
+[data-calendar-theme="moonrise"], 
+.calendar-theme-moonrise {
+  /* Theme Base Colors */
+  --cal-theme-primary: #8b4513;
+  --cal-theme-secondary: #5d4037;
+  --cal-theme-accent: #d4a574;
+  --cal-theme-background: rgba(254, 252, 248, 0.95);
+  --cal-theme-surface: rgba(254, 252, 248, 0.4);
+  --cal-theme-border: #d4a574;
+  
+  /* Activity Color Mapping */
+  --cal-activity-therapy: var(--cal-semantic-health);
+  --cal-activity-fitness: var(--cal-semantic-health);
+  --cal-activity-举铁: var(--cal-semantic-health);
+  --cal-activity-🎾: var(--cal-semantic-health);
+  --cal-activity-health: var(--cal-semantic-health);
+  --cal-activity-nature: var(--cal-semantic-health);
+  
+  --cal-activity-learning: var(--cal-semantic-learning);
+  --cal-activity-学习: var(--cal-semantic-learning);
+  --cal-activity-creative: var(--cal-semantic-creative);
+  
+  --cal-activity-work: var(--cal-semantic-work);
+  --cal-activity-socializing: var(--cal-semantic-social);
+  --cal-activity-social: var(--cal-semantic-social);
+  --cal-activity-family: var(--cal-semantic-social);
+  
+  --cal-activity-🎤: var(--cal-semantic-creative);
+  --cal-activity-看戏: var(--cal-semantic-creative);
+  --cal-activity-hobby: var(--cal-semantic-creative);
+  
+  --cal-activity-下厨: var(--cal-semantic-daily);
+  --cal-activity-cooking: var(--cal-semantic-daily);
+  
+  --cal-activity-travel: var(--cal-semantic-adventure);
+  --cal-activity-看医生: var(--cal-semantic-health);
+  
+  /* Theme Typography */
+  --cal-font-family: 'Futura', 'Century Gothic', 'Gill Sans', 'Trebuchet MS', sans-serif;
+  --cal-title-size: 2.4em;
+  --cal-title-spacing: 3px;
+  --cal-title-weight: 600;
+}
+
+/* =============================================================================
+   GRAND BUDAPEST HOTEL THEME VARIABLES
+   Luxury Hotel Aesthetic - Elegant pinks, sophisticated pastels
+   ============================================================================= */
+
+[data-calendar-theme="budapest"], 
+.calendar-theme-budapest {
+  /* Theme Base Colors */
+  --cal-theme-primary: #8a2b59;
+  --cal-theme-secondary: #5a1b3a;
+  --cal-theme-accent: #e487a8;
+  --cal-theme-background: rgba(248, 232, 240, 0.95);
+  --cal-theme-surface: rgba(255, 255, 255, 0.25);
+  --cal-theme-border: #8a2b59;
+  
+  /* Activity Color Mapping */
+  --cal-activity-therapy: var(--cal-semantic-health-light);
+  --cal-activity-fitness: var(--cal-semantic-health-light);
+  --cal-activity-举铁: var(--cal-semantic-health-light);
+  --cal-activity-🎾: var(--cal-semantic-health-light);
+  --cal-activity-health: var(--cal-semantic-health-light);
+  --cal-activity-nature: var(--cal-semantic-health-light);
+  
+  --cal-activity-learning: var(--cal-semantic-learning-luxury);
+  --cal-activity-学习: var(--cal-semantic-learning-luxury);
+  
+  --cal-activity-work: var(--cal-semantic-work-luxury);
+  --cal-activity-socializing: var(--cal-semantic-social-luxury);
+  --cal-activity-social: var(--cal-semantic-social-luxury);
+  --cal-activity-family: var(--cal-semantic-social-luxury);
+  
+  --cal-activity-🎤: var(--cal-semantic-creative-luxury);
+  --cal-activity-看戏: var(--cal-semantic-creative-luxury);
+  --cal-activity-hobby: var(--cal-semantic-creative-luxury);
+  --cal-activity-creative: var(--cal-semantic-creative-luxury);
+  
+  --cal-activity-下厨: var(--cal-semantic-daily-luxury);
+  --cal-activity-cooking: var(--cal-semantic-daily-luxury);
+  
+  --cal-activity-travel: var(--cal-semantic-adventure-luxury);
+  --cal-activity-看医生: var(--cal-semantic-health-light);
+  
+  /* Theme Typography */
+  --cal-font-family: 'Optima', 'Futura', 'Century Gothic', serif;
+  --cal-title-size: 3em;
+  --cal-title-spacing: 4px;
+  --cal-title-weight: 400;
+}
+
+/* =============================================================================
+   DARJEELING LIMITED THEME VARIABLES
+   Indian Spice Route Aesthetic - Warm spices, train journey colors
+   ============================================================================= */
+
+[data-calendar-theme="darjeeling"], 
+.calendar-theme-darjeeling {
+  /* Theme Base Colors */
+  --cal-theme-primary: #8b4513;
+  --cal-theme-secondary: #654321;
+  --cal-theme-accent: #f4c430;
+  --cal-theme-background: linear-gradient(135deg, #f8f5f0 0%, #f0e8d8 50%, #e8dcc6 100%);
+  --cal-theme-surface: rgba(255, 248, 220, 0.96);
+  --cal-theme-border: #8b4513;
+  
+  /* Activity Color Mapping */
+  --cal-activity-therapy: var(--cal-semantic-health-accent);
+  --cal-activity-fitness: var(--cal-semantic-health-accent);
+  --cal-activity-举铁: var(--cal-semantic-health-accent);
+  --cal-activity-🎾: var(--cal-semantic-health-accent);
+  --cal-activity-health: var(--cal-semantic-health-accent);
+  --cal-activity-nature: var(--cal-semantic-health-accent);
+  
+  --cal-activity-learning: var(--cal-semantic-learning-spice);
+  --cal-activity-学习: var(--cal-semantic-learning-spice);
+  
+  --cal-activity-work: var(--cal-semantic-work-spice);
+  --cal-activity-socializing: var(--cal-semantic-social-spice);
+  --cal-activity-social: var(--cal-semantic-social-spice);
+  --cal-activity-family: var(--cal-semantic-social-spice);
+  
+  --cal-activity-🎤: var(--cal-semantic-creative-spice);
+  --cal-activity-看戏: var(--cal-semantic-creative-spice);
+  --cal-activity-hobby: var(--cal-semantic-creative-spice);
+  --cal-activity-creative: var(--cal-semantic-creative-spice);
+  
+  --cal-activity-下厨: var(--cal-semantic-daily-spice);
+  --cal-activity-cooking: var(--cal-semantic-daily-spice);
+  
+  --cal-activity-travel: var(--cal-semantic-adventure-spice);
+  --cal-activity-看医生: var(--cal-semantic-health-accent);
+  
+  /* Theme Typography */
+  --cal-font-family: 'Futura', 'Century Gothic', 'Avenir', sans-serif;
+  --cal-title-size: 2.8em;
+  --cal-title-spacing: 5px;
+  --cal-title-weight: 600;
+}
+
+/* =============================================================================
+   ASTEROID CITY THEME VARIABLES
+   Mid-Century Desert Atomic Aesthetic - Desert tones, atomic age colors
+   ============================================================================= */
+
+[data-calendar-theme="asteroid"], 
+.calendar-theme-asteroid {
+  /* Theme Base Colors */
+  --cal-theme-primary: #ff7d00;
+  --cal-theme-secondary: #654321;
+  --cal-theme-accent: #ff7d00;
+  --cal-theme-background: linear-gradient(135deg, #f4e4c1 0%, #e8d5b7 50%, #d2b48c 100%);
+  --cal-theme-surface: rgba(255, 248, 240, 0.96);
+  --cal-theme-border: #ff7d00;
+  
+  /* Activity Color Mapping */
+  --cal-activity-therapy: var(--cal-semantic-health-desert);
+  --cal-activity-fitness: var(--cal-semantic-health-desert);
+  --cal-activity-举铁: var(--cal-semantic-health-desert);
+  --cal-activity-🎾: var(--cal-semantic-health-desert);
+  --cal-activity-health: var(--cal-semantic-health-desert);
+  --cal-activity-nature: var(--cal-semantic-health-desert);
+  
+  --cal-activity-learning: var(--cal-semantic-learning-atomic);
+  --cal-activity-学习: var(--cal-semantic-learning-atomic);
+  
+  --cal-activity-work: var(--cal-semantic-work-atomic);
+  --cal-activity-socializing: var(--cal-semantic-social-atomic);
+  --cal-activity-social: var(--cal-semantic-social-atomic);
+  --cal-activity-family: var(--cal-semantic-social-atomic);
+  
+  --cal-activity-🎤: var(--cal-semantic-creative-atomic);
+  --cal-activity-看戏: var(--cal-semantic-creative-atomic);
+  --cal-activity-hobby: var(--cal-semantic-creative-atomic);
+  --cal-activity-creative: var(--cal-semantic-creative-atomic);
+  
+  --cal-activity-下厨: var(--cal-semantic-daily-atomic);
+  --cal-activity-cooking: var(--cal-semantic-daily-atomic);
+  
+  --cal-activity-travel: var(--cal-semantic-adventure-atomic);
+  --cal-activity-看医生: var(--cal-semantic-health-desert);
+  
+  /* Theme Typography */
+  --cal-font-family: 'Courier New', 'Monaco', 'Lucida Console', monospace;
+  --cal-title-size: 2.8em;
+  --cal-title-spacing: 8px;
+  --cal-title-weight: 700;
+}
+
+/* =============================================================================
+   UNIFIED CALENDAR COMPONENT ARCHITECTURE
+   ============================================================================= */
+
+/* Base Calendar Container */
+.unified-calendar {
+  font-family: var(--cal-font-family);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  width: var(--cal-base-width);
+  margin: 0 auto;
+  padding: var(--cal-base-padding);
+  border-radius: var(--cal-base-border-radius);
+  box-shadow: var(--cal-base-shadow);
+  background: var(--cal-theme-background);
+  position: relative;
+  min-height: 720px;
+  transition: var(--cal-transition);
+}
+
+/* Calendar Title */
+.unified-calendar__title {
+  font-family: var(--cal-font-family);
+  font-weight: var(--cal-title-weight);
+  color: var(--cal-theme-primary);
+  margin-bottom: 44px;
+  margin-top: 8px;
+  font-size: var(--cal-title-size);
+  text-transform: uppercase;
+  letter-spacing: var(--cal-title-spacing);
+  text-align: center;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  background: var(--cal-theme-surface);
+  padding: 28px 36px;
+  border-radius: var(--cal-base-border-radius);
+  backdrop-filter: blur(8px);
+  line-height: 1.1;
+  position: relative;
+  z-index: var(--cal-z-elevated);
+}
+
+/* Summary Section */
+.unified-calendar__summary {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 48px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Summary Cards */
+.unified-calendar__summary-card {
+  padding: 28px 24px;
+  border-radius: var(--cal-base-border-radius);
+  border: 2px solid var(--cal-theme-border);
+  backdrop-filter: blur(8px);
+  background: var(--cal-theme-surface);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: var(--cal-transition);
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.unified-calendar__summary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Header */
+.unified-calendar__card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Activity Indicators */
+.unified-calendar__activity-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  opacity: 0.9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Moonrise Kingdom - Dots */
+.calendar-theme-moonrise .unified-calendar__activity-indicator {
+  border-radius: 50%;
+}
+
+/* Budapest Hotel - Diamonds */
+.calendar-theme-budapest .unified-calendar__activity-indicator {
+  transform: rotate(45deg);
+}
+
+/* Darjeeling Limited - Triangles */
+.calendar-theme-darjeeling .unified-calendar__activity-indicator {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 0;
+}
+
+/* Asteroid City - Stars */
+.calendar-theme-asteroid .unified-calendar__activity-indicator {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  border-radius: 0;
+}
+
+/* Card Labels */
+.unified-calendar__card-label {
+  font-family: var(--cal-font-family);
+  font-size: 0.7em;
+  color: var(--cal-theme-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  margin-bottom: 6px;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Card Counts */
+.unified-calendar__card-count {
+  font-family: var(--cal-font-family);
+  font-size: 2.6em;
+  font-weight: 300;
+  color: var(--cal-theme-secondary);
+  line-height: 1;
+  margin-top: auto;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.6);
+}
+
+/* Calendar Grid */
+.unified-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  width: 100%;
+  font-family: var(--cal-font-family);
+  background: var(--cal-theme-accent);
+  border: 4px solid var(--cal-theme-border);
+  border-radius: var(--cal-base-border-radius);
+  overflow: hidden;
+  box-shadow: var(--cal-base-shadow);
+  backdrop-filter: blur(8px);
+}
+
+/* Day Headers */
+.unified-calendar__day-header {
+  background: linear-gradient(135deg, var(--cal-theme-primary), var(--cal-theme-secondary));
+  color: #ffffff;
+  padding: 20px 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.6em;
+  letter-spacing: 2.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+}
+
+/* Day Cells */
+.unified-calendar__day-cell {
+  padding: 14px 12px;
+  min-height: 100px;
+  position: relative;
+  transition: var(--cal-transition);
+  background: var(--cal-theme-surface);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.unified-calendar__day-cell:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+.unified-calendar__day-cell--today {
+  background: linear-gradient(135deg, var(--cal-theme-accent), rgba(255, 255, 255, 0.5));
+  border: 2px solid var(--cal-theme-primary);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.unified-calendar__day-cell--weekend {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.unified-calendar__day-cell--empty {
+  background: rgba(0, 0, 0, 0.02);
+  opacity: 0.6;
+}
+
+/* Day Numbers */
+.unified-calendar__day-number {
+  font-family: var(--cal-font-family);
+  font-size: 1.3em;
+  font-weight: 600;
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--cal-transition);
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.unified-calendar__day-number:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.unified-calendar__day-number--today {
+  font-weight: 700;
+  color: var(--cal-theme-primary);
+}
+
+.unified-calendar__day-number--weekend {
+  color: var(--cal-theme-secondary);
+}
+
+/* Activities Container */
+.unified-calendar__activities {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  right: 12px;
+}
+
+/* Activity Dots/Shapes with Semantic Colors */
+.unified-calendar__activity {
+  width: 12px;
+  height: 12px;
+  opacity: 0.9;
+  transition: var(--cal-transition);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.unified-calendar__activity:hover {
+  transform: scale(1.4);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Activity Color Classes */
+.unified-calendar__activity--therapy { background: var(--cal-activity-therapy); }
+.unified-calendar__activity--fitness { background: var(--cal-activity-fitness); }
+.unified-calendar__activity--举铁 { background: var(--cal-activity-举铁); }
+.unified-calendar__activity--🎾 { background: var(--cal-activity-🎾); }
+.unified-calendar__activity--health { background: var(--cal-activity-health); }
+.unified-calendar__activity--nature { background: var(--cal-activity-nature); }
+.unified-calendar__activity--learning { background: var(--cal-activity-learning); }
+.unified-calendar__activity--学习 { background: var(--cal-activity-学习); }
+.unified-calendar__activity--work { background: var(--cal-activity-work); }
+.unified-calendar__activity--socializing { background: var(--cal-activity-socializing); }
+.unified-calendar__activity--social { background: var(--cal-activity-social); }
+.unified-calendar__activity--family { background: var(--cal-activity-family); }
+.unified-calendar__activity--🎤 { background: var(--cal-activity-🎤); }
+.unified-calendar__activity--看戏 { background: var(--cal-activity-看戏); }
+.unified-calendar__activity--hobby { background: var(--cal-activity-hobby); }
+.unified-calendar__activity--creative { background: var(--cal-activity-creative); }
+.unified-calendar__activity--下厨 { background: var(--cal-activity-下厨); }
+.unified-calendar__activity--cooking { background: var(--cal-activity-cooking); }
+.unified-calendar__activity--travel { background: var(--cal-activity-travel); }
+.unified-calendar__activity--看医生 { background: var(--cal-activity-看医生); }
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
+
+@media (max-width: 768px) {
+  .unified-calendar {
+    width: 100%;
+    padding: 32px 20px;
+  }
+  
+  .unified-calendar__title {
+    font-size: calc(var(--cal-title-size) * 0.7);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  
+  .unified-calendar__summary {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .unified-calendar__summary-card {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 150px;
+    padding: 20px 16px;
+    min-height: 100px;
+  }
+  
+  .unified-calendar__day-cell {
+    min-height: 80px;
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unified-calendar__summary-card {
+    flex: 1 1 100%;
+  }
+  
+  .unified-calendar__title {
+    font-size: calc(var(--cal-title-size) * 0.5);
+    letter-spacing: 2px;
+  }
+}
+
+/* =============================================================================
+   PRINT STYLES
+   ============================================================================= */
+
+@media print {
+  .unified-calendar {
+    background: white;
+    box-shadow: none;
+    break-inside: avoid;
+    width: 100%;
+  }
+  
+  .unified-calendar__summary-card,
+  .unified-calendar__grid {
+    break-inside: avoid;
+    background: white;
+  }
+}
+
+/* =============================================================================
+   ACCESSIBILITY FEATURES
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .unified-calendar *,
+  .unified-calendar *::before,
+  .unified-calendar *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .unified-calendar {
+    --cal-theme-surface: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--cal-theme-primary);
+  }
+  
+  .unified-calendar__day-cell {
+    border: 1px solid var(--cal-theme-primary);
+  }
+}
+
+/* =============================================================================
+   BROWSER COMPATIBILITY FALLBACKS
+   ============================================================================= */
+
+/* CSS Grid Fallback for IE11 */
+@supports not (display: grid) {
+  .unified-calendar__grid {
+    display: table;
+    width: 100%;
+  }
+  
+  .unified-calendar__day-header,
+  .unified-calendar__day-cell {
+    display: table-cell;
+    width: 14.28%;
+  }
+}
+
+/* CSS Custom Properties Fallback */
+@supports not (--custom: property) {
+  .unified-calendar {
+    font-family: 'Futura', 'Century Gothic', sans-serif;
+    width: 850px;
+    padding: 48px;
+    border-radius: 16px;
+    background: rgba(254, 252, 248, 0.95);
+  }
+  
+  .unified-calendar__activity--therapy { background: #2d5a3d; }
+  .unified-calendar__activity--learning { background: #d4a574; }
+  .unified-calendar__activity--work { background: #34495e; }
+  .unified-calendar__activity--social { background: #c8756d; }
+  .unified-calendar__activity--creative { background: #e67e22; }
+  .unified-calendar__activity--daily { background: #8b6914; }
+  .unified-calendar__activity--adventure { background: #16a085; }
+}

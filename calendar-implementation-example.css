@@ -1,0 +1,364 @@
+/**
+ * Calendar Implementation Example
+ * Demonstrates practical usage of the unified color system
+ * Senior Engineer: Production-ready implementation patterns
+ */
+
+/* ==========================================================================
+   EXAMPLE 1: Basic Theme Usage
+   ========================================================================== */
+
+/**
+ * How to implement the unified calendar with Asteroid theme
+ * Replace existing .asteroid-calendar with this structure
+ */
+.example-asteroid-calendar {
+  /* Apply unified system with theme */
+  @extend .unified-calendar, .calendar-theme-asteroid;
+  
+  /* Theme-specific customizations if needed */
+  --cal-accent: #FF6B35; /* Custom orange variant */
+  --cal-font-family: 'Courier New', monospace; /* Atomic aesthetic */
+}
+
+/* ==========================================================================
+   EXAMPLE 2: Activity Color Customization
+   ========================================================================== */
+
+/**
+ * How to add or modify activity colors
+ * Maintains semantic meaning across all themes
+ */
+.custom-activities {
+  /* Add new activity types */
+  --cal-activity-meditation: #9B59B6;
+  --cal-activity-photography: #E74C3C;
+  --cal-activity-gardening: #27AE60;
+  
+  /* Override existing activities */
+  --cal-activity-learning: #3498DB; /* Change from orange to blue */
+}
+
+/**
+ * Activity card styling - automatic inheritance
+ */
+.unified-summary-card[data-activity="meditation"] {
+  --cal-activity-default: var(--cal-activity-meditation);
+}
+
+.unified-summary-card[data-activity="photography"] {
+  --cal-activity-default: var(--cal-activity-photography);
+}
+
+.unified-summary-card[data-activity="gardening"] {
+  --cal-activity-default: var(--cal-activity-gardening);
+}
+
+/* Theme-specific activity backgrounds */
+.calendar-theme-asteroid {
+  --cal-activity-meditation-bg: linear-gradient(135deg, #F3E8F8, #E8D5F0);
+  --cal-activity-photography-bg: linear-gradient(135deg, #FFE8E8, #F5D5D5);
+  --cal-activity-gardening-bg: linear-gradient(135deg, #E8F8E8, #D5F0D5);
+}
+
+.calendar-theme-budapest {
+  --cal-activity-meditation-bg: rgba(155, 89, 182, 0.15);
+  --cal-activity-photography-bg: rgba(231, 76, 60, 0.15);
+  --cal-activity-gardening-bg: rgba(39, 174, 96, 0.15);
+}
+
+/* ==========================================================================
+   EXAMPLE 3: Theme Variants
+   ========================================================================== */
+
+/**
+ * Create theme variations without duplicating code
+ * Demonstrates the power of CSS custom properties
+ */
+
+/* Asteroid Dark Variant */
+.calendar-theme-asteroid-dark {
+  @extend .calendar-theme-asteroid;
+  
+  /* Override specific colors for dark theme */
+  --cal-bg-primary: linear-gradient(135deg, #2C1810 0%, #1A1008 50%, #0F0804 100%);
+  --cal-text-primary: #F4E4C1;
+  --cal-text-secondary: #D2B48C;
+  --cal-cell-weekday: rgba(255, 248, 240, 0.1);
+  --cal-cell-weekend: rgba(245, 230, 211, 0.1);
+}
+
+/* Budapest Vintage Variant */  
+.calendar-theme-budapest-vintage {
+  @extend .calendar-theme-budapest;
+  
+  /* Sepia-toned vintage effect */
+  --cal-bg-primary: linear-gradient(135deg, rgba(200, 180, 140, 0.9), rgba(180, 160, 120, 0.95));
+  --cal-accent: #8B4513; /* Saddle brown */
+  filter: sepia(20%) contrast(1.1);
+}
+
+/* ==========================================================================
+   EXAMPLE 4: Responsive Customizations
+   ========================================================================== */
+
+/**
+ * Theme-specific responsive behavior
+ * Fine-tune mobile experience per theme
+ */
+@media (max-width: 768px) {
+  .calendar-theme-asteroid {
+    /* Asteroid mobile optimizations */
+    --cal-bg-primary: linear-gradient(135deg, #F4E4C1, #E8D5B7); /* Simplified gradient */
+    padding: 16px; /* Tighter padding */
+  }
+  
+  .calendar-theme-budapest {
+    /* Budapest mobile optimizations */
+    backdrop-filter: blur(4px); /* Reduced blur for performance */
+  }
+}
+
+@media (max-width: 480px) {
+  .unified-calendar-title {
+    /* Theme-specific mobile title sizing */
+    font-size: clamp(1.4em, 5vw, 2em);
+    letter-spacing: clamp(1px, 0.5vw, 3px);
+  }
+}
+
+/* ==========================================================================
+   EXAMPLE 5: Animation & Interaction Enhancements
+   ========================================================================== */
+
+/**
+ * Theme-specific animations and interactions
+ * Maintain performance while adding personality
+ */
+
+/* Asteroid theme: Atomic particle effects */
+.calendar-theme-asteroid .unified-activity-indicator:hover {
+  animation: atomic-spin 0.8s ease-in-out;
+  filter: brightness(1.2) drop-shadow(0 0 4px var(--cal-activity-default));
+}
+
+@keyframes atomic-spin {
+  0%, 100% { transform: scale(1.4) rotate(0deg); }
+  50% { transform: scale(1.6) rotate(180deg); }
+}
+
+/* Budapest theme: Elegant fade */
+.calendar-theme-budapest .unified-summary-card:hover {
+  backdrop-filter: blur(12px);
+  transform: translateY(-6px) rotateX(2deg);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Darjeeling theme: Train journey effect */
+.calendar-theme-darjeeling .unified-calendar:hover {
+  animation: train-journey 3s ease-in-out infinite;
+}
+
+@keyframes train-journey {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(1px); }
+  75% { transform: translateX(-1px); }
+}
+
+/* Moonrise theme: Scout badge flip */
+.calendar-theme-moonrise .unified-day-number:hover {
+  transform: scale(1.1) rotateY(15deg);
+  transform-style: preserve-3d;
+}
+
+/* ==========================================================================
+   EXAMPLE 6: Accessibility Enhancements
+   ========================================================================== */
+
+/**
+ * Theme-specific accessibility improvements
+ * Ensure WCAG compliance across all themes
+ */
+
+/* High contrast variants */
+@media (prefers-contrast: high) {
+  .calendar-theme-asteroid {
+    --cal-border: #000000;
+    --cal-text-primary: #000000;
+    border-width: 4px;
+  }
+  
+  .calendar-theme-budapest {
+    --cal-accent: #000080; /* Navy blue for high contrast */
+    --cal-text-primary: #000000;
+  }
+}
+
+/* Reduced motion variants */
+@media (prefers-reduced-motion: reduce) {
+  .calendar-theme-asteroid .unified-activity-indicator,
+  .calendar-theme-budapest .unified-summary-card,
+  .calendar-theme-darjeeling .unified-calendar,
+  .calendar-theme-moonrise .unified-day-number {
+    animation: none;
+    transition: opacity 0.2s ease;
+  }
+}
+
+/* Focus management for keyboard navigation */
+.unified-calendar[data-keyboard-nav="true"] .unified-day-cell {
+  cursor: pointer;
+}
+
+.unified-calendar[data-keyboard-nav="true"] .unified-day-cell:focus {
+  outline: 3px solid var(--cal-accent);
+  outline-offset: 2px;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   EXAMPLE 7: Performance Monitoring
+   ========================================================================== */
+
+/**
+ * Production performance monitoring
+ * Track CSS performance metrics
+ */
+.unified-calendar[data-performance="monitor"] {
+  /* CSS containment for performance isolation */
+  contain: layout style paint size;
+  
+  /* GPU layer creation for complex animations */
+  will-change: transform, opacity;
+}
+
+/* Performance budget enforcement */
+.unified-calendar[data-performance="strict"] * {
+  /* Limit expensive properties */
+  transition-duration: 0.2s; /* Maximum transition time */
+  animation-duration: 1s;     /* Maximum animation time */
+}
+
+/* ==========================================================================
+   EXAMPLE 8: Theme Switching Implementation
+   ========================================================================== */
+
+/**
+ * Runtime theme switching
+ * Smooth transitions between themes
+ */
+.unified-calendar[data-theme-switching="true"] {
+  transition: 
+    background 0.6s ease-in-out,
+    border-color 0.6s ease-in-out,
+    color 0.6s ease-in-out;
+}
+
+.unified-calendar[data-theme-switching="true"] * {
+  transition-property: background, border-color, color, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Theme switch animations */
+@keyframes theme-switch-fade {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.unified-calendar[data-theme-switching="active"] {
+  animation: theme-switch-fade 0.8s ease-in-out;
+}
+
+/* ==========================================================================
+   EXAMPLE 9: Print Optimization
+   ========================================================================== */
+
+/**
+ * Theme-specific print styles
+ * Maintain visual hierarchy in print
+ */
+@media print {
+  .calendar-theme-asteroid {
+    /* High contrast for black and white printing */
+    --cal-text-primary: #000000;
+    --cal-border: #000000;
+    border-width: 2px;
+  }
+  
+  .calendar-theme-budapest {
+    /* Preserve elegance in print */
+    --cal-text-primary: #2C1810;
+    font-weight: 500; /* Slightly bolder for print clarity */
+  }
+  
+  .calendar-theme-darjeeling {
+    /* Maintain spice theme hierarchy */
+    --cal-text-primary: #3D2914;
+    --cal-text-secondary: #2D1F10;
+  }
+  
+  .calendar-theme-moonrise {
+    /* Scout handbook print aesthetic */
+    --cal-text-primary: #1A0F0A;
+    font-family: 'Times New Roman', serif; /* Traditional print font */
+  }
+  
+  /* Ensure activity indicators are visible */
+  .unified-activity-indicator {
+    background: #000000;
+    opacity: 0.8;
+  }
+}
+
+/* ==========================================================================
+   EXAMPLE 10: Custom Property Debugging
+   ========================================================================== */
+
+/**
+ * Development debugging utilities
+ * Visualize custom property usage
+ */
+.unified-calendar[data-debug-colors="true"] {
+  position: relative;
+}
+
+.unified-calendar[data-debug-colors="true"]::after {
+  content: 
+    "Primary: " var(--cal-text-primary) "\A"
+    "Accent: " var(--cal-accent) "\A"
+    "Background: " var(--cal-bg-primary);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px;
+  font-family: monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: pre-line;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+/* Highlight custom property usage */
+.unified-calendar[data-debug-properties="true"] [style*="--cal"] {
+  outline: 2px dashed orange;
+  position: relative;
+}
+
+.unified-calendar[data-debug-properties="true"] [style*="--cal"]::before {
+  content: "Custom Props";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: orange;
+  color: white;
+  padding: 2px 4px;
+  font-size: 10px;
+  font-family: monospace;
+  border-radius: 2px;
+  z-index: 1001;
+}

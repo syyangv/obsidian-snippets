@@ -1,0 +1,172 @@
+/* =============================================================================
+   EMERGENCY CSS CONFLICT PATCH
+   Temporary conflict prevention while migrating to unified systems
+   
+   Purpose: Prevent CSS conflicts and functionality breakage during migration
+   Status: TEMPORARY - Remove after migration complete
+   Author: Claude Code Senior Engineer
+   Version: 1.0.0
+   ============================================================================= */
+
+/* =============================================================================
+   USAGE INSTRUCTIONS
+   
+   1. ENABLE this file immediately to prevent conflicts
+   2. DISABLE conflicting individual files as you migrate to unified systems:
+      - calendar-moonrise.css (replaced by calendar-unified-system.css)
+      - calendar-budapest.css (replaced by calendar-unified-system.css)
+      - calendar-darjeeling.css (replaced by calendar-unified-system.css)
+      - calendar-asteroid.css (replaced by calendar-unified-system.css)
+      - meta-bind-complete.css (replaced by meta-bind-unified.css)
+      - tag-selector.css (replaced by meta-bind-unified.css)
+   
+   3. TEST the unified systems thoroughly
+   4. REMOVE this emergency patch file once migration is complete
+   ============================================================================= */
+
+/* =============================================================================
+   CALENDAR THEME CONFLICT PREVENTION
+   Prevent conflicting calendar themes from interfering with each other
+   ============================================================================= */
+
+/* Disable non-active calendar themes to prevent conflicts */
+/* Users should only have ONE calendar theme active at a time */
+
+/* Comment out the themes you want to keep active */
+/* EXAMPLE: If you want Moonrise Kingdom active, comment out the other three */
+
+/*
+.budapest-calendar,
+.darjeeling-calendar,
+.asteroid-calendar {
+  display: none !important;
+  visibility: hidden !important;
+}
+*/
+
+/* Emergency activity color override - use only if colors are completely broken */
+/*
+[class*="activity-dot"],
+[class*="activity-ornament"], 
+[class*="activity-stripe"],
+[class*="activity-star"] {
+  background: var(--interactive-accent) !important;
+  opacity: 0.7 !important;
+}
+*/
+
+/* =============================================================================
+   META-BIND CONFLICT PREVENTION
+   Prevent Meta-Bind toggles from breaking during transition
+   ============================================================================= */
+
+/* Emergency toggle visibility fix */
+.meta-bind-input-toggle input {
+  display: initial !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Emergency button reset for broken tag selectors */
+.meta-bind-button {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Prevent edit button conflicts from breaking interface */
+.edit-block-button {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* =============================================================================
+   MCL VARIABLE CONFLICT PREVENTION
+   Prevent MCL variable pollution from breaking other components
+   ============================================================================= */
+
+/* Reset MCL variables that might be causing conflicts */
+/* Uncomment if you notice widespread color/styling issues */
+
+/*
+:root {
+  --mcl-moonrise-yellow: revert !important;
+  --mcl-budapest-pink: revert !important;
+  --mcl-darjeeling-orange: revert !important;
+  --mcl-asteroid-desert: revert !important;
+}
+*/
+
+/* =============================================================================
+   Z-INDEX CONFLICT PREVENTION
+   Prevent layering issues during migration
+   ============================================================================= */
+
+/* Emergency z-index fixes */
+.sidebar-toggle-button {
+  z-index: 100 !important;
+}
+
+.modal-container,
+.modal {
+  z-index: 1000 !important;
+}
+
+.menu,
+.suggestion-container {
+  z-index: 200 !important;
+}
+
+/* =============================================================================
+   PERFORMANCE PROTECTION
+   Prevent CSS conflicts from causing performance issues
+   ============================================================================= */
+
+/* Disable expensive animations if conflicts cause performance problems */
+/*
+@media (max-width: 768px) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+*/
+
+/* =============================================================================
+   DEBUGGING HELPERS
+   Visual indicators for conflict investigation
+   ============================================================================= */
+
+/* Uncomment to highlight potential conflict areas */
+/*
+[class*="calendar"] {
+  outline: 2px solid red !important;
+}
+
+[class*="meta-bind"] {
+  outline: 2px solid blue !important;
+}
+
+[class*="mcl"] {
+  outline: 2px solid green !important;
+}
+*/
+
+/* =============================================================================
+   MIGRATION STATUS TRACKING
+   Remove sections as you complete migration
+   ============================================================================= */
+
+/*
+MIGRATION CHECKLIST:
+☐ Calendar Unified System deployed and tested
+☐ Meta-Bind Unified System deployed and tested
+☐ MCL Variables refactored
+☐ Z-Index Management implemented
+☐ Individual conflict files disabled
+☐ Emergency patch removed
+
+STATUS: EMERGENCY PATCH ACTIVE
+REMOVE THIS FILE: After unified systems are stable
+*/
