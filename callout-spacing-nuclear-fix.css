@@ -1,0 +1,182 @@
+/* =============================================================================
+   NUCLEAR CALLOUT SPACING FIX
+   Maximum specificity override for all callout spacing issues
+   ============================================================================= */
+
+/* NUCLEAR OVERRIDE: Callout Title Spacing - MINIMAL TOP PADDING */
+html body.theme-light .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html body.theme-dark .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+.workspace-leaf-content .markdown-preview-view .callout .callout-title,
+.markdown-preview-view .callout .callout-title,
+.callout .callout-title {
+  padding: 2px 6px 1px 6px !important; /* Minimal padding - text shouldn't touch border */
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.2 !important;
+  min-height: auto !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+/* NUCLEAR OVERRIDE: Remove any inherited spacing */
+.callout .callout-title::before,
+.callout .callout-title::after {
+  content: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* NUCLEAR OVERRIDE: Callout Title Inner - ZERO ALL SPACING */
+html body.theme-light .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+html body.theme-dark .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+.workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+.markdown-preview-view .callout .callout-title-inner,
+.callout[data-callout-metadata] .callout-title-inner,
+.callout .callout-title-inner {
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  display: block !important;
+  font-size: var(--callout-font-size-title) !important;
+  white-space: normal !important;
+  line-height: 1.1 !important;
+  position: relative !important;
+  top: 0 !important;
+  transform: none !important;
+  vertical-align: top !important;
+}
+
+/* NUCLEAR OVERRIDE: Title inner pseudo-elements */
+.callout .callout-title-inner::before,
+.callout .callout-title-inner::after {
+  content: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* NUCLEAR OVERRIDE: Callout Content Paragraph Spacing */
+html body.theme-light .workspace-leaf-content .markdown-preview-view .callout .callout-content p,
+html body.theme-dark .workspace-leaf-content .markdown-preview-view .callout .callout-content p,
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-content p,
+.workspace-leaf-content .markdown-preview-view .callout .callout-content p,
+.markdown-preview-view .callout .callout-content p,
+.callout .callout-content p {
+  margin: 8px 0 8px 0 !important;
+  padding: 0 !important;
+  text-align: var(--callouts-align-text) !important;
+  display: block !important;
+}
+
+/* NUCLEAR OVERRIDE: Callout Container - ZERO TOP SPACING */
+html body.theme-light .workspace-leaf-content .markdown-preview-view .callout,
+html body.theme-dark .workspace-leaf-content .markdown-preview-view .callout,
+html body .workspace-leaf-content .markdown-preview-view .callout,
+.workspace-leaf-content .markdown-preview-view .callout,
+.markdown-preview-view .callout,
+.callout {
+  padding: 0px 8px 4px 8px !important;
+  margin: 4px 0 !important;
+  /* PRESERVE THEMED BORDERS - Do not override */
+  position: relative !important;
+}
+
+/* NUCLEAR OVERRIDE: Ensure no top spacing from any pseudo-elements */
+.callout::before,
+.callout::after {
+  content: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+/* NUCLEAR OVERRIDE: Disable CSS Variables That May Interfere */
+.callout-title-inner {
+  --hide-callout-title: block !important;
+}
+
+/* NUCLEAR OVERRIDE: Callout Icon spacing only - PRESERVE ICONS */
+html body .callout .callout-icon,
+.callout .callout-icon {
+  margin: 0 !important;
+  padding: 0 !important;
+  /* PRESERVE ICONS - Do not hide them completely */
+}
+
+/* NUCLEAR OVERRIDE: MCL-specific callouts - MINIMAL TOP SPACING */
+.callout[data-callout-metadata] .callout-title,
+.callout[data-callout-metadata*="moonrise-"] .callout-title,
+.callout[data-callout-metadata*="mk-"] .callout-title,
+.callout[data-callout-metadata*="budapest-"] .callout-title,
+.callout[data-callout-metadata*="gbh-"] .callout-title,
+.callout[data-callout-metadata*="cavalier-"] .callout-title,
+.callout[data-callout-metadata*="hc-"] .callout-title,
+.callout[data-callout-metadata*="darjeeling-"] .callout-title,
+.callout[data-callout-metadata*="dl-"] .callout-title,
+.callout[data-callout-metadata*="asteroid-"] .callout-title,
+.callout[data-callout-metadata*="ac-"] .callout-title,
+.callout[data-callout-metadata*="pastel-"] .callout-title {
+  padding: 2px 6px 1px 6px !important; /* Minimal padding - preserve borders */
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.2 !important;
+  min-height: auto !important;
+  height: auto !important;
+  position: relative !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+/* NUCLEAR OVERRIDE: Force consistent box model */
+.callout,
+.callout *,
+.callout *::before,
+.callout *::after {
+  box-sizing: border-box !important;
+}
+
+/* NUCLEAR OVERRIDE: Theme-specific fixes for Lagom and other themes */
+.theme-lagom .callout .callout-title,
+.theme-lagom .callout .callout-title-inner,
+body[class*="theme"] .callout .callout-title,
+body[class*="theme"] .callout .callout-title-inner {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+/* NUCLEAR OVERRIDE: Eliminate any CSS variables that add spacing */
+.callout {
+  --callout-title-padding: 0px 8px 1px 8px !important;
+  --callout-content-padding: 8px 0 8px 0 !important;
+  --callout-title-size: inherit !important;
+}
+
+/* =============================================================================
+   DEBUG MODE (Uncomment to visualize spacing issues)
+   ============================================================================= */
+
+/*
+.callout { border: 2px solid red !important; }
+.callout-title { border: 2px solid blue !important; }
+.callout-title-inner { border: 2px solid green !important; }
+.callout-content { border: 2px solid orange !important; }
+.callout-content p { border: 1px solid purple !important; }
+*/

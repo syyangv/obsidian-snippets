@@ -28,7 +28,8 @@
 */
 
 /* Method 3: Hide frontmatter in notes within a specific folder */
-/* Replace "folder-name" with your folder name */
+/* Replace "folder-name" with your folder name - DISABLED by default */
+/* To re-enable, uncomment the following rules:
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .frontmatter,
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .frontmatter-container,
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .metadata-container,
@@ -45,6 +46,7 @@
   height: 0 !important;
   overflow: hidden !important;
 }
+*/
 
 /* Clean up spacing after hiding frontmatter */
 .hide-frontmatter .markdown-preview-view,
@@ -67,7 +69,8 @@
   display: none !important;
 }
 
-/* Additional selectors for hiding frontmatter in edit mode for specific folder */
+/* Additional selectors for hiding frontmatter in edit mode for specific folder - DISABLED by default */
+/* To re-enable, uncomment the following rules:
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-line:has(.cm-meta),
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-line:has(.cm-def),
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-line:has(.cm-atom),
@@ -78,9 +81,12 @@
   height: 0 !important;
   line-height: 0 !important;
 }
+*/
 
-/* Hide the entire YAML block in edit mode */
+/* Hide the entire YAML block in edit mode - DISABLED by default */
+/* To re-enable, uncomment the following rules:
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-editor .cm-line:has(.cm-meta):first-child,
 .workspace-leaf-content[data-path*="知识库/读书笔记/"] .cm-editor .cm-line:has(.cm-meta) {
   display: none !important;
 }
+*/

@@ -1,0 +1,83 @@
+
+/* Bases 的列表样式和元素隐藏 */
+/* 原始想法和绝大多数代码来自：https://discord.com/channels/686053708261228577/716028884885307432/1405933574149898402 */
+/* Moy 进行了些许调节 */
+
+.workspace-split.mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) .bases-view,
+.bases-ordered-list,
+.bases-embed[alt~="ordered-list"] {
+
+    .query-toolbar-item:not(.mod-views) { display: none; }
+
+    /* 隐藏下方阴影 */
+    .bases-tbody { box-shadow: none; }
+
+    .bases-view[data-view-type="table"] {--bases-embed-border-width: 0; overflow-x: hidden;}
+
+    /* 隐藏标题栏 */
+    .bases-thead {
+        display: none;
+        /* font-size: 0.8em; */
+    }
+
+    /* 底部间距（主要是分组用） */
+    .bases-table {
+        padding-top: 4px;
+        border-bottom: 1px dashed var(--background-secondary);
+        padding-bottom: 8px;
+    }
+
+    /* 计数序号功能 */
+    .bases-tr { counter-increment: di-bases-pure-list-counter; }
+
+    /* 表格的网格 */
+    .bases-tr, .bases-td { box-shadow: none; }
+
+    /* .bases-table-cell { font-size: var(--font-text-size); } */
+
+
+    /* 隐藏下划线——这里只针对链接位于第一列的情况 🤔 */
+    .bases-td:first-of-type a { 
+        text-decoration: none; 
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        /* 换行 */
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /* 添加前方的序号 */
+    .bases-td:first-of-type .bases-table-cell::before {
+        content: counter(di-bases-pure-list-counter) ". ";
+        color: var(--list-marker-color);
+        padding-right: 1ch;
+        padding-left: 1ch;
+    }
+
+    .bases-embed {
+        .edit-block-button,
+        .bases-header {
+            display: none !important;
+        }
+    }
+
+    /* ! 卡片 */
+    /* 隐藏卡片的属性名称 */
+    .bases-cards-label {
+        display: none;
+    }
+    .bases-cards-property.mod-title {
+        a.internal-link {
+            color: var(--text-normal) !important;
+            font-weight: normal;
+        }
+
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+}

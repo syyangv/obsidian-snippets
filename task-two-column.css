@@ -1,0 +1,56 @@
+/* Two columns - use [!two-col] */
+div.el-div:has(.callout[data-callout="two-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result {
+    columns: 2 !important;
+    column-gap: 30px;
+    column-rule: 1px solid var(--background-modifier-border);
+    background-color: #E8F4F8;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Three columns - use [!three-col] */
+div.el-div:has(.callout[data-callout="three-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result {
+    columns: 3 !important;
+    column-gap: 30px;
+    column-rule: 1px solid var(--background-modifier-border);
+    background-color: #F0E8F4;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Four columns - use [!four-col] */
+div.el-div:has(.callout[data-callout="four-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result {
+    columns: 4 !important;
+    column-gap: 30px;
+    column-rule: 1px solid var(--background-modifier-border);
+    background-color: #FFF4E8;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Five columns - use [!five-col] */
+div.el-div:has(.callout[data-callout="five-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result {
+    columns: 5 !important;
+    column-gap: 30px;
+    column-rule: 1px solid var(--background-modifier-border);
+    background-color: #E8F8F0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Apply to all column variants */
+div.el-div:has(.callout[data-callout="two-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result li.plugin-tasks-list-item,
+div.el-div:has(.callout[data-callout="three-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result li.plugin-tasks-list-item,
+div.el-div:has(.callout[data-callout="four-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result li.plugin-tasks-list-item,
+div.el-div:has(.callout[data-callout="five-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result li.plugin-tasks-list-item {
+    break-inside: avoid !important;
+    margin-bottom: 0.5em;
+}
+
+/* Hide the marker callouts */
+.callout[data-callout="two-col"],
+.callout[data-callout="three-col"],
+.callout[data-callout="four-col"],
+.callout[data-callout="five-col"] {
+    display: none;
+}

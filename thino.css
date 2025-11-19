@@ -1,0 +1,7 @@
+div[data-type=thino_view] .search-bar-inputer {
+	border:1px solid var(--memos-bg-gray)!important;
+}
+
+.markdown-embed[alt="no-title"] .markdown-embed-title {
+    display: none !important;
+}

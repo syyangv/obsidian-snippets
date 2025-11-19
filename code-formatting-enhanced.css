@@ -1,0 +1,396 @@
+/* =============================================================================
+   CODE FORMATTING ENHANCED - COMPREHENSIVE SOLUTION
+   Professional code display with superior readability and visual design
+   
+   Author: Claude (AI Assistant)
+   Version: 1.0.0
+   Created: 2025-08-10
+   
+   Features:
+   - Intelligent text wrapping for long code lines
+   - Professional syntax highlighting enhancement  
+   - Consistent styling across edit and preview modes
+   - Improved line numbering with proper spacing
+   - Enhanced inline code formatting
+   - Responsive design for different screen sizes
+   - Performance optimized selectors
+   ============================================================================= */
+
+/* ===== CORE CODE BLOCK FOUNDATION ===== */
+:root {
+  /* Code typography settings */
+  --code-font-family: 'JetBrains Mono', 'Fira Code', 'Source Code Pro', 'Consolas', monospace;
+  --code-font-size: 0.85em;
+  --code-line-height: 1.5;
+  
+  /* Code colors and backgrounds */
+  --code-background: rgba(0, 0, 0, 0.05);
+  --code-border: rgba(0, 0, 0, 0.1);
+  --code-text: inherit;
+  
+  /* Code block spacing */
+  --code-padding: 1em;
+  --code-margin: 1em 0;
+  --code-border-radius: 6px;
+  
+  /* Line numbering */
+  --line-number-width: 3em;
+  --line-number-color: rgba(0, 0, 0, 0.4);
+  --line-number-bg: rgba(0, 0, 0, 0.03);
+}
+
+/* Dark theme adjustments */
+.theme-dark {
+  --code-background: rgba(255, 255, 255, 0.08);
+  --code-border: rgba(255, 255, 255, 0.15);
+  --line-number-color: rgba(255, 255, 255, 0.5);
+  --line-number-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== INTELLIGENT TEXT WRAPPING SYSTEM ===== */
+/* ULTRA-HIGH SPECIFICITY to override Lagom theme conflicts */
+
+/* Edit mode code blocks - Ultra-specific CodeMirror targeting */
+body .workspace-leaf-content .view-content .cm-editor .cm-scroller .cm-content .cm-line.HyperMD-codeblock,
+body .workspace-leaf-content .cm-editor .cm-content .cm-line.HyperMD-codeblock,
+body .markdown-source-view.mod-cm6 .cm-editor .cm-line.HyperMD-codeblock,
+body .markdown-source-view .cm-s-obsidian .cm-line.HyperMD-codeblock,
+body .cm-s-obsidian .cm-line.HyperMD-codeblock,
+body .mod-cm6 .cm-line.HyperMD-codeblock,
+body .cm-line.HyperMD-codeblock {
+  /* Intelligent wrapping - override theme */
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-all !important;
+  
+  /* Layout improvements */
+  max-width: 100% !important;
+  overflow: visible !important;
+  display: block !important;
+  
+  /* Typography - override theme font sizes */
+  font-family: var(--code-font-family) !important;
+  font-size: var(--code-font-size) !important;
+  line-height: var(--code-line-height) !important;
+  
+  /* Visual enhancements */
+  border-radius: var(--code-border-radius) !important;
+  padding: 0.5em !important;
+}
+
+/* Override theme-specific code wrapping rules */
+body .code-wrap pre > code,
+body code[class*="language-"],
+body .HyperMD-codeblock {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-all !important;
+}
+
+/* Preview mode code blocks - Ultra-specific targeting */
+body .workspace-leaf-content .markdown-preview-view pre,
+body .workspace-leaf-content .markdown-reading-view pre,
+body .workspace-leaf-content .markdown-rendered pre,
+body .markdown-preview-view pre,
+body .markdown-reading-view pre,
+body .markdown-rendered pre {
+  /* Wrapping system */
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  
+  /* Layout */
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  
+  /* Visual design */
+  background: var(--code-background) !important;
+  border: 1px solid var(--code-border) !important;
+  border-radius: var(--code-border-radius) !important;
+  padding: var(--code-padding) !important;
+  margin: var(--code-margin) !important;
+  
+  /* Typography */
+  font-family: var(--code-font-family) !important;
+  font-size: var(--code-font-size) !important;
+  line-height: var(--code-line-height) !important;
+}
+
+/* Preview mode code content - Ultra-specific targeting */
+body .workspace-leaf-content .markdown-preview-view pre code,
+body .workspace-leaf-content .markdown-reading-view pre code,
+body .workspace-leaf-content .markdown-rendered pre code,
+body .markdown-preview-view pre code,
+body .markdown-reading-view pre code,
+body .markdown-rendered pre code {
+  /* Content wrapping */
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-all !important;
+  
+  /* Reset conflicting styles */
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+/* ===== SYNTAX HIGHLIGHTING ENHANCEMENT ===== */
+/* Target specific CodeMirror syntax elements */
+.cm-line.HyperMD-codeblock span.cm-string,
+.cm-line.HyperMD-codeblock span.cm-atom,
+.cm-line.HyperMD-codeblock span.cm-number,
+.cm-line.HyperMD-codeblock span.cm-property,
+.cm-line.HyperMD-codeblock span.cm-keyword,
+.cm-line.HyperMD-codeblock span.cm-variable,
+.cm-line.HyperMD-codeblock span.cm-operator,
+.cm-line.HyperMD-codeblock span[class*="cm-"] {
+  /* Ensure syntax elements wrap */
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  display: inline !important;
+}
+
+/* ===== ENHANCED LINE NUMBERING ===== */
+/* Improved line numbers with proper spacing */
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin,.HyperMD-codeblock-end) {
+  padding-left: var(--line-number-width) !important;
+  position: relative !important;
+}
+
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock:not(.HyperMD-codeblock-begin,.HyperMD-codeblock-end):before {
+  /* Line number styling */
+  content: counter(codeblock-line-numbers) !important;
+  counter-increment: codeblock-line-numbers !important;
+  
+  /* Positioning */
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  
+  /* Dimensions */
+  width: calc(var(--line-number-width) - 0.5em) !important;
+  height: 100% !important;
+  
+  /* Typography */
+  font-family: var(--code-font-family) !important;
+  font-size: 0.75em !important;
+  line-height: var(--code-line-height) !important;
+  
+  /* Alignment */
+  text-align: right !important;
+  padding-right: 0.5em !important;
+  
+  /* Visual design */
+  color: var(--line-number-color) !important;
+  background: var(--line-number-bg) !important;
+  border-right: 1px solid var(--code-border) !important;
+  
+  /* Ensure proper display */
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+}
+
+/* ===== INLINE CODE ENHANCEMENT ===== */
+/* Professional inline code styling */
+.markdown-preview-view code:not(pre code),
+.markdown-reading-view code:not(pre code),
+.cm-s-obsidian span.cm-inline-code {
+  /* Typography */
+  font-family: var(--code-font-family) !important;
+  font-size: 0.9em !important;
+  
+  /* Wrapping */
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  
+  /* Visual design */
+  background: var(--code-background) !important;
+  color: var(--code-text) !important;
+  border: 1px solid var(--code-border) !important;
+  border-radius: 3px !important;
+  padding: 0.2em 0.4em !important;
+  margin: 0 0.1em !important;
+  
+  /* Layout */
+  display: inline !important;
+  vertical-align: baseline !important;
+}
+
+/* ===== CONTAINER LEVEL FIXES ===== */
+/* Ensure parent containers allow wrapping */
+.cm-editor,
+.cm-scroller,
+.cm-content,
+.cm-focused {
+  /* Container wrapping support */
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Mobile and small screen optimizations */
+@media (max-width: 768px) {
+  :root {
+    --code-font-size: 0.8em;
+    --code-padding: 0.75em;
+    --line-number-width: 2.5em;
+  }
+  
+  /* Simplified mobile layout */
+  .cm-line.HyperMD-codeblock {
+    word-break: break-all !important;
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+/* GPU acceleration for smooth scrolling */
+.cm-line.HyperMD-codeblock,
+.markdown-preview-view pre,
+.markdown-reading-view pre {
+  transform: translateZ(0) !important;
+  will-change: auto !important;
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --code-background: rgba(0, 0, 0, 0.1);
+    --code-border: rgba(0, 0, 0, 0.3);
+  }
+  
+  .theme-dark {
+    --code-background: rgba(255, 255, 255, 0.15);
+    --code-border: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .cm-line.HyperMD-codeblock,
+  .markdown-preview-view pre,
+  .markdown-reading-view pre {
+    will-change: auto !important;
+    transform: none !important;
+  }
+}
+
+/* ===== DEBUG MODE (Optional) ===== */
+/* Uncomment to enable visual debugging */
+/*
+body.debug-code-formatting .cm-line.HyperMD-codeblock {
+  outline: 2px solid red !important;
+}
+
+body.debug-code-formatting .markdown-preview-view pre {
+  outline: 2px solid blue !important;
+}
+*/
+
+/* ===== LAGOM THEME SPECIFIC OVERRIDES ===== */
+/* Ultra-high specificity overrides for Lagom theme conflicts */
+
+/* Override Lagom's inline code rules */
+body .cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight),
+body .markdown-preview-view code {
+  font-family: var(--code-font-family) !important;
+  font-size: var(--code-font-size) !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Override Lagom's code block rules */
+body .markdown-rendered pre,
+body .cm-line.HyperMD-codeblock,
+body .cm-s-obsidian .HyperMD-codeblock span.cm-inline-code {
+  font-family: var(--code-font-family) !important;
+  font-size: var(--code-font-size) !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-all !important;
+}
+
+/* Override all Lagom code wrapping rules with MAXIMUM specificity */
+html body .app-container .workspace .workspace-leaf-content .view-content .markdown-preview-view pre,
+html body .app-container .workspace .workspace-leaf-content .markdown-preview-view pre,
+html body .workspace-leaf-content .markdown-preview-view pre,
+html body .markdown-preview-view pre,
+html body .code-wrap pre > code,
+html body code[class*="language-"],
+html body .markdown-preview-view pre code,
+html body .markdown-reading-view pre,
+html body .markdown-reading-view pre code,
+html body .HyperMD-codeblock,
+html body .HyperMD-codeblock code,
+html body .markdown-preview-view code:not(pre code),
+html body .markdown-reading-view code:not(pre code),
+html body .cm-inline-code,
+html body .cm-editor .cm-scroller .cm-content .cm-line.HyperMD-codeblock,
+html body .cm-editor .cm-content .cm-line.HyperMD-codeblock,
+html body .mod-cm6 .cm-line.HyperMD-codeblock,
+html body .cm-s-obsidian .cm-line.HyperMD-codeblock,
+html body .markdown-source-view .cm-line.HyperMD-codeblock {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-all !important;
+  font-family: var(--code-font-family) !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  overflow-x: visible !important;
+}
+
+/* Force consistent font sizes between edit and view modes */
+body .cm-line.HyperMD-codeblock {
+  font-size: var(--code-font-size) !important;
+}
+
+body .markdown-preview-view pre,
+body .markdown-preview-view code {
+  font-size: var(--code-font-size) !important;
+}
+
+/* Override any line number formatting conflicts */
+body:not(.no-codeblock-line-numbers) .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin,.HyperMD-codeblock-end) {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Override force code wrap body class */
+body.force-code-wrap .HyperMD-codeblock.cm-line:not(.HyperMD-codeblock-begin,.HyperMD-codeblock-end) {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-all !important;
+}
+
+/* ===== TARGETED CODE BLOCK OVERRIDE ===== */
+/* Specific targeting without breaking layout */
+
+.markdown-preview-view pre[class*="language-"] {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+}
+
+.markdown-preview-view pre[class*="language-"] code {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+/* ===== END OF SNIPPET ===== */

@@ -1,0 +1,79 @@
+/* ! Moy-属性区调整.css */
+/* created: 2025-07-31 */
+/* v1.0 */
+
+/* ! 加宽 &双栏 */
+
+/* scope 确保只影响中间区域 */
+@scope (.workspace-split.mod-root) {
+
+/* 增加宽度 */
+.metadata-container {
+    width: min(150%, 80vw);
+    margin-left: max(-25%, calc(50% - 40vw));
+    /* width: min(150%, 2400px);
+    margin-left: max(-25%, calc(50% - 1200px)); */
+
+    container-name: metadata-container;
+    container-type: inline-size;
+
+}
+
+/* 网格，分双栏 */
+.metadata-properties {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    --metadata-property-gap: 6px;
+    /* 空出小间距 */
+    gap: var(--metadata-property-gap);
+    padding: var(--metadata-property-gap);
+}
+
+@container metadata-container (min-width: 1200px) {
+    .metadata-properties {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@container metadata-container (min-width: 1600px) {
+    .metadata-properties {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 限制链接长度 */
+.metadata-link {
+    max-width: 100%;
+}
+
+/* 属性名称靠右 */
+/* input.metadata-property-key-input {
+    text-align: right;
+    padding-right: 8px;
+} */
+
+.metadata-add-button.text-icon-button {
+    /* justify-content: right;
+    width: 100%; */
+    opacity: 0.25;
+    /* 图标元素本身 18px 宽*/
+    margin-left: calc(50% - 25px);
+    padding-left: 16px;
+    padding-right: 16px;
+
+    /* position: absolute;
+    right: 0px; */
+
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    .text-button-label {
+        display: none;
+    }
+
+}
+}

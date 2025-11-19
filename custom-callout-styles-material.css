@@ -1,0 +1,331 @@
+/**
+ * Custom Callout Styles - Google Material Symbols
+ * @author: Claude
+ * @description: Collection of callout types using local Material Symbol SVG files
+ * @created: 2025-01-21
+ * @updated: 2025-01-21
+ * @version: 3.0.0
+ * 
+ * Icon Style: Google Material Symbols from local /icons/ directory
+ * All icons: 24px, filled, weight 400, viewBox 0 -960 960 960
+ * 
+ * Usage:
+ * > [!callout-name] Title
+ * > Content here
+ */
+
+/* ========================================
+   BUILT-IN CALLOUT OVERRIDES 
+   Material Design Icon Replacements
+   ======================================== */
+
+/* Note Callout - Sticky Note icon */
+.callout[data-callout="note"] {
+  --callout-icon: url("icons/sticky_note_2_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* Abstract/Summary Callout - Bulleted List icon */
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"] {
+  --callout-icon: url("icons/format_list_bulleted_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* Info Callout - Info icon */
+.callout[data-callout="info"] {
+  --callout-icon: url("icons/info_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* Todo Callout - Task Alt icon */
+.callout[data-callout="todo"] {
+  --callout-icon: url("icons/task_alt_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* Tip Callout - Lightbulb icon */
+.callout[data-callout="tip"] {
+  --callout-icon: url("icons/lightbulb_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* Success Callout - Check Circle icon */
+.callout[data-callout="success"] {
+  --callout-icon: url("icons/apps_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* Question Callout - Help icon */
+.callout[data-callout="question"] {
+  --callout-icon: url("icons/info_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* Warning Callout - Warning icon */
+.callout[data-callout="warning"] {
+  --callout-icon: url("icons/warning_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* Important Callout - Priority High icon */
+.callout[data-callout="important"] {
+  --callout-icon: url("icons/priority_high_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+}
+
+/* ========================================
+   CUSTOM CALLOUT DEFINITIONS
+   ======================================== */
+
+/* Priority Callout - Red urgent styling */
+.callout[data-callout="priority"] {
+  --callout-color: 220, 53, 69; /* Bootstrap danger red */
+  --callout-icon: url("icons/priority_high_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  border-left: 4px solid rgb(var(--callout-color)) !important;
+  background-color: rgba(var(--callout-color), 0.1);
+}
+
+/* Progress Callout - Green with progress bar styling */
+.callout[data-callout="progress"] {
+  --callout-color: 40, 167, 69; /* Bootstrap success green */
+  --callout-icon: url("icons/apps_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  border-left: 4px solid rgb(var(--callout-color)) !important;
+  background: linear-gradient(90deg, rgba(var(--callout-color), 0.15) 0%, rgba(var(--callout-color), 0.05) 100%);
+}
+
+/* Meeting Callout - Purple with calendar icon */
+.callout[data-callout="meeting"] {
+  --callout-color: 111, 66, 193; /* Purple */
+  --callout-icon: url("icons/calendar_month_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  border-radius: 8px;
+  border: 2px solid rgba(var(--callout-color), 0.3);
+  background-color: rgba(var(--callout-color), 0.08);
+}
+
+/* Learn Callout - Blue with book icon */
+.callout[data-callout="learn"] {
+  --callout-color: 13, 110, 253; /* Bootstrap primary blue */
+  --callout-icon: url("icons/lightbulb_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  border-left: 6px solid rgb(var(--callout-color));
+  background-color: rgba(var(--callout-color), 0.06);
+  position: relative;
+}
+
+.callout[data-callout="learn"]::before {
+  content: "📚";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.2em;
+  opacity: 0.3;
+}
+
+/* Practice Callout - Orange with target icon */
+.callout[data-callout="practice"] {
+  --callout-color: 253, 126, 20; /* Bootstrap warning orange */
+  --callout-icon: url("icons/bolt_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  border: 3px dashed rgba(var(--callout-color), 0.5);
+  border-radius: 12px;
+  background-color: rgba(var(--callout-color), 0.08);
+}
+
+/* Research Callout - Teal with magnifying glass */
+.callout[data-callout="research"] {
+  --callout-color: 32, 201, 151; /* Teal */
+  --callout-icon: url("icons/search_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  border-left: 5px solid rgb(var(--callout-color));
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(var(--callout-color), 0.03),
+    rgba(var(--callout-color), 0.03) 10px,
+    rgba(var(--callout-color), 0.08) 10px,
+    rgba(var(--callout-color), 0.08) 20px
+  );
+}
+
+/* Idea Callout - Yellow with psychology/brain icon */
+.callout[data-callout="idea"] {
+  --callout-color: 255, 193, 7; /* Yellow */
+  --callout-icon: url("icons/psychology_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background: radial-gradient(circle at top left, rgba(var(--callout-color), 0.15), rgba(var(--callout-color), 0.05));
+  border-radius: 15px;
+  border: 2px solid rgba(var(--callout-color), 0.4);
+  box-shadow: 0 4px 12px rgba(var(--callout-color), 0.1);
+}
+
+/* Inspiration Callout - Pink with star */
+.callout[data-callout="inspiration"] {
+  --callout-color: 214, 51, 132; /* Pink */
+  --callout-icon: url("icons/star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background: linear-gradient(135deg, rgba(var(--callout-color), 0.12), rgba(var(--callout-color), 0.04));
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.callout[data-callout="inspiration"]::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(var(--callout-color), 0.4), rgba(var(--callout-color), 0.1));
+}
+
+/* Code Callout - Dark with code icon */
+.callout[data-callout="code"] {
+  --callout-color: 108, 117, 125; /* Gray */
+  --callout-icon: url("icons/code_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(var(--callout-color), 0.3);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.callout[data-callout="code"] .callout-content {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Terminal Callout - Green on dark */
+.callout[data-callout="terminal"] {
+  --callout-color: 25, 135, 84; /* Dark green */
+  --callout-icon: url("icons/terminal_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background-color: #1a1a1a;
+  color: #00ff00;
+  border: 1px solid rgba(var(--callout-color), 0.5);
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.callout[data-callout="terminal"] .callout-title {
+  background-color: #2a2a2a;
+  color: #00ff00;
+  margin: -16px -16px 16px -16px;
+  padding: 8px 16px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Complete Callout - Green completion mark */
+.callout[data-callout="complete"] {
+  --callout-color: 25, 135, 84; /* Success green */
+  --callout-icon: url("icons/task_alt_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background: linear-gradient(135deg, rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.05));
+  border: 2px solid rgba(var(--callout-color), 0.3);
+  border-radius: 10px;
+}
+
+/* Pending Callout - Orange clock */
+.callout[data-callout="pending"] {
+  --callout-color: 253, 126, 20; /* Warning orange */
+  --callout-icon: url("icons/schedule_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(var(--callout-color), 0.05),
+    rgba(var(--callout-color), 0.05) 5px,
+    rgba(var(--callout-color), 0.1) 5px,
+    rgba(var(--callout-color), 0.1) 10px
+  );
+  border-left: 4px solid rgba(var(--callout-color), 0.8);
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 5px rgba(253, 126, 20, 0.3); }
+  to { box-shadow: 0 0 15px rgba(253, 126, 20, 0.1); }
+}
+
+/* Blocked Callout - Red with block symbol */
+.callout[data-callout="blocked"] {
+  --callout-color: 220, 53, 69; /* Danger red */
+  --callout-icon: url("icons/bolt_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background-color: rgba(var(--callout-color), 0.08);
+  border: 2px solid rgba(var(--callout-color), 0.4);
+  border-radius: 8px;
+  position: relative;
+  opacity: 0.9;
+}
+
+/* Highlight Callout - Glowing border */
+.callout[data-callout="highlight"] {
+  --callout-color: 102, 16, 242; /* Purple */
+  --callout-icon: url("icons/star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background: linear-gradient(135deg, rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.05));
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background-clip: padding-box;
+  box-shadow: 
+    0 0 0 2px rgba(var(--callout-color), 0.3),
+    0 8px 16px rgba(var(--callout-color), 0.1);
+  animation: highlight-glow 3s ease-in-out infinite;
+}
+
+@keyframes highlight-glow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 0 2px rgba(102, 16, 242, 0.3),
+      0 8px 16px rgba(102, 16, 242, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 0 3px rgba(102, 16, 242, 0.5),
+      0 12px 24px rgba(102, 16, 242, 0.2);
+  }
+}
+
+/* Bookmark Callout - Folded corner effect */
+.callout[data-callout="bookmark"] {
+  --callout-color: 220, 53, 69; /* Red */
+  --callout-icon: url("icons/star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg");
+  background-color: rgba(var(--callout-color), 0.08);
+  border-radius: 8px;
+  position: relative;
+  border: 1px solid rgba(var(--callout-color), 0.2);
+}
+
+.callout[data-callout="bookmark"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(-45deg, transparent 50%, rgba(var(--callout-color), 0.3) 50%);
+  border-radius: 0 8px 0 0;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  .callout[data-callout="terminal"] .callout-title {
+    font-size: 0.9em;
+  }
+  
+  .callout[data-callout="code"] .callout-content {
+    font-size: 0.8em;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  .callout[data-callout="highlight"] {
+    animation: none;
+    box-shadow: 0 0 0 2px rgba(var(--callout-color), 0.3);
+  }
+  
+  .callout[data-callout="pending"] {
+    animation: none;
+  }
+}
+
+/* ========================================
+   DARK THEME ADJUSTMENTS
+   ======================================== */
+
+.theme-dark .callout[data-callout="terminal"] {
+  background-color: #0d1117;
+  color: #00d562;
+}
+
+.theme-dark .callout[data-callout="terminal"] .callout-title {
+  background-color: #161b22;
+  color: #00d562;
+}
+
+.theme-dark .callout[data-callout="code"] {
+  background-color: rgba(255, 255, 255, 0.03);
+}

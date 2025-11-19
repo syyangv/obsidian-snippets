@@ -1,0 +1,5 @@
+/* Simplified half-width PDF */
+.pdf-embed-half .internal-embed[src$=".pdf"] {
+    width: 50% !important;
+    margin-bottom: 1rem !important;
+}

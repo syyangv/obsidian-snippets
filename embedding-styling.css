@@ -1,0 +1,297 @@
+/* ===== SUBTLE STYLING FOR EMBEDS AND CALLOUTS ===== */
+
+/* ===== EMBED STYLING ===== */
+
+/* ===== EMBED STYLING ===== */
+
+/* Make the left border much more subtle - Only target the main embed container */
+.markdown-embed {
+    border-left: 2px solid var(--background-modifier-border) !important;
+    
+    /* Remove other borders */
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    
+    /* Force transparent background */
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    
+    /* Remove any box shadows that might create blue tints */
+    box-shadow: none !important;
+    
+    /* Reduce padding for cleaner look */
+    padding-left: 12px !important;
+    margin: 8px 0 !important;
+    
+    /* Smooth border radius */
+    border-radius: 0 4px 4px 0 !important;
+}
+
+/* ===== EMBED STYLING ===== */
+
+/* Make the left border much more subtle - Only target the main embed container */
+.markdown-embed {
+    border-left: 2px solid var(--background-modifier-border) !important;
+    
+    /* Remove other borders */
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    
+    /* Force transparent background */
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    
+    /* Remove any box shadows that might create blue tints */
+    box-shadow: none !important;
+    
+    /* Reduce padding for cleaner look */
+    padding-left: 12px !important;
+    margin: 8px 0 !important;
+    
+    /* Smooth border radius */
+    border-radius: 0 4px 4px 0 !important;
+}
+
+/* ===== EMBED STYLING ===== */
+
+/* Make the left border much more subtle - Only target the main embed container */
+.markdown-embed {
+    border-left: 2px solid var(--background-modifier-border) !important;
+    
+    /* Remove other borders */
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    
+    /* Force transparent background */
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    
+    /* Remove any box shadows that might create blue tints */
+    box-shadow: none !important;
+    
+    /* Reduce padding for cleaner look */
+    padding-left: 12px !important;
+    margin: 8px 0 !important;
+    
+    /* Smooth border radius */
+    border-radius: 0 4px 4px 0 !important;
+}
+
+/* Remove borders from nested content to prevent multiple borders */
+.markdown-embed-content,
+.markdown-embed .markdown-preview-view,
+.markdown-embed .markdown-reading-view {
+    border: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+/* ULTIMATE NUCLEAR OPTION: Target every possible element type inside embeds */
+.markdown-embed div,
+.markdown-embed span,
+.markdown-embed p,
+.markdown-embed section,
+.markdown-embed article,
+.markdown-embed aside,
+.markdown-embed nav,
+.markdown-embed header,
+.markdown-embed footer,
+.markdown-embed main,
+.markdown-embed figure,
+.markdown-embed figcaption,
+.markdown-embed blockquote,
+.markdown-embed pre,
+.markdown-embed code,
+.markdown-embed table,
+.markdown-embed th,
+.markdown-embed td,
+.markdown-embed tr,
+.markdown-embed tbody,
+.markdown-embed thead,
+.markdown-embed tfoot,
+.markdown-embed caption,
+.markdown-embed col,
+.markdown-embed colgroup,
+.markdown-embed ul,
+.markdown-embed ol,
+.markdown-embed li,
+.markdown-embed dl,
+.markdown-embed dt,
+.markdown-embed dd,
+.markdown-embed h1,
+.markdown-embed h2,
+.markdown-embed h3,
+.markdown-embed h4,
+.markdown-embed h5,
+.markdown-embed h6,
+.markdown-embed .callout,
+.markdown-embed .callout-content,
+.markdown-embed .callout-title,
+.markdown-embed .callout-icon,
+.markdown-embed [data-callout],
+.markdown-embed [data-callout-metadata],
+.markdown-embed [class*="callout"],
+.markdown-embed [class*="multi-column"],
+.markdown-embed *[class],
+.markdown-embed *[id],
+.markdown-embed * {
+    border-left: none !important;
+    border-left-width: 0px !important;
+    border-left-style: none !important;
+    border-left-color: transparent !important;
+}
+
+/* Target pseudo-elements that might add borders */
+.markdown-embed *::before,
+.markdown-embed *::after,
+.markdown-embed div::before,
+.markdown-embed div::after,
+.markdown-embed .callout::before,
+.markdown-embed .callout::after {
+    border-left: none !important;
+    border-left-width: 0px !important;
+    border-left-style: none !important;
+    border-left-color: transparent !important;
+    content: none !important;
+    display: none !important;
+}
+
+/* Also force transparency on the embed content container */
+.markdown-embed-content {
+    max-height: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Force transparency on any nested containers */
+.markdown-embed .markdown-preview-view,
+.markdown-embed .markdown-reading-view {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Remove embed title for cleaner look */
+.markdown-embed-title {
+    display: none !important;
+}
+
+/* Ensure embedded content flows naturally */
+.markdown-embed-content {
+    max-height: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Force transparency on any nested containers */
+.markdown-embed .markdown-preview-view,
+.markdown-embed .markdown-reading-view {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Hide the embed link icon */
+.markdown-embed-link {
+    display: none !important;
+}
+
+/* ===== CALLOUT STYLING ===== */
+
+/* ===== CALLOUT STYLING - Override custom callout backgrounds ===== */
+
+/* Make callout left borders more subtle - Override your custom callout file */
+.callout,
+.callout[data-callout="priority"],
+.callout[data-callout="progress"],
+.callout[data-callout="meeting"],
+.callout[data-callout="learn"],
+.callout[data-callout="practice"],
+.callout[data-callout="research"],
+.callout[data-callout="idea"],
+.callout[data-callout="inspiration"],
+.callout[data-callout="code"],
+.callout[data-callout="terminal"],
+.callout[data-callout="complete"],
+.callout[data-callout="pending"],
+.callout[data-callout="blocked"],
+.callout[data-callout="highlight"],
+.callout[data-callout="bookmark"],
+.callout[data-callout="multi-column"] {
+    /* Reduce border thickness and opacity - override your 4px, 6px borders */
+    border-left: 2px solid rgba(var(--callout-color), 0.4) !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    
+    /* Subtle background with reduced opacity - override gradients and complex backgrounds */
+    background: rgba(var(--callout-color), 0.03) !important;
+    background-color: rgba(var(--callout-color), 0.03) !important;
+    background-image: none !important;
+    
+    /* Remove any special effects from your custom callouts */
+    box-shadow: none !important;
+    animation: none !important;
+    
+    /* Softer border radius - override your custom radius values */
+    border-radius: 0 6px 6px 0 !important;
+    
+    /* Adjust padding for cleaner look */
+    padding: 12px 16px !important;
+    margin: 8px 0 !important;
+}
+
+/* Special handling for multi-column callouts */
+.callout[data-callout="multi-column"],
+.callout[data-callout-metadata*="multi-column"] {
+    --callout-color: 68, 138, 255; /* Default blue for multi-column */
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-left: 2px solid var(--background-modifier-border) !important;
+}
+
+/* Make callout titles less prominent too */
+.callout-title {
+    /* Reduce title emphasis */
+    font-weight: 500 !important; /* Instead of bold */
+    opacity: 0.9 !important;
+    margin-bottom: 6px !important;
+}
+
+/* Callout icons - make them more subtle */
+.callout-icon {
+    opacity: 0.7 !important;
+}
+
+/* Nested callouts - even more subtle */
+.callout .callout {
+    border-left-width: 1px !important;
+    background-color: rgba(var(--callout-color), 0.01) !important;
+    margin: 4px 0 !important;
+    padding: 8px 12px !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Even more subtle on smaller screens */
+@media (max-width: 768px) {
+    .markdown-embed {
+        border-left-width: 1px !important;
+        padding-left: 8px !important;
+    }
+    
+    .callout {
+        border-left-width: 1px !important;
+        padding: 8px 12px !important;
+    }
+}

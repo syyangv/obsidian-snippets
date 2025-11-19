@@ -1,0 +1,38 @@
+/* Override reading line length for mermaid charts */
+.markdown-preview-view:has(.block-language-mermaid) .markdown-preview-sizer {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* Force full width for mermaid containers */
+.block-language-mermaid {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.block-language-mermaid svg {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* For dataviewjs blocks containing mermaid */
+.block-language-dataviewjs {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Override readable line length globally when mermaid is present */
+.is-readable-line-width .markdown-preview-view:has(.block-language-mermaid) {
+    max-width: 100% !important;
+}
+
+.is-readable-line-width .markdown-source-view.mod-cm6:has(.block-language-mermaid) .cm-sizer {
+    max-width: 100% !important;
+}

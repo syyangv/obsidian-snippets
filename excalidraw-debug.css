@@ -1,0 +1,29 @@
+/* =============================================================================
+   EXCALIDRAW MINIMAL FIX
+   Simple fix for color picker and viewport issues
+   ============================================================================= */
+
+/* Basic viewport fix */
+.excalidraw-wrapper,
+.excalidraw-container,
+.excalidraw {
+  overflow: visible !important;
+}
+
+/* Simple color picker fix */
+.excalidraw .popover-content,
+.excalidraw .color-palette,
+.excalidraw .picker,
+.excalidraw div[role="dialog"] {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 9999 !important;
+}
+
+/* Debug outline (commented out by default) */
+/*
+.excalidraw * {
+  outline: 1px solid red !important;
+}
+*/

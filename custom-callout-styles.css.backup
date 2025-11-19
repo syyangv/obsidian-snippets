@@ -1,0 +1,382 @@
+/**
+ * Custom Callout Styles - Material Design Icons
+ * @author: Claude
+ * @description: Collection of custom callout types with Google Material Symbols styling
+ * @created: 2025-01-21
+ * @updated: 2025-01-21
+ * @version: 2.0.0
+ * 
+ * Icon Style: Google Material Symbols (24px, filled, weight 400)
+ * ViewBox: 0 -960 960 960
+ * Fill: #1f1f1f (adapts to theme)
+ * 
+ * Usage:
+ * > [!callout-name] Title
+ * > Content here
+ */
+
+/* ========================================
+   BUILT-IN CALLOUT OVERRIDES 
+   Material Design Icon Replacements
+   ======================================== */
+
+/* Note Callout - Edit Note icon */
+.callout[data-callout="note"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></svg>;
+}
+
+/* Abstract/Summary Callout - Summarize icon */
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M280-280h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm-80 480q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>;
+}
+
+/* Info Callout - Info icon */
+.callout[data-callout="info"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>;
+}
+
+/* Todo Callout - Task Alt icon */
+.callout[data-callout="todo"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-40-320L320-520l56-56 64 64 148-148 56 56-204 204Z"/></svg>;
+}
+
+/* Tip Callout - Lightbulb icon */
+.callout[data-callout="tip"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-34 0-57.5-23.5T399-161h162q0 34-23.5 57.5T480-80ZM318-223v-60h324v60H318Zm5-121q-66-43-104.5-107.5T180-580q0-125 87.5-212.5T480-880q125 0 212.5 87.5T780-580q0 64-38 128.5T637-344H323Zm22-60h270q44-26 69.5-71T710-580q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 50 25.5 95t69.5 71Zm135 0Z"/></svg>;
+}
+
+/* Success Callout - Check Circle icon */
+.callout[data-callout="success"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>;
+}
+
+/* Question Callout - Help icon */
+.callout[data-callout="question"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-29t38.5-11q23 0 35 12t12 30q0 21-12 37.5T472-532q-30 26-41 49.5T420-394Zm60 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>;
+}
+
+/* Warning Callout - Warning icon */
+.callout[data-callout="warning"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"/></svg>;
+}
+
+/* Failure Callout - Cancel icon */
+.callout[data-callout="failure"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>;
+}
+
+/* Danger Callout - Dangerous icon */
+.callout[data-callout="danger"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>;
+}
+
+/* Bug Callout - Bug Report icon */
+.callout[data-callout="bug"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-83 0-141.5-58.5T280-280v-120H160v-80h120v-40H160v-80h120v-120q0-61 33-111.5t87-71.5l-40-40 56-56 64 64h80l64-64 56 56-40 40q54 21 87 71.5T760-520v120h120v80H760v40h120v80H760v120q0 83-58.5 141.5T480-80ZM360-400h240v-120q0-50-35-85t-85-35q-50 0-85 35t-35 85v120Zm0 80v40h240v-40H360Zm0 120v40q0 50 35 85t85 35q50 0 85-35t35-85v-40H360Zm120-200Z"/></svg>;
+}
+
+/* Example Callout - Code icon */
+.callout[data-callout="example"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M320-242 80-482l242-242 56 56-186 186 186 186-56 56Zm320 0-56-56 186-186-186-186 56-56 242 242-242 242Z"/></svg>;
+}
+
+/* Quote Callout - Format Quote icon */
+.callout[data-callout="quote"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M580-240h160v-160H580v160Zm-20-60 60-100h-60v-260h200v232L658-300H560Zm-340 60h160v-160H220v160Zm-20-60 60-100h-60v-260h200v232L298-300H200Zm80-160Zm360 0Z"/></svg>;
+}
+
+/* Important Callout - Priority High icon */
+.callout[data-callout="important"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm-40-240v-480h80v480h-80Z"/></svg>;
+}
+
+/* Caution Callout - Report Problem icon */
+.callout[data-callout="caution"] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>;
+}
+
+/* ========================================
+   PRODUCTIVITY CALLOUTS
+   ======================================== */
+
+/* Priority Callout - Red urgent styling */
+.callout[data-callout="priority"] {
+  --callout-color: 220, 53, 69; /* Bootstrap danger red */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm-40-240v-480h80v480h-80Z"/></svg>;
+  border-left: 4px solid rgb(var(--callout-color)) !important;
+  background-color: rgba(var(--callout-color), 0.1);
+}
+
+/* Progress Callout - Green with progress bar styling */
+.callout[data-callout="progress"] {
+  --callout-color: 40, 167, 69; /* Bootstrap success green */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm80-400v-80h400v80H280Zm0 160v-80h280v80H280Zm0 160v-80h400v80H280Z"/></svg>;
+  border-left: 4px solid rgb(var(--callout-color)) !important;
+  background: linear-gradient(90deg, rgba(var(--callout-color), 0.15) 0%, rgba(var(--callout-color), 0.05) 100%);
+}
+
+/* Meeting Callout - Purple with calendar icon */
+.callout[data-callout="meeting"] {
+  --callout-color: 111, 66, 193; /* Purple */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>;
+  border-radius: 8px;
+  border: 2px solid rgba(var(--callout-color), 0.3);
+  background-color: rgba(var(--callout-color), 0.08);
+}
+
+/* ========================================
+   EDUCATIONAL CALLOUTS
+   ======================================== */
+
+/* Learn Callout - Blue with book icon */
+.callout[data-callout="learn"] {
+  --callout-color: 13, 110, 253; /* Bootstrap primary blue */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113 15t107 45q52-30 107-45t113-15q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59Z"/></svg>;
+  border-left: 6px solid rgb(var(--callout-color));
+  background-color: rgba(var(--callout-color), 0.06);
+  position: relative;
+}
+
+.callout[data-callout="learn"]::before {
+  content: "📚";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.2em;
+  opacity: 0.3;
+}
+
+/* Practice Callout - Orange with target icon */
+.callout[data-callout="practice"] {
+  --callout-color: 253, 126, 20; /* Bootstrap warning orange */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-120q-67 0-113.5-46.5T320-440q0-67 46.5-113.5T480-600q67 0 113.5 46.5T640-440q0 67-46.5 113.5T480-280Zm0-80q33 0 56.5-23.5T560-440q0-33-23.5-56.5T480-520q-33 0-56.5 23.5T400-440q0 33 23.5 56.5T480-360Z"/></svg>;
+  border: 3px dashed rgba(var(--callout-color), 0.5);
+  border-radius: 12px;
+  background-color: rgba(var(--callout-color), 0.08);
+}
+
+/* Research Callout - Teal with magnifying glass */
+.callout[data-callout="research"] {
+  --callout-color: 32, 201, 151; /* Teal */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>;
+  border-left: 5px solid rgb(var(--callout-color));
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(var(--callout-color), 0.03),
+    rgba(var(--callout-color), 0.03) 10px,
+    rgba(var(--callout-color), 0.08) 10px,
+    rgba(var(--callout-color), 0.08) 20px
+  );
+}
+
+/* ========================================
+   CREATIVE CALLOUTS
+   ======================================== */
+
+/* Idea Callout - Yellow with lightbulb */
+.callout[data-callout="idea"] {
+  --callout-color: 255, 193, 7; /* Yellow */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-34 0-57.5-23.5T399-161h162q0 34-23.5 57.5T480-80ZM318-223v-60h324v60H318Zm5-121q-66-43-104.5-107.5T180-580q0-125 87.5-212.5T480-880q125 0 212.5 87.5T780-580q0 64-38 128.5T637-344H323Zm22-60h270q44-26 69.5-71T710-580q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 50 25.5 95t69.5 71Zm135 0Z"/></svg>;
+  background: radial-gradient(circle at top left, rgba(var(--callout-color), 0.15), rgba(var(--callout-color), 0.05));
+  border-radius: 15px;
+  border: 2px solid rgba(var(--callout-color), 0.4);
+  box-shadow: 0 4px 12px rgba(var(--callout-color), 0.1);
+}
+
+/* Inspiration Callout - Pink with star */
+.callout[data-callout="inspiration"] {
+  --callout-color: 214, 51, 132; /* Pink */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/></svg>;
+  background: linear-gradient(135deg, rgba(var(--callout-color), 0.12), rgba(var(--callout-color), 0.04));
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.callout[data-callout="inspiration"]::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(var(--callout-color), 0.4), rgba(var(--callout-color), 0.1));
+}
+
+/* ========================================
+   TECHNICAL CALLOUTS
+   ======================================== */
+
+/* Code Callout - Dark with code icon */
+.callout[data-callout="code"] {
+  --callout-color: 108, 117, 125; /* Gray */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M320-242 80-482l242-242 56 56-186 186 186 186-56 56Zm320 0-56-56 186-186-186-186 56-56 242 242-242 242Z"/></svg>;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(var(--callout-color), 0.3);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.callout[data-callout="code"] .callout-content {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Terminal Callout - Green on dark */
+.callout[data-callout="terminal"] {
+  --callout-color: 25, 135, 84; /* Dark green */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z"/></svg>;
+  background-color: #1a1a1a;
+  color: #00ff00;
+  border: 1px solid rgba(var(--callout-color), 0.5);
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.callout[data-callout="terminal"] .callout-title {
+  background-color: #2a2a2a;
+  color: #00ff00;
+  margin: -16px -16px 16px -16px;
+  padding: 8px 16px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* ========================================
+   STATUS CALLOUTS
+   ======================================== */
+
+/* Complete Callout - Green checkmark */
+.callout[data-callout="complete"] {
+  --callout-color: 25, 135, 84; /* Success green */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M421-298 274-445l43-43 104 104 227-227 43 43-270 270Zm59 218q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z"/></svg>;
+  background: linear-gradient(135deg, rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.05));
+  border: 2px solid rgba(var(--callout-color), 0.3);
+  border-radius: 10px;
+}
+
+/* Pending Callout - Orange clock */
+.callout[data-callout="pending"] {
+  --callout-color: 253, 126, 20; /* Warning orange */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(var(--callout-color), 0.05),
+    rgba(var(--callout-color), 0.05) 5px,
+    rgba(var(--callout-color), 0.1) 5px,
+    rgba(var(--callout-color), 0.1) 10px
+  );
+  border-left: 4px solid rgba(var(--callout-color), 0.8);
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 5px rgba(253, 126, 20, 0.3); }
+  to { box-shadow: 0 0 15px rgba(253, 126, 20, 0.1); }
+}
+
+/* Blocked Callout - Red with X */
+.callout[data-callout="blocked"] {
+  --callout-color: 220, 53, 69; /* Danger red */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80ZM274-274l206-206 206 206q27-31 40.5-69.5T740-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 39 13.5 77.5T274-274Z"/></svg>;
+  background-color: rgba(var(--callout-color), 0.08);
+  border: 2px solid rgba(var(--callout-color), 0.4);
+  border-radius: 8px;
+  position: relative;
+  opacity: 0.9;
+}
+
+/* ========================================
+   SPECIAL EFFECT CALLOUTS
+   ======================================== */
+
+/* Highlight Callout - Glowing border */
+.callout[data-callout="highlight"] {
+  --callout-color: 102, 16, 242; /* Purple */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/></svg>;
+  background: linear-gradient(135deg, rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.05));
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background-clip: padding-box;
+  box-shadow: 
+    0 0 0 2px rgba(var(--callout-color), 0.3),
+    0 8px 16px rgba(var(--callout-color), 0.1);
+  animation: highlight-glow 3s ease-in-out infinite;
+}
+
+@keyframes highlight-glow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 0 2px rgba(102, 16, 242, 0.3),
+      0 8px 16px rgba(102, 16, 242, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 0 3px rgba(102, 16, 242, 0.5),
+      0 12px 24px rgba(102, 16, 242, 0.2);
+  }
+}
+
+/* Bookmark Callout - Folded corner effect */
+.callout[data-callout="bookmark"] {
+  --callout-color: 220, 53, 69; /* Red */
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg>;
+  background-color: rgba(var(--callout-color), 0.08);
+  border-radius: 8px;
+  position: relative;
+  border: 1px solid rgba(var(--callout-color), 0.2);
+}
+
+.callout[data-callout="bookmark"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(-45deg, transparent 50%, rgba(var(--callout-color), 0.3) 50%);
+  border-radius: 0 8px 0 0;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  .callout[data-callout="terminal"] .callout-title {
+    font-size: 0.9em;
+  }
+  
+  .callout[data-callout="code"] .callout-content {
+    font-size: 0.8em;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  .callout[data-callout="highlight"] {
+    animation: none;
+    box-shadow: 0 0 0 2px rgba(var(--callout-color), 0.3);
+  }
+  
+  .callout[data-callout="pending"] {
+    animation: none;
+  }
+}
+
+/* ========================================
+   DARK THEME ADJUSTMENTS
+   ======================================== */
+
+.theme-dark .callout[data-callout="terminal"] {
+  background-color: #0d1117;
+  color: #00d562;
+}
+
+.theme-dark .callout[data-callout="terminal"] .callout-title {
+  background-color: #161b22;
+  color: #00d562;
+}
+
+.theme-dark .callout[data-callout="code"] {
+  background-color: rgba(255, 255, 255, 0.03);
+}

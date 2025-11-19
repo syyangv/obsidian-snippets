@@ -1,0 +1,36 @@
+/* Hide Link Favicons plugin icons for app protocols */
+a[href^="airtable://"] img,
+a[href^="daakledger://"] img,
+a[href^="airtable://"] .link-favicon,
+a[href^="daakledger://"] .link-favicon,
+a[href^="airtable://"] .favicon,
+a[href^="daakledger://"] .favicon {
+    display: none !important;
+}
+
+/* Your custom app protocol icons */
+.markdown-preview-view a[href^="airtable://"]::before,
+.markdown-source-view a[href^="airtable://"]::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background-image: url('https://static.airtable.com/images/favicon/favicon-32x32.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: text-bottom;
+}
+
+.markdown-preview-view a[href^="daakledger://"]::before,
+.markdown-source-view a[href^="daakledger://"]::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background-image: url('path-to-daak-ledger-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: text-bottom;
+}

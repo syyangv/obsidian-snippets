@@ -1,0 +1,76 @@
+/* TEMPORARILY DISABLED - TESTING IF THIS AFFECTS NOTES DISPLAY */
+/*
+
+/* Force file explorer container to have proper scrolling */
+.workspace-split.mod-left-split {
+  overflow-y: visible !important;
+  max-height: calc(100vh - 60px) !important;
+  padding-bottom: 10px !important;
+}
+
+.workspace-leaf-content[data-type="file-explorer"] {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: calc(100vh - 160px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin-bottom: 15px !important;
+}
+
+.workspace-leaf-content[data-type="file-explorer"] .view-content {
+  overflow-y: auto !important;
+  max-height: calc(100vh - 200px) !important;
+  height: auto !important;
+  padding-bottom: 40px !important;
+}
+
+.nav-files-container {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: calc(100vh - 220px) !important;
+  height: auto !important;
+  padding-bottom: 50px !important;
+  margin-bottom: 25px !important;
+}
+
+/* Override ALL overflow hidden rules that might affect navigation */
+.workspace-leaf-content[data-type="file-explorer"] *,
+.nav-files-container *,
+.tree-item-children *,
+.nav-folder-children * {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+/* Ensure scrollbar is visible */
+.workspace-leaf-content[data-type="file-explorer"]::-webkit-scrollbar,
+.nav-files-container::-webkit-scrollbar {
+  width: 8px !important;
+  display: block !important;
+}
+
+.workspace-leaf-content[data-type="file-explorer"]::-webkit-scrollbar-thumb,
+.nav-files-container::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg) !important;
+  border-radius: 4px !important;
+}
+
+TEMPORARILY DISABLED ALL SIDEBAR FIXES
+/*
+/* Ensure any bottom UI elements in sidebar are visible */
+.workspace-split.mod-left-split .workspace-leaf-footer,
+.workspace-split.mod-left-split .view-header,
+.workspace-split.mod-left-split .status-bar,
+.workspace-split.mod-left-split .nav-buttons-container {
+  position: relative !important;
+  z-index: 100 !important;
+  margin-bottom: 5px !important;
+}
+
+/* Adjust overall sidebar height to accommodate all elements */
+.workspace-split.mod-left-split {
+  max-height: calc(100vh - 80px) !important;
+  box-sizing: border-box !important;
+  padding-bottom: 20px !important;
+}
+*/

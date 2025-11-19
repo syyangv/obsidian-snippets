@@ -17,19 +17,19 @@
   display: none !important;
 }
 
-/* Prevent scrolling and movement in the widget */
-.year-progress-widget .workspace-leaf-content,
-.year-progress-widget .view-content,
-.year-progress-widget .markdown-preview-view,
-.year-progress-widget .markdown-source-view {
+/* Prevent scrolling and movement in the widget - more specific targeting */
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .workspace-leaf-content,
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .view-content,
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .markdown-preview-view,
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .markdown-source-view {
   overflow: hidden !important;
   pointer-events: none !important;
   height: 100% !important;
   max-height: 100% !important;
 }
 
-.year-progress-widget .cm-scroller,
-.year-progress-widget .markdown-preview-sizer {
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .cm-scroller,
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .markdown-preview-sizer {
   overflow: hidden !important;
   max-height: 100% !important;
   height: 100% !important;
@@ -37,7 +37,7 @@
 }
 
 /* Prevent any scrolling or interaction */
-.year-progress-widget .view-content {
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .view-content {
   user-select: none !important;
   -webkit-user-select: none !important;
   -moz-user-select: none !important;
@@ -55,8 +55,8 @@
 }
 
 /* Clean up spacing after hiding elements */
-.year-progress-widget .markdown-preview-view,
-.year-progress-widget .markdown-source-view {
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .markdown-preview-view,
+.workspace-leaf-content[data-type="markdown"] .year-progress-widget .markdown-source-view {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }

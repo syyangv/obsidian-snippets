@@ -8,6 +8,34 @@
    Version: 2.0.0 (Performance Optimized)
    ============================================================================= */
 
+/* Material Design Icon Overrides for Built-in Callouts - High Specificity */
+html body .workspace-leaf-content .markdown-preview-view .callout[data-callout="note"],
+html body .workspace-leaf-content .markdown-source-view .callout[data-callout="note"],
+.callout[data-callout="note"] {
+  --callout-icon: url("icons/sticky_note_2_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg") !important;
+}
+
+html body .workspace-leaf-content .markdown-preview-view .callout[data-callout="abstract"],
+html body .workspace-leaf-content .markdown-preview-view .callout[data-callout="summary"],
+html body .workspace-leaf-content .markdown-source-view .callout[data-callout="abstract"],
+html body .workspace-leaf-content .markdown-source-view .callout[data-callout="summary"],
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"] {
+  --callout-icon: url("icons/format_list_bulleted_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg") !important;
+}
+
+html body .workspace-leaf-content .markdown-preview-view .callout[data-callout="warning"],
+html body .workspace-leaf-content .markdown-source-view .callout[data-callout="warning"],
+.callout[data-callout="warning"] {
+  --callout-icon: url("icons/warning_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg") !important;
+}
+
+html body .workspace-leaf-content .markdown-preview-view .callout[data-callout="idea"],
+html body .workspace-leaf-content .markdown-source-view .callout[data-callout="idea"],
+.callout[data-callout="idea"] {
+  --callout-icon: url("icons/psychology_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg") !important;
+}
+
 /* =============================================================================
    PERFORMANCE OPTIMIZATIONS
    ============================================================================= */
@@ -16,6 +44,67 @@
 .callout[data-callout-metadata] {
   contain: layout style;
   will-change: auto;
+}
+
+/* =============================================================================
+   MULTI-COLUMN LAYOUT FUNCTIONALITY
+   Core flexbox layout system for [!multi-column] callouts
+   ============================================================================= */
+
+/* Hide the multi-column container styling */
+.callout[data-callout="multi-column"] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hide the multi-column title */
+.callout[data-callout="multi-column"] > .callout-title {
+  display: none;
+}
+
+/* Content area - transparent and flexible */
+.callout[data-callout="multi-column"] > .callout-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Individual column items - preserve themed styling */
+.callout[data-callout="multi-column"] > .callout-content > .callout {
+  flex: 1;
+  min-width: 200px;
+  /* Preserve themed margins and styling */
+}
+
+/* Individual content blocks (for non-callout content) */
+.callout[data-callout="multi-column"] > .callout-content > *:not(.callout) {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Image handling within multi-column */
+.callout[data-callout="multi-column"] img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .callout[data-callout="multi-column"] > .callout-content > .callout,
+  .callout[data-callout="multi-column"] > .callout-content > * {
+    min-width: 100%;
+    flex: none;
+  }
 }
 
 /* =============================================================================
@@ -117,6 +206,322 @@
 }
 
 /* =============================================================================
+   CALLOUT TITLE SPACING - ORIGINAL VALUES
+   Proper spacing for themed callout titles
+   ============================================================================= */
+
+/* ULTIMATE NUCLEAR OPTION: Maximum specificity to override legacy disabled file */
+html body.theme-light .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html body.theme-dark .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html .workspace .markdown-preview-view .callout .callout-title,
+html .markdown-preview-view .callout .callout-title,
+html body .callout .callout-title,
+html .callout .callout-title,
+body.theme-light .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+body.theme-dark .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+body .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+.workspace-leaf-content .markdown-preview-view .callout .callout-title,
+.markdown-preview-view .callout .callout-title,
+.callout[data-callout-metadata] .callout-title,
+.callout[data-callout-metadata*="moonrise-"] .callout-title,
+.callout[data-callout-metadata*="mk-"] .callout-title,
+.callout[data-callout-metadata*="budapest-"] .callout-title,
+.callout[data-callout-metadata*="gbh-"] .callout-title,
+.callout[data-callout-metadata*="cavalier-"] .callout-title,
+.callout[data-callout-metadata*="hc-"] .callout-title,
+.callout[data-callout-metadata*="darjeeling-"] .callout-title,
+.callout[data-callout-metadata*="dl-"] .callout-title,
+.callout[data-callout-metadata*="asteroid-"] .callout-title,
+.callout[data-callout-metadata*="ac-"] .callout-title,
+.callout .callout-title {
+  padding: 4px 8px 2px 8px !important;
+  margin: 0 0 2px 0 !important;
+  line-height: 1.1 !important;
+  min-height: auto !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* NUCLEAR CALLOUT SPACING FIX: Complete override of all spacing sources */
+
+/* Target ALL callout elements - BOTH EDIT AND VIEW MODES */
+html body.theme-light .workspace-leaf-content .markdown-preview-view .callout,
+html body.theme-dark .workspace-leaf-content .markdown-preview-view .callout,
+html body .workspace-leaf-content .markdown-preview-view .callout,
+html .workspace-leaf-content .markdown-preview-view .callout,
+html .markdown-preview-view .callout,
+.markdown-preview-view .callout,
+html body.theme-light .workspace-leaf-content .markdown-reading-view .callout,
+html body.theme-dark .workspace-leaf-content .markdown-reading-view .callout,
+html body .workspace-leaf-content .markdown-reading-view .callout,
+html .workspace-leaf-content .markdown-reading-view .callout,
+html .markdown-reading-view .callout,
+.markdown-reading-view .callout,
+html body.theme-light .workspace-leaf-content .view-content .callout,
+html body.theme-dark .workspace-leaf-content .view-content .callout,
+html body .workspace-leaf-content .view-content .callout,
+html .workspace-leaf-content .view-content .callout,
+html .view-content .callout,
+.view-content .callout,
+.callout {
+  padding: 0px 8px 4px 8px !important;
+  margin: 4px 0 !important;
+  position: relative !important;
+}
+
+/* Callout titles - ZERO TOP SPACING - BOTH EDIT AND VIEW MODES */
+html body.theme-light .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html body.theme-dark .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html .markdown-preview-view .callout .callout-title,
+.markdown-preview-view .callout .callout-title,
+html body.theme-light .workspace-leaf-content .markdown-reading-view .callout .callout-title,
+html body.theme-dark .workspace-leaf-content .markdown-reading-view .callout .callout-title,
+html body .workspace-leaf-content .markdown-reading-view .callout .callout-title,
+html .workspace-leaf-content .markdown-reading-view .callout .callout-title,
+html .markdown-reading-view .callout .callout-title,
+.markdown-reading-view .callout .callout-title,
+html body.theme-light .workspace-leaf-content .view-content .callout .callout-title,
+html body.theme-dark .workspace-leaf-content .view-content .callout .callout-title,
+html body .workspace-leaf-content .view-content .callout .callout-title,
+html .workspace-leaf-content .view-content .callout .callout-title,
+html .view-content .callout .callout-title,
+.view-content .callout .callout-title,
+.callout .callout-title,
+.callout[data-callout-metadata] .callout-title {
+  padding: 0px 6px 1px 6px !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  line-height: 1.2 !important;
+  min-height: auto !important;
+  height: auto !important;
+  top: 0 !important;
+  position: relative !important;
+}
+
+/* Lagom theme's callout-title-inner - BOTH EDIT AND VIEW MODES */
+html body.theme-light .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+html body.theme-dark .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+html .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+html .markdown-preview-view .callout .callout-title-inner,
+.markdown-preview-view .callout .callout-title-inner,
+html body.theme-light .workspace-leaf-content .markdown-reading-view .callout .callout-title-inner,
+html body.theme-dark .workspace-leaf-content .markdown-reading-view .callout .callout-title-inner,
+html body .workspace-leaf-content .markdown-reading-view .callout .callout-title-inner,
+html .workspace-leaf-content .markdown-reading-view .callout .callout-title-inner,
+html .markdown-reading-view .callout .callout-title-inner,
+.markdown-reading-view .callout .callout-title-inner,
+html body.theme-light .workspace-leaf-content .view-content .callout .callout-title-inner,
+html body.theme-dark .workspace-leaf-content .view-content .callout .callout-title-inner,
+html body .workspace-leaf-content .view-content .callout .callout-title-inner,
+html .workspace-leaf-content .view-content .callout .callout-title-inner,
+html .view-content .callout .callout-title-inner,
+.view-content .callout .callout-title-inner,
+.callout .callout-title-inner,
+.callout-title-inner {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+  display: block !important;
+}
+
+/* Callout content spacing reduction */
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-content,
+html .markdown-preview-view .callout .callout-content,
+.callout .callout-content {
+  padding: 4px 6px !important;
+  margin: 0 !important;
+}
+
+/* Content paragraph spacing override */
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-content p,
+html .markdown-preview-view .callout .callout-content p,
+.callout .callout-content p {
+  margin: 4px 0 !important;
+  padding: 0 !important;
+}
+
+/* ADDITIONAL TOP SPACING ELIMINATORS */
+
+/* Force CSS variables to zero top spacing */
+html .callout,
+.callout {
+  --callout-title-padding: 0px 6px 1px 6px !important;
+  --callout-content-padding: 2px 6px 4px 6px !important;
+  --callout-padding: 0px 8px 4px 8px !important;
+}
+
+/* Theme-specific overrides for any remaining top spacing */
+.theme-lagom .callout .callout-title,
+body[class*="theme"] .callout .callout-title,
+[data-theme] .callout .callout-title {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  top: 0 !important;
+}
+
+/* Prevent any pseudo-elements from creating space */
+.callout::before, .callout::after,
+.callout .callout-title::before, .callout .callout-title::after,
+.callout .callout-title-inner::before, .callout .callout-title-inner::after {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ULTRA-NUCLEAR VIEW MODE FIX - Maximum specificity for persistent spacing */
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+html body .workspace-leaf-content .markdown-reading-view .callout .callout-title,
+html body .workspace-leaf-content .view-content .callout .callout-title,
+html body .markdown-preview-view .callout .callout-title,
+html body .markdown-reading-view .callout .callout-title,
+html body .view-content .callout .callout-title,
+body .workspace-leaf-content .markdown-preview-view .callout .callout-title,
+body .workspace-leaf-content .markdown-reading-view .callout .callout-title,
+body .workspace-leaf-content .view-content .callout .callout-title,
+.workspace-leaf-content .markdown-preview-view .callout .callout-title,
+.workspace-leaf-content .markdown-reading-view .callout .callout-title,
+.workspace-leaf-content .view-content .callout .callout-title {
+  padding: 0px 6px 0px 6px !important;
+  margin: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  line-height: 1.1 !important;
+  position: relative !important;
+  top: 0px !important;
+}
+
+/* ULTRA-NUCLEAR VIEW MODE TITLE-INNER FIX */
+html body .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+html body .workspace-leaf-content .markdown-reading-view .callout .callout-title-inner,
+html body .workspace-leaf-content .view-content .callout .callout-title-inner,
+html body .markdown-preview-view .callout .callout-title-inner,
+html body .markdown-reading-view .callout .callout-title-inner,
+html body .view-content .callout .callout-title-inner,
+body .workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+body .workspace-leaf-content .markdown-reading-view .callout .callout-title-inner,
+body .workspace-leaf-content .view-content .callout .callout-title-inner,
+.workspace-leaf-content .markdown-preview-view .callout .callout-title-inner,
+.workspace-leaf-content .markdown-reading-view .callout .callout-title-inner,
+.workspace-leaf-content .view-content .callout .callout-title-inner {
+  margin: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  position: relative !important;
+  top: 0px !important;
+}
+
+/* VIEW MODE CALLOUT CONTAINER FIX */
+html body .workspace-leaf-content .markdown-preview-view .callout,
+html body .workspace-leaf-content .markdown-reading-view .callout,
+html body .workspace-leaf-content .view-content .callout,
+html body .markdown-preview-view .callout,
+html body .markdown-reading-view .callout,
+html body .view-content .callout,
+body .workspace-leaf-content .markdown-preview-view .callout,
+body .workspace-leaf-content .markdown-reading-view .callout,
+body .workspace-leaf-content .view-content .callout,
+.workspace-leaf-content .markdown-preview-view .callout,
+.workspace-leaf-content .markdown-reading-view .callout,
+.workspace-leaf-content .view-content .callout {
+  padding: 0px 8px 4px 8px !important;
+  margin: 4px 0px !important;
+  position: relative !important;
+}
+
+/* SURGICAL APPROACH - Keep borders, reduce only internal spacing */
+
+/* Target callout title spacing only - preserve borders */
+[class*="callout"] [class*="title"],
+[data-callout] [class*="title"],
+.callout-title,
+.callout-title-inner,
+*[class*="callout-title"] {
+  margin: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding-top: 0px !important;
+  /* Keep borders intact - only remove border-bottom from title-inner */
+  position: relative !important;
+  top: 0px !important;
+  transform: translateY(0px) !important;
+}
+
+/* Specifically target Lagom's title-inner border issue */
+.callout-title-inner {
+  border-bottom: none !important;
+  padding-bottom: 0px !important;
+}
+
+/* Reduce callout container internal padding only - preserve borders */
+[class*="callout"]:not([class*="title"]):not([class*="content"]),
+.callout {
+  padding-top: 0px !important;
+  /* Do NOT touch margins as they might control border positioning */
+  /* Do NOT touch border properties */
+  transform: translateY(0px) !important;
+}
+
+/* ULTRA-HIGH SPECIFICITY VIEW MODE FIX - Lagom theme override */
+/* Target Lagom's .callout-title-inner { margin: 7px auto 7px auto; } specifically */
+
+/* View mode ultra-specific callout-title-inner override */
+html body.theme-light .workspace-leaf-content[data-mode="preview"] .markdown-preview-view .callout .callout-title-inner,
+html body.theme-dark .workspace-leaf-content[data-mode="preview"] .markdown-preview-view .callout .callout-title-inner,
+html body .workspace-leaf-content[data-mode="preview"] .markdown-preview-view .callout .callout-title-inner,
+.workspace-leaf-content[data-mode="preview"] .markdown-preview-view .callout .callout-title-inner,
+.markdown-preview-view .callout .callout-title-inner,
+.markdown-reading-view .callout .callout-title-inner,
+.view-content .callout .callout-title-inner {
+  margin: 0px auto 0px auto !important;  /* Override Lagom's 7px auto 7px auto */
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  border-bottom: none !important;
+  display: block !important;
+  position: relative !important;
+  top: 0px !important;
+}
+
+/* View mode callout container - minimal internal spacing */
+html body .workspace-leaf-content[data-mode="preview"] .markdown-preview-view .callout,
+.workspace-leaf-content[data-mode="preview"] .markdown-preview-view .callout,
+.markdown-preview-view .callout,
+.markdown-reading-view .callout,
+.view-content .callout {
+  padding-top: 0px !important;
+  /* Preserve all border properties for themed callouts */
+}
+
+/* View mode callout titles - 2px minimal padding to match edit mode */
+html body .workspace-leaf-content[data-mode="preview"] .markdown-preview-view .callout .callout-title,
+.workspace-leaf-content[data-mode="preview"] .markdown-preview-view .callout .callout-title,
+.markdown-preview-view .callout .callout-title,
+.markdown-reading-view .callout .callout-title,
+.view-content .callout .callout-title {
+  margin: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding: 2px 6px 1px 6px !important; /* Minimal padding - text shouldn't touch border */
+  line-height: 1.2 !important;
+  position: relative !important;
+  top: 0px !important;
+}
+
+/* =============================================================================
    MOONRISE KINGDOM THEMED CALLOUTS
    Scout camp aesthetic with hand-drawn elements
    ============================================================================= */
@@ -138,16 +543,27 @@
   letter-spacing: 1px;
 }
 
-/* Moonrise Color Variants */
-.callout[data-callout-metadata*="moonrise-yellow"] { background: rgba(194, 156, 38, 0.15); border-color: var(--mcl-moonrise-yellow); }
-.callout[data-callout-metadata*="mk-khaki"] { background: rgba(149, 134, 82, 0.15); border-color: var(--mcl-moonrise-khaki); }
-.callout[data-callout-metadata*="mk-red"] { background: rgba(138, 24, 24, 0.15); border-color: var(--mcl-moonrise-red); }
-.callout[data-callout-metadata*="mk-green"] { background: rgba(65, 87, 27, 0.15); border-color: var(--mcl-moonrise-green); }
-.callout[data-callout-metadata*="mk-teal"] { background: rgba(75, 138, 140, 0.15); border-color: var(--mcl-moonrise-teal); }
-.callout[data-callout-metadata*="mk-blue"] { background: rgba(50, 110, 160, 0.15); border-color: var(--mcl-moonrise-blue); }
-.callout[data-callout-metadata*="mk-orange"] { background: rgba(215, 100, 0, 0.15); border-color: var(--mcl-moonrise-orange); }
-.callout[data-callout-metadata*="mk-pink"] { background: rgba(205, 131, 145, 0.15); border-color: var(--mcl-moonrise-pink); }
-.callout[data-callout-metadata*="mk-gold"] { background: rgba(178, 125, 12, 0.15); border-color: var(--mcl-moonrise-gold); }
+/* Moonrise Color Variants - Original Color Values */
+.callout[data-callout-metadata*="moonrise-yellow"],
+.callout[data-callout-metadata*="mk-yellow"] { background-color: rgba(244, 196, 48, 0.12) !important; border: 4px solid var(--mcl-moonrise-yellow) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-khaki"],
+.callout[data-callout-metadata*="mk-khaki"] { background-color: rgba(189, 164, 102, 0.12) !important; border: 4px solid var(--mcl-moonrise-khaki) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-red"],
+.callout[data-callout-metadata*="mk-red"] { background-color: rgba(178, 34, 34, 0.12) !important; border: 4px solid var(--mcl-moonrise-red) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-green"],
+.callout[data-callout-metadata*="mk-green"] { background-color: rgba(85, 107, 47, 0.12) !important; border: 4px solid var(--mcl-moonrise-green) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-teal"],
+.callout[data-callout-metadata*="mk-teal"] { background-color: rgba(95, 158, 160, 0.12) !important; border: 4px solid var(--mcl-moonrise-teal) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-blue"],
+.callout[data-callout-metadata*="mk-blue"] { background-color: rgba(70, 130, 180, 0.12) !important; border: 4px solid var(--mcl-moonrise-blue) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-pine"],
+.callout[data-callout-metadata*="mk-pine"] { background-color: rgba(53, 94, 59, 0.12) !important; border: 4px solid var(--mcl-moonrise-pine) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-sand"],
+.callout[data-callout-metadata*="mk-sand"] { background-color: rgba(218, 194, 148, 0.12) !important; border: 4px solid var(--mcl-moonrise-sand) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-orange"],
+.callout[data-callout-metadata*="mk-orange"] { background-color: rgba(255, 140, 0, 0.12) !important; border: 4px solid var(--mcl-moonrise-orange) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="moonrise-magenta"],
+.callout[data-callout-metadata*="mk-magenta"] { background-color: rgba(199, 21, 133, 0.12) !important; border: 4px solid var(--mcl-moonrise-magenta) !important; border-radius: 12px !important; }
 
 /* =============================================================================
    GRAND BUDAPEST HOTEL THEMED CALLOUTS
@@ -170,15 +586,17 @@
   font-size: 1.2em;
   font-style: italic;
   text-align: center;
-  margin-bottom: 12px;
 }
 
-/* Budapest Color Variants */
-.callout[data-callout-metadata*="budapest-pink"] { background: rgba(215, 59, 127, 0.12); border-color: var(--mcl-budapest-pink); }
-.callout[data-callout-metadata*="gbh-purple"] { background: rgba(159, 31, 113, 0.12); border-color: var(--mcl-budapest-purple); }
-.callout[data-callout-metadata*="gbh-gold"] { background: rgba(178, 125, 12, 0.12); border-color: var(--mcl-budapest-gold); }
-.callout[data-callout-metadata*="gbh-cream"] { background: rgba(215, 208, 180, 0.12); border-color: var(--mcl-budapest-cream); }
-.callout[data-callout-metadata*="gbh-rose"] { background: rgba(215, 142, 153, 0.12); border-color: var(--mcl-budapest-rose); }
+/* Budapest Color Variants - Original Values */
+.callout[data-callout-metadata*="budapest-purple"],
+.callout[data-callout-metadata*="gbh-purple"] { background-color: rgba(102, 51, 153, 0.12) !important; border: 4px solid var(--mcl-budapest-purple) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="budapest-gold"],
+.callout[data-callout-metadata*="gbh-gold"] { background-color: rgba(218, 165, 32, 0.12) !important; border: 4px solid var(--mcl-budapest-gold) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="budapest-blue"],
+.callout[data-callout-metadata*="gbh-blue"] { background-color: rgba(70, 130, 180, 0.12) !important; border: 4px solid var(--mcl-budapest-pink) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="budapest-red"],
+.callout[data-callout-metadata*="gbh-red"] { background-color: rgba(139, 0, 0, 0.12) !important; border: 4px solid var(--mcl-budapest-maroon) !important; border-radius: 12px !important; }
 
 /* =============================================================================
    HOTEL CAVALIER THEMED CALLOUTS
@@ -203,11 +621,23 @@
   letter-spacing: 2px;
 }
 
-/* Cavalier Color Variants */
-.callout[data-callout-metadata*="cavalier-coral"] { background: rgba(215, 107, 59, 0.12); border-color: var(--mcl-cavalier-coral); }
-.callout[data-callout-metadata*="hc-teal"] { background: rgba(75, 138, 140, 0.12); border-color: var(--mcl-cavalier-teal); }
-.callout[data-callout-metadata*="hc-mint"] { background: rgba(119, 186, 151, 0.12); border-color: var(--mcl-cavalier-mint); }
-.callout[data-callout-metadata*="hc-navy"] { background: rgba(5, 5, 92, 0.12); border-color: var(--mcl-cavalier-navy); }
+/* Cavalier Color Variants - Original Values */
+.callout[data-callout-metadata*="cavalier-teal"],
+.callout[data-callout-metadata*="hc-teal"] { background-color: rgba(0, 128, 128, 0.12) !important; border: 4px solid var(--mcl-cavalier-teal) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="cavalier-mustard"],
+.callout[data-callout-metadata*="hc-mustard"] { background-color: rgba(218, 165, 32, 0.12) !important; border: 4px solid var(--mcl-cavalier-mint) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="cavalier-darkteal"],
+.callout[data-callout-metadata*="hc-darkteal"] { background-color: rgba(47, 79, 79, 0.12) !important; border: 4px solid var(--mcl-cavalier-navy) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="cavalier-vintage"],
+.callout[data-callout-metadata*="hc-vintage"] { background-color: rgba(204, 153, 51, 0.12) !important; border: 4px solid var(--mcl-cavalier-coral) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="cavalier-seafoam"],
+.callout[data-callout-metadata*="hc-seafoam"] { background-color: rgba(159, 226, 191, 0.12) !important; border: 4px solid var(--mcl-cavalier-seafoam) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="cavalier-brass"],
+.callout[data-callout-metadata*="hc-brass"] { background-color: rgba(181, 166, 66, 0.12) !important; border: 4px solid var(--mcl-cavalier-deco-blue) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="cavalier-turquoise"],
+.callout[data-callout-metadata*="hc-turquoise"] { background-color: rgba(64, 224, 208, 0.12) !important; border: 4px solid var(--mcl-cavalier-cream) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="cavalier-deepmustard"],
+.callout[data-callout-metadata*="hc-deepmustard"] { background-color: rgba(184, 134, 11, 0.12) !important; border: 4px solid var(--mcl-cavalier-mint) !important; border-radius: 12px !important; }
 
 /* =============================================================================
    DARJEELING LIMITED THEMED CALLOUTS
@@ -231,11 +661,19 @@
   text-transform: capitalize;
 }
 
-/* Darjeeling Color Variants */
-.callout[data-callout-metadata*="darjeeling-blue"] { background: rgba(50, 110, 160, 0.12); border-color: var(--mcl-darjeeling-blue); }
-.callout[data-callout-metadata*="dl-saffron"] { background: rgba(228, 155, 15, 0.12); border-color: var(--mcl-darjeeling-saffron); }
-.callout[data-callout-metadata*="dl-curry"] { background: rgba(204, 119, 34, 0.12); border-color: var(--mcl-darjeeling-curry); }
-.callout[data-callout-metadata*="dl-turmeric"] { background: rgba(227, 190, 44, 0.12); border-color: var(--mcl-darjeeling-turmeric); }
+/* Darjeeling Color Variants - Original Values */
+.callout[data-callout-metadata*="darjeeling-blue"],
+.callout[data-callout-metadata*="dl-blue"] { background-color: rgba(25, 25, 112, 0.12) !important; border: 4px solid var(--mcl-darjeeling-blue) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="darjeeling-saffron"],
+.callout[data-callout-metadata*="dl-saffron"] { background-color: rgba(244, 196, 48, 0.12) !important; border: 4px solid var(--mcl-darjeeling-saffron) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="darjeeling-curry"],
+.callout[data-callout-metadata*="dl-curry"] { background-color: rgba(255, 165, 0, 0.12) !important; border: 4px solid var(--mcl-darjeeling-curry) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="darjeeling-brown"],
+.callout[data-callout-metadata*="dl-brown"] { background-color: rgba(139, 69, 19, 0.12) !important; border: 4px solid var(--mcl-darjeeling-turmeric) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="darjeeling-red"],
+.callout[data-callout-metadata*="dl-red"] { background-color: rgba(220, 20, 60, 0.12) !important; border: 4px solid var(--mcl-darjeeling-paprika) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="darjeeling-green"],
+.callout[data-callout-metadata*="dl-green"] { background-color: rgba(34, 139, 34, 0.12) !important; border: 4px solid var(--mcl-darjeeling-cardamom) !important; border-radius: 12px !important; }
 
 /* =============================================================================
    ASTEROID CITY THEMED CALLOUTS
@@ -260,11 +698,25 @@
   text-align: center;
 }
 
-/* Asteroid Color Variants */
-.callout[data-callout-metadata*="asteroid-desert"] { background: rgba(215, 179, 48, 0.12); border-color: var(--mcl-asteroid-desert); }
-.callout[data-callout-metadata*="ac-atomic"] { background: rgba(255, 149, 0, 0.12); border-color: var(--mcl-asteroid-atomic); }
-.callout[data-callout-metadata*="ac-uranium"] { background: rgba(186, 218, 85, 0.12); border-color: var(--mcl-asteroid-uranium); }
-.callout[data-callout-metadata*="ac-mars"] { background: rgba(205, 92, 92, 0.12); border-color: var(--mcl-asteroid-mars); }
+/* Asteroid Color Variants - Original Values */
+.callout[data-callout-metadata*="asteroid-sand"],
+.callout[data-callout-metadata*="ac-sand"] { background-color: rgba(238, 203, 173, 0.12) !important; border: 4px solid var(--mcl-asteroid-sand) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="asteroid-orange"],
+.callout[data-callout-metadata*="ac-orange"] { background-color: rgba(255, 99, 71, 0.12) !important; border: 4px solid var(--mcl-asteroid-atomic) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="asteroid-turquoise"],
+.callout[data-callout-metadata*="ac-turquoise"] { background-color: rgba(64, 224, 208, 0.12) !important; border: 4px solid var(--mcl-asteroid-uranium) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="asteroid-rust"],
+.callout[data-callout-metadata*="ac-rust"] { background-color: rgba(183, 65, 14, 0.12) !important; border: 4px solid var(--mcl-asteroid-mars) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="asteroid-sage"],
+.callout[data-callout-metadata*="ac-sage"] { background-color: rgba(158, 169, 139, 0.12) !important; border: 4px solid var(--mcl-asteroid-sage) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="asteroid-blue"],
+.callout[data-callout-metadata*="ac-blue"] { background-color: rgba(70, 130, 180, 0.12) !important; border: 4px solid var(--mcl-asteroid-space) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="asteroid-pink"],
+.callout[data-callout-metadata*="ac-pink"] { background-color: rgba(255, 182, 193, 0.12) !important; border: 4px solid var(--mcl-asteroid-desert) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="asteroid-black"],
+.callout[data-callout-metadata*="ac-black"] { background-color: rgba(47, 79, 79, 0.12) !important; border: 4px solid var(--mcl-asteroid-space) !important; border-radius: 12px !important; }
+.callout[data-callout-metadata*="asteroid-yellow"],
+.callout[data-callout-metadata*="ac-yellow"] { background-color: rgba(255, 255, 224, 0.12) !important; border: 4px solid var(--mcl-asteroid-desert) !important; border-radius: 12px !important; }
 
 /* =============================================================================
    PASTEL AND VINTAGE THEMED CALLOUTS
@@ -427,3 +879,30 @@ Pastel options:
 > [!tip|pastel-sky] Airy & Open
 
 */
+
+/* =============================================================================
+   FINAL OVERRIDE - Material Design Icons (Highest Priority)
+   Must be last to override any other icon definitions
+   ============================================================================= */
+
+.callout[data-callout="note"],
+.callout[data-callout="note"][data-callout-metadata] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-200v-560q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v360L560-200H280q-33 0-56.5-23.5T200-280v80Zm80-80h240v-160h160v-280H280v440Zm0 0v-440 440Z"/></svg> !important;
+}
+
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="abstract"][data-callout-metadata],
+.callout[data-callout="summary"][data-callout-metadata] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M360-200v-80h480v80H360Zm0-240v-80h480v80H360Zm0-240v-80h480v80H360ZM200-160q-17 0-28.5-11.5T160-200q0-17 11.5-28.5T200-240q17 0 28.5 11.5T240-200q0 17-11.5 28.5T200-160Zm0-240q-17 0-28.5-11.5T160-440q0-17 11.5-28.5T200-480q17 0 28.5 11.5T240-440q0 17-11.5 28.5T200-400Zm0-240q-17 0-28.5-11.5T160-680q0-17 11.5-28.5T200-720q17 0 28.5 11.5T240-680q0 17-11.5 28.5T200-640Z"/></svg> !important;
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="warning"][data-callout-metadata] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"/></svg> !important;
+}
+
+.callout[data-callout="idea"],
+.callout[data-callout="idea"][data-callout-metadata] {
+  --callout-icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M240-80q-17 0-28.5-11.5T200-120q0-17 11.5-28.5T240-160h40v-280q0-83 58.5-141.5T480-640q83 0 141.5 58.5T680-440v280h40q17 0 28.5 11.5T760-120q0 17-11.5 28.5T720-80H240Zm240-640q-17 0-28.5-11.5T440-760v-80q0-17 11.5-28.5T480-880q17 0 28.5 11.5T520-840v80q0 17-11.5 28.5T480-720ZM360-160h80v-120q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280v120h80v-280q0-50-35-85t-85-35q-50 0-85 35t-35 85v280Zm120-320q8 0 14-6t6-14v-80q0-8-6-14t-14-6q-8 0-14 6t-6 14v80q0 8 6 14t14 6Z"/></svg> !important;
+}
