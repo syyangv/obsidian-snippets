@@ -1,0 +1,52 @@
+/* ========================================
+   EMOJI FIX - WORKING FINAL VERSION
+   Protects Meta Bind buttons explicitly
+   ======================================== */
+
+/* Ensure list items display correctly */
+.markdown-preview-view .callout[data-callout="multi-column"] li {
+    display: list-item !important;
+}
+
+/* ONLY target spans that contain emoji images */
+.markdown-preview-view .callout[data-callout="multi-column"] li>span:has(img.emoji) {
+    display: inline !important;
+    vertical-align: baseline !important;
+}
+
+/* Ensure emoji images are inline */
+.markdown-preview-view .callout[data-callout="multi-column"] li img.emoji {
+    display: inline !important;
+    vertical-align: middle !important;
+}
+
+/* Remove any br tags */
+.markdown-preview-view .callout[data-callout="multi-column"] li br {
+    display: none !important;
+}
+
+/* Ensure text elements stay inline */
+.markdown-preview-view .callout[data-callout="multi-column"] li a:not(.button):not([class*="button"]),
+.markdown-preview-view .callout[data-callout="multi-column"] li em,
+.markdown-preview-view .callout[data-callout="multi-column"] li strong,
+.markdown-preview-view .callout[data-callout="multi-column"] li code:not(.block) {
+    display: inline !important;
+}
+
+/* CRITICAL: Explicitly preserve ALL Meta Bind button functionality */
+.markdown-preview-view .callout[data-callout="multi-column"] button,
+.markdown-preview-view .callout[data-callout="multi-column"] .mb-button,
+.markdown-preview-view .callout[data-callout="multi-column"] .mb-button-inner,
+.markdown-preview-view .callout[data-callout="multi-column"] .meta-bind-button,
+.markdown-preview-view .callout[data-callout="multi-column"] [class*="mb-"],
+.markdown-preview-view .callout[data-callout="multi-column"] [class*="button"] {
+    all: revert !important;
+}
+
+/* OPTIONAL: Hide embed titles */
+/*
+.markdown-preview-view .callout[data-callout="multi-column"] .markdown-embed-title,
+.markdown-preview-view .callout[data-callout="multi-column"] .markdown-embed-link {
+  display: none !important;
+}
+*/

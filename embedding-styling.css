@@ -7,24 +7,24 @@
 /* Make the left border much more subtle - Only target the main embed container */
 .markdown-embed {
     border-left: 2px solid var(--background-modifier-border) !important;
-    
+
     /* Remove other borders */
     border-right: none !important;
     border-top: none !important;
     border-bottom: none !important;
-    
+
     /* Force transparent background */
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
-    
+
     /* Remove any box shadows that might create blue tints */
     box-shadow: none !important;
-    
+
     /* Reduce padding for cleaner look */
     padding-left: 12px !important;
     margin: 8px 0 !important;
-    
+
     /* Smooth border radius */
     border-radius: 0 4px 4px 0 !important;
 }
@@ -34,24 +34,24 @@
 /* Make the left border much more subtle - Only target the main embed container */
 .markdown-embed {
     border-left: 2px solid var(--background-modifier-border) !important;
-    
+
     /* Remove other borders */
     border-right: none !important;
     border-top: none !important;
     border-bottom: none !important;
-    
+
     /* Force transparent background */
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
-    
+
     /* Remove any box shadows that might create blue tints */
     box-shadow: none !important;
-    
+
     /* Reduce padding for cleaner look */
     padding-left: 12px !important;
     margin: 8px 0 !important;
-    
+
     /* Smooth border radius */
     border-radius: 0 4px 4px 0 !important;
 }
@@ -61,24 +61,24 @@
 /* Make the left border much more subtle - Only target the main embed container */
 .markdown-embed {
     border-left: 2px solid var(--background-modifier-border) !important;
-    
+
     /* Remove other borders */
     border-right: none !important;
     border-top: none !important;
     border-bottom: none !important;
-    
+
     /* Force transparent background */
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
-    
+
     /* Remove any box shadows that might create blue tints */
     box-shadow: none !important;
-    
+
     /* Reduce padding for cleaner look */
     padding-left: 12px !important;
     margin: 8px 0 !important;
-    
+
     /* Smooth border radius */
     border-radius: 0 4px 4px 0 !important;
 }
@@ -232,19 +232,19 @@
     border-right: none !important;
     border-top: none !important;
     border-bottom: none !important;
-    
+
     /* Subtle background with reduced opacity - override gradients and complex backgrounds */
     background: rgba(var(--callout-color), 0.03) !important;
     background-color: rgba(var(--callout-color), 0.03) !important;
     background-image: none !important;
-    
+
     /* Remove any special effects from your custom callouts */
     box-shadow: none !important;
     animation: none !important;
-    
+
     /* Softer border radius - override your custom radius values */
     border-radius: 0 6px 6px 0 !important;
-    
+
     /* Adjust padding for cleaner look */
     padding: 12px 16px !important;
     margin: 8px 0 !important;
@@ -253,7 +253,8 @@
 /* Special handling for multi-column callouts */
 .callout[data-callout="multi-column"],
 .callout[data-callout-metadata*="multi-column"] {
-    --callout-color: 68, 138, 255; /* Default blue for multi-column */
+    --callout-color: 68, 138, 255;
+    /* Default blue for multi-column */
     background: transparent !important;
     background-color: transparent !important;
     border: none !important;
@@ -263,7 +264,8 @@
 /* Make callout titles less prominent too */
 .callout-title {
     /* Reduce title emphasis */
-    font-weight: 500 !important; /* Instead of bold */
+    font-weight: 500 !important;
+    /* Instead of bold */
     opacity: 0.9 !important;
     margin-bottom: 6px !important;
 }
@@ -289,9 +291,13 @@
         border-left-width: 1px !important;
         padding-left: 8px !important;
     }
-    
+
     .callout {
         border-left-width: 1px !important;
         padding: 8px 12px !important;
     }
+}
+
+.hide-embed-titles .markdown-embed-title {
+    display: none;
 }

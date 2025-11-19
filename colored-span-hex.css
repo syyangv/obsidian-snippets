@@ -30,17 +30,15 @@
 /* ╔══════════════════════════╦═════════════════════════════════════════════════════════════════════════════[─]═[□]═[×]═╗ */
 /* ║ Colors                   ║ General                                                                                 ║ */
 /* ╚══════════════════════════╩═════════════════════════════════════════════════════════════════════════════════════════╝ */
-
-/* Spacing */
+/* FIXED CODE - REPLACE WITH THIS */
 [data-callout="colors-4"] p,
 [data-callout="colors-3"] p,
 [data-callout="colors-2"] p,
-[data-callout="colors-1"] p  {
-  display: flex;
-  flex-wrap: wrap;
+[data-callout="colors-1"] p {
+  display: block !important;
+  /* Changed from flex to block */
   border-radius: 8px;
-  row-gap: 8px;
-  column-gap: 4px;
+  /* Removed flex-wrap, row-gap, column-gap since we're no longer using flex */
 }
 
 /* Background */
