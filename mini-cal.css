@@ -1,0 +1,184 @@
+/* =========================
+   Mini Calendar - Year View
+   ========================= */
+
+.mini-cal-year-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.mini-cal-year {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.mini-cal-month {
+  min-width: 180px;
+}
+
+.mini-cal-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding-left: 3px;
+}
+
+.mini-cal-head {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.mini-cal-dow {
+  font-size: 0.7em;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.mini-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.mini-cal-empty {
+  aspect-ratio: 1;
+}
+
+/* =========================
+   Mini-cal-day 基础
+   ========================= */
+.mini-cal-day {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  border-radius: 4px;
+  border: 1px solid rgb(59,61,60);
+  background-color: rgb(59,61,60) !important;
+  box-shadow: none !important;
+  color: rgb(170,172,171) !important;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mini-cal-day:hover {
+  color: rgb(222,224,223) !important;
+  background-color: rgb(69,71,70) !important;
+}
+
+/* =========================
+   Today 高亮
+   ========================= */
+body.theme-dark .mini-cal-day.is-today {
+  border-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35) !important;
+}
+
+body.theme-light .mini-cal-day.is-today {
+  border-color: rgba(0, 0, 0, 0.55) !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25) !important;
+}
+
+.mini-cal-day.is-today:hover {
+  box-shadow: 0 0 0 1px currentColor !important;
+}
+
+/* =========================
+   状态样式：手动标记 / 已有日记
+   ========================= */
+
+/* 手动标记 */
+.mini-cal-day.is-on {
+  background-color: var(--text-accent) !important;
+  border-color: transparent !important;
+  color: rgb(244,242,243) !important;
+}
+
+/* 已有日记 */
+.mini-cal-day.has-entry {
+  background-color: rgb(38, 110, 65) !important;
+  color: rgb(220, 255, 230) !important;
+  border-color: rgb(48, 140, 85);
+}
+
+.mini-cal-day.has-entry:hover {
+  background-color: rgb(48, 140, 85) !important;
+  color: rgb(235, 255, 240) !important;
+}
+
+/* 已有日记 + 手动标记（紫色优先） */
+.mini-cal-day.has-entry.is-on {
+  background-color: var(--text-accent) !important;
+  border-color: transparent !important;
+  color: rgb(244,242,243) !important;
+}
+
+/* 今日甚好 (红色) */
+.mini-cal-day.is-good-day {
+  background-color: rgb(211, 60, 60) !important;
+  color: rgb(255, 240, 240) !important;
+  border-color: rgb(230, 80, 80);
+}
+
+.mini-cal-day.is-good-day:hover {
+  background-color: rgb(230, 80, 80) !important;
+  color: rgb(255, 248, 248) !important;
+}
+
+/* 今日甚好 + 手动标记（紫色优先） */
+.mini-cal-day.is-good-day.is-on {
+  background-color: var(--text-accent) !important;
+  border-color: transparent !important;
+  color: rgb(244,242,243) !important;
+}
+
+/* 公共假期 (淡紫/lilac) */
+.mini-cal-day.is-holiday {
+  background-color: rgb(220, 180, 245) !important;
+  color: rgb(45, 15, 55) !important;
+  border-color: rgb(235, 200, 255);
+}
+
+.mini-cal-day.is-holiday:hover {
+  background-color: rgb(235, 200, 255) !important;
+  color: rgb(35, 10, 45) !important;
+}
+
+/* 公共假期 + 手动标记（紫色优先） */
+.mini-cal-day.is-holiday.is-on {
+  background-color: var(--text-accent) !important;
+  border-color: transparent !important;
+  color: rgb(244,242,243) !important;
+}
+
+/* 未来日期 */
+.mini-cal-day.is-future {
+  border: 1px dashed rgb(76,78,77);
+  background-color: transparent !important;
+  color: rgb(130,132,131) !important;
+}
+
+.mini-cal-day.is-future:hover {
+  color: rgb(180,182,181) !important;
+}
+
+/* =========================
+   Responsive Layout
+   ========================= */
+@media (max-width: 900px) {
+  .mini-cal-year {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .mini-cal-year {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}

@@ -24,10 +24,10 @@
 }
 
 .theme-light {
-    /* Light theme minimal colors */
+    /* Light theme minimal colors - Lighter Pastel Blue Headers */
     --table-background: #ffffff;
-    --table-header-background: #fafbfc;
-    --table-header-text: #374151;
+    --table-header-background: #e8f4fc;
+    --table-header-text: #2563eb;
     --table-border-color: rgba(0, 0, 0, var(--table-outer-border-opacity));
     --table-inner-border-color: rgba(0, 0, 0, var(--table-inner-border-opacity));
     --table-row-hover: rgba(0, 0, 0, 0.03);
@@ -37,10 +37,10 @@
 }
 
 .theme-dark {
-    /* Dark theme minimal colors */
+    /* Dark theme - Muted Blue Headers */
     --table-background: #1f2937;
-    --table-header-background: #111827;
-    --table-header-text: #f9fafb;
+    --table-header-background: #1e3a5f;
+    --table-header-text: #93c5fd;
     --table-border-color: rgba(255, 255, 255, var(--table-outer-border-opacity));
     --table-inner-border-color: rgba(255, 255, 255, var(--table-inner-border-opacity));
     --table-row-hover: rgba(255, 255, 255, 0.05);
@@ -69,12 +69,17 @@
 /* --- Table Header Styling --- */
 .markdown-preview-view table:not(.dataview) thead,
 .markdown-source-view.is-live-preview table:not(.dataview) thead {
-    background: var(--table-header-background);
+    background: var(--table-header-background) !important;
 }
 
 .markdown-preview-view table:not(.dataview) th,
-.markdown-source-view.is-live-preview table:not(.dataview) th {
-    background: var(--table-header-background);
+.markdown-source-view.is-live-preview table:not(.dataview) th,
+.markdown-preview-view table:not(.dataview) thead tr th,
+.markdown-source-view.is-live-preview table:not(.dataview) thead tr th,
+.markdown-preview-view table:not(.dataview) thead td,
+.markdown-source-view.is-live-preview table:not(.dataview) thead td {
+    background: var(--table-header-background) !important;
+    background-color: var(--table-header-background) !important;
     color: var(--table-header-text);
     font-weight: var(--table-header-font-weight);
     font-size: var(--table-header-font-size);
@@ -82,6 +87,7 @@
     letter-spacing: 0.05em;
     padding: var(--table-header-padding);
     height: var(--table-header-height);
+    min-height: var(--table-header-height);
     text-align: left;
     vertical-align: middle;
     border: none;
@@ -89,6 +95,39 @@
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+/* Ensure header row itself has background */
+.markdown-preview-view table:not(.dataview) thead tr,
+.markdown-source-view.is-live-preview table:not(.dataview) thead tr {
+    background: var(--table-header-background) !important;
+}
+
+/* Nuclear option: force ALL elements inside th to be transparent */
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > * > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > * > * > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > * > * > * > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > * > * > * > * > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th [class],
+.markdown-source-view.is-live-preview table:not(.dataview) thead th div,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th span {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Target Obsidian's table cell wrapper and editor specifically */
+.markdown-source-view.is-live-preview table:not(.dataview) thead .table-cell-wrapper,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-editor,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-scroller,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-content,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-line,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-sizer,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-gutters,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-activeLineGutter,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-activeLine {
+    background: transparent !important;
+    background-color: transparent !important;
 }
 
 .markdown-preview-view table:not(.dataview) th:not(:last-child),

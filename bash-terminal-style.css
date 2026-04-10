@@ -1,0 +1,87 @@
+/* =============================================================================
+   BASH TERMINAL STYLE - Dark terminal appearance
+   Inspired by terminal themes like Antigravity
+   ============================================================================= */
+
+/* Bash/Shell code blocks - dark terminal look */
+.markdown-preview-view pre:has(code.language-bash),
+.markdown-preview-view pre:has(code.language-shell),
+.markdown-preview-view pre:has(code.language-sh),
+.markdown-preview-view pre:has(code.language-zsh),
+.markdown-reading-view pre:has(code.language-bash),
+.markdown-reading-view pre:has(code.language-shell),
+.markdown-reading-view pre:has(code.language-sh),
+.markdown-reading-view pre:has(code.language-zsh) {
+  background: #1a1a2e !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Code text styling */
+.markdown-preview-view pre:has(code.language-bash) code,
+.markdown-preview-view pre:has(code.language-shell) code,
+.markdown-preview-view pre:has(code.language-sh) code,
+.markdown-preview-view pre:has(code.language-zsh) code,
+.markdown-reading-view pre:has(code.language-bash) code,
+.markdown-reading-view pre:has(code.language-shell) code,
+.markdown-reading-view pre:has(code.language-sh) code,
+.markdown-reading-view pre:has(code.language-zsh) code {
+  color: #a9dc76 !important;
+}
+
+/* Syntax colors */
+.markdown-preview-view code.language-bash .token.function,
+.markdown-preview-view code.language-shell .token.function,
+.markdown-preview-view code.language-sh .token.function,
+.markdown-reading-view code.language-bash .token.function,
+.markdown-reading-view code.language-shell .token.function,
+.markdown-reading-view code.language-sh .token.function {
+  color: #78dce8;
+}
+
+.markdown-preview-view code.language-bash .token.string,
+.markdown-preview-view code.language-shell .token.string,
+.markdown-preview-view code.language-sh .token.string,
+.markdown-reading-view code.language-bash .token.string,
+.markdown-reading-view code.language-shell .token.string,
+.markdown-reading-view code.language-sh .token.string {
+  color: #ffd866;
+}
+
+.markdown-preview-view code.language-bash .token.comment,
+.markdown-preview-view code.language-shell .token.comment,
+.markdown-preview-view code.language-sh .token.comment,
+.markdown-reading-view code.language-bash .token.comment,
+.markdown-reading-view code.language-shell .token.comment,
+.markdown-reading-view code.language-sh .token.comment {
+  color: #727072;
+  font-style: italic;
+}
+
+.markdown-preview-view code.language-bash .token.variable,
+.markdown-preview-view code.language-shell .token.variable,
+.markdown-preview-view code.language-sh .token.variable,
+.markdown-reading-view code.language-bash .token.variable,
+.markdown-reading-view code.language-shell .token.variable,
+.markdown-reading-view code.language-sh .token.variable {
+  color: #ff6188;
+}
+
+.markdown-preview-view code.language-bash .token.operator,
+.markdown-preview-view code.language-shell .token.operator,
+.markdown-preview-view code.language-sh .token.operator,
+.markdown-reading-view code.language-bash .token.operator,
+.markdown-reading-view code.language-shell .token.operator,
+.markdown-reading-view code.language-sh .token.operator {
+  color: #ff6188;
+}
+
+.markdown-preview-view code.language-bash .token.keyword,
+.markdown-preview-view code.language-shell .token.keyword,
+.markdown-preview-view code.language-sh .token.keyword,
+.markdown-reading-view code.language-bash .token.keyword,
+.markdown-reading-view code.language-shell .token.keyword,
+.markdown-reading-view code.language-sh .token.keyword {
+  color: #ff6188;
+}

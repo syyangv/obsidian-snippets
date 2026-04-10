@@ -425,6 +425,15 @@ div:has(.meta-bind-input-toggle) .edit-block-button {
    BROWSER COMPATIBILITY
    ============================================================================= */
 
+/* Fallback for browsers without CSS containment */
+@supports not (contain: style) {
+  .meta-bind-input-toggle,
+  .mb-input-type-toggle,
+  .tag-selector {
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
+}
+
 /* Fallback for older flexbox implementations */
 @supports not (gap: 8px) {
   .markdown-reading-view p:has(.meta-bind-input-toggle:not(.tag-selector .meta-bind-input-toggle)) > * + * {

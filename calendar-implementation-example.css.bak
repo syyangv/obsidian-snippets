@@ -1,11 +1,7 @@
 /**
  * Calendar Implementation Example
  * Demonstrates practical usage of the unified color system
- *
- * ⚠️ REFERENCE ONLY — NOT ACTIVE CSS ⚠️
- * This file uses SCSS @extend syntax which is NOT valid plain CSS.
- * Obsidian loads snippets as raw CSS — @extend directives are silently ignored.
- * These are documentation patterns, not applied styles.
+ * Senior Engineer: Production-ready implementation patterns
  */
 
 /* ==========================================================================

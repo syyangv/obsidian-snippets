@@ -1,0 +1,118 @@
+/* =============================================================================
+   PYTHON SYNTAX HIGHLIGHTING - VIBRANT THEME
+   Reading/Preview mode only for smooth editing performance
+   ============================================================================= */
+
+/* ===== READING/PREVIEW MODE ===== */
+
+/* Background - light solid color */
+pre:has(code.language-python),
+pre:has(code.language-py) {
+  background: #f0f9f7 !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Keywords - magenta */
+code.language-python .token.keyword,
+code.language-py .token.keyword {
+  color: #d81b60 !important;
+}
+
+/* Built-ins - purple */
+code.language-python .token.builtin,
+code.language-py .token.builtin {
+  color: #8e24aa !important;
+}
+
+/* Functions - blue */
+code.language-python .token.function,
+code.language-py .token.function {
+  color: #1976d2 !important;
+}
+
+/* Class names - orange */
+code.language-python .token.class-name,
+code.language-py .token.class-name {
+  color: #e64a19 !important;
+}
+
+/* Decorators - teal */
+code.language-python .token.decorator,
+code.language-python .token.annotation,
+code.language-py .token.decorator,
+code.language-py .token.annotation {
+  color: #00897b !important;
+}
+
+/* Strings - green */
+code.language-python .token.string,
+code.language-py .token.string {
+  color: #388e3c !important;
+}
+
+/* Triple-quoted strings/docstrings - olive */
+code.language-python .token.triple-quoted-string,
+code.language-python .token.docstring,
+code.language-py .token.triple-quoted-string,
+code.language-py .token.docstring {
+  color: #689f38 !important;
+}
+
+/* Numbers - indigo */
+code.language-python .token.number,
+code.language-py .token.number {
+  color: #303f9f !important;
+}
+
+/* Booleans (True/False/None) - deep orange */
+code.language-python .token.boolean,
+code.language-python .token.none,
+code.language-python .token.constant,
+code.language-py .token.boolean,
+code.language-py .token.none,
+code.language-py .token.constant {
+  color: #e65100 !important;
+}
+
+/* Comments - gray */
+code.language-python .token.comment,
+code.language-py .token.comment {
+  color: #607d8b !important;
+  font-style: italic !important;
+}
+
+/* Operators - red */
+code.language-python .token.operator,
+code.language-py .token.operator {
+  color: #c62828 !important;
+}
+
+/* Punctuation - dark gray */
+code.language-python .token.punctuation,
+code.language-py .token.punctuation {
+  color: #455a64 !important;
+}
+
+/* Import keyword - cyan */
+code.language-python .token.keyword-import,
+code.language-python .token.imports,
+code.language-py .token.keyword-import,
+code.language-py .token.imports {
+  color: #0097a7 !important;
+}
+
+/* Variables/identifiers - dark blue-gray */
+code.language-python .token.variable,
+code.language-py .token.variable {
+  color: #37474f !important;
+}
+
+/* Self/cls - brown */
+code.language-python .token.self,
+code.language-python .token.cls,
+code.language-py .token.self,
+code.language-py .token.cls {
+  color: #bf360c !important;
+}

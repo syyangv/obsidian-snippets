@@ -425,18 +425,11 @@ a.moonrise-day-number:hover {
 }
 
 .moonrise-calendar {
-  animation: camp-fade-in 0.8s ease-out both;
+  animation: camp-fade-in 0.8s ease-out;
 }
 
 .moonrise-summary-card {
-  animation: camp-fade-in 1s ease-out both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .moonrise-calendar,
-  .moonrise-summary-card {
-    animation: none;
-  }
+  animation: camp-fade-in 1s ease-out;
 }
 
 /* Remove scout badge effect for today's date */

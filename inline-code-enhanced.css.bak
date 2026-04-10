@@ -14,13 +14,13 @@ code:not(pre code) {
     font-weight: 500 !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
     margin: 0 1px !important;
-    transition: background-color 0.2s ease, border-color 0.2s ease !important;
 }
 
 /* Hover effect for better interactivity */
 code:not(pre code):hover {
     background-color: var(--background-modifier-hover) !important;
     border-color: var(--text-accent) !important;
+    transition: all 0.2s ease !important;
 }
 
 /* Dark theme specific adjustments */

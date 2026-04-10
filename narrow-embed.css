@@ -1,0 +1,15 @@
+/* Scale embeds by filename */
+.internal-embed[src*="季度总结"] .markdown-embed-content,
+.internal-embed[src*="ProgressBar"] .markdown-embed-content {
+  zoom: 0.7 !important;
+}
+
+/* Hide status bar, show on hover */
+.status-bar {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.status-bar:hover {
+  opacity: 1;
+}

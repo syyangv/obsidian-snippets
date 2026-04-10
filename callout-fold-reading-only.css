@@ -1,0 +1,23 @@
+/* Prevent callout folding in edit/live preview mode - only allow folding in reading mode */
+
+/* Hide fold icon in CodeMirror edit mode */
+.cm-callout .callout-fold {
+    display: none;
+}
+
+/* Hide fold icon in Live Preview mode */
+.markdown-source-view .callout-fold {
+    display: none;
+    pointer-events: none;
+}
+
+/* Disable fold click area in Live Preview */
+.markdown-source-view .callout-title {
+    pointer-events: none;
+}
+
+/* But keep content clickable/editable */
+.markdown-source-view .callout-content,
+.markdown-source-view .callout-content * {
+    pointer-events: auto;
+}

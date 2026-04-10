@@ -127,6 +127,8 @@ html body .callout .callout-icon,
 .callout[data-callout-metadata*="pastel-"] .callout-title {
   padding: 2px 6px 1px 6px !important; /* Minimal padding - preserve borders */
   margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   line-height: 1.2 !important;
   min-height: auto !important;
   height: auto !important;

@@ -634,6 +634,20 @@
    BROWSER COMPATIBILITY FALLBACKS
    ============================================================================= */
 
+/* CSS Grid Fallback for IE11 */
+@supports not (display: grid) {
+  .unified-calendar__grid {
+    display: table;
+    width: 100%;
+  }
+  
+  .unified-calendar__day-header,
+  .unified-calendar__day-cell {
+    display: table-cell;
+    width: 14.28%;
+  }
+}
+
 /* CSS Custom Properties Fallback */
 @supports not (--custom: property) {
   .unified-calendar {

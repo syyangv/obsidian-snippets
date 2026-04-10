@@ -1,0 +1,48 @@
+/* ========================================
+   DATAVIEW PROGRESS BAR FIX
+   Forces horizontal display for moon phase progress bars
+   in multi-column callouts
+   ======================================== */
+
+/* Target Dataview containers inside multi-column callouts */
+.markdown-preview-view .callout[data-callout="multi-column"] .block-language-dataviewjs,
+.markdown-reading-view .callout[data-callout="multi-column"] .block-language-dataviewjs {
+    display: block !important;
+    white-space: nowrap !important;
+}
+
+/* Target the Dataview result container */
+.markdown-preview-view .callout[data-callout="multi-column"] .block-language-dataviewjs > *,
+.markdown-reading-view .callout[data-callout="multi-column"] .block-language-dataviewjs > * {
+    display: inline !important;
+    white-space: nowrap !important;
+}
+
+/* Ensure all inline content stays on one line */
+.markdown-preview-view .callout[data-callout="multi-column"] .block-language-dataviewjs span,
+.markdown-reading-view .callout[data-callout="multi-column"] .block-language-dataviewjs span {
+    display: inline !important;
+    white-space: nowrap !important;
+}
+
+/* Handle emoji images within Dataview blocks */
+.markdown-preview-view .callout[data-callout="multi-column"] .block-language-dataviewjs img.emoji,
+.markdown-reading-view .callout[data-callout="multi-column"] .block-language-dataviewjs img.emoji {
+    display: inline !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+}
+
+/* Nuclear option: force all Dataview content inline */
+.callout[data-callout="multi-column"] .block-language-dataviewjs * {
+    display: inline !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+}
+
+/* Prevent line breaks between emojis */
+.callout[data-callout="multi-column"] .block-language-dataviewjs {
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    line-height: 1.5 !important;
+}

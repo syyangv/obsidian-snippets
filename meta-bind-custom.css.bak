@@ -1,0 +1,92 @@
+/* Custom Meta Bind styling */
+
+/* Half-width for textArea */
+.meta-bind-half-width,
+.meta-bind-half-width textarea,
+.meta-bind-half-width input {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Half-width for edit callout */
+.callout[data-callout="edit"] {
+    width: 50% !important;
+    max-width: 50% !important;
+}
+
+
+/* === Meta-Bind Integration === */
+
+/* Prevent wide page effects on meta-bind elements */
+.wide-page .meta-bind-input-toggle,
+.tag-column .meta-bind-input-toggle {
+  max-width: none !important;
+  width: auto !important;
+}
+
+/* Meta-Bind Toggle Styling - Fixed to match plugin structure */
+.mb-input-wrapper .checkbox-container {
+  vertical-align: middle;
+}
+
+/* Fix layout issues with toggle + button combinations */
+.mb-input-wrapper:has(.checkbox-container) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Hide any unwanted buttons in toggle inputs */
+.mb-input-type-toggle .mb-button {
+  display: none;
+}
+
+/* Ensure checkbox container stays properly aligned */
+.mb-input-wrapper .checkbox-container {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+/* === Action buttons — equal width row === */
+.mb-button.action-btn {
+  display: inline-flex !important;
+  width: 10% !important;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  vertical-align: middle;
+}
+
+.mb-button.action-btn .mb-button-inner {
+  width: 100% !important;
+  justify-content: center;
+}
+
+/* === Pastel button style — matches dailyNavigation / weeklyNavigation palette === */
+/* Targets inline BUTTON[name] components (not tag-selector .meta-bind-button) */
+.mb-button button {
+  background: #FDE2DA !important;
+  border: none !important;
+  border-radius: 6px !important;
+  color: #D06AAE !important;
+  font-weight: 600 !important;
+  padding: 3px 12px !important;
+  font-size: 0.85em !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease !important;
+  box-shadow: none !important;
+}
+
+.mb-button button:hover {
+  background: #DFF7ED !important;
+  border-color: transparent !important;
+  color: #3A8A62 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+.mb-button button:active {
+  transform: translateY(0) scale(0.97) !important;
+}
+

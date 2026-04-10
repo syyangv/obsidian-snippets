@@ -55,17 +55,13 @@
   margin-top: 0 !important;
 }
 
-/* Hide frontmatter in both edit and reading mode */
-.hide-frontmatter .cm-line:has(.cm-meta) {
-  display: none !important;
-}
-
-/* Hide YAML frontmatter blocks specifically */
+/* Hide YAML frontmatter blocks specifically in edit mode */
 .hide-frontmatter .cm-hmd-frontmatter {
   display: none !important;
 }
 
-.hide-frontmatter .HyperMD-header-line {
+/* Hide frontmatter delimiters (---) in edit mode */
+.hide-frontmatter .cm-line.HyperMD-header.HyperMD-header-6:has(.cm-hmd-frontmatter) {
   display: none !important;
 }
 

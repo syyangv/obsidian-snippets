@@ -1,0 +1,31 @@
+/* Fix line numbers hiding content in edit mode */
+
+/* Increase the left margin/padding for the editor content */
+.markdown-source-view.mod-cm6 .cm-content {
+  padding-left: 10px !important;
+}
+
+/* Alternatively, you can adjust the gutter width */
+.markdown-source-view.mod-cm6 .cm-gutters {
+  padding-right: 5px !important;
+}
+
+/* If you have a very narrow editor, you might also need this */
+.markdown-source-view.mod-cm6 .cm-line {
+  padding-left: 5px !important;
+}
+
+/* 强制热力图方块为正方形 */
+/* 强制热力图方块为正方形，统一间距 */
+/* 热力图固定宽度，正方形方块，均匀间距 */
+.heatmap-calendar-graph {
+    width: fit-content !important;
+    max-width: 80% !important;
+}
+
+.heatmap-calendar-boxes li {
+    width: 16px !important;
+    height: 16px !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0.3px !important;
+}

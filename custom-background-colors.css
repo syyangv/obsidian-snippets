@@ -3,8 +3,8 @@
 
 :root {
   /* Primary background (main editor area only) */
-  --background-primary: #ffffff;
-  --background-primary-rgb: 255, 255, 255;
+  --background-primary: #f5ecd7;
+  --background-primary-rgb: 245, 236, 215;
   /* Alternative colors - uncomment one line below to try different main background colors */
 }
 

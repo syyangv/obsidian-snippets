@@ -340,7 +340,7 @@ a.budapest-day-number:hover {
   .budapest-calendar {
     width: 100% !important;
     padding: 20px;
-    background-attachment: scroll;
+    background-attachment: scroll; /* Better mobile performance */
   }
   
   .budapest-calendar-grid, .budapest-summary {
