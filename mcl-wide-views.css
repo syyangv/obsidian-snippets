@@ -27,8 +27,21 @@
 
 /* === Wide Page === */
 
+    /* -- Global line width override -- */
+    .markdown-source-view .cm-sizer,
+    .markdown-preview-view .markdown-preview-sizer {
+        max-width: 75% !important;
+        margin-inline: auto !important;
+        --file-line-width: 75cqi; /* keep wide-*-global margin math in sync with sizer */
+    }
+    /* Reset inside embeds — inherit width from embed container, don't re-center */
+    .markdown-embed .markdown-preview-sizer {
+        max-width: 100% !important;
+        margin-inline: 0 !important;
+    }
+
     /* -- Main Code - EV & RV -- */
-    body .wide-page { --file-line-width: 70%; }
+    body .wide-page { --file-line-width: 60%; }
 
 
     /* -- Special adjustment for Community Themes */

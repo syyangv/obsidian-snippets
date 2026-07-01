@@ -8,12 +8,6 @@
     display: none !important;
 }
 
-/* Also hide completed tasks with checkmark unicode */
-.hide-completed-tasks .task-list-item:has(input[type="checkbox"]:checked),
-.hide-completed-tasks li:has(input[type="checkbox"]:checked) {
-    display: none !important;
-}
-
 /* Hide completed tasks in reading view */
 .hide-completed-tasks .markdown-reading-view .task-list-item[data-task="x"],
 .hide-completed-tasks .markdown-reading-view li[data-task="x"] {

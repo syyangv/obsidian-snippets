@@ -1,29 +1,40 @@
-/* Custom Background Colors Override - Main Background Only */
-/* This snippet only changes the main editor background while preserving theme-zen-translucency.css effects */
-
+/* custom-background-colors.css — tokenised. */
 :root {
+  --cbc-1: #fef3c7;
+  --cbc-2: #dbeafe;
+  --cbc-3: #fee2e2;
+  --cbc-4: #d1fae5;
+  --cbc-5: #fce7f3;
+  --cbc-6: #e0e7ff;
+  /* --- */
   /* Primary background (main editor area only) */
   --background-primary: #f5ecd7;
   --background-primary-rgb: 245, 236, 215;
   /* Alternative colors - uncomment one line below to try different main background colors */
+
+  --bg-cool:#1a1f2e;
+  --bg-warm:#2a1f1a;
+  --bg-violet:#1f1a2e;
+  --bg-mint:#1a2e1f;
+  --bg-neutral:#2d2d2d;
 }
 
 /* Uncomment one of these to try different main background colors */
 
 /* Dark Blue Background */
-/* --background-primary: #1a1f2e; --background-primary-rgb: 26, 31, 46; */
+/* --background-primary: var(--bg-cool, #1a1f2e); --background-primary-rgb: 26, 31, 46; */
 
 /* Warm Dark Background */
-/* --background-primary: #2a1f1a; --background-primary-rgb: 42, 31, 26; */
+/* --background-primary: var(--bg-warm, #2a1f1a); --background-primary-rgb: 42, 31, 26; */
 
 /* Purple Background */
-/* --background-primary: #1f1a2e; --background-primary-rgb: 31, 26, 46; */
+/* --background-primary: var(--bg-violet, #1f1a2e); --background-primary-rgb: 31, 26, 46; */
 
 /* Forest Green Background */
-/* --background-primary: #1a2e1f; --background-primary-rgb: 26, 46, 31; */
+/* --background-primary: var(--bg-mint, #1a2e1f); --background-primary-rgb: 26, 46, 31; */
 
 /* Lighter Dark Background */
-/* --background-primary: #2d2d2d; --background-primary-rgb: 45, 45, 45; */
+/* --background-primary: var(--bg-neutral, #2d2d2d); --background-primary-rgb: 45, 45, 45; */
 
 /* Custom Color - Replace with your preferred hex code */
 /* --background-primary: #YOUR_HEX_HERE; --background-primary-rgb: R, G, B; */

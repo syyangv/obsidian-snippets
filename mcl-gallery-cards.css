@@ -1,36 +1,11 @@
-/* === README ===
-	Snippet: MCL Gallery Cards / Author: Faiz Khuzaimah / twitter: @faizkhuzaimah / github: https://github.com/efemkay
+/* mcl-gallery-cards.css — tokenised. */
+:root {
+  --mclg-shadow-1: rgba(0, 0, 0, 0.05);
+  --mclg-shadow-2: rgba(0, 0, 0, 0.1);
+  --mclg-shadow-3: rgba(0, 0, 0, 0.15);
+  --mclg-shadow-4: rgba(0, 0, 0, 0.2);
+}
 
-	ver 0.9.9 (draft upd 2024-01-14)
-	- minor performance improvement by reducing image gallery has() scope, focusing on editing view
-	ver 0.9.8 (updated 2023-11-03)
-	- re-fixes #50
-	v0.9.7 (updated 2023-10-13)
-	- fixes #50 i.e. Gallery Card not working with Minimal due to Minimal max-width specificity
-	Ver 0.9.5 (updated 2023-07-30)
-	- fixes on minimal float affecting Minimal own wide table feature
-	- fixes on properties padding affecting Minimal
-	- fixes Mermaid zoom in Editing View
-	Ver 0.9.4 (updated 2023-07-06)
-	- improve Float Image for editing text in Editing View
-	- fix for Float Image for Minimal (and respect width settings). No longer require cssClass "minimal-float" but require Style Settings
-	- improve Image Gallery especially for use in Live Preview without callout
-	Ver 0.9.2 (updated 2023-05-27)
-	- fix div width for float image also affecting normal image embed
-	Ver 0.9.0 (updated 2023-04-01)
-	- image float
-	- banner background
-	- card view for dataview table
-
-	This snippet is part of MCL collection of snippets for customising layout, and it provides the following
-	- "gallery" callout-metadata i.e. [!<any-callout>|gallery] for flex/grid layout
-		- use together with MCL Multi Column [!blank-container] for invisible container
-	- YAML `cssClass: image-gallery` to achieve similar to callout but using only Contextual Typography plugin & <p>
-	- Image Zoom via css
-	- Dimension control for images in lists <ul>
-
-	Credits to @kepano Minimal Theme and @SlRvb ITS Theme for inspiration
-*/
 /* === Master Setting === */
 
 	/* set the defaults */

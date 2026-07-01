@@ -114,3 +114,20 @@ body {
     }
   }
 }
+
+/* simple-columns plugin: suppress horizontal scrollbar at every level of the
+   columns block tree — column interiors, the resizable container, and the
+   code-block wrappers Obsidian wraps around processed code blocks. */
+.markdown-columns-resizable .column {
+  overflow-x: hidden;
+}
+.markdown-columns-resizable {
+  overflow: hidden;
+}
+.block-language-columns {
+  overflow: hidden;
+}
+.cm-preview-code-block:has(.markdown-columns-resizable) {
+  overflow: hidden;
+}
+

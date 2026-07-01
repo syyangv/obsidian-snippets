@@ -242,6 +242,25 @@ body .workspace-leaf-content .markdown-preview-view .callout .callout-title,
   min-height: auto !important;
   height: auto !important;
   box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+.callout .callout-title .callout-icon {
+  align-self: center !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  top: 4px !important;
+}
+/* Note callout: 44px square to match H1 (--fs-3xl) font size */
+.callout[data-callout="note"] .callout-title .callout-icon {
+  align-self: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  top: 0 !important;
 }
 
 /* NUCLEAR CALLOUT SPACING FIX: Complete override of all spacing sources */
@@ -528,7 +547,6 @@ html body .workspace-leaf-content[data-mode="preview"] .markdown-preview-view .c
 
 .callout[data-callout-metadata*="moonrise-"],
 .callout[data-callout-metadata*="mk-"] {
-  font-family: 'Courier New', 'Monaco', monospace;
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
   position: relative;
@@ -536,7 +554,6 @@ html body .workspace-leaf-content[data-mode="preview"] .markdown-preview-view .c
 
 .callout[data-callout-metadata*="moonrise-"] .callout-title,
 .callout[data-callout-metadata*="mk-"] .callout-title {
-  font-family: 'Courier New', 'Monaco', monospace;
   font-weight: bold;
   font-size: 1.1em;
   text-transform: uppercase;

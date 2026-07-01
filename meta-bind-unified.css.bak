@@ -1,12 +1,23 @@
-/* =============================================================================
-   META-BIND UNIFIED INTEGRATION
-   Unified solution for Meta-Bind toggle switches and tag selectors
-   
-   Architecture: Conflict-free cascade with namespace separation
-   Replaces: meta-bind-complete.css + tag-selector.css
-   Author: Claude Code Senior Engineer + Visual Designer
-   Version: 1.0.0
-   ============================================================================= */
+/* meta-bind-unified.css — tokenised. */
+:root {
+  --mbu-accent: #7c3aed; /* bridges to var(--mood-inspired) */
+  --mbu-accent-soft: #a78bfa;
+  --mbu-bg: #f3f4f6;
+  --mbu-bg-2: #e5e7eb;
+  --mbu-text: #111827;
+  --mbu-text-soft: #6b7280;
+  --mbu-edge: #d1d5db;
+  --mbu-shadow-1: rgba(0,0,0,0.1);
+  --mbu-shadow-2: rgba(0,0,0,0.05);
+
+  --mb-green:#27ae60;
+  --mb-amber:#f39c12;
+  --mb-blue:#3498db;
+  --mb-pink:#e91e63;
+  --mb-purple:#9b59b6;
+  --mb-orange:#e67e22;
+  --mb-teal:#16a085;
+}
 
 /* =============================================================================
    ARCHITECTURE OVERVIEW
@@ -238,29 +249,29 @@ div:has(.meta-bind-input-toggle) .edit-block-button {
 .tag-selector .meta-bind-button[data-mb-field="🎾"][data-mb-active="true"],
 .tag-selector .meta-bind-button[data-mb-field="health"][data-mb-active="true"],
 .tag-selector .meta-bind-button[data-mb-field="看医生"][data-mb-active="true"] {
-  background: #27ae60;
-  border-color: #27ae60;
+  background: var(--mb-green, #27ae60);
+  border-color: var(--mb-green, #27ae60);
 }
 
 /* Learning & Growth - Orange/Gold variants */
 .tag-selector .meta-bind-button[data-mb-field="学习"][data-mb-active="true"],
 .tag-selector .meta-bind-button[data-mb-field="learning"][data-mb-active="true"] {
-  background: #f39c12;
-  border-color: #f39c12;
+  background: var(--mb-amber, #f39c12);
+  border-color: var(--mb-amber, #f39c12);
 }
 
 /* Work & Professional - Blue variants */
 .tag-selector .meta-bind-button[data-mb-field="work"][data-mb-active="true"] {
-  background: #3498db;
-  border-color: #3498db;
+  background: var(--mb-blue, #3498db);
+  border-color: var(--mb-blue, #3498db);
 }
 
 /* Social & Relationships - Pink variants */
 .tag-selector .meta-bind-button[data-mb-field="socializing"][data-mb-active="true"],
 .tag-selector .meta-bind-button[data-mb-field="social"][data-mb-active="true"],
 .tag-selector .meta-bind-button[data-mb-field="family"][data-mb-active="true"] {
-  background: #e91e63;
-  border-color: #e91e63;
+  background: var(--mb-pink, #e91e63);
+  border-color: var(--mb-pink, #e91e63);
 }
 
 /* Creative & Expression - Purple/Red variants */
@@ -268,21 +279,21 @@ div:has(.meta-bind-input-toggle) .edit-block-button {
 .tag-selector .meta-bind-button[data-mb-field="看戏"][data-mb-active="true"],
 .tag-selector .meta-bind-button[data-mb-field="hobby"][data-mb-active="true"],
 .tag-selector .meta-bind-button[data-mb-field="creative"][data-mb-active="true"] {
-  background: #9b59b6;
-  border-color: #9b59b6;
+  background: var(--mb-purple, #9b59b6);
+  border-color: var(--mb-purple, #9b59b6);
 }
 
 /* Daily Life & Maintenance - Brown variants */
 .tag-selector .meta-bind-button[data-mb-field="下厨"][data-mb-active="true"],
 .tag-selector .meta-bind-button[data-mb-field="cooking"][data-mb-active="true"] {
-  background: #e67e22;
-  border-color: #e67e22;
+  background: var(--mb-orange, #e67e22);
+  border-color: var(--mb-orange, #e67e22);
 }
 
 /* Adventure & Travel - Teal variants */
 .tag-selector .meta-bind-button[data-mb-field="travel"][data-mb-active="true"] {
-  background: #16a085;
-  border-color: #16a085;
+  background: var(--mb-teal, #16a085);
+  border-color: var(--mb-teal, #16a085);
 }
 
 /* =============================================================================
@@ -424,15 +435,6 @@ div:has(.meta-bind-input-toggle) .edit-block-button {
 /* =============================================================================
    BROWSER COMPATIBILITY
    ============================================================================= */
-
-/* Fallback for browsers without CSS containment */
-@supports not (contain: style) {
-  .meta-bind-input-toggle,
-  .mb-input-type-toggle,
-  .tag-selector {
-    transform: translateZ(0); /* Force hardware acceleration */
-  }
-}
 
 /* Fallback for older flexbox implementations */
 @supports not (gap: 8px) {

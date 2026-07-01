@@ -1,6 +1,21 @@
-/* =========================
-   Mini Calendar - Year View
-   ========================= */
+/* mini-cal.css — tokenised. */
+:root {
+  --minc-shadow-1: rgba(0,0,0,0.05);
+  --minc-shadow-2: rgba(0,0,0,0.1);
+  --minc-shadow-3: rgba(0,0,0,0.15);
+  --minc-shadow-4: rgba(0,0,0,0.2);
+  --minc-shadow-5: rgba(0,0,0,0.25);
+  --minc-shadow-6: rgba(0,0,0,0.3);
+
+  --mc-fg-rgb:59,61,60;
+  --mc-mute-rgb:170,172,171;
+  --mc-line-rgb:222,224,223;
+  --mc-fg2-rgb:69,71,70;
+  --mc-bg-rgb:244,242,243;
+  --mc-accent-rgb:38,110,65;
+  --mc-accent-bg-rgb:220,255,230;
+  --mc-accent2-rgb:48,140,85;
+}
 
 .mini-cal-year-title {
   font-weight: 700;
@@ -59,17 +74,17 @@
   justify-content: center;
   font-size: 0.8em;
   border-radius: 4px;
-  border: 1px solid rgb(59,61,60);
-  background-color: rgb(59,61,60) !important;
+  border: 1px solid rgb(var(--mc-fg-rgb, 59,61,60));
+  background-color: rgb(var(--mc-fg-rgb, 59,61,60)) !important;
   box-shadow: none !important;
-  color: rgb(170,172,171) !important;
+  color: rgb(var(--mc-mute-rgb, 170,172,171)) !important;
   cursor: pointer;
   padding: 0;
 }
 
 .mini-cal-day:hover {
-  color: rgb(222,224,223) !important;
-  background-color: rgb(69,71,70) !important;
+  color: rgb(var(--mc-line-rgb, 222,224,223)) !important;
+  background-color: rgb(var(--mc-fg2-rgb, 69,71,70)) !important;
 }
 
 /* =========================
@@ -97,18 +112,18 @@ body.theme-light .mini-cal-day.is-today {
 .mini-cal-day.is-on {
   background-color: var(--text-accent) !important;
   border-color: transparent !important;
-  color: rgb(244,242,243) !important;
+  color: rgb(var(--mc-bg-rgb, 244,242,243)) !important;
 }
 
 /* 已有日记 */
 .mini-cal-day.has-entry {
-  background-color: rgb(38, 110, 65) !important;
-  color: rgb(220, 255, 230) !important;
-  border-color: rgb(48, 140, 85);
+  background-color: rgb(var(--mc-accent-rgb, 38,110,65)) !important;
+  color: rgb(var(--mc-accent-bg-rgb, 220,255,230)) !important;
+  border-color: rgb(var(--mc-accent2-rgb, 48,140,85));
 }
 
 .mini-cal-day.has-entry:hover {
-  background-color: rgb(48, 140, 85) !important;
+  background-color: rgb(var(--mc-accent2-rgb, 48,140,85)) !important;
   color: rgb(235, 255, 240) !important;
 }
 
@@ -116,7 +131,7 @@ body.theme-light .mini-cal-day.is-today {
 .mini-cal-day.has-entry.is-on {
   background-color: var(--text-accent) !important;
   border-color: transparent !important;
-  color: rgb(244,242,243) !important;
+  color: rgb(var(--mc-bg-rgb, 244,242,243)) !important;
 }
 
 /* 今日甚好 (红色) */
@@ -135,7 +150,7 @@ body.theme-light .mini-cal-day.is-today {
 .mini-cal-day.is-good-day.is-on {
   background-color: var(--text-accent) !important;
   border-color: transparent !important;
-  color: rgb(244,242,243) !important;
+  color: rgb(var(--mc-bg-rgb, 244,242,243)) !important;
 }
 
 /* 公共假期 (淡紫/lilac) */
@@ -154,7 +169,7 @@ body.theme-light .mini-cal-day.is-today {
 .mini-cal-day.is-holiday.is-on {
   background-color: var(--text-accent) !important;
   border-color: transparent !important;
-  color: rgb(244,242,243) !important;
+  color: rgb(var(--mc-bg-rgb, 244,242,243)) !important;
 }
 
 /* 未来日期 */

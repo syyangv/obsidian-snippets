@@ -81,3 +81,38 @@
         }
     }
 }
+
+/* Shrink table-view Bases to content width and center in the window. */
+.bases-view[data-view-type="table"] {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Allow horizontal scrolling in embedded table Bases.
+   Obsidian sets .bases-embed { overflow: hidden } globally, which clips columns
+   when the table is wider than the embed container. Override x-axis only. */
+.workspace-leaf-content[data-type="markdown"] .bases-embed {
+    overflow-x: auto;
+}
+
+/* Tabular numbers for all cells — lightweight, doesn't affect layout cost. */
+.bases-view .bases-table-cell,
+.bases-view .bases-table-cell .bases-metadata-value {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+    letter-spacing: 0;
+}
+
+/* white-space: pre scoped to progress bar column only — prevents bar characters
+   from wrapping without forcing pre-mode layout on every other cell. */
+.bases-view[data-view-type="table"] .bases-tbody .bases-tr .bases-td:nth-child(2) .bases-table-cell,
+.bases-view[data-view-type="table"] .bases-tbody .bases-tr .bases-td:nth-child(2) .bases-table-cell .bases-metadata-value {
+    white-space: pre;
+}
+
+/* Progress bars live in column 2 in the affected Bases tables; keep only that column monospace. */
+.bases-view[data-view-type="table"] .bases-tbody .bases-tr .bases-td:nth-child(2) .bases-table-cell,
+.bases-view[data-view-type="table"] .bases-tbody .bases-tr .bases-td:nth-child(2) .bases-table-cell .bases-metadata-value {
+    font-family: var(--font-monospace-theme), var(--font-monospace), monospace;
+}

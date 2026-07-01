@@ -1,3 +1,40 @@
+/* colored-metadata.css — tokenised. */
+:root {
+  --cm-tan-33: #a98c7833;
+  --cm-tan-40: #a98c7840;
+  --cm-sand-33: #d8c3a533;
+  --cm-sand-40: #d8c3a540;
+  --cm-grey-33: #8e8d8a33;
+  --cm-grey-40: #8e8d8a40;
+  --cm-coral-33: #e9807433;
+  --cm-coral-40: #e9807440;
+  --cm-red-33: #e85a4f33;
+  --cm-red-40: #e85a4f40;
+  --cm-gold-33: #d8ae4733;
+  --cm-gold-40: #d8ae4740;
+  --cm-sage-33: #a49e8d33;
+  --cm-sage-40: #a49e8d40;
+  --cm-amber-33: #e6b47c33;
+  --cm-amber-40: #e6b47c40;
+  /* --- */
+  --cm-1: #e74c3c;
+  --cm-2: #3498db;
+  --cm-3: #2ecc71;
+  --cm-4: #f39c12;
+  --cm-5: #9b59b6;
+  --cm-6: #1abc9c;
+  --cm-7: #e67e22;
+  --cm-8: #34495e;
+  --cm-9: #16a085;
+  --cm-10: #27ae60;
+  --cm-11: #2980b9;
+  --cm-12: #8e44ad;
+  --cm-13: #c0392b;
+  --cm-14: #d35400;
+  --cm-15: #7f8c8d;
+  --cm-16: #f1c40f;
+}
+
 @charset "UTF-8";
 /* 
   优化版：Obsidian Metadata 多彩标签样式
@@ -8,14 +45,14 @@
 .metadata-property:not([data-property-key="tags"]) {
     /* --- 色板3: 大地色系 / Earth Tones --- */
     /* AA=33 表示20%透明度, AA=40 表示25%透明度 */
-    --pill-bg-1: #a98c7833; --pill-hover-1: #a98c7840; /* Clay Brown */
-    --pill-bg-2: #d8c3a533; --pill-hover-2: #d8c3a540; /* Almond */
-    --pill-bg-3: #8e8d8a33; --pill-hover-3: #8e8d8a40; /* Stone Grey */
-    --pill-bg-4: #e9807433; --pill-hover-4: #e9807440; /* Terracotta */
-    --pill-bg-5: #e85a4f33; --pill-hover-5: #e85a4f40; /* Rust Red */
-    --pill-bg-6: #d8ae4733; --pill-hover-6: #d8ae4740; /* Ochre */
-    --pill-bg-7: #a49e8d33; --pill-hover-7: #a49e8d40; /* Khaki Grey */
-    --pill-bg-8: #e6b47c33; --pill-hover-8: #e6b47c40; /* Sandy Brown */
+    --pill-bg-1: var(--cm-tan-33); --pill-hover-1: var(--cm-tan-40); /* Clay Brown */
+    --pill-bg-2: var(--cm-sand-33); --pill-hover-2: var(--cm-sand-40); /* Almond */
+    --pill-bg-3: var(--cm-grey-33); --pill-hover-3: var(--cm-grey-40); /* Stone Grey */
+    --pill-bg-4: var(--cm-coral-33); --pill-hover-4: var(--cm-coral-40); /* Terracotta */
+    --pill-bg-5: var(--cm-red-33); --pill-hover-5: var(--cm-red-40); /* Rust Red */
+    --pill-bg-6: var(--cm-gold-33); --pill-hover-6: var(--cm-gold-40); /* Ochre */
+    --pill-bg-7: var(--cm-sage-33); --pill-hover-7: var(--cm-sage-40); /* Khaki Grey */
+    --pill-bg-8: var(--cm-amber-33); --pill-hover-8: var(--cm-amber-40); /* Sandy Brown */
 }
 
 /* 基础样式：确保内边距和背景填充正确 */

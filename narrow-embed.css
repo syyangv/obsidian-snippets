@@ -1,15 +1,26 @@
+/* Remove padding/border on embeds whose content has cssclass: no-embed-padding */
+.internal-embed:has(.no-embed-padding) {
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+.internal-embed:has(.no-embed-padding) .markdown-preview-sizer {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 /* Scale embeds by filename */
 .internal-embed[src*="季度总结"] .markdown-embed-content,
 .internal-embed[src*="ProgressBar"] .markdown-embed-content {
   zoom: 0.7 !important;
 }
 
-/* Hide status bar, show on hover */
-.status-bar {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.status-bar:hover {
-  opacity: 1;
+/* Hide status bar, show on hover — desktop only (hover not available on mobile) */
+@media (hover: hover) {
+  .status-bar {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .status-bar:hover {
+    opacity: 1;
+  }
 }

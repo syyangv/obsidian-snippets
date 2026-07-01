@@ -1,7 +1,20 @@
-/* =============================================================================
-   BASH TERMINAL STYLE - Dark terminal appearance
-   Inspired by terminal themes like Antigravity
-   ============================================================================= */
+/* bash-terminal-style.css — tokenised. */
+:root {
+  --bt-bg: #1e1e1e;
+  --bt-prompt: #50fa7b;
+  --bt-text: #f8f8f2;
+  --bt-comment: #6272a4;
+  --bt-error: #ff5555;
+  --bt-edge: #44475a;
+  --bt-shadow: rgba(0,0,0,0.4);
+
+  --bash-bg:#1a1a2e;
+  --bash-green:#a9dc76;
+  --bash-cyan:#78dce8;
+  --bash-yellow:#ffd866;
+  --bash-grey:#727072;
+  --bash-pink:#ff6188;
+}
 
 /* Bash/Shell code blocks - dark terminal look */
 .markdown-preview-view pre:has(code.language-bash),
@@ -12,7 +25,7 @@
 .markdown-reading-view pre:has(code.language-shell),
 .markdown-reading-view pre:has(code.language-sh),
 .markdown-reading-view pre:has(code.language-zsh) {
-  background: #1a1a2e !important;
+  background: var(--bash-bg, #1a1a2e) !important;
   border: none !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -27,7 +40,7 @@
 .markdown-reading-view pre:has(code.language-shell) code,
 .markdown-reading-view pre:has(code.language-sh) code,
 .markdown-reading-view pre:has(code.language-zsh) code {
-  color: #a9dc76 !important;
+  color: var(--bash-green, #a9dc76) !important;
 }
 
 /* Syntax colors */
@@ -37,7 +50,7 @@
 .markdown-reading-view code.language-bash .token.function,
 .markdown-reading-view code.language-shell .token.function,
 .markdown-reading-view code.language-sh .token.function {
-  color: #78dce8;
+  color: var(--bash-cyan, #78dce8);
 }
 
 .markdown-preview-view code.language-bash .token.string,
@@ -46,7 +59,7 @@
 .markdown-reading-view code.language-bash .token.string,
 .markdown-reading-view code.language-shell .token.string,
 .markdown-reading-view code.language-sh .token.string {
-  color: #ffd866;
+  color: var(--bash-yellow, #ffd866);
 }
 
 .markdown-preview-view code.language-bash .token.comment,
@@ -55,7 +68,7 @@
 .markdown-reading-view code.language-bash .token.comment,
 .markdown-reading-view code.language-shell .token.comment,
 .markdown-reading-view code.language-sh .token.comment {
-  color: #727072;
+  color: var(--bash-grey, #727072);
   font-style: italic;
 }
 
@@ -65,7 +78,7 @@
 .markdown-reading-view code.language-bash .token.variable,
 .markdown-reading-view code.language-shell .token.variable,
 .markdown-reading-view code.language-sh .token.variable {
-  color: #ff6188;
+  color: var(--bash-pink, #ff6188);
 }
 
 .markdown-preview-view code.language-bash .token.operator,
@@ -74,7 +87,7 @@
 .markdown-reading-view code.language-bash .token.operator,
 .markdown-reading-view code.language-shell .token.operator,
 .markdown-reading-view code.language-sh .token.operator {
-  color: #ff6188;
+  color: var(--bash-pink, #ff6188);
 }
 
 .markdown-preview-view code.language-bash .token.keyword,
@@ -83,5 +96,5 @@
 .markdown-reading-view code.language-bash .token.keyword,
 .markdown-reading-view code.language-shell .token.keyword,
 .markdown-reading-view code.language-sh .token.keyword {
-  color: #ff6188;
+  color: var(--bash-pink, #ff6188);
 }

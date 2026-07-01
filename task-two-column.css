@@ -1,9 +1,21 @@
-/* Two columns - use [!two-col] */
+/* task-two-column.css — tokenised. */
+:root {
+  --t2c-1: #3aa4c2;
+  --t2c-2: #50e131;
+  --t2c-3: #f4c842;
+  --t2c-4: #d93030;
+
+  --ttc-c1:#E8F4F8;
+  --ttc-c2:#F0E8F4;
+  --ttc-c3:#FFF4E8;
+  --ttc-c4:#E8F8F0;
+}
+
 div.el-div:has(.callout[data-callout="two-col"]) + div.el-pre .block-language-tasks ul.plugin-tasks-query-result {
     columns: 2 !important;
     column-gap: 30px;
     column-rule: 1px solid var(--background-modifier-border);
-    background-color: #E8F4F8;
+    background-color: var(--ttc-c1, #E8F4F8);
     padding: 15px;
     border-radius: 8px;
 }
@@ -13,7 +25,7 @@ div.el-div:has(.callout[data-callout="three-col"]) + div.el-pre .block-language-
     columns: 3 !important;
     column-gap: 30px;
     column-rule: 1px solid var(--background-modifier-border);
-    background-color: #F0E8F4;
+    background-color: var(--ttc-c2, #F0E8F4);
     padding: 15px;
     border-radius: 8px;
 }
@@ -23,7 +35,7 @@ div.el-div:has(.callout[data-callout="four-col"]) + div.el-pre .block-language-t
     columns: 4 !important;
     column-gap: 30px;
     column-rule: 1px solid var(--background-modifier-border);
-    background-color: #FFF4E8;
+    background-color: var(--ttc-c3, #FFF4E8);
     padding: 15px;
     border-radius: 8px;
 }
@@ -33,7 +45,7 @@ div.el-div:has(.callout[data-callout="five-col"]) + div.el-pre .block-language-t
     columns: 5 !important;
     column-gap: 30px;
     column-rule: 1px solid var(--background-modifier-border);
-    background-color: #E8F8F0;
+    background-color: var(--ttc-c4, #E8F8F0);
     padding: 15px;
     border-radius: 8px;
 }

@@ -1,16 +1,34 @@
-/* Enhanced Inline Code Visibility */
+/* inline-code-enhanced.css — tokenised. */
+:root {
+  --ice-bg: #f6f8fa;
+  --ice-text: #1f2328;
+  --ice-edge: #d0d7de;
+  --ice-accent: #0969da;
+  --ice-warn: #9a6700;
+  --ice-shadow-1: rgba(0,0,0,0.05);
+  --ice-shadow-2: rgba(0,0,0,0.1);
+  --ice-shadow-3: rgba(0,0,0,0.15);
+  --ice-shadow-4: rgba(0,0,0,0.08);
+
+  --ice-bg:#f8f9fa;
+  --ice-fg:#2d3748;
+  --ice-border:#cbd5e0;
+  --ice-border-soft:#e2e8f0;
+  --ice-shadow:#000;
+}
+
 /* Improves contrast against light yellow backgrounds */
 /* Compatible with light and dark themes */
 
 /* Main inline code styling */
-code:not(pre code) {
+code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
     background-color: var(--background-secondary) !important;
     color: var(--text-normal) !important;
     border: 1px solid var(--background-modifier-border) !important;
     border-radius: 4px !important;
     padding: 2px 6px !important;
     font-family: var(--font-monospace) !important;
-    font-size: 0.95em !important;
+    font-size: 0.875em !important;
     font-weight: 500 !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
     margin: 0 1px !important;
@@ -18,39 +36,39 @@ code:not(pre code) {
 }
 
 /* Hover effect for better interactivity */
-code:not(pre code):hover {
+code:not(pre code):not(.mb-input):not(:has(.mb-button)):hover {
     background-color: var(--background-modifier-hover) !important;
     border-color: var(--text-accent) !important;
 }
 
 /* Dark theme specific adjustments */
-.theme-dark code:not(pre code) {
+.theme-dark code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
     background-color: var(--background-primary-alt) !important;
     border-color: var(--background-modifier-border-hover) !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
-.theme-dark code:not(pre code):hover {
+.theme-dark code:not(pre code):not(.mb-input):not(:has(.mb-button)):hover {
     background-color: var(--background-modifier-hover) !important;
     border-color: var(--text-accent) !important;
 }
 
 /* Light theme specific adjustments */
-.theme-light code:not(pre code) {
-    background-color: #f8f9fa !important;
-    color: #2d3748 !important;
-    border-color: #cbd5e0 !important;
+.theme-light code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
+    background-color: var(--ice-bg, #f8f9fa) !important;
+    color: var(--ice-fg, #2d3748) !important;
+    border-color: var(--ice-border, #cbd5e0) !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 }
 
-.theme-light code:not(pre code):hover {
-    background-color: #e2e8f0 !important;
+.theme-light code:not(pre code):not(.mb-input):not(:has(.mb-button)):hover {
+    background-color: var(--ice-border-soft, #e2e8f0) !important;
     border-color: var(--text-accent) !important;
 }
 
 /* High contrast option for accessibility */
-body.high-contrast code:not(pre code) {
-    background-color: #000000 !important;
+body.high-contrast code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
+    background-color: var(--ice-shadow, #000) !important;
     color: #ffffff !important;
     border: 2px solid #ffffff !important;
     font-weight: 600 !important;
@@ -67,24 +85,24 @@ pre code {
 }
 
 /* Special handling for code within links */
-a code:not(pre code) {
+a code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
     color: var(--text-accent) !important;
     border-color: var(--text-accent) !important;
 }
 
-a:hover code:not(pre code) {
+a:hover code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
     background-color: var(--text-accent) !important;
     color: var(--text-on-accent) !important;
 }
 
 /* Code within callouts */
-.callout code:not(pre code) {
+.callout code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
     background-color: rgba(var(--callout-color), 0.1) !important;
     border-color: rgba(var(--callout-color), 0.3) !important;
 }
 
 /* Code within tables */
-table code:not(pre code) {
+table code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
     margin: 0 !important;
     padding: 1px 4px !important;
     font-size: 0.9em !important;
@@ -92,7 +110,7 @@ table code:not(pre code) {
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-    code:not(pre code) {
+    code:not(pre code):not(.mb-input):not(:has(.mb-button)) {
         padding: 1px 4px !important;
         font-size: 0.9em !important;
     }

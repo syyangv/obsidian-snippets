@@ -1,4 +1,15 @@
-/* Custom Meta Bind styling */
+/* meta-bind-custom.css — tokenised. */
+:root {
+  --mbc-1: #3aa4c2;
+  --mbc-2: #50e131;
+  --mbc-3: #f4c842;
+  --mbc-4: #d93030;
+
+  --mbc-pink-bg:#FEE9E3;
+  --mbc-pink-fg:#D06AAE;
+  --mbc-green-bg:#DFF7ED;
+  --mbc-green-fg:#3A8A62;
+}
 
 /* Half-width for textArea */
 .meta-bind-half-width,
@@ -48,45 +59,64 @@
   margin: 0;
 }
 
-/* === Action buttons — equal width row === */
-.mb-button.action-btn {
-  display: inline-flex !important;
-  width: 10% !important;
-  margin-right: 8px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  vertical-align: middle;
-}
-
-.mb-button.action-btn .mb-button-inner {
-  width: 100% !important;
-  justify-content: center;
-}
-
-/* === Pastel button style — matches dailyNavigation / weeklyNavigation palette === */
-/* Targets inline BUTTON[name] components (not tag-selector .meta-bind-button) */
+/* === Sims Action button style ════════════════════════════════════════════════
+ * White pill, #448cc8 blue text, drop shadow.
+ * Active: Plumbob green border + glow.
+ * Suite strips: colored left pill-cap via ::before on button.
+ * The suite class sits on .mb-button wrapper; ::before targets button inside.
+ * ══════════════════════════════════════════════════════════════════════════════ */
 .mb-button button {
-  background: #FDE2DA !important;
+  background: rgba(255, 255, 255, 0.93) !important;
+  color: var(--mood-confident, #448cc8) !important;
   border: none !important;
-  border-radius: 6px !important;
-  color: #D06AAE !important;
+  border-radius: 999px !important;
   font-weight: 600 !important;
-  padding: 3px 12px !important;
-  font-size: 0.85em !important;
+  padding: 7px 18px !important;
+  font-size: 0.9em !important;
+  letter-spacing: 0.01em;
   cursor: pointer !important;
-  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, border-color 0.15s ease !important;
-  box-shadow: none !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.28), 0 1px 3px rgba(0,0,0,0.15) !important;
+  transition: box-shadow 0.15s, transform 0.12s, background 0.12s !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .mb-button button:hover {
-  background: #DFF7ED !important;
-  border-color: transparent !important;
-  color: #3A8A62 !important;
+  background: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35) !important;
   transform: translateY(-1px) !important;
-  box-shadow: none !important;
 }
 
 .mb-button button:active {
-  transform: translateY(0) scale(0.97) !important;
+  border: 2.5px solid var(--plumbob-400, #50e131) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.28),
+              0 0 12px rgba(80,225,49,0.38) !important;
+  transform: none !important;
 }
+
+/* Suite strips — colored left pill-cap indicates category */
+.mb-button[class*="suite-"] button {
+  padding-left: 44px !important;
+}
+
+.mb-button[class*="suite-"] button::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0; top: 0; bottom: 0;
+  width: 34px;
+  border-radius: 999px 0 0 999px;
+}
+
+/* TV / Entertainment */
+.mb-button.suite-teal   button::before { background: var(--mood-inspired, #33bcc1) !important; }
+/* Books / Learning */
+.mb-button.suite-amber  button::before { background: var(--mood-tense,   #df841c) !important; }
+/* Health / Wellness */
+.mb-button.suite-pink   button::before { background: var(--mood-flirty,  #ee5da5) !important; }
+/* Activity */
+.mb-button.suite-blue   button::before { background: var(--mood-confident, #448cc8) !important; }
+/* Tasks / Productivity */
+.mb-button.suite-green  button::before { background: var(--plumbob-400,  #50e131) !important; }
+/* Edit / Data entry / Tool */
+.mb-button.suite-purple button::before { background: var(--mood-dazed,   #816dcc) !important; }
 
