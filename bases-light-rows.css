@@ -1,0 +1,196 @@
+/* bases-light-rows.css
+   Makes Obsidian Bases table rows use the Plumbob panel-light palette
+   in dark mode — matching the light-mode appearance.
+
+   Palette: Plumbob panel-light tokens
+     #ffffff    row / cell background
+     #eaf2fb    header / summary background (--panel-bg-bot)
+     #f5f9fd    group header (--panel-row-alt)
+     #d8e8f7    hover (--panel-row-hover)
+     #a8c1dc    border (--panel-frame)
+     #16306b    text-normal (--navy-ink-900)
+     #1f3a7a    text-muted / header (--navy-ink-700)
+     #448cc8    links (--mood-confident, Sims bright blue)
+     #5a7a9a    text-faint
+*/
+
+/* ── Re-scope palette variables to panel-light inside any Bases view ─────── */
+.theme-dark .bases-view {
+  --text-normal:   #16306b;
+  --text-muted:    #1f3a7a;
+  --text-faint:    #5a7a9a;
+  --link-color:    #448cc8;
+
+  --table-border-color:                   #a8c1dc;
+  --bases-table-border-color:             #a8c1dc;
+  --bases-table-header-background:        #eaf2fb;
+  --bases-table-header-background-hover:  #d8e8f7;
+  --bases-table-header-color:             #1f3a7a;
+  --bases-table-row-background-hover:     #d8e8f7;
+  --bases-table-group-background:         #f5f9fd;
+  --bases-table-summary-background:       #eaf2fb;
+  --bases-table-summary-background-hover: #d8e8f7;
+  --background-modifier-hover:            #d8e8f7;
+}
+
+/* ── Row background — broad selector, no .bases-tbody intermediate
+   (some embedded contexts omit it from the matched ancestor chain) */
+.theme-dark .bases-tr {
+  background-color: #ffffff !important;
+}
+
+/* Also paint .bases-td cells — in certain embed contexts the cell
+   overlays the row and repaints dark via the container background */
+.theme-dark .bases-view .bases-td {
+  background-color: #ffffff !important;
+}
+
+/* ── Header row — #deeaf6 is slightly more saturated than row bg, matching Sims */
+.theme-dark .bases-thead {
+  background-color: #deeaf6 !important;
+}
+
+.theme-dark .bases-thead .bases-td {
+  background-color: #deeaf6 !important;
+}
+
+.theme-dark .bases-thead .bases-td:hover,
+.theme-dark .bases-thead .bases-td.has-active-menu {
+  background-color: #d8e8f7 !important;
+}
+
+/* Header label text color */
+.theme-dark .bases-table-header-label,
+.theme-dark .bases-table-header-name {
+  color: #1f3a7a !important;
+}
+
+/* Hide property type icons (ⓘ ⊟ ## ≡ 📅) from header — design shows clean text only */
+.theme-dark .bases-view .bases-table-header-icon {
+  display: none !important;
+}
+
+/* Center the text inside each header cell */
+.theme-dark .bases-thead .bases-table-header {
+  justify-content: center;
+}
+
+/* ── Toolbar area (above the table) — light background ──────────────────── */
+.theme-dark .bases-view .bases-toolbar,
+.theme-dark .bases-toolbar {
+  background-color: #f0f6fc;
+  color: #5a7a9a;
+  border-bottom: 1px solid #c8d8ec;
+}
+
+/* ── Progress bar column — blue to match design (#448cc8 Sims blue) ───────
+   Progress bars live in column 2 across all affected Bases tables */
+.theme-dark .bases-view .bases-td:nth-child(2) .bases-table-cell {
+  color: #448cc8;
+}
+
+/* ── Subtle vertical column dividers (Sims style) ────────────────────────── */
+.theme-dark .bases-view .bases-td {
+  border-right: 1px solid #edf2f8 !important;
+}
+
+.theme-dark .bases-view .bases-td:last-child {
+  border-right: none !important;
+}
+
+.theme-dark .bases-thead .bases-td {
+  border-right: 1px solid #c8d8ec !important;
+}
+
+.theme-dark .bases-thead .bases-td:last-child {
+  border-right: none !important;
+}
+
+/* ── Data cell content ───────────────────────────────────────────────────── */
+/* Direct color on .bases-table-cell — variable inheritance doesn't reach
+   deep enough for all property types (numbers, dates, text, etc.) */
+.theme-dark .bases-view .bases-table-cell,
+.theme-dark .bases-view .bases-metadata-value,
+.theme-dark .bases-view .bases-metadata-label {
+  color: #16306b;
+}
+
+/* Center all columns including name/title (Sims style) */
+.theme-dark .bases-view .bases-td .bases-table-cell {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Keep progress bar column (2nd child) left-aligned — centering makes bars
+   start at different positions per row because (bar+%) widths vary */
+.theme-dark .bases-view .bases-td:nth-child(2) .bases-table-cell {
+  justify-content: flex-start;
+  text-align: left;
+  color: #448cc8;
+}
+
+/* ── Multi-select / select pill text ────────────────────────────────────── */
+/* --pill-color cascades through var(--text-muted) but Bases overrides it;
+   setting --pill-color directly wins in all contexts */
+.theme-dark .bases-view .multi-select-pill {
+  --pill-color: #16306b;
+  --pill-border-color: #c8d8ec;
+}
+.theme-dark .bases-view .multi-select-pill-remove-button {
+  color: #8aa8c8;
+}
+
+/* ── Date / number / text inputs inside Bases cells ────────────────────── */
+.theme-dark .bases-table-container input[type='date'],
+.theme-dark .bases-table-container input[type='datetime-local'],
+.theme-dark .bases-table-container input[type='number'],
+.theme-dark .bases-table-container input[type='text'] {
+  color: #16306b !important;
+}
+
+/* Date inputs render "/ /" separators via WebKit internal pseudo-elements
+   that ignore the regular color property — must target each part separately */
+.theme-dark .bases-table-container input[type='date']::-webkit-datetime-edit,
+.theme-dark .bases-table-container input[type='datetime-local']::-webkit-datetime-edit {
+  color: #16306b;
+}
+.theme-dark .bases-table-container input[type='date']::-webkit-datetime-edit-day-field,
+.theme-dark .bases-table-container input[type='date']::-webkit-datetime-edit-month-field,
+.theme-dark .bases-table-container input[type='date']::-webkit-datetime-edit-year-field,
+.theme-dark .bases-table-container input[type='datetime-local']::-webkit-datetime-edit-day-field,
+.theme-dark .bases-table-container input[type='datetime-local']::-webkit-datetime-edit-month-field,
+.theme-dark .bases-table-container input[type='datetime-local']::-webkit-datetime-edit-year-field {
+  color: #16306b;
+}
+.theme-dark .bases-table-container input[type='date']::-webkit-datetime-edit-text,
+.theme-dark .bases-table-container input[type='datetime-local']::-webkit-datetime-edit-text {
+  color: #8aa8c8; /* the "/" separators — slightly lighter than values */
+}
+
+/* Faint placeholder text (empty date "/ /", unset values) */
+.theme-dark .bases-view .bases-metadata-value-empty,
+.theme-dark .bases-view .bases-date-empty {
+  color: #b8cce0;
+}
+
+/* ── Outer container ─────────────────────────────────────────────────────── */
+.theme-dark .bases-table-container {
+  background-color: #ffffff !important;
+  border-color: #a8c1dc;
+}
+
+/* ── Both modes: center all columns including 名称 ───────────────────────── */
+.bases-view .bases-td .bases-table-cell {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Progress bar column always left-aligned in both modes (centering misaligns bars) */
+.bases-view .bases-td:nth-child(2) .bases-table-cell {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.bases-thead .bases-table-header {
+  justify-content: center;
+}

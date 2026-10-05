@@ -66,3 +66,9 @@ div.el-div:has(.callout[data-callout="five-col"]) + div.el-pre .block-language-t
 .callout[data-callout="five-col"] {
     display: none;
 }
+
+/* Dashboard-only: source sync IDs are Dataview inline fields, not task text. */
+.todo-task-dashboard .plugin-tasks-query-result .task-description .inline-field,
+.todo-task-dashboard .plugin-tasks-query-result .task-description [data-dv-inline-field] {
+    display: none !important;
+}

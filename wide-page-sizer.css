@@ -1,0 +1,43 @@
+/* Per-note full-width override for the existing `wide-page` cssclass. */
+.wide-page.markdown-preview-view .markdown-preview-sizer,
+.wide-page.markdown-source-view .cm-sizer {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-inline: 0 !important;
+}
+
+/* Responsive TaskNotes Kanban columns inside a full-width page. */
+@media (min-width: 768px) {
+  .wide-page .tasknotes-plugin.tn-tasknotesKanban .kanban-view__board {
+    overflow-x: hidden !important;
+  }
+
+  .wide-page .tasknotes-plugin.tn-tasknotesKanban .kanban-view__column {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+}
+
+/* Let relationship-widget Kanbans follow their actual page container even when
+   Obsidian does not expose the note cssclass on the rendered view. */
+@media (min-width: 768px) {
+  .markdown-preview-view:has(.tasknotes-relationships-widget) .markdown-preview-sizer,
+  .markdown-source-view:has(.tasknotes-relationships-widget) .cm-sizer {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+  }
+
+  .tasknotes-relationships-widget .tasknotes-plugin.tn-tasknotesKanban .kanban-view__board {
+    overflow-x: hidden !important;
+  }
+
+  .tasknotes-relationships-widget .tasknotes-plugin.tn-tasknotesKanban .kanban-view__column {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+}

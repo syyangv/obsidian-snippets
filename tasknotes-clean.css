@@ -1,0 +1,26 @@
+/* TaskNotes Clean: Hide sub-day time tracking and inputs (day-level only) */
+
+/* 1. Hide Time (optional) input in date picker modal */
+.date-time-picker-modal__time-field,
+.date-time-picker-modal__time-input {
+    display: none !important;
+}
+
+/* 2. Hide Time Estimate field in task creation and edit modals */
+.tn-task-modal__time-estimate,
+[data-field-id="time-estimate"] {
+    display: none !important;
+}
+
+/* 3. Hide Pomodoro and Time Tracking items in status bar */
+.tasknotes-status-bar.tasknotes-pomodoro-status-bar,
+.tasknotes-status-bar.tasknotes-tracked-status-bar {
+    display: none !important;
+}
+
+/* 4. Hide time tracking buttons and time entries on task cards */
+.tasknotes-plugin .task-card__tracked-time,
+.tasknotes-plugin .task-card__time-entries,
+.tasknotes-plugin [data-event-type="timeEntry"] {
+    display: none !important;
+}

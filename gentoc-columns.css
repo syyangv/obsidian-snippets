@@ -1,0 +1,10 @@
+/* gentoc-columns.css */
+/* Embedded genTOC multi-column.
+   The column COUNT is decided in Helper/utils/genTOC.md (JS) from the row
+   count: 1 column when short, then balanced across up to 3 columns when long.
+   This snippet only keeps each heading row intact across a column break. */
+/* created: 2026-06-04 */
+
+.internal-embed[src*="genTOC"] .gen-toc > div > div {
+    break-inside: avoid;
+}

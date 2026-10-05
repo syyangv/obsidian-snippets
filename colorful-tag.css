@@ -1,0 +1,91 @@
+/*整体修改标签的外观样式*/
+.tag {
+  background-color: var(--text-accent);
+  border: none;
+  color: white;
+  font-size: 11px;
+  padding: 1px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px;
+  cursor: pointer;
+  border-radius: 14px;
+}
+/*标签指向时候，文字和背景色变化*/
+.tag:hover {
+color: white;
+background-color: var(--text-accent-hover);
+}
+/*#todo 标签在阅读和编辑模式*/
+.tag[href^="#todo"] {
+ color:white;
+  background-color: var(--color-blue);
+}
+.cm-s-obsidian span.cm-tag-todo,.tag[href^="#todo"] {
+ color:white;
+  background-color: var(--color-blue);
+}
+/*#shopping 标签在阅读和编辑模式*/
+.tag[href^="#shopping"] {
+ color:white;
+  background-color: var(--color-purple);
+}
+.cm-s-obsidian span.cm-tag-shopping,.tag[href^="#shopping"] {
+ color:white;
+  background-color: var(--color-purple);
+}
+/*#important 标签在阅读和编辑模式*/
+.tag[href^="#important"] {
+ color:white;
+  background-color: var(--color-red);
+}
+.cm-s-obsidian span.cm-tag-important,.tag[href^="#important"] {
+ color:white;
+  background-color: var(--color-red);
+}
+/*#task 标签在阅读和编辑模式*/
+.tag[href^="#task"] {
+ color:white;
+  background-color: var(--color-orange);
+}
+.cm-s-obsidian span.cm-tag-task,.tag[href^="#task"] {
+ color:white;
+  background-color: var(--color-orange);
+}
+/*#meeting 标签在阅读和编辑模式*/
+.tag[href^="#meeting"] {
+ color:white;
+  background-color: var(--everforest-aqua);
+}
+.cm-s-obsidian span.cm-tag-meeting,.tag[href^="#meeting"] {
+ color:white;
+  background-color: var(--everforest-aqua);
+}
+/*#comunicate 标签在阅读和编辑模式*/
+.tag[href^="#comunicate"] {
+ color:white;
+  background-color: var(--color-green);
+}
+.cm-s-obsidian span.cm-tag-comunicate,.tag[href^="#comunicate"] {
+ color:white;
+  background-color: var(--color-green);
+}
+/*#newadd 标签在阅读和编辑模式*/
+.tag[href^="#newadd"] {
+ color:white;
+  background-color: var(--color-red);
+}
+.cm-s-obsidian span.cm-tag-newadd,.tag[href^="#newadd"] {
+ color:white;
+  background-color: var(--color-red);
+}
+/*#update 标签在阅读和编辑模式*/
+.tag[href^="#update"] {
+ color:white;
+  background-color: var(--everforest-blue);
+}
+.cm-s-obsidian span.cm-tag-update,.tag[href^="#update"] {
+ color:white;
+  background-color: var(--everforest-blue);
+}

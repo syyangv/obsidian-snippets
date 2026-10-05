@@ -1,0 +1,33 @@
+/* File explorer: 日记 file and folder row tint (keeping font color standard).
+   Hue matches the Notebook Navigator row tint #9AB3F4 = rgb(154, 179, 244). */
+.nav-file-title[data-path^="日记/"],
+.nav-folder-title[data-path="日记"],
+.nav-folder-title[data-path^="日记/"],
+.tree-item-self[data-path^="日记/"] {
+  background-color: rgba(154, 179, 244, 0.18) !important;
+  border-radius: var(--radius-s);
+}
+
+.nav-file-title[data-path^="日记/"]:hover,
+.nav-folder-title[data-path="日记"]:hover,
+.nav-folder-title[data-path^="日记/"]:hover,
+.tree-item-self[data-path^="日记/"]:hover {
+  background-color: rgba(154, 179, 244, 0.30) !important;
+}
+
+/* Ensure text remains normal font color */
+.nav-file-title[data-path^="日记/"] .nav-file-title-content,
+.nav-folder-title[data-path="日记"] .nav-folder-title-content,
+.nav-folder-title[data-path^="日记/"] .nav-folder-title-content,
+.tree-item-self[data-path^="日记/"] .tree-item-inner {
+  color: var(--text-normal) !important;
+}
+
+/* Flair count badge background */
+.nav-folder-title[data-path="日记"] .tree-item-flair,
+.nav-folder-title[data-path^="日记/"] .tree-item-flair {
+  background-color: rgba(154, 179, 244, 0.35) !important;
+  color: var(--text-muted) !important;
+}
+
+

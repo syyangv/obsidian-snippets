@@ -1,0 +1,45 @@
+/* Typography enhancements — Figtree headings, refined hierarchy */
+
+/* H1–H3: Figtree for structural presence distinct from Crimson Pro body */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.cm-s-obsidian .HyperMD-header-1,
+.cm-s-obsidian .HyperMD-header-2,
+.cm-s-obsidian .HyperMD-header-3 {
+    font-family: Figtree, var(--font-interface), sans-serif;
+    font-weight: 600;
+}
+
+/* Inline title (note name at top of note) — centered */
+/* 3 plugins each wrap .inline-title differently:
+   - iconic: .iconic-title-wrapper (display:flex row) → needs justify-content:center
+   - pretty-properties: .title-wrapper (block, children display:inline) → needs text-align:center
+   - base Obsidian: direct block .inline-title → needs text-align:center + unicode-bidi reset */
+.iconic-title-wrapper {
+    justify-content: center !important;
+}
+.title-wrapper {
+    text-align: center !important;
+}
+.inline-title {
+    unicode-bidi: normal !important;
+    text-align: center !important;
+}
+
+/* H4–H6: stay Crimson Pro, just slightly bolder to distinguish from body */
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.cm-s-obsidian .HyperMD-header-4,
+.cm-s-obsidian .HyperMD-header-5,
+.cm-s-obsidian .HyperMD-header-6 {
+    font-family: var(--font-text);
+    font-weight: 600;
+}
+
+/* Larger note titles */
+body {
+  --h1-size: 2.2em;
+  --inline-title-size: 2.2em;
+}

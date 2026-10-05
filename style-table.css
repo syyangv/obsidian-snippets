@@ -1,0 +1,465 @@
+/* style-table.css — tokenised. */
+:root {
+  --st-edge: #e5e7eb;
+  --st-edge-2: #d1d5db;
+  --st-bg: #f9fafb;
+  --st-bg-2: #f3f4f6;
+  --st-text: #111827;
+  --st-text-soft: #6b7280;
+  --st-accent: #3b82f6;
+  --st-accent-2: #2563eb;
+  --st-row-alt: #fafbfc;
+  --st-shadow-1: rgba(0,0,0,0.05);
+  --st-shadow-2: rgba(0,0,0,0.1);
+  --st-shadow-3: rgba(0,0,0,0.08);
+
+  --st-head-bg: #c5ddef;    /* Sims-style light blue header */
+  --st-head-bg-dark: #063749; /* teal700 — Plumbob dark header */
+  --st-head-text: #1e3a5f;  /* navy ink on light header */
+  --st-head-text-dark: #50e131; /* plumbob green on dark header */
+  --st-fg:#374151;
+  --st-fg-strong:#1f2937;
+  --st-link:#1e3a5f;
+  --st-border:#93c5fd;
+}
+
+/* Inspired by Linear, Notion, and contemporary design systems */
+
+/* --- CSS Variables for Minimal Design --- */
+.theme-light,
+.theme-dark {
+    /* Spacing and sizing */
+    --table-cell-padding: 14px 18px;
+    --table-header-padding: 14px 18px;
+    --table-border-radius: 3px;
+    --table-row-height: 48px;
+    --table-header-height: 48px;
+    
+    /* Typography */
+    --table-font-weight: 400;
+    --table-header-font-weight: 500;
+    --table-font-size: 14px;
+    --table-header-font-size: 13px;
+    
+    /* Minimal borders */
+    --table-border-width: 1px;
+    --table-inner-border-opacity: 0.1;
+    --table-outer-border-opacity: 0.15;
+}
+
+.theme-light {
+    /* Light theme — Sims-style light blue header */
+    --table-background: #ffffff;
+    --table-header-background: var(--st-head-bg, #c5ddef);
+    --table-header-text: var(--st-head-text, #1e3a5f);
+    --table-border-color: rgba(0, 0, 0, 0);
+    --table-inner-border-color: rgba(0, 0, 0, var(--table-inner-border-opacity));
+    --table-row-hover: rgba(0, 0, 0, 0.04);
+    --table-row-alt: rgba(0, 0, 0, 0.025);
+    --table-text-color: var(--st-fg, #374151);
+    --table-text-secondary: var(--st-text-soft);
+}
+
+.theme-dark {
+    /* Dark theme — Plumbob teal header, plumbob green text */
+    --table-background: transparent;
+    --table-header-background: var(--st-head-bg-dark, #063749);
+    --table-header-text: var(--st-head-text-dark, #50e131);
+    --table-border-color: rgba(255, 255, 255, 0);
+    --table-inner-border-color: rgba(255, 255, 255, var(--table-inner-border-opacity));
+    --table-row-hover: rgba(255, 255, 255, 0.05);
+    --table-row-alt: rgba(255, 255, 255, 0.03);
+    --table-text-color: #f2fbff;
+    --table-text-secondary: #cde5ef;
+}
+
+/* --- Base Table Styling --- */
+.markdown-preview-view table:not(.dataview),
+.markdown-source-view.is-live-preview table:not(.dataview) {
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--table-background);
+    border-radius: var(--table-border-radius);
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+    margin: 24px 0;
+    width: 100%;
+    font-size: var(--table-font-size);
+    font-weight: var(--table-font-weight);
+    color: var(--table-text-color);
+}
+
+/* --- Table Header Styling --- */
+.markdown-preview-view table:not(.dataview) thead,
+.markdown-source-view.is-live-preview table:not(.dataview) thead {
+    background: var(--table-header-background) !important;
+}
+
+.markdown-preview-view table:not(.dataview) th,
+.markdown-source-view.is-live-preview table:not(.dataview) th,
+.markdown-preview-view table:not(.dataview) thead tr th,
+.markdown-source-view.is-live-preview table:not(.dataview) thead tr th,
+.markdown-preview-view table:not(.dataview) thead td,
+.markdown-source-view.is-live-preview table:not(.dataview) thead td {
+    background: var(--table-header-background) !important;
+    background-color: var(--table-header-background) !important;
+    color: var(--table-header-text);
+    font-weight: var(--table-header-font-weight);
+    font-size: var(--table-header-font-size);
+    text-transform: none;
+    letter-spacing: 0;
+    padding: var(--table-header-padding);
+    height: var(--table-header-height);
+    min-height: var(--table-header-height);
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+    border-bottom: var(--table-border-width) solid var(--table-inner-border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Ensure header row itself has background */
+.markdown-preview-view table:not(.dataview) thead tr,
+.markdown-source-view.is-live-preview table:not(.dataview) thead tr {
+    background: var(--table-header-background) !important;
+}
+
+/* Nuclear option: force ALL elements inside th to be transparent */
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > * > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > * > * > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > * > * > * > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th > * > * > * > * > *,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th [class],
+.markdown-source-view.is-live-preview table:not(.dataview) thead th div,
+.markdown-source-view.is-live-preview table:not(.dataview) thead th span {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Target Obsidian's table cell wrapper and editor specifically */
+.markdown-source-view.is-live-preview table:not(.dataview) thead .table-cell-wrapper,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-editor,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-scroller,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-content,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-line,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-sizer,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-gutters,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-activeLineGutter,
+.markdown-source-view.is-live-preview table:not(.dataview) thead .cm-activeLine {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.markdown-preview-view table:not(.dataview) th:not(:last-child),
+.markdown-source-view.is-live-preview table:not(.dataview) th:not(:last-child) {
+    border-right: none;
+}
+
+/* --- Table Body Styling --- */
+.markdown-preview-view table:not(.dataview) tbody,
+.markdown-source-view.is-live-preview table:not(.dataview) tbody {
+    background: var(--table-background);
+}
+
+.markdown-preview-view table:not(.dataview) td,
+.markdown-source-view.is-live-preview table:not(.dataview) td {
+    padding: var(--table-cell-padding);
+    height: var(--table-row-height);
+    vertical-align: middle;
+    border: none;
+    border-bottom: var(--table-border-width) solid var(--table-inner-border-color);
+    color: var(--table-text-color);
+    line-height: 1.5;
+}
+
+.markdown-preview-view table:not(.dataview) td:not(:last-child),
+.markdown-source-view.is-live-preview table:not(.dataview) td:not(:last-child) {
+    border-right: none;
+}
+
+/* Remove border from last row */
+.markdown-preview-view table:not(.dataview) tbody tr:last-child td,
+.markdown-source-view.is-live-preview table:not(.dataview) tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Row Interactions --- */
+.markdown-preview-view table:not(.dataview) tbody tr:hover,
+.markdown-source-view.is-live-preview table:not(.dataview) tbody tr:hover {
+    background: var(--table-row-hover);
+    transition: background-color 0.15s ease-in-out;
+}
+
+/* --- Alternating Row Colors (always on) --- */
+.markdown-preview-view table:not(.dataview) tbody tr:nth-child(even),
+.markdown-source-view.is-live-preview table:not(.dataview) tbody tr:nth-child(even) {
+    background: var(--table-row-alt);
+}
+
+.markdown-preview-view table:not(.dataview) tbody tr:nth-child(even):hover,
+.markdown-source-view.is-live-preview table:not(.dataview) tbody tr:nth-child(even):hover {
+    background: var(--table-row-hover);
+}
+
+/* --- Special Cell Types --- */
+/* Center-aligned content */
+.markdown-preview-view table:not(.dataview) td:has(img),
+.markdown-source-view.is-live-preview table:not(.dataview) td:has(img),
+.markdown-preview-view table:not(.dataview) td[align="center"],
+.markdown-source-view.is-live-preview table:not(.dataview) td[align="center"] {
+    text-align: center;
+}
+
+/* Numeric columns */
+.markdown-preview-view table:not(.dataview) td:has(.math),
+.markdown-source-view.is-live-preview table:not(.dataview) td:has(.math),
+.markdown-preview-view table:not(.dataview) td[align="right"],
+.markdown-source-view.is-live-preview table:not(.dataview) td[align="right"] {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Secondary text styling */
+.markdown-preview-view table:not(.dataview) td small,
+.markdown-source-view.is-live-preview table:not(.dataview) td small {
+    color: var(--table-text-secondary);
+    font-size: 12px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .markdown-preview-view table:not(.dataview),
+    .markdown-source-view.is-live-preview table:not(.dataview) {
+        font-size: 13px;
+        --table-cell-padding: 8px 12px;
+        --table-header-padding: 12px;
+        --table-row-height: 44px;
+        --table-header-height: 48px;
+    }
+}
+
+/* --- Dataview Table Alignment --- */
+.markdown-rendered table.table-view-table,
+.markdown-preview-view table.table-view-table,
+.markdown-reading-view table.table-view-table,
+.markdown-source-view.is-live-preview table.table-view-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--table-background);
+    border-radius: var(--table-border-radius);
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+    margin: 24px 0;
+    width: 100%;
+    font-size: var(--table-font-size);
+    font-weight: var(--table-font-weight);
+    color: var(--table-text-color);
+}
+
+.markdown-rendered table.table-view-table > thead > tr,
+.markdown-rendered table.table-view-table > tbody > tr,
+.markdown-preview-view table.table-view-table > thead > tr,
+.markdown-preview-view table.table-view-table > tbody > tr,
+.markdown-reading-view table.table-view-table > thead > tr,
+.markdown-reading-view table.table-view-table > tbody > tr,
+.markdown-source-view.is-live-preview table.table-view-table > thead > tr,
+.markdown-source-view.is-live-preview table.table-view-table > tbody > tr {
+    margin: 0;
+    text-align: left;
+}
+
+.markdown-rendered table.table-view-table > thead > tr > th,
+.markdown-preview-view table.table-view-table > thead > tr > th,
+.markdown-reading-view table.table-view-table > thead > tr > th,
+.markdown-source-view.is-live-preview table.table-view-table > thead > tr > th {
+    background: var(--table-header-background) !important;
+    background-color: var(--table-header-background) !important;
+    color: var(--table-header-text);
+    font-weight: var(--table-header-font-weight);
+    font-size: var(--table-header-font-size);
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 10px 14px;
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+    border-bottom: var(--table-border-width) solid var(--table-inner-border-color);
+    white-space: nowrap;
+}
+
+.markdown-rendered table.table-view-table > tbody > tr > td,
+.markdown-preview-view table.table-view-table > tbody > tr > td,
+.markdown-reading-view table.table-view-table > tbody > tr > td,
+.markdown-source-view.is-live-preview table.table-view-table > tbody > tr > td {
+    padding: 6px 14px;
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+    border-bottom: var(--table-border-width) solid var(--table-inner-border-color);
+    color: var(--table-text-color);
+    line-height: 1.2;
+}
+
+.markdown-rendered table.table-view-table > thead > tr > th:not(:last-child),
+.markdown-rendered table.table-view-table > tbody > tr > td:not(:last-child),
+.markdown-preview-view table.table-view-table > thead > tr > th:not(:last-child),
+.markdown-preview-view table.table-view-table > tbody > tr > td:not(:last-child),
+.markdown-reading-view table.table-view-table > thead > tr > th:not(:last-child),
+.markdown-reading-view table.table-view-table > tbody > tr > td:not(:last-child),
+.markdown-source-view.is-live-preview table.table-view-table > thead > tr > th:not(:last-child),
+.markdown-source-view.is-live-preview table.table-view-table > tbody > tr > td:not(:last-child) {
+    border-right: none;
+}
+
+.markdown-rendered table.table-view-table > tbody > tr:last-child > td,
+.markdown-preview-view table.table-view-table > tbody > tr:last-child > td,
+.markdown-reading-view table.table-view-table > tbody > tr:last-child > td,
+.markdown-source-view.is-live-preview table.table-view-table > tbody > tr:last-child > td {
+    border-bottom: none;
+}
+
+.markdown-rendered table.table-view-table > tbody > tr:hover,
+.markdown-preview-view table.table-view-table > tbody > tr:hover,
+.markdown-reading-view table.table-view-table > tbody > tr:hover,
+.markdown-source-view.is-live-preview table.table-view-table > tbody > tr:hover {
+    background: var(--table-row-hover);
+    transition: background-color 0.15s ease-in-out;
+}
+
+/* Compact list-like Dataview cells in 药品.md */
+.medication-inventory-note table.table-view-table td ul,
+.medication-inventory-note table.table-view-table td ol,
+.medication-inventory-note table.table-view-table th ul,
+.medication-inventory-note table.table-view-table th ol {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+    padding-inline-start: 0 !important;
+    list-style: none !important;
+}
+
+.medication-inventory-note table.table-view-table td li,
+.medication-inventory-note table.table-view-table th li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* --- Clean up existing table editor gutters --- */
+.markdown-preview-view table:not(.dataview) .table-cell-wrapper > .cm-s-obsidian > .cm-editor .cm-gutters,
+.markdown-source-view.is-live-preview table:not(.dataview) .table-cell-wrapper > .cm-s-obsidian > .cm-editor .cm-gutters {
+    display: none;
+}
+
+/* --- Integration with existing MCL system --- */
+.mcl-column table:not(.dataview) {
+    margin: 16px 0;
+    font-size: 13px;
+}
+
+/* --- Obsidian Bases Table Styling --- */
+/* Note: Bases uses .bases-td for BOTH header and body cells;
+   header cells are distinguished by .bases-thead .bases-td */
+
+.bases-view[data-view-type="table"] {
+    border-radius: var(--table-border-radius);
+    overflow: hidden;
+}
+
+/* Header cells — compact padding for dense Bases layout */
+.bases-thead .bases-td {
+    background: var(--table-header-background) !important;
+    color: var(--table-header-text) !important;
+    font-weight: var(--table-header-font-weight);
+    font-size: var(--table-header-font-size);
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 4px 1px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--table-inner-border-color) !important;
+}
+
+.bases-thead .bases-table-header,
+.bases-thead .bases-table-header-name {
+    color: var(--table-header-text) !important;
+}
+
+/* Body cells — compact padding, no color override (let Bases handle its own cell colors) */
+.bases-tbody .bases-td {
+    padding: 4px 1px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--table-inner-border-color) !important;
+    vertical-align: middle;
+}
+
+/* Align Bases body-cell contents vertically.
+   Bases rows use div-based cells, so table-cell vertical-align alone does not reliably center
+   number/date metadata values. Center the cell container, then normalize inner metadata. */
+.bases-view[data-view-type="table"] .bases-tbody .bases-td {
+    display: flex;
+    align-items: center;
+}
+
+.bases-view[data-view-type="table"] .bases-tbody .bases-table-cell,
+.bases-view[data-view-type="table"] .bases-tbody .bases-metadata-value {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    line-height: 1.2;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 4px;
+}
+
+.bases-view[data-view-type="table"] .bases-tbody .bases-table-cell svg,
+.bases-view[data-view-type="table"] .bases-tbody .bases-metadata-value svg {
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.bases-view[data-view-type="table"] .bases-table-cell .lucide-calendar {
+    transform: translateY(-1px);
+}
+
+.bases-view[data-view-type="table"] .bases-tbody .bases-table-cell:has(.lucide-calendar),
+.bases-view[data-view-type="table"] .bases-tbody .bases-metadata-value:has(.lucide-calendar) {
+    gap: 2px;
+    min-width: 0;
+    width: 100%;
+    overflow: visible;
+    white-space: nowrap;
+}
+
+/* Last row — no bottom border */
+.bases-tbody .bases-tr:last-child .bases-td {
+    border-bottom: none !important;
+}
+
+/* Row hover */
+.bases-tbody .bases-tr:hover .bases-td {
+    background: var(--table-row-hover);
+}
+
+/* Alternating rows */
+.bases-tbody .bases-tr:nth-child(even) .bases-td {
+    background: var(--table-row-alt);
+}
+.bases-tbody .bases-tr:nth-child(even):hover .bases-td {
+    background: var(--table-row-hover);
+}
+
+/* --- Accessibility improvements --- */
+.markdown-preview-view table:not(.dataview) th,
+.markdown-source-view.is-live-preview table:not(.dataview) th {
+    outline: none;
+}
+
+.markdown-preview-view table:not(.dataview):focus-within,
+.markdown-source-view.is-live-preview table:not(.dataview):focus-within {
+    box-shadow: 0 0 0 2px var(--accent-color);
+    outline: none;
+}

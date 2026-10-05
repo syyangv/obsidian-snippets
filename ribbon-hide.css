@@ -1,0 +1,151 @@
+/* ribbon-hide.css
+ * Replicates Commander hide settings via CSS (Commander broken on Obsidian 1.12.4)
+ * Source: .obsidian/plugins/cmdr/data.json → hide.leftRibbon + hide.statusbar
+ */
+
+/* ── Ribbon spacing ── */
+.side-dock-actions {
+  justify-content: space-evenly;
+  gap: 0;
+  height: 60%;
+}
+
+/* Obsidian positions the left sidebar toggle absolutely at the top of the
+ * ribbon. Reserve its header slot so the first ribbon action is not painted
+ * on top of the toggle icon. */
+body:not(.is-mobile) .workspace-ribbon.mod-left .side-dock-actions {
+  padding-top: calc(var(--header-height) - 1px) !important;
+}
+
+/* ── Left Ribbon ── */
+.side-dock-ribbon-tab[aria-label="Always color text"],
+.side-dock-ribbon-action[aria-label="Always color text"],
+.side-dock-ribbon-tab[aria-label="Always Color Text"],
+.side-dock-ribbon-action[aria-label="Always Color Text"],
+.side-dock-ribbon-tab[aria-label="Advanced Tables Toolbar"],
+.side-dock-ribbon-action[aria-label="Advanced Tables Toolbar"],
+.side-dock-ribbon-tab[aria-label="QuickAdd"],
+.side-dock-ribbon-action[aria-label="QuickAdd"],
+.side-dock-ribbon-tab[aria-label="Create new book note"],
+.side-dock-ribbon-action[aria-label="Create new book note"],
+.side-dock-ribbon-tab[aria-label="打开/创建今天的日记"],
+.side-dock-ribbon-action[aria-label="打开/创建今天的日记"],
+.side-dock-ribbon-tab[aria-label="surfing-bookmark-manager"],
+.side-dock-ribbon-action[aria-label="surfing-bookmark-manager"],
+.side-dock-ribbon-tab[aria-label="创建 Excel 文件"],
+.side-dock-ribbon-action[aria-label="创建 Excel 文件"],
+.side-dock-ribbon-tab[aria-label="Open Symbols for the active editor"],
+.side-dock-ribbon-action[aria-label="Open Symbols for the active editor"],
+.side-dock-ribbon-tab[aria-label="Open Chronology"],
+.side-dock-ribbon-action[aria-label="Open Chronology"],
+.side-dock-ribbon-tab[aria-label="Open in Headings Mode"],
+.side-dock-ribbon-action[aria-label="Open in Headings Mode"],
+.side-dock-ribbon-tab[aria-label="Sync your Kindle highlights"],
+.side-dock-ribbon-action[aria-label="Sync your Kindle highlights"],
+.side-dock-ribbon-tab[aria-label="插入模板"],
+.side-dock-ribbon-action[aria-label="插入模板"],
+.side-dock-ribbon-tab[aria-label="打开 Markdown 格式转换器"],
+.side-dock-ribbon-action[aria-label="打开 Markdown 格式转换器"],
+.side-dock-ribbon-tab[aria-label="Templater"],
+.side-dock-ribbon-action[aria-label="Templater"],
+.side-dock-ribbon-tab[aria-label="创建新看板"],
+.side-dock-ribbon-action[aria-label="创建新看板"],
+.side-dock-ribbon-tab[aria-label="打开项目"],
+.side-dock-ribbon-action[aria-label="打开项目"],
+.side-dock-ribbon-tab[aria-label="Janitor: scan vault"],
+.side-dock-ribbon-action[aria-label="Janitor: scan vault"],
+.side-dock-ribbon-tab[aria-label="HelpMate"],
+.side-dock-ribbon-action[aria-label="HelpMate"],
+.side-dock-ribbon-tab[aria-label="创建一个新数据库表"],
+.side-dock-ribbon-action[aria-label="创建一个新数据库表"],
+.side-dock-ribbon-tab[aria-label="Create New Excalidraw File"],
+.side-dock-ribbon-action[aria-label="Create New Excalidraw File"],
+.side-dock-ribbon-tab[aria-label="新建绘图文件"],
+.side-dock-ribbon-action[aria-label="新建绘图文件"],
+.side-dock-ribbon-tab[aria-label="Search obsidian in modal view"],
+.side-dock-ribbon-action[aria-label="Search obsidian in modal view"],
+.side-dock-ribbon-tab[aria-label="Open today"],
+.side-dock-ribbon-action[aria-label="Open today"],
+.side-dock-ribbon-tab[aria-label="BRAT"],
+.side-dock-ribbon-action[aria-label="BRAT"],
+.side-dock-ribbon-tab[aria-label="Toggle Soomda"],
+.side-dock-ribbon-action[aria-label="Toggle Soomda"],
+.side-dock-ribbon-tab[aria-label="FolderFile Splitter"],
+.side-dock-ribbon-action[aria-label="FolderFile Splitter"],
+.side-dock-ribbon-tab[aria-label="Open Mermaid Toolbar"],
+.side-dock-ribbon-action[aria-label="Open Mermaid Toolbar"],
+.side-dock-ribbon-tab[aria-label="Apple Books - Import Highlights"],
+.side-dock-ribbon-action[aria-label="Apple Books - Import Highlights"],
+.side-dock-ribbon-tab[aria-label="RSS Discover"],
+.side-dock-ribbon-action[aria-label="RSS Discover"],
+.side-dock-ribbon-tab[aria-label="Text Transporter"],
+.side-dock-ribbon-action[aria-label="Text Transporter"],
+.side-dock-ribbon-tab[aria-label="Create .url file"],
+.side-dock-ribbon-action[aria-label="Create .url file"],
+.side-dock-ribbon-tab[aria-label="Open homepage"],
+.side-dock-ribbon-action[aria-label="Open homepage"],
+.side-dock-ribbon-tab[aria-label="新建代码文件"],
+.side-dock-ribbon-action[aria-label="新建代码文件"],
+.side-dock-ribbon-tab[aria-label="Open trash explorer"],
+.side-dock-ribbon-action[aria-label="Open trash explorer"],
+.side-dock-ribbon-tab[aria-label="Local Images Plus  0.16.3 Localize attachments (plugin folder)"],
+.side-dock-ribbon-action[aria-label="Local Images Plus  0.16.3 Localize attachments (plugin folder)"],
+.side-dock-ribbon-tab[aria-label="笔记本导航器"],
+.side-dock-ribbon-action[aria-label="笔记本导航器"],
+.side-dock-ribbon-tab[aria-label="Omnisearch"],
+.side-dock-ribbon-action[aria-label="Omnisearch"],
+.side-dock-ribbon-tab[aria-label="Create new Markwhen file"],
+.side-dock-ribbon-action[aria-label="Create new Markwhen file"],
+.side-dock-ribbon-tab[aria-label="Open external media"],
+.side-dock-ribbon-action[aria-label="Open external media"],
+.side-dock-ribbon-tab[aria-label="Open map view"],
+.side-dock-ribbon-action[aria-label="Open map view"],
+.side-dock-ribbon-tab[aria-label="同步微信读书笔记"],
+.side-dock-ribbon-action[aria-label="同步微信读书笔记"],
+.side-dock-ribbon-tab[aria-label="Thino"],
+.side-dock-ribbon-action[aria-label="Thino"],
+.side-dock-ribbon-tab[aria-label="Regex Rulesets"],
+.side-dock-ribbon-action[aria-label="Regex Rulesets"],
+.side-dock-ribbon-tab[aria-label="打开 Task Genius 视图"],
+.side-dock-ribbon-action[aria-label="打开 Task Genius 视图"],
+.side-dock-ribbon-tab[aria-label="Manage workspaces"],
+.side-dock-ribbon-action[aria-label="Manage workspaces"],
+.side-dock-ribbon-tab[aria-label="Open terminal"],
+.side-dock-ribbon-action[aria-label="Open terminal"],
+.side-dock-ribbon-tab[aria-label="Open 3d graph"],
+.side-dock-ribbon-action[aria-label="Open 3d graph"],
+.side-dock-ribbon-tab[aria-label="Create new board"],
+.side-dock-ribbon-action[aria-label="Create new board"],
+.side-dock-ribbon-tab[aria-label="Open list panel"],
+.side-dock-ribbon-action[aria-label="Open list panel"],
+.side-dock-ribbon-tab[aria-label="New drawing"],
+.side-dock-ribbon-action[aria-label="New drawing"],
+.side-dock-ribbon-tab[aria-label="Open virtual content in sidebar"],
+.side-dock-ribbon-action[aria-label="Open virtual content in sidebar"],
+.side-dock-ribbon-tab[aria-label="Insert Habit Tracker Block"],
+.side-dock-ribbon-action[aria-label="Insert Habit Tracker Block"],
+.side-dock-ribbon-tab[aria-label="Open Git source control"],
+.side-dock-ribbon-action[aria-label="Open Git source control"],
+.side-dock-ribbon-tab[aria-label="Open Importer"],
+.side-dock-ribbon-action[aria-label="Open Importer"],
+.side-dock-ribbon-tab[aria-label="Trim whitespace"],
+.side-dock-ribbon-action[aria-label="Trim whitespace"],
+.side-dock-ribbon-tab[aria-label="Open Task Graph"],
+.side-dock-ribbon-action[aria-label="Open Task Graph"],
+.side-dock-ribbon-tab[aria-label="ReadItLater: Create from clipboard"],
+.side-dock-ribbon-action[aria-label="ReadItLater: Create from clipboard"],
+.side-dock-ribbon-tab[aria-label="CardBoard"],
+.side-dock-ribbon-action[aria-label="CardBoard"],
+.side-dock-ribbon-tab[aria-label="Open rulebook"],
+.side-dock-ribbon-action[aria-label="Open rulebook"] {
+  display: none !important;
+}
+
+/* ── Status Bar ── */
+.status-bar-item[data-section="sync"] { display: none !important; }
+.status-bar-item[data-section="custom-sort"] { display: none !important; }
+.status-bar-item[data-section="readwise-official"] { display: none !important; }
+.status-bar-item[data-section="obsidian-douban-plugin"] { display: none !important; }
+.status-bar-item[data-section="editing-toolbar"] { display: none !important; }
+.status-bar-item[data-section="theme-picker"] { display: none !important; }
+.status-bar-item[data-section="properties"] { display: none !important; }

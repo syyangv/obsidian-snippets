@@ -1,0 +1,61 @@
+/* ============================================================
+ * section-callout-titles.css  (Plumbob vault)
+ * Variant: Accent Bar + Centered headings
+ * Color scheme: green-teal · bar opacity: 0.90 · callout tint: 0.08
+ * Generated: 2026-05-09
+ * ============================================================ */
+
+/* Centered note title, headings + callout titles */
+.inline-title { text-align: center; }
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.cm-s-obsidian .HyperMD-header-1,
+.cm-s-obsidian .HyperMD-header-2,
+.cm-s-obsidian .HyperMD-header-3 { text-align: center; }
+.callout-title { justify-content: center; }
+.callout-title-inner { flex: none; }
+
+/* H1–H3 accent bars */
+.markdown-preview-view h1,
+.cm-s-obsidian .HyperMD-header-1 {
+  border-left: 3px solid var(--plumbob-400);
+  padding-left: 12px;
+}
+.markdown-preview-view h2,
+.cm-s-obsidian .HyperMD-header-2 {
+  border-left: 2px solid var(--sim-teal-200);
+  padding-left: 8px;
+}
+.markdown-preview-view h3,
+.cm-s-obsidian .HyperMD-header-3 {
+  border-left: 2px solid rgba(127, 200, 220, 0.47);
+  padding-left: 8px;
+}
+
+/* Callout title tint + weight
+ * !important needed: embedding-styling.css sets bg to 0.03 globally */
+.callout-title {
+  font-weight: 700;
+}
+/* Built-in callouts */
+.callout[data-callout="note"]     .callout-title { background: rgba(var(--co-learn),    0.08) !important; }
+.callout[data-callout="tip"]      .callout-title { background: rgba(var(--co-practice), 0.08) !important; }
+.callout[data-callout="warning"]  .callout-title { background: rgba(var(--co-research), 0.08) !important; }
+.callout[data-callout="success"]  .callout-title { background: rgba(var(--co-complete), 0.08) !important; }
+.callout[data-callout="question"] .callout-title { background: rgba(var(--co-learn),    0.08) !important; }
+/* Custom callouts */
+.callout[data-callout="priority"] .callout-title { background: rgba(var(--co-priority), 0.08) !important; }
+.callout[data-callout="progress"] .callout-title { background: rgba(var(--co-progress), 0.08) !important; }
+.callout[data-callout="meeting"]  .callout-title { background: rgba(var(--co-meeting),  0.08) !important; }
+.callout[data-callout="learn"]    .callout-title { background: rgba(var(--co-learn),    0.08) !important; }
+.callout[data-callout="research"] .callout-title { background: rgba(var(--co-research), 0.08) !important; }
+.callout[data-callout="idea"]     .callout-title { background: rgba(var(--co-idea),     0.08) !important; }
+.callout[data-callout="practice"] .callout-title { background: rgba(var(--co-practice), 0.08) !important; }
+.callout[data-callout="inspire"]  .callout-title { background: rgba(var(--co-inspire),  0.08) !important; }
+.callout[data-callout="complete"] .callout-title { background: rgba(var(--co-complete), 0.08) !important; }
+.callout[data-callout="blocked"]  .callout-title { background: rgba(var(--co-blocked),  0.08) !important; }
+.callout[data-callout="code"]     .callout-title { background: rgba(var(--co-code),     0.08) !important; }
+.callout[data-callout="terminal"] .callout-title { background: rgba(var(--co-terminal), 0.08) !important; }
+.callout[data-callout="highlight"].callout-title { background: rgba(var(--co-highlight),0.08) !important; }
+.callout[data-callout="bookmark"] .callout-title { background: rgba(var(--co-bookmark), 0.08) !important; }

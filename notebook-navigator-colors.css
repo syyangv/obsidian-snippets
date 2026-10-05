@@ -1,0 +1,12 @@
+/* Notebook Navigator: color the folder icon only, keep the folder name theme-styled.
+   NN applies one `folderColors` value as an inline style to BOTH the icon span and
+   the name span, so the name has to be reverted here. Inline style => !important. */
+.nn-navitem-name.nn-has-custom-color {
+  color: var(--nn-theme-navitem-name-color) !important;
+  font-weight: var(--nn-theme-navitem-name-font-weight) !important;
+}
+
+/* Note rows inside a colored folder inherit the same treatment */
+.nn-navitem[data-nav-item-type='note'] .nn-navitem-name.nn-has-custom-color {
+  color: var(--nn-theme-navitem-file-name-color) !important;
+}

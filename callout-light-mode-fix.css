@@ -1,0 +1,16 @@
+/* callout-light-mode-fix.css
+ * Fix: callout title and body text are hardcoded white in theme.css,
+ * which is invisible in light mode when embedding-styling.css makes
+ * backgrounds transparent. Scoped to body.theme-light only — dark
+ * mode behavior is untouched.
+ */
+
+body.theme-light .callout > .callout-title > .callout-title-inner {
+  color: rgba(0, 0, 0, 0.82) !important;
+  text-shadow: none !important;
+}
+
+body.theme-light .callout > .callout-content {
+  color: var(--text-normal) !important;
+  text-shadow: none !important;
+}
